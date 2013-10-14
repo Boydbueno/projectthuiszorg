@@ -2,8 +2,8 @@
 
 Route::get('/', array('as' => 'home', 'uses' => 'HomeController@showIndex'));
 
-Route::get('client', array('as' => 'client', 'uses' => 'ClientController@showClient'));
-Route::get('opdrachtgever', array('as' => 'company', 'uses' => 'CompanyController@showCompany'));
+Route::get('client', array('as' => 'client', 'uses' => 'ClientController@showIndex'));
+Route::get('opdrachtgever', array('as' => 'company', 'uses' => 'CompanyController@showIndex'));
 
 /*
 |---------------------------------------------------------------------------

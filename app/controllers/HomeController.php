@@ -7,14 +7,6 @@ class HomeController extends BaseController {
 		return View::make('home/index');
 	}
 
-	public function showClient()
-	{
-		return View::make('client/index');
-	}
-
-	public function showCompany()
-	{
-		return View::make('company/index');
-	}
-
 }
+
+?>

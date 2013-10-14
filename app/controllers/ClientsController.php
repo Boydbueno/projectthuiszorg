@@ -29,7 +29,20 @@ class ClientsController extends \BaseController {
 	 */
 	public function store()
 	{
-		return 'storinguser';
+		$input = Input::all();
+
+		$user = new User();
+
+		$user->email = $input['email'];
+		$user->password = Hash::make($input['password']);
+		$user->first_name = $input['first_name'];
+		$user->last_name = $input['last_name'];
+		$user->street_name = $input['street_name'];
+		$user->house_number = $input['house_number'];
+		$user->zipcode = $input['zipcode'];
+		$user->city = $input['city'];
+
+		$user->save();
 	}
 
 	/**

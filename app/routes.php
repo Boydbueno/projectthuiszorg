@@ -6,11 +6,6 @@ Route::get('client', 'HomeController@showClient');
 
 Route::get('opdrachtgever', 'HomeController@showCompany');
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
-
 Route::get('login', array('as' => 'login', 'uses' => 'AuthController@getLogin'));
 Route::post('login', 'AuthController@postLogin');
 Route::get('logout', array('as' => 'logout', 'uses' => 'AuthController@getLogout'));

@@ -31,6 +31,10 @@ class ClientsController extends \BaseController {
 	{
 		$input = Input::all();
 
+		$validator = Validator::make($input, User::$rules);
+
+		if($validator->fails()) return Redirect::back()->withInput()->withErrors($validator);
+
 		$user = new User();
 
 		$user->email = $input['email'];

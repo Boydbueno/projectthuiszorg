@@ -8,9 +8,9 @@ class UsersTableSeeder extends Seeder {
 		// DB::table('users')->truncate();
 
 		$users = array(
-			array('email' => 'boydbuenodemesquita@gmail.com', 'hash' => Hash::make('Welkom01')),
-			array('email' => 'stefanweck1@gmail.com', 'hash' => Hash::make('Welkom01')),
-			array('email' => 'dmagphone@gmail.com', 'hash' => Hash::make('Welkom01'))
+			array('email' => 'boydbuenodemesquita@gmail.com', 'password' => Hash::make('Welkom01')),
+			array('email' => 'stefanweck1@gmail.com', 'password' => Hash::make('Welkom01')),
+			array('email' => 'dmagphone@gmail.com', 'password' => Hash::make('Welkom01'))
 		);
 
 		// Uncomment the below to run the seeder

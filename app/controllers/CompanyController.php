@@ -4,9 +4,7 @@ class CompanyController extends BaseController {
 
 	public function showIndex()
 	{
-		return View::make('company/index');
+		return View::make('company.index');
 	}
 
 }
-
-?>

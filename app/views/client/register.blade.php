@@ -33,8 +33,8 @@
 			{{ Form::password('password') }}
 		</li>
 		<li>
-			{{ Form::label('confirm_password', 'Wachtwoord nogmaals:') }}
-			{{ Form::password('confirm_password') }}
+			{{ Form::label('password_confirmation', 'Bevestig wachtwoord:') }}
+			{{ Form::password('password_confirmation') }}
 		</li>
 		<li>
 			{{ Form::submit() }}

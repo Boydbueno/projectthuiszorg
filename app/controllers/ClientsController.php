@@ -19,7 +19,7 @@ class ClientsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('client.registration');
+		return View::make('client.register');
 	}
 
 	/**

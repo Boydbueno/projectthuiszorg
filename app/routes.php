@@ -1,9 +1,7 @@
 <?php
 
 Route::get('/', 'HomeController@showIndex');
-
 Route::get('client', 'HomeController@showClient');
-
 Route::get('opdrachtgever', 'HomeController@showCompany');
 
 Route::get('login', array('as' => 'login', 'uses' => 'AuthController@getLogin'));

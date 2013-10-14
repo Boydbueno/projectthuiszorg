@@ -11,14 +11,14 @@
 |
 */
 
-Route::get('/', array('as' => 'home'), function()
+Route::get('/', function()
 {
 	return View::make('hello');
 });
 
-Route::get('login', ['as' => 'login', 'uses' => 'AuthController@getLogin']);
+Route::get('login', array('as' => 'login', 'uses' => 'AuthController@getLogin'));
 Route::post('login', 'AuthController@postLogin');
-Route::get('logout', ['as' => 'logout', 'uses' => 'AuthController@getLogout']);
+Route::get('logout', array('as' => 'logout', 'uses' => 'AuthController@getLogout'));
 Route::controller('auth', 'AuthController');
 
 Route::group(array('before' => 'auth'), function() 

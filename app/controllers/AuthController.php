@@ -43,10 +43,7 @@ class AuthController extends \BaseController {
 	public function getLogout()
 	{
 		Auth::logout();
-
-		// TODO: Redirect somewhere
-
-		return "Logged out";
+		return Redirect::to('/');
 	}
 
 }

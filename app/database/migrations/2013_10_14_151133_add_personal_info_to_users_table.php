@@ -31,13 +31,13 @@ class AddPersonalInfoToUsersTable extends Migration {
 	public function down()
 	{
 		Schema::table('users', function(Blueprint $table) {
-			$table->dropColumn('firstName');
-			$table->dropColumn('lastName');
-			$table->dropColumn('streetName');
-			$table->dropColumn('houseNumber');
-			$table->dropColumn('zipCode');
-			$table->dropColumn('city');
-			$table->dropColumn('country');
+			$table->string('first_name');
+			$table->string('last_name');
+			$table->string('street_name');
+			$table->string('house_number');
+			$table->string('zipcode');
+			$table->string('city');
+			$table->string('country');
 		});
 	}
 

@@ -2,31 +2,16 @@
 
 class ClientController extends BaseController {
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
 	public function getIndex()
 	{
 		return View::make('client.index');
 	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
 	public function getRegister()
 	{
 		return View::make('client.register');
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
 	public function postIndex()
 	{
 

@@ -9,7 +9,7 @@
         <h1>Client</h1>
     </div>
 
-    @include('auth.login')
+    @include('partials._login')
 
     <div>
     	<a href='/client/register'>Maak een account!</a>

@@ -9,17 +9,9 @@ class ClientsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('clients.index');
-	}
+		$users = User::all();
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		return View::make('client.register');
+		return View::make('clients.index')->with('users', $users);
 	}
 
 	/**

@@ -11,19 +11,11 @@
     </div>
     <div>
     	<h2>Naam vacature</h2>
-	    	<?php
-	    	//$results = DB::select('select * from users where id = 1', array(3));
-	    	//echo $results;
-	    	//
-	    	$users = DB::table('users')->get();
-    			?>
-	    			<ul>
-		    			<?php
-						foreach ($users as $user)
-						{
-						    ?> <li> <?php echo ($user->email); ?> </li> <?php
-						}?>
-		    		</ul>
+		<ul>
+			@foreach ($users as $user)
+			    <li>{{ $user->email }}</li>
+			@endforeach
+		</ul>
     </div>
     {{ link_to_route('logout', 'Logout') }}
 @stop

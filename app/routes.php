@@ -3,7 +3,7 @@
 Route::get('/', array('as' => 'home', 'uses' => 'HomeController@showIndex'));
 
 Route::controller('client', 'ClientController');
-Route::get('opdrachtgever', array('as' => 'company', 'uses' => 'CompanyController@showIndex'));
+Route::controller('opdrachtgever', 'CompanyController');
 
 /*
 |---------------------------------------------------------------------------

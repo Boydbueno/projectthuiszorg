@@ -1,6 +1,3 @@
-@extends('layouts.master')
-
-@section('content')
 {{ Form::open() }}
 	<ul>
 		<li>
@@ -15,8 +12,6 @@
 
 		<li>
 			{{ Form::submit() }}
-			{{ Session::get('notice') }}
 		</li>
 	</ul>
 {{ Form::close() }}
-@stop

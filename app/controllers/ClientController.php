@@ -42,29 +42,19 @@ class ClientController extends BaseController {
 	        )
 		);
 
-		if ($validator->fails()){
+		if ($validator->fails()) return Redirect::back()->withErrors($validator)->withInput();
 
-			//Validation fails
-			$messages = $validator->messages();
+		//Validation succeeds
+		$input = Input::all();
 
-			//Display all errors
-			return Redirect::back()->with('errors', $messages)->withInput();
+		$attempt = Auth::attempt(array(
+			'email' => $input['email'],
+			'password' => $input['password']
+		));
 
-		}else{
+		if($attempt) return Redirect::intended('/clients')->with('notice', 'You have been logged in!');
 
-			//Validation succeeds
-			$input = Input::all();
-
-			$attempt = Auth::attempt(array(
-				'email' => $input['email'],
-				'password' => $input['password']
-			));
-
-			if($attempt) return Redirect::intended('/clients')->with('notice', 'You have been logged in!');
-
-			return Redirect::back()->with('notice', 'Invalid credentials')->withInput();
-
-		}
+		return Redirect::back()->with('notice', 'Invalid credentials')->withInput();
 
 	}
 

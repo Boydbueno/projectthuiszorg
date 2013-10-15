@@ -1,3 +1,6 @@
+@extends('layouts.master')
+
+@section('content')
 {{ Form::open(array('route' => 'clients.store')) }}
 	<ul>
 		<li>
@@ -41,5 +44,6 @@
 		</li>
 	</ul>
 {{ Form::close() }}
+@stop
 
 @include('partials._errors')

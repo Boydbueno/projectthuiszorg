@@ -1,3 +1,6 @@
+@extends('layouts.master')
+
+@section('content')
 {{ Form::open() }}
 	<ul>
 		<li>
@@ -16,3 +19,4 @@
 		</li>
 	</ul>
 {{ Form::close() }}
+@stop

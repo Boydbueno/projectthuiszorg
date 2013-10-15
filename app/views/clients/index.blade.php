@@ -25,4 +25,5 @@
 						}?>
 		    		</ul>
     </div>
+    {{ link_to_route('logout', 'Logout') }}
 @stop

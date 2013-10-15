@@ -41,3 +41,5 @@
 		</li>
 	</ul>
 {{ Form::close() }}
+
+@include('partials._errors')

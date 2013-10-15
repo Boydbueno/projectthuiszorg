@@ -15,4 +15,6 @@
     	<a href='/client/register'>Maak een account!</a>
     </div>
 
+    @include('partials._errors')
+
 @stop

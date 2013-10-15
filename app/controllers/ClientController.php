@@ -29,16 +29,43 @@ class ClientController extends BaseController {
 	 */
 	public function postIndex()
 	{
+
+		//Get all input
 		$input = Input::all();
 
-		$attempt = Auth::attempt(array(
-			'email' => $input['email'],
-			'password' => $input['password']
-		));
+		//Create validator instance
+		$validator = Validator::make(
+		    $input,
+		    array(
+	            'email' => 'required|email',
+	            'password' => 'required'
+	        )
+		);
 
-		if($attempt) return Redirect::intended('/clients')->with('notice', 'You have been logged in!');
+		if ($validator->fails()){
 
-		return Redirect::back()->with('notice', 'Invalid credentials')->withInput();
+			//Validation fails
+			$messages = $validator->messages();
+
+			//Display all errors
+			return Redirect::back()->with('errors', $messages)->withInput();
+
+		}else{
+
+			//Validation succeeds
+			$input = Input::all();
+
+			$attempt = Auth::attempt(array(
+				'email' => $input['email'],
+				'password' => $input['password']
+			));
+
+			if($attempt) return Redirect::intended('/clients')->with('notice', 'You have been logged in!');
+
+			return Redirect::back()->with('notice', 'Invalid credentials')->withInput();
+
+		}
+
 	}
 
 }

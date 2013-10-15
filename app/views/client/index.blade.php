@@ -11,4 +11,8 @@
 
     @include('auth.login')
 
+    <div>
+    	<a href='/client/register'>Maak een account!</a>
+    </div>
+
 @stop

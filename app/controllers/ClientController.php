@@ -13,6 +13,16 @@ class ClientController extends BaseController {
 	}
 
 	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return Response
+	 */
+	public function getRegister()
+	{
+		return View::make('client.register');
+	}
+
+	/**
 	 * Store a newly created resource in storage.
 	 *
 	 * @return Response
@@ -26,7 +36,7 @@ class ClientController extends BaseController {
 			'password' => $input['password']
 		));
 
-		if($attempt) return Redirect::intended('/')->with('notice', 'You have been logged in!');
+		if($attempt) return Redirect::intended('/clients')->with('notice', 'You have been logged in!');
 
 		return Redirect::back()->with('notice', 'Invalid credentials')->withInput();
 	}

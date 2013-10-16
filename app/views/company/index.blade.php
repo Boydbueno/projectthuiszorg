@@ -12,9 +12,9 @@
     @include('partials._login')
 
     <div>
-    	<a href='/client/register'>Maak een account!</a>
+    	<a href='/opdrachtgever/register'>Maak een account!</a>
     </div>
 
     @include('partials._errors')
-    
+
 @stop

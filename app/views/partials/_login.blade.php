@@ -1,17 +1,17 @@
 {{ Form::open() }}
 	<ul>
-		<li>
+		<li class="form-group">
 			{{ Form::label('email', 'Email:') }}
 			{{ Form::text('email') }}
 		</li>
 
-		<li>
+		<li class="form-group">
 			{{ Form::label('password', 'Password:') }}
 			{{ Form::password('password') }}
 		</li>
 
-		<li>
-			{{ Form::submit('Login') }}
+		<li class="form-group">
+			{{ Form::submit('Login', array('class' => 'btn btn-primary')) }}
 			{{ Session::get('notice') }}
 		</li>
 	</ul>

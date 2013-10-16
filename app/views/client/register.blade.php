@@ -41,7 +41,7 @@
 				{{ Form::password('password_confirmation') }}
 			</li>
 			<li>
-				{{ Form::submit() }}
+				{{ Form::submit('Registreer') }}
 			</li>
 		</ul>
 	{{ Form::close() }}

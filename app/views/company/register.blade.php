@@ -1,16 +1,20 @@
 @extends('layouts.master')
 
 @section('content')
-
+	
 	{{ Form::open(array('route' => 'clients.store')) }}
 		<ul>
 			<li>
-				{{ Form::label('first_name', 'Voornaam:') }}
-				{{ Form::text('first_name') }}
+				{{ Form::label('company_name', 'Bedrijfdnaam:') }}
+				{{ Form::text('company_name') }}
 			</li>
 			<li>
-				{{ Form::label('last_name', 'Achternaam:') }}
-				{{ Form::text('last_name') }}
+				{{ Form::label('url', 'Website:') }}
+				{{ Form::text('url') }}
+			</li>
+			<li>
+				{{ Form::label('kvknummer', 'KvK nummer:') }}
+				{{ Form::text('kvknummer') }}
 			</li>
 			<li>
 				{{ Form::label('email', 'Email:') }}
@@ -41,7 +45,7 @@
 				{{ Form::password('password_confirmation') }}
 			</li>
 			<li>
-				{{ Form::submit() }}
+				{{ Form::submit('Registreer') }}
 			</li>
 		</ul>
 	{{ Form::close() }}

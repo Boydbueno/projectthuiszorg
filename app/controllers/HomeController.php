@@ -31,6 +31,15 @@ class HomeController extends BaseController {
 
 		if ($validator->fails()) return Redirect::back()->withErrors($validator)->withInput();
 
+		//Send the contact form!
+		Mail::send('emails.contact', $input, function($message){
+
+		    $message->to('stefanweck1@gmail.com', 'Stefan Weck')->subject('Contact Form!');
+
+		});
+
+		return "De mail is verzonden!";
+
 	}
 
 }

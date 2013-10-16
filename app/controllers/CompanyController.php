@@ -29,15 +29,12 @@ class CompanyController extends BaseController {
 
 		if ($validator->fails()) return Redirect::back()->withErrors($validator)->withInput();
 
-		//Validation succeeds
-		$input = Input::all();
-
 		$attempt = Auth::attempt(array(
 			'email' => $input['email'],
 			'password' => $input['password']
 		));
 
-		if($attempt) return Redirect::intended('/companys')->with('notice', 'You have been logged in!');
+		if($attempt) return Redirect::intended('/companies')->with('notice', 'You have been logged in!');
 
 		return Redirect::back()->with('notice', 'Invalid credentials')->withInput();
 

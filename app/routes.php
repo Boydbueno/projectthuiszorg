@@ -1,7 +1,5 @@
 <?php
 
-Route::get('/', array('as' => 'home', 'uses' => 'HomeController@showIndex'));
-
 Route::controller('client', 'ClientController');
 Route::controller('opdrachtgever', 'CompanyController');
 
@@ -32,3 +30,5 @@ Route::group(array('before' => 'auth'), function()
 	Route::resource('clients', 'ClientsController');
 
 });
+
+Route::controller('/', 'HomeController');

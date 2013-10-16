@@ -9,9 +9,9 @@ class ClientsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$users = User::all();
+		$jobs = Job::all();
 
-		return View::make('clients.index')->with('users', $users);
+		return View::make('clients.index')->with('jobs', $jobs);
 	}
 
 	/**

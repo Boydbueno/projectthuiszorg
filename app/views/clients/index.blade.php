@@ -10,12 +10,14 @@
         <p>{{ Session::get('notice') }}</p>
     </div>
     <div>
-    	<h2>Naam vacature</h2>
-		<ul>
-			@foreach ($users as $user)
-			    <li>{{ $user->email }}</li>
-			@endforeach
-		</ul>
-    </div>
+
+    <section class="jobs">
+        <h1>Vacatures</h1>
+        <ul>
+            @foreach ($jobs as $job)
+                <li class="job">{{ $job->title }}</li>
+            @endforeach
+        </ul>
+    </section>
     {{ link_to_route('logout', 'Logout') }}
 @stop

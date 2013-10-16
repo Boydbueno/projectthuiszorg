@@ -11,7 +11,7 @@
 		</li>
 
 		<li>
-			{{ Form::submit() }}
+			{{ Form::submit('Login') }}
 			{{ Session::get('notice') }}
 		</li>
 	</ul>

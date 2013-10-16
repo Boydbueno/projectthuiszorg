@@ -29,9 +29,6 @@ class CompanyController extends BaseController {
 
 		if ($validator->fails()) return Redirect::back()->withErrors($validator)->withInput();
 
-		//Validation succeeds
-		$input = Input::all();
-
 		$attempt = Auth::attempt(array(
 			'email' => $input['email'],
 			'password' => $input['password']

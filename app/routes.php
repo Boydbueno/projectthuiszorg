@@ -2,7 +2,6 @@
 
 Route::controller('client', 'ClientController');
 Route::controller('opdrachtgever', 'CompanyController');
-Route::controller('/', 'HomeController');
 
 /*
 |---------------------------------------------------------------------------
@@ -31,3 +30,5 @@ Route::group(array('before' => 'auth'), function()
 	Route::resource('clients', 'ClientsController');
 
 });
+
+Route::controller('/', 'HomeController');

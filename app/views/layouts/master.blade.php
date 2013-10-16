@@ -6,6 +6,12 @@
     {{ HTML::style('css/base.css'); }}
 </head>
 <body>
-    @yield('content')
+	<header></header>
+    
+	<div class="container">
+    	@yield('content')
+	</div>
+
+	<footer></footer>
 </body>
 </html>

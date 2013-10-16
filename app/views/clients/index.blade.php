@@ -13,7 +13,7 @@
     	<h2>Naam vacature</h2>
 		<ul>
 			@foreach ($users as $user)
-			    <li>{{ $user->email }}</li>
+			    <li>{{{ $user->email }}}</li>
 			@endforeach
 		</ul>
     </div>

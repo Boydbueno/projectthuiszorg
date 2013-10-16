@@ -21,7 +21,7 @@
 				{{ Form::textarea('text') }}
 			</li>
 			<li>
-				{{ Form::submit() }}
+				{{ Form::submit('Verzend') }}
 			</li>
 		</ul>
 	{{ Form::close() }}

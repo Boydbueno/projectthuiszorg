@@ -1,8 +1,8 @@
 <?php
 
-Route::controller('/', 'HomeController');
 Route::controller('client', 'ClientController');
 Route::controller('opdrachtgever', 'CompanyController');
+Route::controller('/', 'HomeController');
 
 /*
 |---------------------------------------------------------------------------

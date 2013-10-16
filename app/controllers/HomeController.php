@@ -14,7 +14,23 @@ class HomeController extends BaseController {
 
 	public function postContact()
 	{
-		return View::make('home.contact');
+		
+		//Get all input
+		$input = Input::all();
+
+		//Create validator instance
+		$validator = Validator::make(
+		    $input,
+		    array(
+		    	'first_name' => 'required',
+		    	'last_name' => 'required',
+	            'email' => 'required|email',
+	            'text' => 'required'
+	        )
+		);
+
+		if ($validator->fails()) return Redirect::back()->withErrors($validator)->withInput();
+
 	}
 
 }

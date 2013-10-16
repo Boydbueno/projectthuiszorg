@@ -2,6 +2,10 @@
 
 @section('content')
 
+	<div class="welcome">
+	    <h1>Contact</h1>
+	</div>
+
 	{{ Form::open(array('url' => '/contact')) }}
 		<ul>
 			<li>
@@ -21,7 +25,7 @@
 				{{ Form::textarea('text') }}
 			</li>
 			<li>
-				{{ Form::submit('Verzend') }}
+				{{ Form::submit('Verzend', array('class' => 'btn btn-primary')) }}
 			</li>
 		</ul>
 	{{ Form::close() }}

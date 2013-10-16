@@ -2,6 +2,10 @@
 
 @section('content')
 
+	<div class="welcome">
+	    <h1>Registreren</h1>
+	</div>
+
 	{{ Form::open(array('url' => 'client/register')) }}
 		<ul>
 			<li class="form-group">

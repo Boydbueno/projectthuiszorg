@@ -1,6 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
+
+	<div class="welcome">
+	    <h1>Registreren</h1>
+	</div>
 	
 	{{ Form::open(array('route' => 'clients.store')) }}
 		<ul>

@@ -2,7 +2,7 @@
 
 @section('content')
 
-	{{ Form::open(array('route' => 'clients.store')) }}
+	{{ Form::open(array('url' => 'client/register')) }}
 		<ul>
 			<li>
 				{{ Form::label('first_name', 'Voornaam:') }}

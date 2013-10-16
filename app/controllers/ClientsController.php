@@ -39,6 +39,8 @@ class ClientsController extends \BaseController {
 		$user->city = $input['city'];
 
 		$user->save();
+
+		return Redirect::to('/client');
 	}
 
 	/**

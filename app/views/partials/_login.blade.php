@@ -12,6 +12,7 @@
 
 		<li>
 			{{ Form::submit() }}
+			{{ Session::get('notice') }}
 		</li>
 	</ul>
 {{ Form::close() }}

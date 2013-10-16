@@ -34,7 +34,7 @@ class CompanyController extends BaseController {
 			'password' => $input['password']
 		));
 
-		if($attempt) return Redirect::intended('/companys')->with('notice', 'You have been logged in!');
+		if($attempt) return Redirect::intended('/companies')->with('notice', 'You have been logged in!');
 
 		return Redirect::back()->with('notice', 'Invalid credentials')->withInput();
 

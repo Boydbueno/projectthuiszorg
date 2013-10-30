@@ -17,8 +17,8 @@ class CreateJobsTable extends Migration {
 			$table->string('title');
 			$table->text('description');
 			$table->integer('amount');
-			$table->timestamp('start_date');
-			$table->timestamp('end_date');
+			$table->timestamp('start_date')->nullable();
+			$table->timestamp('end_date')->nullable();
 			$table->integer('company_id');
 			$table->timestamps();
 		});

@@ -16,25 +16,25 @@ class JobsTableSeeder extends Seeder {
 				"company_id" => 1
 			),
 			array(
-				"title" => "Tuin verbouwen",
+				"title" => "Folders rondbrengen",
 				"description" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-				"amount" => 400,
-				"payment" => 1000.00,
-				"company_id" => 1
+				"amount" => 600,
+				"payment" => 300.00,
+				"company_id" => 2
 			),
 			array(
 				"title" => "T-shirts vouwen",
 				"description" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-				"amount" => 400,
-				"payment" => 1000.00,
-				"company_id" => 1
+				"amount" => 800,
+				"payment" => 1200.00,
+				"company_id" => 3
 			),
 			array(
-				"title" => "Vloer leggen",
+				"title" => "Handoeken ophalen en wassen",
 				"description" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-				"amount" => 400,
-				"payment" => 1000.00,
-				"company_id" => 1
+				"amount" => 200,
+				"payment" => 500.00,
+				"company_id" => 4
 			)
 		);
 

@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<div class="welcome">
+	<div>
 	    <h1>Registreren</h1>
 	</div>
 	

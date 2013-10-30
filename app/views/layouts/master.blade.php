@@ -8,7 +8,7 @@
 <body>
 	<header></header>
     
-	<div class="container">
+	<div>
     	@yield('content')
 	</div>
 

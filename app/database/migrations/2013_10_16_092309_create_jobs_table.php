@@ -16,7 +16,9 @@ class CreateJobsTable extends Migration {
 			$table->increments('id')->unsigned();
 			$table->string('title');
 			$table->text('description');
-			$table->integer('job_unit_id');
+			$table->integer('amount');
+			$table->timestamp('start_date');
+			$table->timestamp('end_date');
 			$table->integer('company_id');
 			$table->timestamps();
 		});

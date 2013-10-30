@@ -15,7 +15,7 @@ class CreateCompaniesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('company_name', 100);
-			$table->string('url', 250);
+			$table->string('url', 250)->nullable();
 			$table->string('discription', 250);
 			$table->string('kvk_number', 8);
 			$table->string('address', 100);

@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>@yield('title', 'Project Thuiszorg')</title>
-    {{ HTML::style('css/base.css'); }}
+    {{ HTML::style('css/base.css') }}
+	{{ HTML::script('scripts/modernizr.js') }}
 </head>
 <body>
-	<header></header>
+	<header>
+		
+	</header>
     
-	<div>
+	<section class="content">
     	@yield('content')
-	</div>
+	</section> <!-- End Content -->
 
 	<footer></footer>
+
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
 
-class JobCategory extends Eloquent {
+class Jobcategory extends Eloquent {
 	
 }

@@ -1,8 +1,8 @@
 <?php
 
 class Job extends Eloquent {
-	public function jobCategory()
+	public function jobcategory()
 	{
-		return $this->belongsToMany('JobCategory');
+		return $this->belongsToMany('Jobcategory');
 	}
 }

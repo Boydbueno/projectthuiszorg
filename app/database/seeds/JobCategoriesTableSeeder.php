@@ -1,13 +1,13 @@
 <?php
 
-class JobCategoriesTableSeeder extends Seeder {
+class JobcategoriesTableSeeder extends Seeder {
 
 	public function run()
 	{
 		// Uncomment the below to wipe the table clean before populating
 		// DB::table('job_categories')->truncate();
 
-		$job_categories = array(
+		$jobcategories = array(
 			array(
 				"label" => "advies",
 				"description" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
@@ -23,7 +23,7 @@ class JobCategoriesTableSeeder extends Seeder {
 		);
 
 		// Uncomment the below to run the seeder
-		DB::table('job_categories')->insert($job_categories);
+		DB::table('jobcategories')->insert($jobcategories);
 	}
 
 }

@@ -1,33 +1,33 @@
 <?php
 
-class JobJobCategoryTableSeeder extends Seeder {
+class JobJobcategoryTableSeeder extends Seeder {
 
 	public function run()
 	{
 		// Uncomment the below to wipe the table clean before populating
 		// DB::table('job_job_category')->truncate();
 
-		$job_job_category = array(
+		$job_jobcategory = array(
 			array(
 				"job_id" => 1,
-				"job_category_id" => 1
+				"jobcategory_id" => 1
 			),
 			array(
 				"job_id" => 2,
-				"job_category_id" => 2
+				"jobcategory_id" => 2
 			),
 			array(
 				"job_id" => 3,
-				"job_category_id" => 2
+				"jobcategory_id" => 2
 			),
 			array(
 				"job_id" => 4,
-				"job_category_id" => 3
+				"jobcategory_id" => 3
 			)
 		);
 
 		// Uncomment the below to run the seeder
-		DB::table('job_job_category')->insert($job_job_category);
+		DB::table('job_jobcategory')->insert($job_jobcategory);
 	}
 
 }

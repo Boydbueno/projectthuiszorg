@@ -5,7 +5,7 @@ class JobUserTableSeeder extends Seeder {
 	public function run()
 	{
 		// Uncomment the below to wipe the table clean before populating
-		// DB::table('jobuser')->truncate();
+		// DB::table('job_user')->truncate();
 
 		$job_user = array(
 			array(
@@ -21,7 +21,7 @@ class JobUserTableSeeder extends Seeder {
 		);
 
 		// Uncomment the below to run the seeder
-		DB::table('jobuser')->insert($job_user);
+		DB::table('job_user')->insert($job_user);
 	}
 
 }

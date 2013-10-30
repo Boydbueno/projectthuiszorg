@@ -29,6 +29,10 @@ Route::group(array('before' => 'auth'), function()
 
 	Route::resource('clients', 'ClientsController');
 
+	Route::resource('jobs', 'JobsController');
+
 });
 
 Route::controller('/', 'HomeController');
+
+Route::resource('pizzas', 'PizzasController');

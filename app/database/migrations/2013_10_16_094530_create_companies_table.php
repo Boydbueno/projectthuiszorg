@@ -14,14 +14,14 @@ class CreateCompaniesTable extends Migration {
 		Schema::create('companies', function($table)
 		{
 			$table->increments('id');
-			$table->string('companyName', 100);
+			$table->string('company_name', 100);
 			$table->string('url', 250);
 			$table->string('discription', 250);
-			$table->string('kvkNummer', 8);
-			$table->string('adress', 100);
-			$table->string('houseNumber', 5);
+			$table->string('kvk_number', 8);
+			$table->string('address', 100);
+			$table->string('house_number', 5);
 			$table->string('city', 100);
-			$table->string('phoneNumber', 10);
+			$table->string('phone_number', 10);
 		});
 	}
 

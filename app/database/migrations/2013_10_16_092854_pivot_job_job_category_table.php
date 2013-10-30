@@ -15,9 +15,9 @@ class PivotJobJobCategoryTable extends Migration {
 		Schema::create('job_job_category', function(Blueprint $table) {
 			$table->increments('id')->unsigned();
 			$table->integer('job_id')->unsigned()->index();
-			$table->integer('job_category_id')->unsigned()->index();
+			$table->integer('jobcategory_id')->unsigned()->index();
 			$table->foreign('job_id')->references('id')->on('jobs')->onDelete('cascade');
-			$table->foreign('job_category_id')->references('id')->on('job_categories')->onDelete('cascade');
+			$table->foreign('jobcategory_id')->references('id')->on('job_categories')->onDelete('cascade');
 		});
 	}
 

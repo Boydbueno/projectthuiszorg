@@ -5,7 +5,7 @@
 @stop
 
 @section('content')
-    <div class="welcome">
+    <div>
         <h1>Opdrachtgever</h1>
     </div>
 

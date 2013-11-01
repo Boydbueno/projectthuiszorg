@@ -1,9 +1,14 @@
+// Modules and variables
+@import "partials/base";
+
+// Partials
 @import "partials/reset";
 @import "partials/typography";
+@import "partials/buttons";
 
 body {
-    margin:0;
-    font-family:'Lato', sans-serif;
-    text-align:center;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
     color: #999;
 }

@@ -34,5 +34,3 @@ Route::group(array('before' => 'auth'), function()
 });
 
 Route::controller('/', 'HomeController');
-
-Route::resource('pizzas', 'PizzasController');

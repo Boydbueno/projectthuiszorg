@@ -40,7 +40,9 @@ class JobsController extends BaseController {
 	 */
 	public function show($id)
 	{
-        return View::make('jobs.show');
+		$job = Job::find($id);
+
+        return View::make('jobs.show')->with('job', $job);
 	}
 
 	/**

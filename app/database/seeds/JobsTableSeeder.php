@@ -27,14 +27,14 @@ class JobsTableSeeder extends Seeder {
 				"description" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 				"amount" => 800,
 				"payment" => 1200.00,
-				"company_id" => 3
+				"company_id" => 1
 			),
 			array(
 				"title" => "Handoeken ophalen en wassen",
 				"description" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 				"amount" => 200,
 				"payment" => 500.00,
-				"company_id" => 4
+				"company_id" => 2
 			)
 		);
 

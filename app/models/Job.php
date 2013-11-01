@@ -5,6 +5,11 @@ class Job extends Eloquent {
 	
 	public static $rules = array();
 
+	public function company()
+	{
+		return $this->belongsTo('Company');
+	}
+
 	public function jobcategory()
 	{
 		return $this->belongsToMany('Jobcategory');

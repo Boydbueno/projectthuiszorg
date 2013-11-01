@@ -20,7 +20,7 @@
 				<li>Nog 5 dagen</li>
 				<li>Gepauzeerd</li>
 				<li>€{{ $job->payment }},=</li>
-				<li>{{ $job->company_id }}</li>
+				<li>{{ $job->company->company_name }}</li>
 			</ul>
 			<p>Al 15 mensen gingen je voor, doe ook mee!</p>
 			<a href="#">Meedoen</a>

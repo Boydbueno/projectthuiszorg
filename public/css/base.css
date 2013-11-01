@@ -1,13 +1,159 @@
 @import url(//fonts.googleapis.com/css?family=Lato:300,400,700);
 /* line 1, ../sass/partials/_reset.scss */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 10, ../sass/partials/_reset.scss */
 li {
   list-style: none;
 }
 
-/* line 4, ../sass/base.scss */
+/* line 3, ../sass/partials/_typography.scss */
+h1 {
+  font-weight: bold;
+  font-size: 15px;
+  color: #989898;
+}
+
+/* line 9, ../sass/partials/_typography.scss */
+p {
+  line-height: 30px;
+  font-size: 15px;
+}
+
+/* line 14, ../sass/partials/_typography.scss */
+.subTitle {
+  color: #d5d5d5;
+}
+
+/* line 1, ../sass/partials/_buttons.scss */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background-color: #989898;
+  padding: 6px 12px;
+  margin: 5px;
+}
+/* line 9, ../sass/partials/_buttons.scss */
+.btn:hover {
+  background-color: #c5c5c5;
+}
+
+/* line 15, ../sass/partials/_buttons.scss */
+.btn-yellow {
+  background-color: #fec606;
+}
+/* line 17, ../sass/partials/_buttons.scss */
+.btn-yellow:hover {
+  background-color: #fedf73;
+}
+
+/* line 22, ../sass/partials/_buttons.scss */
+.btn-blue {
+  background-color: #0692fe;
+}
+/* line 24, ../sass/partials/_buttons.scss */
+.btn-blue:hover {
+  background-color: #73c2fe;
+}
+
+/* line 29, ../sass/partials/_buttons.scss */
+.btn-green {
+  background-color: #6bcd3b;
+}
+/* line 31, ../sass/partials/_buttons.scss */
+.btn-green:hover {
+  background-color: #ace391;
+}
+
+/* line 36, ../sass/partials/_buttons.scss */
+.btn-red {
+  background-color: #fe0606;
+}
+/* line 38, ../sass/partials/_buttons.scss */
+.btn-red:hover {
+  background-color: #fe7373;
+}
+
+/* line 9, ../sass/base.scss */
 body {
   margin: 0;
   font-family: 'Lato', sans-serif;
-  text-align: center;
-  color: #999;
+  color: #aaaaaa;
+  background-color: #f2f2f2;
+}
+
+/* line 16, ../sass/base.scss */
+.block {
+  background-color: #fff;
+  border-bottom: 3px solid #dfdfdf;
+}
+
+/* line 21, ../sass/base.scss */
+.progress {
+  width: 100%;
+  height: 23px;
+  background-color: #989898;
+}
+
+/* line 27, ../sass/base.scss */
+.progressBar {
+  width: 20%;
+  height: 23px;
+  background-color: #c5c5c5;
+}
+
+/* line 33, ../sass/base.scss */
+.mainTitle {
+  padding: 20px 30px 20px 20px;
+}
+
+/* line 37, ../sass/base.scss */
+.description {
+  padding: 30px 30px 30px 20px;
+}
+
+/* line 41, ../sass/base.scss */
+.floatFix {
+  overflow: hidden;
+}
+
+/* line 45, ../sass/base.scss */
+.marginTop {
+  margin-top: 20px;
+}
+
+/* line 51, ../sass/base.scss */
+.floatLeft {
+  float: left;
+}
+
+/* line 55, ../sass/base.scss */
+.floatRight {
+  float: right;
+}
+
+/* line 61, ../sass/base.scss */
+.menuLink {
+  float: left;
+  display: block;
+  padding: 10px;
+  color: #989898;
+  text-decoration: none;
+}
+/* line 67, ../sass/base.scss */
+.menuLink:hover {
+  text-decoration: underline;
+}
+
+/* line 72, ../sass/base.scss */
+.borderRight {
+  border-right: 1px solid #eaeaea;
 }

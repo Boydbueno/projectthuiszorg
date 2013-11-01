@@ -9,6 +9,66 @@
 body {
     margin: 0;
     font-family: 'Lato', sans-serif;
-    text-align: center;
-    color: #999;
+    color: $text;
+    background-color:#f2f2f2;
+}
+
+.block{
+	background-color: #fff;
+	border-bottom:3px solid #dfdfdf;
+}
+
+.progress{
+	width:100%;
+	height:23px;
+	background-color:$grey;
+}
+
+.progressBar{
+	width:20%;
+	height:23px;
+	background-color: $lightGrey;
+}
+
+.mainTitle{
+	padding:20px 30px 20px 20px;
+}
+
+.description{
+	padding:30px 30px 30px 20px;
+}
+
+.floatFix{
+	overflow:hidden;
+}
+
+.marginTop{
+	margin-top:20px
+}
+
+//Positioning
+
+.floatLeft{
+	float:left;
+}
+
+.floatRight{
+	float:right;
+}
+
+//Menu
+
+.menuLink{
+	float:left;
+	display:block;
+	padding:10px;
+	color:$grey;
+	text-decoration: none;
+	&:hover{
+		text-decoration: underline;
+	}
+}
+
+.borderRight{
+	border-right:1px solid $line;
 }

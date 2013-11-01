@@ -6,7 +6,7 @@
 
 @section('content')
 	<div>
-		<a href="back">Terug</a>
+		<a href="../clients">Terug</a>
 	</div>
 	<div>
 		<h1>{{ $job->title }}</h1>

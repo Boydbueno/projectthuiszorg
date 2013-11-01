@@ -8,15 +8,20 @@
 	{{ HTML::script('scripts/modernizr.js') }}
 </head>
 <body>
-	<header>
+	
+	<div class="grid-container">
 		
-	</header>
-    
-	<section class="content">
-    	@yield('content')
-	</section> <!-- End Content -->
+		<header>
+			
+		</header>
+	    
+		<section class="content">
+	    	@yield('content')
+		</section> <!-- End Content -->
 
-	<footer></footer>
+		<footer></footer>
 
+	</div>
+	
 </body>
 </html>

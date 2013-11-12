@@ -5,17 +5,17 @@
 @stop
 
 @section('content')
-	<div>
+	<nav>
 		<a href="../clients">Terug</a>
-	</div>
-	<div>
+	</nav>
+	<section>
 		<h1>{{ $job->title }}</h1>
-	</div>
-	<div>
-		<div>
+	</section>
+	<section>
+		<section>
 			<p>{{ $job->description }}}</p> 
-		</div>
-		<div>
+		</section>
+		<aside>
 			<ul>
 				<li>Nog 5 dagen</li>
 				<li>Gepauzeerd</li>
@@ -24,6 +24,6 @@
 			</ul>
 			<p>Al 15 mensen gingen je voor, doe ook mee!</p>
 			<a href="#">Meedoen</a>
-		</div>
-	</div>
+		</aside>
+	</section>
 @stop

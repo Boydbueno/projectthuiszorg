@@ -6,12 +6,9 @@
 
 @section('content')
 
-    <section class="block marginTop">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, ab iusto doloribus atque nostrum ullam velit porro distinctio architecto. <p>{{ Session::get('notice') }}</p>
-        </p>
+    <section class="block marginTop floatFix mainTitle">
 
-        <aside>
+        <aside class="floatRight">
             <nav>
                 <ul>
                     <li><a href="#" class="btn">Mijn Opdrachten</a></li>
@@ -19,6 +16,11 @@
                 </ul>
             </nav>
         </aside>
+
+        <p class="information borderRight">
+            Goed om u terug te zien, er staan weer een hoop nieuwe opdrachten op u te  wachten, in de balk hier naast kunt u de status van uw huidige opdrachten bekijken of zoek een nieuwe opdracht uit om samen aan te werken, alles is mogelijk!<p>{{ Session::get('notice') }}</p>
+        </p>
+
     </section> <!-- End Welcome -->
 
     <section class="block marginTop">

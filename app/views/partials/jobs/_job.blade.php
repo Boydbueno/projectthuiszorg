@@ -8,7 +8,7 @@
     </div>
     <aside class="description">
         <div class="information">
-            <p>The Earth was small, light blue, and so touchingly alone, our home that must be defended like a holy relic. The Earth was absolutely round. I believe I never knew what the word round meant until I saw Earth from space. Where ignorance lurks, so too do the frontiers of discovery and imagination. Here men from the planet Earth first set foot upon the Moon. July 1969 AD. We came in peace for all mankind.</p>
+            <p>{{ $job->description }}</p>
         </div>
         <div class="details">
             <ul>

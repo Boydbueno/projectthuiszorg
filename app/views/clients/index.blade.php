@@ -43,6 +43,4 @@
         @endforeach
 
     </section> <!-- End Jobs -->
-
-    {{ link_to_route('logout', 'Logout') }}
 @stop

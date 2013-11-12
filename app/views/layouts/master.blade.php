@@ -10,10 +10,6 @@
 <body>
 	
 	<div class="grid-container">
-		
-		<header>
-			
-		</header>
 	    
 		<section class="content">
 	    	@yield('content')

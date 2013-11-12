@@ -12,7 +12,7 @@
             <ul class="mainMenu">
                 <li><a href="#" class="menuLink borderRight">Mijn Opdrachten</a></li>
                 <li><a href="#" class="menuLink borderRight">Instellingen</a></li>
-                <li><a href="#" class="menuLink">Uitloggen</a></li>
+                <li>{{ link_to_route("logout", "Uitloggen", array(), array("class" => "menuLink")) }}</li>
             </ul>
         </nav>
     </header>

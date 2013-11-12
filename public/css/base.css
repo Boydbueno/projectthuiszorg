@@ -120,80 +120,126 @@ body {
   background-color: #fedf73;
 }
 
-/* line 43, ../sass/base.scss */
+/* line 42, ../sass/base.scss */
+.fysiekWerk h1 {
+  color: #fec606;
+}
+
+/* line 47, ../sass/base.scss */
 .adviserendWerk .progress {
   background-color: #0692fe;
 }
 
-/* line 47, ../sass/base.scss */
+/* line 51, ../sass/base.scss */
 .adviserendWerk .progressBar {
   background-color: #73c2fe;
 }
 
-/* line 52, ../sass/base.scss */
+/* line 55, ../sass/base.scss */
+.adviserendWerk h1 {
+  color: #0692fe;
+}
+
+/* line 60, ../sass/base.scss */
 .handarbeid .progress {
   background-color: #6bcd3b;
 }
 
-/* line 56, ../sass/base.scss */
+/* line 64, ../sass/base.scss */
 .handarbeid .progressBar {
   background-color: #ace391;
 }
 
-/* line 61, ../sass/base.scss */
+/* line 68, ../sass/base.scss */
+.handarbeid h1 {
+  color: #6bcd3b;
+}
+
+/* line 73, ../sass/base.scss */
 .technischWerk .progress {
   background-color: #fe0606;
 }
 
-/* line 65, ../sass/base.scss */
+/* line 77, ../sass/base.scss */
 .technischWerk .progressBar {
   background-color: #fe7373;
 }
 
-/* line 69, ../sass/base.scss */
+/* line 81, ../sass/base.scss */
+.technischWerk h1 {
+  color: #fe0606;
+}
+
+/* line 85, ../sass/base.scss */
 .mainTitle {
   padding: 20px 30px 20px 20px;
 }
 
-/* line 73, ../sass/base.scss */
+/* line 89, ../sass/base.scss */
 .description {
   padding: 30px 30px 30px 20px;
 }
 
-/* line 77, ../sass/base.scss */
+/* line 93, ../sass/base.scss */
+.information {
+  margin-right: 220px;
+  padding-right: 30px;
+}
+
+/* line 98, ../sass/base.scss */
+.details {
+  width: 170px;
+}
+
+/* line 102, ../sass/base.scss */
 .floatFix {
   overflow: hidden;
 }
 
-/* line 81, ../sass/base.scss */
+/* line 106, ../sass/base.scss */
 .marginTop {
   margin-top: 20px;
 }
 
-/* line 87, ../sass/base.scss */
+/* line 112, ../sass/base.scss */
 .floatLeft {
   float: left;
 }
 
-/* line 91, ../sass/base.scss */
+/* line 116, ../sass/base.scss */
 .floatRight {
   float: right;
 }
 
-/* line 97, ../sass/base.scss */
+/* line 122, ../sass/base.scss */
+.mainMenu {
+  height: 95px;
+}
+
+/* line 126, ../sass/base.scss */
+.mainMenu h1 {
+  padding-top: 20px;
+}
+
+/* line 130, ../sass/base.scss */
+.mainMenu img {
+  padding-top: 10px;
+  margin-right: 15px;
+}
+
+/* line 135, ../sass/base.scss */
 .menuLink {
-  float: left;
   display: block;
-  padding: 10px;
+  padding: 15px;
   color: #989898;
   text-decoration: none;
 }
-/* line 103, ../sass/base.scss */
+/* line 140, ../sass/base.scss */
 .menuLink:hover {
   text-decoration: underline;
 }
 
-/* line 108, ../sass/base.scss */
+/* line 145, ../sass/base.scss */
 .borderRight {
   border-right: 1px solid #eaeaea;
 }

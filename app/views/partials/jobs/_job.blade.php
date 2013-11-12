@@ -1,4 +1,4 @@
-<article class="block marginTop {{ $job->jobcategory->label }}">
+<article class="block marginTop {{ camel_case($job->jobcategory->label) }}">
     <header class="mainTitle floatFix">
         <h1 class="floatLeft">{{ $job->title }}</h1>
         <span class="subTitle floatRight">{{ $job->jobcategory->label }}</span>

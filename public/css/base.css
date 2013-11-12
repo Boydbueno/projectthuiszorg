@@ -47,38 +47,38 @@ p {
 }
 
 /* line 15, ../sass/partials/_buttons.scss */
-.btn-yellow {
+.fysiekWerk .btn {
   background-color: #fec606;
 }
 /* line 17, ../sass/partials/_buttons.scss */
-.btn-yellow:hover {
+.fysiekWerk .btn:hover {
   background-color: #fedf73;
 }
 
 /* line 22, ../sass/partials/_buttons.scss */
-.btn-blue {
+.adviserendWerk .btn {
   background-color: #0692fe;
 }
 /* line 24, ../sass/partials/_buttons.scss */
-.btn-blue:hover {
+.adviserendWerk .btn:hover {
   background-color: #73c2fe;
 }
 
 /* line 29, ../sass/partials/_buttons.scss */
-.btn-green {
+.handarbeid .btn {
   background-color: #6bcd3b;
 }
 /* line 31, ../sass/partials/_buttons.scss */
-.btn-green:hover {
+.handarbeid .btn:hover {
   background-color: #ace391;
 }
 
 /* line 36, ../sass/partials/_buttons.scss */
-.btn-red {
+.technischWerk .btn {
   background-color: #fe0606;
 }
 /* line 38, ../sass/partials/_buttons.scss */
-.btn-red:hover {
+.technischWerk .btn:hover {
   background-color: #fe7373;
 }
 
@@ -110,37 +110,77 @@ body {
   background-color: #c5c5c5;
 }
 
-/* line 33, ../sass/base.scss */
+/* line 34, ../sass/base.scss */
+.fysiekWerk .progress {
+  background-color: #fec606;
+}
+
+/* line 38, ../sass/base.scss */
+.fysiekWerk .progressBar {
+  background-color: #fedf73;
+}
+
+/* line 43, ../sass/base.scss */
+.adviserendWerk .progress {
+  background-color: #0692fe;
+}
+
+/* line 47, ../sass/base.scss */
+.adviserendWerk .progressBar {
+  background-color: #73c2fe;
+}
+
+/* line 52, ../sass/base.scss */
+.handarbeid .progress {
+  background-color: #6bcd3b;
+}
+
+/* line 56, ../sass/base.scss */
+.handarbeid .progressBar {
+  background-color: #ace391;
+}
+
+/* line 61, ../sass/base.scss */
+.technischWerk .progress {
+  background-color: #fe0606;
+}
+
+/* line 65, ../sass/base.scss */
+.technischWerk .progressBar {
+  background-color: #fe7373;
+}
+
+/* line 69, ../sass/base.scss */
 .mainTitle {
   padding: 20px 30px 20px 20px;
 }
 
-/* line 37, ../sass/base.scss */
+/* line 73, ../sass/base.scss */
 .description {
   padding: 30px 30px 30px 20px;
 }
 
-/* line 41, ../sass/base.scss */
+/* line 77, ../sass/base.scss */
 .floatFix {
   overflow: hidden;
 }
 
-/* line 45, ../sass/base.scss */
+/* line 81, ../sass/base.scss */
 .marginTop {
   margin-top: 20px;
 }
 
-/* line 51, ../sass/base.scss */
+/* line 87, ../sass/base.scss */
 .floatLeft {
   float: left;
 }
 
-/* line 55, ../sass/base.scss */
+/* line 91, ../sass/base.scss */
 .floatRight {
   float: right;
 }
 
-/* line 61, ../sass/base.scss */
+/* line 97, ../sass/base.scss */
 .menuLink {
   float: left;
   display: block;
@@ -148,12 +188,12 @@ body {
   color: #989898;
   text-decoration: none;
 }
-/* line 67, ../sass/base.scss */
+/* line 103, ../sass/base.scss */
 .menuLink:hover {
   text-decoration: underline;
 }
 
-/* line 72, ../sass/base.scss */
+/* line 108, ../sass/base.scss */
 .borderRight {
   border-right: 1px solid #eaeaea;
 }

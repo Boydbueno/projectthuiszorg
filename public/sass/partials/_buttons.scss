@@ -12,28 +12,28 @@
 
 }
 
-.btnYellow{
+.fysiekWerk .btn{
 	background-color:$yellow;
 	&:hover{
 		background-color:$lightYellow;		
 	}
 }
 
-.btnBlue{
+.adviserendWerk .btn{
 	background-color:$blue;
 	&:hover{
 		background-color:$lightBlue;
 	}
 }
 
-.btnGreen{
+.handarbeid .btn{
 	background-color:$green;
 	&:hover{
 		background-color:$lightGreen;
 	}
 }
 
-.btnRed{
+.technischWerk .btn{
 	background-color:$red;
 	&:hover{
 		background-color:$lightRed;

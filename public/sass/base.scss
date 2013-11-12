@@ -30,6 +30,42 @@ body {
 	background-color: $lightGrey;
 }
 
+	//Fysiek Werk
+	.fysiekWerk .progress{
+		background-color:$yellow;
+	}
+
+		.fysiekWerk .progressBar{
+			background-color: $lightYellow;
+		}
+
+	//Adviserend Werk
+	.adviserendWerk .progress{
+		background-color:$blue;
+	}
+
+		.adviserendWerk .progressBar{
+			background-color: $lightBlue;
+		}
+
+	//Handarbeid
+	.handarbeid .progress{
+		background-color:$green;
+	}
+
+		.handarbeid .progressBar{
+			background-color: $lightGreen;
+		}
+
+	//Technisch Werk
+	.technischWerk .progress{
+		background-color:$red;
+	}
+
+		.technischWerk .progressBar{
+			background-color: $lightRed;
+		}
+
 .mainTitle{
 	padding:20px 30px 20px 20px;
 }

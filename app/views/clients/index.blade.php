@@ -5,17 +5,6 @@
 @stop
 
 @section('content')
-    
-    <header class="block mainTitle floatFix">
-        <h1 class="floatLeft">Banending</h1>
-        <nav>
-            <ul class="mainMenu">
-                <li><a href="#" class="menuLink borderRight">Mijn Opdrachten</a></li>
-                <li><a href="#" class="menuLink borderRight">Instellingen</a></li>
-                <li>{{ link_to_route("logout", "Uitloggen", array(), array("class" => "menuLink")) }}</li>
-            </ul>
-        </nav>
-    </header>
 
     <section class="block marginTop">
         <p>

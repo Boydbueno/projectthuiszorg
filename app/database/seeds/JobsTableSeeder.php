@@ -9,31 +9,35 @@ class JobsTableSeeder extends Seeder {
 
 		$jobs = array(
 			array(
-				"title" => "Mutsen breien",
-				"description" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-				"amount" => 400,
-				"payment" => 1000.00,
+				"title" => "Verven/tapijt leggen",
+				"description" => "Wij hebben net een nieuw bedrijfspand gekocht vlakbij Station Blaak in Rotterdam. De muren moeten geverfd worden en er moet tapijt gelegd worden. Hier zoeken wij mensen voor die ervaring hebben met het verven van grote oppervlakken. Aanschaf van de benodigde materialen zullen wij zelf verzorgen.",
+				"category" => "Fysiek werk",
+				"amount" => 10,
+				"payment" => 10.00,
 				"company_id" => 1
 			),
 			array(
-				"title" => "Folders rondbrengen",
-				"description" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-				"amount" => 600,
+				"title" => "Finacieel advies",
+				"description" => "Beginnend bedrijf zoekt een of meerdere voormalig financieel adviseurs. Ervaring in deze branch is een pre. We heben hulp nodig met onze administratie en het bijhouden van de financiele zaken voor het bedrijf. Ook hebben wij advies nodig op het gebied van afschrijven, inkopen van kantoor artikelen en pensioenen van toekomstige werknemers.",
+				"category" => "Adviserend werk",
+				"amount" => 1,
 				"payment" => 300.00,
 				"company_id" => 2
 			),
 			array(
-				"title" => "T-shirts vouwen",
-				"description" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+				"title" => "Mutsen breien",
+				"description" => "We hebben sinds kort een skischool geopend in Tsjechië en willen als reclame middel mutsen hebben met ons logo en bedrijfsnaam er op. Deze willen we als promotie materiaal weggeven aan klanten. Om te beginnen willen we graag 1000 stuks hebben, het liefst gehaakt, maar gebreide mutsen is ook een optie. Minimale bijdrage per persoon is 25 stuks.",
+				"category" => "Handarbeit",
 				"amount" => 800,
-				"payment" => 1200.00,
+				"payment" => 02.50,
 				"company_id" => 1
 			),
 			array(
-				"title" => "Handoeken ophalen en wassen",
-				"description" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+				"title" => "Speelgoed monteren",
+				"description" => "Wij zijn een van de grootste speelgoed fabrikanten van Nederland, en we zijn op zoek naar mensen die voor ons thuis speelgoed in elkaar kunnen zetten. Materialen en gereedschap zullen worden aangeleverd.  Technische kennis is een vereiste, aangezien er ook wat soldeer werk aan te pas komt om de chips aan te sluiten op de batterijen.",
+				"category" => "Technisch werk",
 				"amount" => 200,
-				"payment" => 500.00,
+				"payment" => 40.00,
 				"company_id" => 2
 			)
 		);

@@ -1,13 +1,13 @@
 @extends('layouts.master')
 
 @section('title')
-	Project Thuiszorg - Clients
+	Rework - Clients
 @stop
 
 @section('content')
     
     <header class="block mainTitle floatFix">
-        <h1 class="floatLeft">Banending</h1>
+        <h1 class="floatLeft">Rework</h1>
         <nav>
             <ul class="mainMenu">
                 <li><a href="#" class="menuLink borderRight">Mijn Opdrachten</a></li>
@@ -19,7 +19,8 @@
 
     <section class="block marginTop">
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, ab iusto doloribus atque nostrum ullam velit porro distinctio architecto. <p>{{ Session::get('notice') }}</p>
+            Goed om u terug te zien, er staan weer een hoop nieuwe opdrachten op u te  wachten, in de balk hier naast kunt u de status van uw huidige opdrachten bekijken of zoek een nieuwe opdracht uit om samen aan te werken, alles is mogelijk!
+            <p>{{ Session::get('notice') }}</p>
         </p>
 
         <aside>

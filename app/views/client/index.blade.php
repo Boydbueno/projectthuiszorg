@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-	Project Thuiszorg - Client
+	Rework - Client
 @stop
 
 @section('content')

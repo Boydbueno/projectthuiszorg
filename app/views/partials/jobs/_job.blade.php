@@ -1,7 +1,7 @@
-<article class="block marginTop">
+<article class="block marginTop {{ $job->jobcategory->label }}">
     <header class="mainTitle floatFix">
         <h1 class="floatLeft">{{ $job->title }}</h1>
-        <span class="subTitle floatRight">Fysiek Werk</span>
+        <span class="subTitle floatRight">{{ $job->jobcategory->label }}</span>
     </header>
     <div class="progress">
         <div class="progressBar"></div>

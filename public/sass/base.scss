@@ -13,6 +13,10 @@ body {
     background-color:#f2f2f2;
 }
 
+.bold{
+	font-weight:bold;
+}
+
 .grid-container{
 	max-width:960px;
 }
@@ -94,14 +98,36 @@ body {
 	padding:30px 30px 30px 20px;
 }
 
-.information{
-	margin-right:220px;
-	padding-right:30px;
-}
+	.information{
+		margin-right:220px;
+		padding-right:30px;
+	}
 
-.details{
-	width:170px;
-}
+	.details{
+		width:210px;
+	}
+		.details ul{
+			margin-top:5px;
+			margin-left:50px;
+		}
+
+			.iconItem{
+				padding: 0 0 0 40px;
+				margin-bottom:15px;
+				font-size:15px;
+			}
+
+			.dateIcon{
+				background: url('../images/icons/date_icon.png') no-repeat;
+			}
+
+			.timeIcon{
+				background: url('../images/icons/time_icon.png') no-repeat;
+			}
+
+			.moneyIcon{
+				background: url('../images/icons/money_icon.png') no-repeat;
+			}
 
 .floatFix{
 	overflow:hidden;

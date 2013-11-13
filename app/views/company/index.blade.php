@@ -5,16 +5,21 @@
 @stop
 
 @section('content')
-    <div>
-        <h1>Opdrachtgever</h1>
-    </div>
+	
+	<section class="block description marginTop">
 
-    @include('partials._login')
+	    <header>
+	        <h1>Opdrachtgever</h1>
+	    </header>
 
-    <div>
-    	<a href='/opdrachtgever/register'>Maak een account!</a>
-    </div>
+	    @include('partials._login')
 
-    @include('partials._errors')
+	    <div>
+	    	<a href='/opdrachtgever/register'>Maak een account!</a>
+	    </div>
+
+	    @include('partials._errors')
+
+    </section>
 
 @stop

@@ -2,6 +2,7 @@
 
 @section('content')
 
+<section class="block description marginTop">
 	<div>
 	    <h1>Registreren</h1>
 	</div>
@@ -51,5 +52,7 @@
 	{{ Form::close() }}
 	
 	@include('partials._errors')
+
+</section>
 
 @stop

@@ -32,8 +32,27 @@
 
     </section> <!-- End Welcome -->
 
-    <section class="block marginTop">
-        Filters here
+    <section class="block marginTop mainTitle">
+        <select>
+            <option value="">Categorie</option>
+            <option value="fysiek">Fysiek Werk</option>
+            <option value="adviserend">Adviserend Werk</option>
+            <option value="handarbeid">Handarbeid</option>
+            <option value="technisch">Technisch Werk</option>
+        </select>
+        <select>
+            <option value="">Status</option>
+            <option value="fysiek">Starten</option>
+            <option value="adviserend">Gepauzeerd</option>
+            <option value="handarbeid">Voltooid</option>
+        </select>
+        <select>
+            <option value="">Beschikbaarheid</option>
+            <option value="fysiek">Meer dan 20%</option>
+            <option value="adviserend">Meer dan 50%</option>
+            <option value="handarbeid">Meer dan 70%</option>
+            <option value="technisch">Volledig</option>
+        </select>
     </section>
 
     <section class="jobs">

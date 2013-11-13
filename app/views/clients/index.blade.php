@@ -7,6 +7,9 @@
 @section('content')
 
     <section class="block marginTop floatFix mainTitle">
+        <header>
+            <h1>Welkom terug, {{ Auth::user()->first_name }}!</h1>
+        </header>
 
         <aside class="floatRight">
             <nav>
@@ -18,7 +21,8 @@
         </aside>
 
         <p class="information borderRight">
-            Goed om u terug te zien, er staan weer een hoop nieuwe opdrachten op u te  wachten, in de balk hier naast kunt u de status van uw huidige opdrachten bekijken of zoek een nieuwe opdracht uit om samen aan te werken, alles is mogelijk!<p>{{ Session::get('notice') }}</p>
+            Goed om u terug te zien, er staan weer een hoop nieuwe opdrachten op u te  wachten, in de balk hier naast kunt u de status van uw huidige opdrachten bekijken of zoek een nieuwe opdracht uit om samen aan te werken, alles is mogelijk!
+            <span>{{ Session::get('notice') }}</span>
         </p>
 
     </section> <!-- End Welcome -->
@@ -34,4 +38,33 @@
         @endforeach
 
     </section> <!-- End Jobs -->
+
+    <section class="block marginTop">
+        <header class="mainTitle">
+            <h1>Footer</h1>
+        </header>
+
+        <section class="description">
+            <aside class="details floatRight">
+                <nav>
+                    <ul>
+                        <li><a href="#" class="menuLink">Technisch werk</a></li>
+                        <li><a href="#" class="menuLink">Fysiek werk</a></li>
+                        <li><a href="#" class="menuLink">Adviserend werk</a></li>
+                        <li><a href="#" class="menuLink">Handenarbeid</a></li>
+                    </ul>
+                </nav>
+                <nav>
+                    <ul>
+                        <li><a href="#" class="menuLink borderRight">Terug naar boven</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            
+            <p class="information borderRight">
+                Wij zijn een nieuw initiatief genaamd Rework. Ons doel is om ouderen weer aan werk te helpen en het liefst in de branche waar ze vroeger werkzaam in waren. We willen dat de keuze en tijdsduur van een opdracht volledig bepaald kan worden door u! Geen verplichtingen en geen valkuilen. Heeft u nog tips of advies voor ons, wij horen het graag!
+            </p>
+        </section>
+
+    </section>
 @stop

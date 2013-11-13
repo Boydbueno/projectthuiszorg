@@ -26,7 +26,9 @@
 	    	@yield('content')
 		</section> <!-- End Content -->
 
-		<footer></footer>
+	    <footer class="block marginTop description">
+	    	<p>&copy; Rework 2013</p>
+	    </footer>
 
 	</div>
 	

@@ -6,8 +6,8 @@
     <div class="progress">
         <div class="progressBar"></div>
     </div>
-    <aside class="description">
-        <div class="details floatRight">
+    <section class="description">
+        <aside class="details floatRight">
             <ul>
                 <li>Nog 5 dagen!</li>
                 <li>Gepauzeerd</li>
@@ -15,9 +15,9 @@
             </ul>
 
             {{ link_to_route('jobs.show', 'Bekijk Opdracht', array($job->id), array('class' => 'btn')) }}
-        </div>
+        </aside>
         <div class="information borderRight">
             <p>{{ $job->description }}</p>
         </div>
-    </aside>
+    </section>
 </article>

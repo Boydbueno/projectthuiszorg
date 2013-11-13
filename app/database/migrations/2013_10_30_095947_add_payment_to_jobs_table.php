@@ -13,7 +13,7 @@ class AddPaymentToJobsTable extends Migration {
 	public function up()
 	{
 		Schema::table('jobs', function(Blueprint $table) {
-			$table->double('payment', 10, 2)->after('amount');
+			$table->decimal('payment', 10, 2)->after('amount');
 		});
 	}
 

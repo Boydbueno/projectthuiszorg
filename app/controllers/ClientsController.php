@@ -11,7 +11,7 @@ class ClientsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$jobs = Job::all();
+		$jobs = Job::orderBy('start_date')->get();
 
 		foreach($jobs as $job) {
 			$job->daysLeft = Carbon::now()->diffInDays($job->start_date);

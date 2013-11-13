@@ -10,8 +10,8 @@
         <aside class="details floatRight">
             <ul>
                 <li class="iconItem dateIcon bold">Nog 5 dagen!</li>
-                <li class="iconItem timeIcon">Gepauzeerd</li>
-                <li class="iconItem moneyIcon">€{{ $job->payment }}</li>
+                <li class="iconItem timeIcon">Starten</li>
+                <li class="iconItem moneyIcon">€ {{ $job->payment }},00</li>
             </ul>
 
             {{ link_to_route('jobs.show', 'Bekijk Opdracht', array($job->id), array('class' => 'btn')) }}

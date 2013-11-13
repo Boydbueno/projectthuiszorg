@@ -13,6 +13,14 @@ body {
     background-color:#f2f2f2;
 }
 
+a{
+	color:$grey;
+	text-decoration: none;
+	&:hover{
+		text-decoration: underline;
+	}
+}
+
 .bold{
 	font-weight:bold;
 }
@@ -30,6 +38,12 @@ body {
 	width:100%;
 	height:23px;
 	background-color:$grey;
+}
+
+.progressSmall{
+	width:100%;
+	background-color:$grey;
+	height:5px;
 }
 
 .progressBar{
@@ -103,12 +117,17 @@ body {
 		padding-right:30px;
 	}
 
-	.details{
+	.details, .quickMenu{
 		width:210px;
 	}
 		.details ul{
 			margin-top:5px;
 			margin-left:50px;
+		}
+
+		.quickMenu ul{
+			margin-top:15px;
+			margin-left:30px;
 		}
 
 			.iconItem{
@@ -127,6 +146,10 @@ body {
 
 			.moneyIcon{
 				background: url('../images/icons/money_icon.png') no-repeat;
+			}
+
+			.settingsIcon{
+				background: url('../images/icons/settings_icon.png') no-repeat;
 			}
 
 .floatFix{
@@ -165,13 +188,15 @@ body {
 .menuLink{
 	display:block;
 	padding:15px;
-	color:$grey;
-	text-decoration: none;
-	&:hover{
-		text-decoration: underline;
-	}
 }
 
 .borderRight{
 	border-right:1px solid $line;
+}
+
+//Submenu
+
+.subMenuLink{
+	display:block;
+	padding:5px 0;
 }

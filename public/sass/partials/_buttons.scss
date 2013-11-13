@@ -44,6 +44,15 @@
 	}
 }
 
-.details .btn{
+.btnWorkIcon{
+	background-image: url('../images/icons/work_icon.png');
+	background-repeat: no-repeat;
+	background-position: 10px 9px;
+	padding-left:40px;
+	margin-left:20px;
+	width:180px;
+}
+
+.jobs .btn{
 	margin:15px 0 35px 35px;
 }

@@ -6,24 +6,29 @@
 
 @section('content')
 
-    <section class="block marginTop floatFix mainTitle">
-        <header>
+    <section class="block marginTop floatFix">
+        <header class="mainTitle">
             <h1>Welkom terug, {{ Auth::user()->first_name }}!</h1>
         </header>
 
-        <aside class="floatRight">
-            <nav>
-                <ul>
-                    <li><a href="#" class="btn">Mijn Opdrachten</a></li>
-                    <li><a href="#" class="btn">Instellingen</a></li>
-                </ul>
-            </nav>
-        </aside>
+        <div class="progressSmall">
+        </div>
 
-        <p class="information borderRight">
-            Goed om u terug te zien, er staan weer een hoop nieuwe opdrachten op u te  wachten, in de balk hier naast kunt u de status van uw huidige opdrachten bekijken of zoek een nieuwe opdracht uit om samen aan te werken, alles is mogelijk!
-            <span>{{ Session::get('notice') }}</span>
-        </p>
+        <section class="description">
+            <aside class="floatRight quickMenu">
+                <nav>
+                    <a href="#" class="btn btnWorkIcon">Mijn Opdrachten</a>
+                    <ul>
+                        <li class="iconItem settingsIcon"><a href="#">Instellingen</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <p class="information borderRight">
+                Goed om u terug te zien, er staan weer een hoop nieuwe opdrachten op u te  wachten, in de balk hier naast kunt u de status van uw huidige opdrachten bekijken of zoek een nieuwe opdracht uit om samen aan te werken, alles is mogelijk!
+                <span>{{ Session::get('notice') }}</span>
+            </p>
+        </section>
 
     </section> <!-- End Welcome -->
 
@@ -40,23 +45,27 @@
     </section> <!-- End Jobs -->
 
     <section class="block marginTop">
+
         <header class="mainTitle">
             <h1>Footer</h1>
         </header>
 
-        <section class="description">
+        <div class="progressSmall">
+        </div>
+
+        <section class="description floatFix">
             <aside class="details floatRight">
                 <nav>
                     <ul>
-                        <li><a href="#" class="menuLink">Technisch werk</a></li>
-                        <li><a href="#" class="menuLink">Fysiek werk</a></li>
-                        <li><a href="#" class="menuLink">Adviserend werk</a></li>
-                        <li><a href="#" class="menuLink">Handenarbeid</a></li>
+                        <li><a href="#" class="subMenuLink">Technisch werk</a></li>
+                        <li><a href="#" class="subMenuLink">Fysiek werk</a></li>
+                        <li><a href="#" class="subMenuLink">Adviserend werk</a></li>
+                        <li><a href="#" class="subMenuLink">Handenarbeid</a></li>
                     </ul>
                 </nav>
                 <nav>
                     <ul>
-                        <li><a href="#" class="menuLink borderRight">Terug naar boven</a></li>
+                        <li><a href="#" class="subMenuLink">Terug naar boven</a></li>
                     </ul>
                 </nav>
             </aside>

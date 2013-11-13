@@ -36,48 +36,52 @@ p {
 .btn {
   display: inline-block;
   text-decoration: none;
-  color: white;
+  color: #fff;
   background-color: #989898;
-  padding: 6px 12px;
+  padding: 8px 12px;
   margin: 5px;
+  width: 170px;
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
 }
-/* line 9, ../sass/partials/_buttons.scss */
+/* line 13, ../sass/partials/_buttons.scss */
 .btn:hover {
   background-color: #c5c5c5;
 }
 
-/* line 15, ../sass/partials/_buttons.scss */
+/* line 19, ../sass/partials/_buttons.scss */
 .fysiekWerk .btn {
   background-color: #fec606;
 }
-/* line 17, ../sass/partials/_buttons.scss */
+/* line 21, ../sass/partials/_buttons.scss */
 .fysiekWerk .btn:hover {
   background-color: #fedf73;
 }
 
-/* line 22, ../sass/partials/_buttons.scss */
+/* line 26, ../sass/partials/_buttons.scss */
 .adviserendWerk .btn {
   background-color: #0692fe;
 }
-/* line 24, ../sass/partials/_buttons.scss */
+/* line 28, ../sass/partials/_buttons.scss */
 .adviserendWerk .btn:hover {
   background-color: #73c2fe;
 }
 
-/* line 29, ../sass/partials/_buttons.scss */
+/* line 33, ../sass/partials/_buttons.scss */
 .handarbeid .btn {
   background-color: #6bcd3b;
 }
-/* line 31, ../sass/partials/_buttons.scss */
+/* line 35, ../sass/partials/_buttons.scss */
 .handarbeid .btn:hover {
   background-color: #ace391;
 }
 
-/* line 36, ../sass/partials/_buttons.scss */
+/* line 40, ../sass/partials/_buttons.scss */
 .technischWerk .btn {
   background-color: #fe0606;
 }
-/* line 38, ../sass/partials/_buttons.scss */
+/* line 42, ../sass/partials/_buttons.scss */
 .technischWerk .btn:hover {
   background-color: #fe7373;
 }

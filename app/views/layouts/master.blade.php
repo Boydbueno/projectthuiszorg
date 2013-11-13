@@ -12,7 +12,8 @@
 	<div class="grid-container">
 
 		<header class="block mainMenu mainTitle floatFix">
-		    <img class="floatLeft" src="images/logo_small.png" alt="Rework" /><h1 class="floatLeft">Rework</h1>
+			{{ HTML::image("images/logo_small.png", "Rework", array('class' => 'floatLeft')) }}
+		    <h1 class="floatLeft">Rework</h1>
 		    	
 	    	@if(Auth::check())
 

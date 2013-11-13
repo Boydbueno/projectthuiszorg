@@ -9,7 +9,13 @@
     <section class="description">
         <aside class="details floatRight">
             <ul>
-                <li class="iconItem dateIcon bold">Nog 5 dagen!</li>
+                <li class="iconItem dateIcon bold">
+                    @if($job->daysLeft === 0)
+                        Alleen vandaag nog!
+                    @else
+                        Nog {{ $job->daysLeft }} {{ $job->daysLeft === 1 ? "dag" : "dagen" }}!
+                    @endif
+                </li>
                 <li class="iconItem timeIcon">Starten</li>
                 <li class="iconItem moneyIcon">€ {{ $job->payment }},00</li>
             </ul>

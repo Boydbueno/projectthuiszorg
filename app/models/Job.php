@@ -14,4 +14,9 @@ class Job extends Eloquent {
 	{
 		return $this->belongsTo('Jobcategory');
 	}
+
+	public function getDates()
+	{
+	    return array('created_at', 'updated_at', 'start_date', 'end_date');
+	}
 }

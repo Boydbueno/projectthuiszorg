@@ -1,5 +1,7 @@
 <?php
 
+use \Carbon\Carbon;
+
 class ClientsController extends \BaseController {
 
 	/**
@@ -10,6 +12,10 @@ class ClientsController extends \BaseController {
 	public function index()
 	{
 		$jobs = Job::all();
+
+		foreach($jobs as $job) {
+			$job->daysLeft = Carbon::now()->diffInDays($job->start_date);
+		}
 
 		return View::make('clients.index')->with('jobs', $jobs);
 	}

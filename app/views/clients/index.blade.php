@@ -7,6 +7,9 @@
 @section('content')
 
     <section class="block marginTop floatFix mainTitle">
+        <header>
+            <h1>Welkom terug, {{ Auth::user()->first_name }}!</h1>
+        </header>
 
         <aside class="floatRight">
             <nav>

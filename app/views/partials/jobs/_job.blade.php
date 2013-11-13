@@ -11,7 +11,7 @@
             <ul>
                 <li class="iconItem dateIcon bold">Nog 5 dagen!</li>
                 <li class="iconItem timeIcon">Starten</li>
-                <li class="iconItem moneyIcon">€ {{ $job->payment }},00</li>
+                <li class="iconItem moneyIcon">€ {{ $job->payment }}</li>
             </ul>
 
             {{ link_to_route('jobs.show', 'Bekijk Opdracht', array($job->id), array('class' => 'btn')) }}

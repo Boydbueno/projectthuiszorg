@@ -18,7 +18,8 @@
         </aside>
 
         <p class="information borderRight">
-            Goed om u terug te zien, er staan weer een hoop nieuwe opdrachten op u te  wachten, in de balk hier naast kunt u de status van uw huidige opdrachten bekijken of zoek een nieuwe opdracht uit om samen aan te werken, alles is mogelijk!<p>{{ Session::get('notice') }}</p>
+            Goed om u terug te zien, er staan weer een hoop nieuwe opdrachten op u te  wachten, in de balk hier naast kunt u de status van uw huidige opdrachten bekijken of zoek een nieuwe opdracht uit om samen aan te werken, alles is mogelijk!
+            <span>{{ Session::get('notice') }}</span>
         </p>
 
     </section> <!-- End Welcome -->

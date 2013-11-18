@@ -12,8 +12,11 @@
 	<div class="grid-container">
 
 		<header class="block mainMenu mainTitle floatFix">
-			{{ HTML::image("images/logo_small.png", "Rework", array('class' => 'floatLeft')) }}
-		    <h1 class="floatLeft">Rework</h1>
+
+			<a href="/" title="Rework">
+				{{ HTML::image("images/logo_small.png", "Rework", array('class' => 'floatLeft')) }}
+			    <h1 class="floatLeft">Rework</h1>
+			</a>
 		    	
 	    	@if(Auth::check())
 
@@ -22,6 +25,15 @@
 		            <li class="floatLeft"><a href="#" class="menuLink borderRight">Mijn Opdrachten</a></li>
 		            <li class="floatLeft"><a href="#" class="menuLink borderRight">Instellingen</a></li>
 		            <li class="floatLeft">{{ link_to_route("logout", "Uitloggen", array(), array("class" => "menuLink")) }}</li>
+		        </ul>
+		    </nav>
+
+			@else
+	
+			<nav>
+		        <ul class="floatRight">
+		            <li class="floatLeft"><a href="#" class="menuLink borderRight">Client</a></li>
+		            <li class="floatLeft"><a href="#" class="menuLink borderRight">Opdrachtgever</a></li>
 		        </ul>
 		    </nav>
 

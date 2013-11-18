@@ -21,7 +21,7 @@ class JobUserTableSeeder extends Seeder {
 		);
 
 		// Uncomment the below to run the seeder
-		DB::table('job_user')->insert($job_user);
+		DB::table('jobusers')->insert($job_user);
 	}
 
 }

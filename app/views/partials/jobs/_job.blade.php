@@ -4,7 +4,7 @@
         <span class="subTitle floatRight">{{ $job->jobcategory->label }}</span>
     </header>
     <div class="progress">
-        <div class="progressBar"></div>
+        <div class="progressBar" style="width: {{ $job->percentageComplete }}%"></div>
     </div>
     <section class="description">
         <aside class="details floatRight">

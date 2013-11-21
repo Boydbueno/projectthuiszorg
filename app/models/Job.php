@@ -17,7 +17,7 @@ class Job extends Eloquent {
 
 	public function users()
 	{
-		return $this->belongsToMany('User');
+		return $this->belongsToMany('User')->withPivot('amount', 'amount');
 	}
 
 	public function getDates()

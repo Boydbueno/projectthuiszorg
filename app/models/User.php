@@ -35,6 +35,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		'city' => 'required'
 	);
 
+	public function jobs()
+	{
+		return $this->belongsToMany('Job');
+	}
+
 	/**
 	 * Get the unique identifier for the user.
 	 *

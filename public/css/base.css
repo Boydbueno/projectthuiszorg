@@ -197,189 +197,179 @@ option {
   background-color: #c5c5c5;
 }
 
-/* line 86, ../sass/base.scss */
-.fysiekWerk .progressBar {
-  width: 50%;
-}
-
-/* line 90, ../sass/base.scss */
-.handarbeid .progressBar {
-  width: 80%;
-}
-
-/* line 98, ../sass/base.scss */
+/* line 84, ../sass/base.scss */
 .fysiekWerk .progress {
   background-color: #fec606;
 }
 
-/* line 102, ../sass/base.scss */
+/* line 88, ../sass/base.scss */
 .fysiekWerk .progressBar {
   background-color: #fedf73;
 }
 
-/* line 106, ../sass/base.scss */
+/* line 92, ../sass/base.scss */
 .fysiekWerk h1 {
   color: #fec606;
 }
 
-/* line 111, ../sass/base.scss */
+/* line 97, ../sass/base.scss */
 .adviserendWerk .progress {
   background-color: #0692fe;
 }
 
-/* line 115, ../sass/base.scss */
+/* line 101, ../sass/base.scss */
 .adviserendWerk .progressBar {
   background-color: #73c2fe;
 }
 
-/* line 119, ../sass/base.scss */
+/* line 105, ../sass/base.scss */
 .adviserendWerk h1 {
   color: #0692fe;
 }
 
-/* line 124, ../sass/base.scss */
+/* line 110, ../sass/base.scss */
 .handarbeid .progress {
   background-color: #6bcd3b;
 }
 
-/* line 128, ../sass/base.scss */
+/* line 114, ../sass/base.scss */
 .handarbeid .progressBar {
   background-color: #ace391;
 }
 
-/* line 132, ../sass/base.scss */
+/* line 118, ../sass/base.scss */
 .handarbeid h1 {
   color: #6bcd3b;
 }
 
-/* line 137, ../sass/base.scss */
+/* line 123, ../sass/base.scss */
 .technischWerk .progress {
   background-color: #fe0606;
 }
 
-/* line 141, ../sass/base.scss */
+/* line 127, ../sass/base.scss */
 .technischWerk .progressBar {
   background-color: #fe7373;
 }
 
-/* line 145, ../sass/base.scss */
+/* line 131, ../sass/base.scss */
 .technischWerk h1 {
   color: #fe0606;
 }
 
-/* line 149, ../sass/base.scss */
+/* line 135, ../sass/base.scss */
 .mainTitle {
   padding: 20px 30px 20px 20px;
 }
 
-/* line 153, ../sass/base.scss */
+/* line 139, ../sass/base.scss */
 .description {
   padding: 30px 30px 30px 20px;
 }
 
-/* line 157, ../sass/base.scss */
+/* line 143, ../sass/base.scss */
 .information {
   margin-right: 220px;
   padding-right: 30px;
 }
 
-/* line 162, ../sass/base.scss */
+/* line 148, ../sass/base.scss */
 .details, .quickMenu {
   width: 210px;
 }
 
-/* line 165, ../sass/base.scss */
+/* line 151, ../sass/base.scss */
 .details ul {
   margin-top: 5px;
   margin-left: 50px;
 }
 
-/* line 170, ../sass/base.scss */
+/* line 156, ../sass/base.scss */
 .quickMenu ul {
   margin-top: 15px;
   margin-left: 30px;
 }
 
-/* line 175, ../sass/base.scss */
+/* line 161, ../sass/base.scss */
 .iconItem {
   padding: 0 0 0 40px;
   margin-bottom: 15px;
   font-size: 15px;
 }
 
-/* line 181, ../sass/base.scss */
+/* line 167, ../sass/base.scss */
 .dateIcon {
   background: url("../images/icons/date_icon.png") no-repeat;
 }
 
-/* line 185, ../sass/base.scss */
+/* line 171, ../sass/base.scss */
 .timeIcon {
   background: url("../images/icons/time_icon.png") no-repeat;
 }
 
-/* line 189, ../sass/base.scss */
+/* line 175, ../sass/base.scss */
 .moneyIcon {
   background: url("../images/icons/money_icon.png") no-repeat;
 }
 
-/* line 193, ../sass/base.scss */
+/* line 179, ../sass/base.scss */
 .settingsIcon {
   background: url("../images/icons/settings_icon.png") no-repeat;
 }
 
-/* line 197, ../sass/base.scss */
+/* line 183, ../sass/base.scss */
 .companyIcon {
   background: url("../images/icons/company_icon.png") no-repeat;
 }
 
-/* line 201, ../sass/base.scss */
+/* line 187, ../sass/base.scss */
 .floatFix {
   overflow: hidden;
 }
 
-/* line 205, ../sass/base.scss */
+/* line 191, ../sass/base.scss */
 .marginTop {
   margin-top: 20px;
 }
 
-/* line 211, ../sass/base.scss */
+/* line 197, ../sass/base.scss */
 .floatLeft {
   float: left;
 }
 
-/* line 215, ../sass/base.scss */
+/* line 201, ../sass/base.scss */
 .floatRight {
   float: right;
 }
 
-/* line 221, ../sass/base.scss */
+/* line 207, ../sass/base.scss */
 .mainMenu {
   height: 95px;
 }
 
-/* line 225, ../sass/base.scss */
+/* line 211, ../sass/base.scss */
 .mainMenu h1 {
   padding-top: 20px;
 }
 
-/* line 229, ../sass/base.scss */
+/* line 215, ../sass/base.scss */
 .mainMenu img {
   padding-top: 10px;
   margin-right: 15px;
 }
 
-/* line 234, ../sass/base.scss */
+/* line 220, ../sass/base.scss */
 .menuLink {
   display: block;
   padding: 15px;
 }
 
-/* line 239, ../sass/base.scss */
+/* line 225, ../sass/base.scss */
 .borderRight {
   border-right: 1px solid #eaeaea;
 }
 
-/* line 245, ../sass/base.scss */
+/* line 231, ../sass/base.scss */
 .subMenuLink {
   display: block;
   padding: 5px 0;

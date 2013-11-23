@@ -23,8 +23,8 @@ class UsersTableSeeder extends Seeder {
 			array(
 				'email' => 'stefanweck1@gmail.com', 
 				'password' => Hash::make('Welkom01'),
-				'first_name' => 'Kevin',
-				'last_name' => 'Vlietstra',
+				'first_name' => 'Stefan',
+				'last_name' => 'Weck',
 				'street_name' => 'Weteringdreef',
 				'house_number' => '10',
 				'zipcode' => '2724HA',
@@ -33,8 +33,8 @@ class UsersTableSeeder extends Seeder {
 			array(
 				'email' => 'dmagphone@gmail.com', 
 				'password' => Hash::make('Welkom01'),
-				'first_name' => 'Stefan',
-				'last_name' => 'Weck',
+				'first_name' => 'Kevin',
+				'last_name' => 'Vlietstra',
 				'street_name' => 'somewhere',
 				'house_number' => '0',
 				'zipcode' => '1111AA',

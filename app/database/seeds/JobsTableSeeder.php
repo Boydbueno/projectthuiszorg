@@ -20,7 +20,7 @@ class JobsTableSeeder extends Seeder {
 				"jobcategory_id" => Jobcategory::where('label', '=', 'Fysiek werk')->first()->id
 			),
 			array(
-				"title" => "Finacieel advies",
+				"title" => "Financieel advies",
 				"description" => "Beginnend bedrijf zoekt een of meerdere voormalig financieel adviseurs. Ervaring in deze branch is een pre. We heben hulp nodig met onze administratie en het bijhouden van de financiele zaken voor het bedrijf. Ook hebben wij advies nodig op het gebied van afschrijven, inkopen van kantoor artikelen en pensioenen van toekomstige werknemers.",
 				"amount" => 1,
 				"payment" => 40.00,

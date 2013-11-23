@@ -7,7 +7,7 @@ class JobsTableSeeder extends Seeder {
 		// Uncomment the below to wipe the table clean before populating
 		// TODO: Abstract below two lines
 		DB::table('jobs')->delete();
-		DB::statement('ALTER TABLE users AUTO_INCREMENT=1');
+		DB::statement('ALTER TABLE jobs AUTO_INCREMENT=1');
 
 		$jobs = array(
 			array(
@@ -20,7 +20,7 @@ class JobsTableSeeder extends Seeder {
 				"jobcategory_id" => Jobcategory::where('label', '=', 'Fysiek werk')->first()->id
 			),
 			array(
-				"title" => "Financieel advies",
+				"title" => "Finacieel advies",
 				"description" => "Beginnend bedrijf zoekt een of meerdere voormalig financieel adviseurs. Ervaring in deze branch is een pre. We heben hulp nodig met onze administratie en het bijhouden van de financiele zaken voor het bedrijf. Ook hebben wij advies nodig op het gebied van afschrijven, inkopen van kantoor artikelen en pensioenen van toekomstige werknemers.",
 				"amount" => 1,
 				"payment" => 40.00,

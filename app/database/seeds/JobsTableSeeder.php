@@ -16,7 +16,7 @@ class JobsTableSeeder extends Seeder {
 				"amount" => 10,
 				"payment" => 10.00,
 				"start_date" => "2013-11-15 00:00:00",
-				"company_id" => 1,
+				"company_id" => Company::where('name', '=', 'Primark')->first()->id,
 				"jobcategory_id" => Jobcategory::where('label', '=', 'Fysiek werk')->first()->id
 			),
 			array(
@@ -25,7 +25,7 @@ class JobsTableSeeder extends Seeder {
 				"amount" => 1,
 				"payment" => 40.00,
 				"start_date" => "2013-11-17 00:00:00",
-				"company_id" => 2,
+				"company_id" => Company::where('name', '=', 'Albert Heijn')->first()->id,
 				"jobcategory_id" => Jobcategory::where('label', '=', 'Adviserend werk')->first()->id
 			),
 			array(
@@ -34,7 +34,7 @@ class JobsTableSeeder extends Seeder {
 				"amount" => 800,
 				"payment" => 2.50,
 				"start_date" => "2013-11-28 00:00:00",
-				"company_id" => 1,
+				"company_id" => Company::where('name', '=', 'Primark')->first()->id,
 				"jobcategory_id" => Jobcategory::where('label', '=', 'Handarbeid')->first()->id
 			),
 			array(
@@ -43,7 +43,7 @@ class JobsTableSeeder extends Seeder {
 				"amount" => 200,
 				"payment" => 40.00,
 				"start_date" => "2013-12-02 00:00:00",
-				"company_id" => 2,
+				"company_id" => Company::where('name', '=', 'Albert Heijn')->first()->id,
 				"jobcategory_id" => Jobcategory::where('label', '=', 'Technisch werk')->first()->id
 			)
 		);

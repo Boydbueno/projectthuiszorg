@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class AddPasswordToUsersTable extends Migration {
+class CreateJobcategoriesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,14 @@ class AddPasswordToUsersTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('users', function(Blueprint $table) {
-			$table->string('password', 64);
+		Schema::create('jobcategories', function(Blueprint $table) {
+			$table->increments('id')->unsigned();
+			$table->string('label');
+			$table->text('description');
+			$table->timestamps();
 		});
 	}
+
 
 	/**
 	 * Reverse the migrations.
@@ -24,9 +28,7 @@ class AddPasswordToUsersTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('users', function(Blueprint $table) {
-			$table->dropColumn('password');
-		});
+		Schema::drop('jobcategories');
 	}
 
 }

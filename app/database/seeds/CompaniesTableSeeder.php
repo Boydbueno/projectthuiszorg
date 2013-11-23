@@ -7,7 +7,7 @@ class CompaniesTableSeeder extends Seeder {
 		// Uncomment the below to wipe the table clean before populating
 		// TODO: Abstract below two lines
 		DB::table('companies')->delete();
-		DB::update(DB::raw('ALTER TABLE companies AUTO_INCREMENT=1'));
+		DB::statement('ALTER TABLE users AUTO_INCREMENT=1');
 
 		$companies = array(
 			array(

@@ -7,7 +7,7 @@ class JobsTableSeeder extends Seeder {
 		// Uncomment the below to wipe the table clean before populating
 		// TODO: Abstract below two lines
 		DB::table('jobs')->delete();
-		DB::update(DB::raw('ALTER TABLE jobs AUTO_INCREMENT=1'));
+		DB::statement('ALTER TABLE users AUTO_INCREMENT=1');
 
 		$jobs = array(
 			array(

@@ -6,7 +6,7 @@ class JobcategoriesTableSeeder extends Seeder {
 	{
 		// TODO: Abstract below two lines
 		DB::table('jobcategories')->delete();
-		DB::update(DB::raw('ALTER TABLE jobcategories AUTO_INCREMENT=1'));
+		DB::statement('ALTER TABLE users AUTO_INCREMENT=1');
 
 		$jobcategories = array(
 			array(

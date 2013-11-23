@@ -11,7 +11,7 @@ class CompaniesTableSeeder extends Seeder {
 
 		$companies = array(
 			array(
-				"company_name" => "Primark",
+				"name" => "Primark",
 				"url" => "www.primark.nl",
 				"description" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 				"kvk_number" => 654684653,
@@ -22,7 +22,7 @@ class CompaniesTableSeeder extends Seeder {
 				"phone_number" => 1875239
 			),
 			array(
-				"company_name" => "Albert Heijn",
+				"name" => "Albert Heijn",
 				"url" => "www.ah.nl",
 				"description" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 				"kvk_number" => 78525814,

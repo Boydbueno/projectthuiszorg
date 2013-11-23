@@ -5,7 +5,9 @@ class CompaniesTableSeeder extends Seeder {
 	public function run()
 	{
 		// Uncomment the below to wipe the table clean before populating
-		// DB::table('jobs')->truncate();
+		// TODO: Abstract below two lines
+		DB::table('companies')->delete();
+		DB::update(DB::raw('ALTER TABLE companies AUTO_INCREMENT=1'));
 
 		$companies = array(
 			array(

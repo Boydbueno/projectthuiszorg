@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class RenameCompanyNameColumnToNameInCompanyTable extends Migration {
+class RenameCompanynameColumnToNameInCompanyTable extends Migration {
 
 	/**
 	 * Run the migrations.

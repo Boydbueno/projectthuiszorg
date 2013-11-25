@@ -23,7 +23,7 @@
             {{ link_to_route('jobs.show', 'Bekijk Opdracht', array($job->id), array('class' => 'btn')) }}
         </aside>
         <div class="information borderRight">
-            <p>{{ $job->description }}</p>
+            <p>{{ $job->short_description }}</p>
         </div>
     </section>
 </article>

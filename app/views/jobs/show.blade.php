@@ -27,7 +27,7 @@
 	                <li class="iconItem companyIcon">{{ $job->company->company_name }}</li>
 	            </ul>
 
-	            <p class="marginTop centerText">Al 15 mensen willen meewerken, doe ook mee!</p>
+	            <p class="marginTop centerText">{{ $job->participantsText }}</p>
 				<a class="btn" href="#">Meedoen</a>
 	        </aside>
 	        <div class="information borderRight">

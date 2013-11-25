@@ -24,7 +24,7 @@
 	                <li class="iconItem dateIcon bold">Nog 5 dagen!</li>
 	                <li class="iconItem timeIcon">Starten</li>
 	                <li class="iconItem moneyIcon">€ {{ $job->payment }}</li>
-	                <li class="iconItem companyIcon">{{ $job->company->company_name }}</li>
+	                <li class="iconItem companyIcon">{{ $job->company->name }}</li>
 	            </ul>
 
 	            <p class="marginTop centerText">{{ $job->participantsText }}</p>

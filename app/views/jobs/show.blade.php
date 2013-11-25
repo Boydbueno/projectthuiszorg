@@ -31,7 +31,9 @@
 				<a class="btn" href="#">Meedoen</a>
 	        </aside>
 	        <div class="information borderRight">
-	            <p>{{ $job->description }}</p>
+	            <p>
+	            	{{ $job->long_description ? $job->long_description : $job->short_description }}
+	            </p>
 	        </div>
 	    </section>
 	</section>

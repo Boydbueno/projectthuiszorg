@@ -11,19 +11,19 @@ class JobcategoriesTableSeeder extends Seeder {
 		$jobcategories = array(
 			array(
 				"label" => "Fysiek werk",
-				"short_description" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+				"description" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
 			),
 			array(
 				"label" => "Adviserend werk",
-				"short_description" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+				"description" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
 			),
 			array(
 				"label" => "Handarbeid",
-				"short_description" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+				"description" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
 			),
 			array(
 				"label" => "Technisch werk",
-				"short_description" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
+				"description" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod"
 			)
 		);
 

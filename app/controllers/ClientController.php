@@ -7,6 +7,13 @@ class ClientController extends BaseController {
 		return View::make('client.index');
 	}
 
+	public function getMyjobs() 
+	{
+		$jobs = Auth::user()->jobs;
+
+		return View::make('client.myjobs')->with('jobs', $jobs);
+	}
+
 	public function getRegister()
 	{
 		return View::make('client.register');

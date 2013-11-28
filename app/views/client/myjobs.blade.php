@@ -17,8 +17,7 @@
         <section class="description">
             <aside class="floatRight quickMenu">
                 <nav>
-                    <!-- TODO: Place 'mijn opdrachten' link in ul -->
-                    {{ link_to('client/myjobs', 'Mijn Opdrachten', array('class' => 'btn btnWorkIcon'))}}
+                    {{ link_to('client/myjobs', 'Mijn Opdrachten', array('class' => 'btn btnWorkIcon')) }}
                     <ul>
                         <li class="iconItem settingsIcon"><a href="#">Instellingen</a></li>
                     </ul>
@@ -33,7 +32,6 @@
 
     </section> <!-- End Welcome -->
 
-    <!-- TODO: Generate the dropdown by using categories from database -->
     <section class="block marginTop mainTitle">
         <select>
             <option value="">Categorie</option>

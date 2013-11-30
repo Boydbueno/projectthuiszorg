@@ -9,7 +9,7 @@ class JobsController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		return \Job::all();
 	}
 
 	/**
@@ -40,7 +40,7 @@ class JobsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		return \Job::find($id);
 	}
 
 	/**

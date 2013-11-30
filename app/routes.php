@@ -26,4 +26,9 @@ Route::group(array('before' => 'auth'), function()
 	
 });
 
+Route::group(array('prefix' => 'api'), function()
+{
+	Route::resource('jobs', 'controllers\api\JobsController');
+});
+
 Route::controller('/', 'HomeController');

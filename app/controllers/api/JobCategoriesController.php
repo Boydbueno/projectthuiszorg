@@ -1,6 +1,6 @@
 <?php namespace controllers\api;
 
-class JobCategoriesController extends \BaseController {
+class JobcategoriesController extends \BaseController {
 
 	/**
 	 * Return a listing of the resource as JSON.
@@ -21,7 +21,7 @@ class JobCategoriesController extends \BaseController {
 	public function show($id)
 	{
 		// TODO: Error handling if resource isn't found
-		return \JobCategory::find($id);
+		return \Jobcategory::find($id);
 	}
 
 }

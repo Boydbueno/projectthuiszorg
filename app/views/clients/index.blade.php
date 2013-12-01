@@ -35,13 +35,7 @@
 
     <!-- TODO: Generate the dropdown by using categories from database -->
     <section class="block marginTop mainTitle">
-        <select>
-            <option value="">Categorie</option>
-            <option value="fysiek">Fysiek Werk</option>
-            <option value="adviserend">Adviserend Werk</option>
-            <option value="handarbeid">Handarbeid</option>
-            <option value="technisch">Technisch Werk</option>
-        </select>
+        {{ Form::select('jobcategory', $jobcategories) }}
         <select>
             <option value="">Status</option>
             <option value="fysiek">Starten</option>

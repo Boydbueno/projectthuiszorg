@@ -11,6 +11,10 @@ class ClientsController extends \BaseController {
 	 */
 	public function index()
 	{
+		// Jobcategories in id => label pairs, for the dropdown in view
+		$dropdownPlaceholder = array('' => 'Category');
+		$jobcategories = $dropdownPlaceholder + Jobcategory::lists('label', 'id');
+		
 		$jobs = Job::orderBy('start_date')->get();
 
 		foreach($jobs as $job) {
@@ -27,7 +31,7 @@ class ClientsController extends \BaseController {
 
 		}
 
-		return View::make('clients.index')->with('jobs', $jobs);
+		return View::make('clients.index')->with('jobs', $jobs)->with('jobcategories', $jobcategories);
 	}
 
 	/**

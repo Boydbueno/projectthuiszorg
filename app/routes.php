@@ -45,6 +45,7 @@ Route::group(array('prefix' => 'api'), function()
 	{
 		Route::get('/', 'controllers\api\JobcategoriesController@index');
 		Route::get('{id}', 'controllers\api\JobcategoriesController@show');
+		Route::get('{id}/{relationship}', 'controllers\api\JobcategoriesController@relationship');
 	});
 
 });

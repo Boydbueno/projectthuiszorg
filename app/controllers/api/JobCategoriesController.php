@@ -24,4 +24,17 @@ class JobcategoriesController extends \BaseController {
 		return \Jobcategory::find($id);
 	}
 
+	/**
+	 * Return listing of the resources related to the specified resource as JSON
+	 * 
+	 * @param  int 	$id
+	 * @param  string $relationship
+	 * @return Response
+	 */
+	public function relationship($id, $relationship)
+	{
+		// TODO: Error handling if resource or relationship isn't found
+		return $this->show($id)->$relationship;
+	}
+
 }

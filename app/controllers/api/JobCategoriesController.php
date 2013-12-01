@@ -3,7 +3,7 @@
 class JobCategoriesController extends \BaseController {
 
 	/**
-	 * Display a listing of the resource.
+	 * Return a listing of the resource as JSON.
 	 *
 	 * @return Response
 	 */
@@ -13,13 +13,14 @@ class JobCategoriesController extends \BaseController {
 	}
 
 	/**
-	 * Display the specified resource.
+	 * Return the specified resource as JSON.
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
 	public function show($id)
 	{
+		// TODO: Error handling if resource isn't found
 		return \JobCategory::find($id);
 	}
 

@@ -26,10 +26,27 @@ Route::group(array('before' => 'auth'), function()
 	
 });
 
+/*
+|---------------------------------------------------------------------------
+| API routes
+|---------------------------------------------------------------------------
+*/
+
 Route::group(array('prefix' => 'api'), function()
 {
-	Route::resource('jobs', 'controllers\api\JobsController');
-	Route::resource('jobcategories', 'controllers\api\JobCategoriesController');
+
+	Route::group(array('prefix' => 'jobs'), function() 
+	{
+		Route::get('/', 'controllers\api\JobsController@index');
+		Route::get('{id}', 'controllers\api\JobcategoriesController@show');
+	});
+
+	Route::group(array('prefix' => 'jobcategories'), function()
+	{
+		Route::get('/', 'controllers\api\JobcategoriesController@index');
+		Route::get('{id}', 'controllers\api\JobcategoriesController@show');
+	});
+
 });
 
 Route::controller('/', 'HomeController');

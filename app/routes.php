@@ -53,20 +53,11 @@ Route::group(array('before' => 'auth'), function()
 	{
 		Route::get('/', 'ClientsController@index');
 		Route::post('/', 'ClientsController@store');
-		Route::get('{id}', array('as' => 'jobs.show', 'uses' => 'JobsController@show'));
-		Route::get('{id}/edit', 'ClientsController@edit');
-		Route::put('{id}', 'ClientsController@update');
-		Route::delete('{id}', 'ClientsController@destroy');
 	});
 
 	Route::group(array('prefix' => 'jobs'), function()
 	{
-		Route::get('/', 'JobsController@index');
-		Route::post('/', 'JobsController@store');
-		Route::get('{id}', 'JobsController@show');
-		Route::get('{id}/edit', 'JobsController@edit');
-		Route::put('{id}', 'JobsController@update');
-		Route::delete('{id}', 'JobsController@destroy');
+		Route::get('{id}', array('as' => 'jobs.show', 'uses' => 'JobsController@show'));
 	});
 	
 });

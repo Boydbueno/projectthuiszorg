@@ -266,150 +266,96 @@ textarea {
   width: 100%;
 }
 
-/* line 11, ../sass/base.scss */
-.progress {
-  width: 100%;
-  height: 23px;
-  background-color: #989898;
+/* line 12, ../sass/public.scss */
+body {
+  min-width: 450px;
 }
 
-/* line 17, ../sass/base.scss */
-.progressSmall {
-  width: 100%;
-  background-color: #989898;
-  height: 5px;
+/* line 17, ../sass/public.scss */
+h1 {
+  color: #585858;
 }
 
-/* line 23, ../sass/base.scss */
-.progressBar {
-  width: 0%;
-  max-width: 100%;
-  height: 23px;
-  background-color: #c5c5c5;
+/* line 21, ../sass/public.scss */
+.content .block:first-child h1 {
+  color: #ccc;
 }
 
-/* line 31, ../sass/base.scss */
-.fysiekWerk .progress {
-  background-color: #fec606;
+/* line 27, ../sass/public.scss */
+.boxTitle {
+  padding: 55px 30px 30px 45px;
 }
 
-/* line 35, ../sass/base.scss */
-.fysiekWerk .progressBar {
-  background-color: #fedf73;
+/* line 31, ../sass/public.scss */
+.regularPadding {
+  padding: 0 45px 55px;
 }
 
-/* line 39, ../sass/base.scss */
-.fysiekWerk h1 {
-  color: #fec606;
+/* line 36, ../sass/public.scss */
+.backdropImage {
+  height: 525px;
+  background: #cccccc url("../images/background_public.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-/* line 44, ../sass/base.scss */
-.adviserendWerk .progress {
-  background-color: #0692fe;
+/* line 45, ../sass/public.scss */
+.smallHeader {
+  height: 300px;
 }
 
-/* line 48, ../sass/base.scss */
-.adviserendWerk .progressBar {
-  background-color: #73c2fe;
+/* line 49, ../sass/public.scss */
+.smallHeader .bigLogo {
+  height: 180px;
+  padding-top: 30px;
 }
 
-/* line 52, ../sass/base.scss */
-.adviserendWerk h1 {
-  color: #0692fe;
+/* line 55, ../sass/public.scss */
+.imageOverlay {
+  margin-top: -80px;
 }
 
-/* line 57, ../sass/base.scss */
-.handarbeid .progress {
-  background-color: #6bcd3b;
+/* line 59, ../sass/public.scss */
+.bigLogo {
+  display: block;
+  margin: 0 auto;
+  padding-top: 80px;
 }
 
-/* line 61, ../sass/base.scss */
-.handarbeid .progressBar {
-  background-color: #ace391;
+/* line 65, ../sass/public.scss */
+.content .block:first-child {
+  background-color: #585858;
+  color: #ececec;
 }
 
-/* line 65, ../sass/base.scss */
-.handarbeid h1 {
-  color: #6bcd3b;
+/* line 70, ../sass/public.scss */
+.buttonHolder {
+  text-align: center;
+  padding: 50px 0 25px;
 }
 
-/* line 70, ../sass/base.scss */
-.technischWerk .progress {
-  background-color: #fe0606;
+/* line 75, ../sass/public.scss */
+.grid-33 p {
+  text-align: center;
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 25px 0 70px;
 }
 
-/* line 74, ../sass/base.scss */
-.technischWerk .progressBar {
-  background-color: #fe7373;
-}
-
-/* line 78, ../sass/base.scss */
-.technischWerk h1 {
-  color: #fe0606;
-}
-
-/* line 82, ../sass/base.scss */
+/* line 83, ../sass/public.scss */
 .description {
+  padding: 0 0 80px 45px;
+}
+
+/* line 87, ../sass/public.scss */
+.description .grid-66, .description .grid-33 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* line 93, ../sass/public.scss */
+.footer {
   padding: 30px 30px 30px 20px;
-}
-
-/* line 86, ../sass/base.scss */
-.information {
-  margin-right: 220px;
-  padding-right: 30px;
-}
-
-/* line 91, ../sass/base.scss */
-.details, .quickMenu {
-  width: 210px;
-}
-
-/* line 94, ../sass/base.scss */
-.details ul {
-  margin-top: 5px;
-  margin-left: 50px;
-}
-
-/* line 99, ../sass/base.scss */
-.quickMenu ul {
-  margin-top: 15px;
-  margin-left: 30px;
-}
-
-/* line 104, ../sass/base.scss */
-.iconItem {
-  padding: 0 0 0 40px;
-  margin-bottom: 15px;
-  font-size: 15px;
-}
-
-/* line 110, ../sass/base.scss */
-.dateIcon {
-  background: url("../images/icons/date_icon.png") no-repeat;
-}
-
-/* line 114, ../sass/base.scss */
-.timeIcon {
-  background: url("../images/icons/time_icon.png") no-repeat;
-}
-
-/* line 118, ../sass/base.scss */
-.moneyIcon {
-  background: url("../images/icons/money_icon.png") no-repeat;
-}
-
-/* line 122, ../sass/base.scss */
-.settingsIcon {
-  background: url("../images/icons/settings_icon.png") no-repeat;
-}
-
-/* line 126, ../sass/base.scss */
-.companyIcon {
-  background: url("../images/icons/company_icon.png") no-repeat;
-}
-
-/* line 131, ../sass/base.scss */
-.slider {
-  position: relative;
-  padding: 20px 20px 0 0;
 }

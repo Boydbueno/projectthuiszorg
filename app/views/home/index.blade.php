@@ -26,7 +26,7 @@
 				<div class="buttonHolder">
 					<a href="/contact" class="btn">Contact Opnemen</a>
 				</div>
-				<p>Vragen over Rework of benieuwd wat alles inhoud? Schroom niet contact met ons op te nemen.</p>
+				<p>Vragen over Rework of benieuwd wat alles inhoudt? Schroom niet contact met ons op te nemen.</p>
 			</div>
 		</div>
 	</div>

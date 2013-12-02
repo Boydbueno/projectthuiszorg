@@ -33,7 +33,6 @@
 
     </section> <!-- End Welcome -->
 
-    <!-- TODO: Generate the dropdown by using categories from database -->
     <section class="block marginTop mainTitle">
         {{ Form::select('jobcategory', $jobcategories) }}
         <select>

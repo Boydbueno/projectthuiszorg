@@ -1,7 +1,30 @@
 <?php
 
-Route::controller('client', 'ClientController');
-Route::controller('opdrachtgever', 'CompanyController');
+/*
+|---------------------------------------------------------------------------
+| Client routes
+|---------------------------------------------------------------------------
+*/
+Route::group(array('prefix' => 'client'), function()
+{
+	Route::get('/', 'ClientController@getIndex');
+	Route::post('/', 'ClientController@postIndex');
+	Route::get('myjobs', 'ClientController@getMyJobs');
+	Route::get('register', 'ClientController@getRegister');
+	Route::post('register', 'ClientController@postRegister');
+});
+
+/*
+|---------------------------------------------------------------------------
+| Company routes
+|---------------------------------------------------------------------------
+*/
+Route::group(array('prefix' => 'opdrachtgever'), function()
+{
+	Route::get('/', 'CompanyController@getIndex');
+	Route::post('/', 'CompanyController@postIndex');
+	Route::get('register', 'CompanyController@getRegister');
+});
 
 /*
 |---------------------------------------------------------------------------
@@ -10,7 +33,12 @@ Route::controller('opdrachtgever', 'CompanyController');
 */
 
 Route::get('logout', array('as' => 'logout', 'uses' => 'AuthController@getLogout'));
-Route::controller('auth', 'AuthController');
+
+Route::group(array('prefix' => 'auth'), function()
+{
+	Route::get('login', 'AuthController@getLogin');
+	Route::post('login', 'AuthController@postLogin');
+});
 
 /*
 |---------------------------------------------------------------------------
@@ -21,8 +49,25 @@ Route::controller('auth', 'AuthController');
 Route::group(array('before' => 'auth'), function() 
 {
 
-	Route::resource('clients', 'ClientsController');
-	Route::resource('jobs', 'JobsController');
+	Route::group(array('prefix' => 'clients'), function()
+	{
+		Route::get('/', 'ClientsController@index');
+		Route::post('/', 'ClientsController@store');
+		Route::get('{id}', array('as' => 'jobs.show', 'uses' => 'JobsController@show'));
+		Route::get('{id}/edit', 'ClientsController@edit');
+		Route::put('{id}', 'ClientsController@update');
+		Route::delete('{id}', 'ClientsController@destroy');
+	});
+
+	Route::group(array('prefix' => 'jobs'), function()
+	{
+		Route::get('/', 'JobsController@index');
+		Route::post('/', 'JobsController@store');
+		Route::get('{id}', 'JobsController@show');
+		Route::get('{id}/edit', 'JobsController@edit');
+		Route::put('{id}', 'JobsController@update');
+		Route::delete('{id}', 'JobsController@destroy');
+	});
 	
 });
 
@@ -50,4 +95,6 @@ Route::group(array('prefix' => 'api'), function()
 
 });
 
-Route::controller('/', 'HomeController');
+Route::get('/', 'HomeController@getIndex');
+Route::get('/contact', 'HomeController@getContact');
+Route::post('/contact', 'HomeController@postContact');

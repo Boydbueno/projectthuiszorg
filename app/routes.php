@@ -38,7 +38,7 @@ Route::group(array('prefix' => 'api'), function()
 	Route::group(array('prefix' => 'jobs'), function() 
 	{
 		Route::get('/', 'controllers\api\JobsController@index');
-		Route::get('{id}', 'controllers\api\JobcategoriesController@show');
+		Route::get('{id}', 'controllers\api\JobsController@show');
 	});
 
 	Route::group(array('prefix' => 'jobcategories'), function()

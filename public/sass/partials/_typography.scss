@@ -11,10 +11,22 @@ p{
 	font-size:15px;
 }
 
+a{
+	color:$grey;
+	text-decoration: none;
+	&:hover{
+		text-decoration: underline;
+	}
+}
+
 .subTitle{
 	color:$subText;
 }
 
 .centerText{
 	text-align:center;
+}
+
+.bold{
+	font-weight:bold;
 }

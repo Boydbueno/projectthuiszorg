@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.public')
 
 @section('title')
 	Project Thuiszorg - Clients
@@ -7,6 +7,7 @@
 @section('content')
 
     <section class="block marginTop floatFix">
+    
         <header class="mainTitle">
             <h1>Welkom terug, {{ Auth::user()->first_name }}!</h1>
         </header>

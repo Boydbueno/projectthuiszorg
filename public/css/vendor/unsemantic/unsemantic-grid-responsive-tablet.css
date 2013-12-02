@@ -876,7 +876,7 @@
     width: 100%;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 929px) {
   /* line 47, ../../../sass/vendor/unsemantic/partials/_unsemantic-vars.sass */
   .tablet-grid-100:before,
   .tablet-grid-100:after {
@@ -1674,7 +1674,7 @@
     width: 100%;
   }
 }
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 930px) {
   /* line 47, ../../../sass/vendor/unsemantic/partials/_unsemantic-vars.sass */
   .grid-100:before,
   .grid-100:after {

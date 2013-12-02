@@ -1,5 +1,11 @@
 <?php
 
+Route::get('/', 'HomeController@getIndex');
+Route::get('/contact', 'HomeController@getContact');
+Route::post('/contact', 'HomeController@postContact');
+
+Route::post('clients', 'ClientsController@store'); // Todo: This route is lost, please give it a new home.
+
 /*
 |---------------------------------------------------------------------------
 | Client routes
@@ -7,11 +13,22 @@
 */
 Route::group(array('prefix' => 'client'), function()
 {
-	Route::get('/', 'ClientController@getIndex');
-	Route::post('/', 'ClientController@postIndex');
-	Route::get('myjobs', 'ClientController@getMyJobs');
-	Route::get('register', 'ClientController@getRegister');
-	Route::post('register', 'ClientController@postRegister');
+
+	Route::group(array('before' => 'auth.client'), function() 
+	{
+		Route::get('/', array('as' => 'client', 'uses' => 'controllers\client\HomeController@index'));
+		Route::get('myjobs', 'controllers\client\HomeController@getMyJobs');
+
+		Route::get('jobs/{id}', array('as' => 'client.jobs.show', 'uses' => 'controllers\client\JobsController@show'));
+	});
+
+	Route::get('login', 'controllers\client\AuthController@getLogin');
+	Route::post('login', 'controllers\client\AuthController@postLogin');
+	Route::get('logout', 'controllers\client\AuthController@getLogout');
+
+	Route::get('register', 'controllers\client\HomeController@getRegister'); // Todo: Registration, move in different controller?
+	Route::post('register', 'controllers\client\HomeController@postRegister'); // Todo: Registration, move in different controller?
+
 });
 
 /*
@@ -19,47 +36,13 @@ Route::group(array('prefix' => 'client'), function()
 | Company routes
 |---------------------------------------------------------------------------
 */
+
+// Todo: These still need some refactoring
 Route::group(array('prefix' => 'opdrachtgever'), function()
 {
 	Route::get('/', 'CompanyController@getIndex');
 	Route::post('/', 'CompanyController@postIndex');
 	Route::get('register', 'CompanyController@getRegister');
-});
-
-/*
-|---------------------------------------------------------------------------
-| Authorization
-|---------------------------------------------------------------------------
-*/
-
-Route::get('logout', array('as' => 'logout', 'uses' => 'AuthController@getLogout'));
-
-Route::group(array('prefix' => 'auth'), function()
-{
-	Route::get('login', 'AuthController@getLogin');
-	Route::post('login', 'AuthController@postLogin');
-});
-
-/*
-|---------------------------------------------------------------------------
-| Auth protected areas
-|---------------------------------------------------------------------------
-*/
-
-Route::group(array('before' => 'auth'), function() 
-{
-
-	Route::group(array('prefix' => 'clients'), function()
-	{
-		Route::get('/', 'ClientsController@index');
-		Route::post('/', 'ClientsController@store');
-	});
-
-	Route::group(array('prefix' => 'jobs'), function()
-	{
-		Route::get('{id}', array('as' => 'jobs.show', 'uses' => 'JobsController@show'));
-	});
-	
 });
 
 /*
@@ -85,7 +68,3 @@ Route::group(array('prefix' => 'api'), function()
 	});
 
 });
-
-Route::get('/', 'HomeController@getIndex');
-Route::get('/contact', 'HomeController@getContact');
-Route::post('/contact', 'HomeController@postContact');

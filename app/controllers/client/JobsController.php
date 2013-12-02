@@ -1,6 +1,6 @@
-<?php
+<?php namespace controllers\client;
 
-class JobsController extends BaseController {
+class JobsController extends \BaseController {
 
 	/**
 	 * Display the specified resource.
@@ -10,13 +10,13 @@ class JobsController extends BaseController {
 	 */
 	public function show($id)
 	{
-		$job = Job::find($id);
+		$job = \Job::find($id);
 
 		$usersCount = count($job->users);
 
 		$job->participantsText = $this->getParticipantsText(count($job->users));
 
-        return View::make('jobs.show')->with('job', $job);
+        return \View::make('client.jobDetail')->with('job', $job);
 	}
 
 	/**

@@ -6,7 +6,7 @@
 
 @section('content')
 	<nav class='block marginTop mainTitle'>
-		<a href="../clients">Terug naar het overzicht</a>
+		{{ link_to_route('client', 'Terug naar het overzicht') }}
 	</nav>
 
 	<section class='job'>

@@ -33,9 +33,9 @@ App::after(function($request, $response)
 |
 */
 
-Route::filter('auth', function()
+Route::filter('auth.client', function()
 {
-	if (Auth::guest()) return Redirect::guest('client');
+	if (Auth::guest()) return Redirect::guest('client/login');
 });
 
 

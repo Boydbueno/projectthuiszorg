@@ -20,7 +20,7 @@
                 <li class="iconItem moneyIcon">€ {{ number_format($job->payment, 2, ",", ".") }}</li>
             </ul>
 
-            {{ link_to_route('jobs.show', 'Bekijk Opdracht', array($job->id), array('class' => 'btn')) }}
+            {{ link_to_route('client.jobs.show', 'Bekijk Opdracht', array($job->id), array('class' => 'btn')) }}
         </aside>
         <div class="information borderRight">
             <p>{{ $job->short_description }}</p>

@@ -22,7 +22,7 @@
 				<header class="boxTitle">
 				    <h1>Registreren</h1>
 				</header>
-				{{ Form::open(array('route' => 'clients.store', 'class' => 'regularPadding')) }}
+				{{ Form::open(array('class' => 'regularPadding')) }}
 					<ul>
 						<li>
 							{{ Form::label('company_name', 'Bedrijfdnaam:') }}

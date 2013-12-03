@@ -1,54 +1,69 @@
-@extends('layouts.public')
+@extends('layouts.master')
 
 @section('title')
-	Rework - Opdrachtgever
+	Project Thuiszorg - Clients
 @stop
 
 @section('content')
 
-<div class="backdropImage smallHeader">
-	{{ HTML::image("images/logo_big.png", "Rework Logo", array('class' => 'bigLogo')) }}
-</div>
+    <section class="block marginTop floatFix">
+    
+        <header class="mainTitle">
+            <h1>Dit is de tijdelijke company pagina!</h1>
+        </header>
 
-<section class="content grid-container">
+        <div class="progressSmall">
+        </div>
 
-	<div class="posRelative">
-		<div class="imageOverlay floatFix">
-			<div class="block grid-60">
-				<h1 class="boxTitle">Welkom Opdrachtgever!</h1>
-				<p class="regularPadding">Wij zijn een nieuw initiatief genaamd Rework. Ons doel is om ouderen weer aan werk te helpen en het liefst in de branche waar ze vroeger werkzaam in waren. We willen dat de keuze en tijdsduur van een opdracht volledig bepaald kan worden door u! Geen verplichtingen en geen valkuilen.</p>
-			</div>
-			<div class="block grid-40 contactForm">
-				<header class="boxTitle">
-				    <h1>Inloggen</h1>
-				</header>
-				{{ Form::open(array('class' => 'regularPadding')) }}
-					<ul>
-						<li class="form-group">
-							{{ Form::label('email', 'Email:') }}
-							{{ Form::text('email') }}
-						</li>
+        <section class="description">
+            <aside class="floatRight quickMenu">
+                <nav>
+                    <!-- TODO: Place 'mijn opdrachten' link in ul -->
+                    {{ link_to('client/myjobs', 'Mijn Opdrachten', array('class' => 'btn btnWorkIcon'))}}
+                    <ul>
+                        <li class="iconItem settingsIcon"><a href="#">Instellingen</a></li>
+                    </ul>
+                </nav>
+            </aside>
 
-						<li class="form-group">
-							{{ Form::label('password', 'Password:') }}
-							{{ Form::password('password') }}
-						</li>
+            <p class="information borderRight">
+                Goed om u terug te zien, er staan weer een hoop nieuwe opdrachten op u te  wachten, in de balk hier naast kunt u de status van uw huidige opdrachten bekijken of zoek een nieuwe opdracht uit om samen aan te werken, alles is mogelijk!
+                <span>{{ Session::get('notice') }}</span>
+            </p>
+        </section>
 
-						<li class="form-group">
-							{{ Form::submit('Login', array('class' => 'btn btn-primary')) }}
-							{{ Session::get('notice') }}
-						</li>
-						<li>
-							<a href='/opdrachtgever/register'>Maak een account!</a>
-						</li>
-					</ul>
-				{{ Form::close() }}
+    </section> <!-- End Welcome -->
 
-				@include('partials._errors')
-			</div>
-		</div>
-	</div>
+    <section class="block marginTop">
 
-</section> <!-- End Content -->
+        <header class="mainTitle">
+            <h1>Footer</h1>
+        </header>
 
+        <div class="progressSmall">
+        </div>
+
+        <section class="description floatFix">
+            <aside class="details floatRight">
+                <nav>
+                    <ul>
+                        <li><a href="#" class="subMenuLink">Technisch werk</a></li>
+                        <li><a href="#" class="subMenuLink">Fysiek werk</a></li>
+                        <li><a href="#" class="subMenuLink">Adviserend werk</a></li>
+                        <li><a href="#" class="subMenuLink">Handenarbeid</a></li>
+                    </ul>
+                </nav>
+                <nav>
+                    <ul>
+                        <li><a href="#" class="subMenuLink">Terug naar boven</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            
+            <p class="information borderRight">
+                Wij zijn een nieuw initiatief genaamd Rework. Ons doel is om ouderen weer aan werk te helpen en het liefst in de branche waar ze vroeger werkzaam in waren. We willen dat de keuze en tijdsduur van een opdracht volledig bepaald kan worden door u! Geen verplichtingen en geen valkuilen. Heeft u nog tips of advies voor ons, wij horen het graag!
+            </p>
+        </section>
+
+    </section>
 @stop

@@ -39,9 +39,14 @@ Route::group(array('prefix' => 'client'), function()
 // Todo: These still need some refactoring
 Route::group(array('prefix' => 'opdrachtgever'), function()
 {
-	Route::get('/', 'CompanyController@getIndex');
-	Route::post('/', 'CompanyController@postIndex');
-	Route::get('register', 'CompanyController@getRegister');
+	Route::group(array('before' => 'auth.company'), function() 
+	{
+		Route::get('/', 'controllers\company\HomeController@getIndex');
+	});
+
+	Route::get('login', 'controllers\company\AuthController@getLogin');
+	Route::post('login', 'controllers\company\AuthController@postLogin');
+	Route::get('register', 'controllers\company\AuthController@getRegister');
 });
 
 /*

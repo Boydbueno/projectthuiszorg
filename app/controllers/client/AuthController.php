@@ -2,11 +2,17 @@
 
 class AuthController extends \BaseController {
 
+	/**
+	 * Show login form
+	 */
 	public function getLogin()
 	{
 		return \View::make('client.auth.login');
 	}
 
+	/**
+	 * Logs in the user
+	 */
 	public function postLogin()
 	{
 
@@ -36,10 +42,7 @@ class AuthController extends \BaseController {
 	}
 
 	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
+	 * Logs out the current user
 	 */
 	public function getLogout()
 	{
@@ -47,18 +50,22 @@ class AuthController extends \BaseController {
 		return \Redirect::to('/');
 	}
 
+	/**
+	 * Show the registration form
+	 */
 	public function getRegister()
 	{
 		return \View::make('client.register');
 	}
 
 	/**
-	 * Store a newly created resource in storage.
+	 * Register a new user in the database
 	 *
-	 * @return Response
+	 * @return Redirect
 	 */
 	public function postRegister()
 	{
+		// TODO: Store part in the user table and part in the client table
 		$input = \Input::all();
 
 		$validator = \Validator::make($input, \User::$rules);

@@ -19,6 +19,13 @@ class JobsController extends \BaseController {
         return \View::make('client.jobDetail')->with('job', $job);
 	}
 
+	public function join($id)
+	{
+		$job = \Job::find($id);
+
+        return \View::make('client.join')->with('join', $job);
+	}
+
 	/**
 	 * Get the text about previous participants based on amount of users
 	 * @param  int $usersCount

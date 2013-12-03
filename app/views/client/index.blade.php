@@ -1,4 +1,4 @@
-@extends('layouts.public')
+@extends('layouts.master')
 
 @section('title')
 	Project Thuiszorg - Clients

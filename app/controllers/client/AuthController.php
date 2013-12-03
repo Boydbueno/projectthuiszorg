@@ -55,7 +55,7 @@ class AuthController extends \BaseController {
 	 */
 	public function getRegister()
 	{
-		return \View::make('client.register');
+		return \View::make('client.auth.register');
 	}
 
 	/**

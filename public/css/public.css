@@ -272,31 +272,38 @@ textarea {
 }
 
 /* line 12, ../sass/public.scss */
-body {
-  min-width: 450px;
+html {
+  position: relative;
+  min-height: 100%;
 }
 
 /* line 17, ../sass/public.scss */
+body {
+  margin: 0 0 110px;
+  min-width: 450px;
+}
+
+/* line 23, ../sass/public.scss */
 h1 {
   color: #585858;
 }
 
-/* line 21, ../sass/public.scss */
+/* line 27, ../sass/public.scss */
 .content .block:first-child h1 {
   color: #ccc;
 }
 
-/* line 27, ../sass/public.scss */
+/* line 33, ../sass/public.scss */
 .boxTitle {
   padding: 55px 30px 30px 45px;
 }
 
-/* line 31, ../sass/public.scss */
+/* line 37, ../sass/public.scss */
 .regularPadding {
   padding: 0 45px 55px;
 }
 
-/* line 36, ../sass/public.scss */
+/* line 42, ../sass/public.scss */
 .backdropImage {
   height: 525px;
   background: #cccccc url("../images/background_public.jpg") no-repeat center center fixed;
@@ -306,42 +313,42 @@ h1 {
   background-size: cover;
 }
 
-/* line 45, ../sass/public.scss */
+/* line 51, ../sass/public.scss */
 .smallHeader {
   height: 300px;
 }
 
-/* line 49, ../sass/public.scss */
+/* line 55, ../sass/public.scss */
 .smallHeader .bigLogo {
   height: 180px;
   padding-top: 30px;
 }
 
-/* line 55, ../sass/public.scss */
+/* line 61, ../sass/public.scss */
 .imageOverlay {
   margin-top: -80px;
 }
 
-/* line 59, ../sass/public.scss */
+/* line 65, ../sass/public.scss */
 .bigLogo {
   display: block;
   margin: 0 auto;
   padding-top: 80px;
 }
 
-/* line 65, ../sass/public.scss */
+/* line 71, ../sass/public.scss */
 .content .block:first-child {
   background-color: #585858;
   color: #ececec;
 }
 
-/* line 70, ../sass/public.scss */
+/* line 76, ../sass/public.scss */
 .buttonHolder {
   text-align: center;
   padding: 50px 0 25px;
 }
 
-/* line 75, ../sass/public.scss */
+/* line 81, ../sass/public.scss */
 .grid-33 p {
   text-align: center;
   max-width: 70%;
@@ -349,18 +356,22 @@ h1 {
   padding: 25px 0 70px;
 }
 
-/* line 83, ../sass/public.scss */
+/* line 89, ../sass/public.scss */
 .description {
   padding: 0 0 80px 45px;
 }
 
-/* line 87, ../sass/public.scss */
+/* line 93, ../sass/public.scss */
 .description .grid-66, .description .grid-33 {
   padding-left: 0;
   padding-right: 0;
 }
 
-/* line 93, ../sass/public.scss */
+/* line 99, ../sass/public.scss */
 .footer {
   padding: 30px 30px 30px 20px;
+  position: absolute;
+  bottom: 0;
+  height: 90px;
+  width: 100%;
 }

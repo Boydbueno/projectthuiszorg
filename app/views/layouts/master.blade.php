@@ -13,7 +13,7 @@
 
 		<header class="block mainMenu mainTitle floatFix">
 
-			<a href="/" title="Rework">
+			<a href="/client" title="Rework">
 				{{ HTML::image("images/logo_small.png", "Rework", array('class' => 'floatLeft')) }}
 			    <h1 class="floatLeft">Rework</h1>
 			</a>
@@ -22,9 +22,15 @@
 
 		    <nav>
 		        <ul class="floatRight">
-		            <li class="floatLeft"><a href="#" class="menuLink borderRight">Mijn Opdrachten</a></li>
-		            <li class="floatLeft"><a href="#" class="menuLink borderRight">Instellingen</a></li>
-		            <li class="floatLeft">{{ link_to("client/logout", "Uitloggen", array("class" => "menuLink")) }}</li>
+		            <li class="floatLeft">
+		            	{{ link_to('client/jobs', 'Mijn Opdrachten', array('class' => 'menuLink borderRight'))}}
+		            </li>
+		            <li class="floatLeft">
+		            	{{ link_to('client/settings', 'Instellingen', array('class' => 'menuLink borderRight'))}}
+		            </li>
+		            <li class="floatLeft">
+		            	{{ link_to("client/logout", "Uitloggen", array("class" => "menuLink")) }}
+		            </li>
 		        </ul>
 		    </nav>
 

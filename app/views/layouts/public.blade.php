@@ -24,8 +24,12 @@
 
 			    <nav>
 			        <ul class="floatRight">
-			            <li class="floatLeft"><a href="#" class="menuLink borderRight">Registreren</a></li>
-			            <li class="floatLeft">{{ link_to("client/logout", "Uitloggen", array("class" => "menuLink")) }}</li>
+			            <li class="floatLeft">
+			            	<a href="#" class="menuLink borderRight">Registreren</a>
+			            </li>
+			            <li class="floatLeft">
+			            	{{ link_to("client/logout", "Uitloggen", array("class" => "menuLink")) }}
+			            </li>
 			        </ul>
 			    </nav>
 
@@ -33,8 +37,12 @@
 		
 				<nav>
 			        <ul class="floatRight">
-			        	<li class="floatLeft"><a href="#" class="menuLink borderRight">Registreren!</a></li>
-			            <li class="floatLeft"><a href="#" class="menuLink borderRight">Inloggen</a></li>
+			        	<li class="floatLeft">
+			        		<a href="#" class="menuLink borderRight">Registreren</a>
+			        	</li>
+			            <li class="floatLeft">
+			            	<a href="#" class="menuLink borderRight">Inloggen</a>
+			            </li>
 			        </ul>
 			    </nav>
 

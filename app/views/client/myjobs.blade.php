@@ -8,7 +8,7 @@
 
     <section class="block marginTop floatFix">
         <header class="mainTitle">
-            <h1>Welkom terug, {{ Auth::user()->first_name }}!</h1>
+            <h1>Welkom terug, {{{ Auth::user()->first_name }}}!</h1>
         </header>
 
         <div class="progressSmall">

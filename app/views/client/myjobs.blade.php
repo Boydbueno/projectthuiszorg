@@ -17,9 +17,11 @@
         <section class="description">
             <aside class="floatRight quickMenu">
                 <nav>
-                    {{ link_to('client/myjobs', 'Mijn Opdrachten', array('class' => 'btn btnWorkIcon')) }}
+                    {{ link_to('client/jobs', 'Mijn Opdrachten', array('class' => 'btn btnWorkIcon')) }}
                     <ul>
-                        <li class="iconItem settingsIcon"><a href="#">Instellingen</a></li>
+                        <li class="iconItem settingsIcon">
+                            {{ link_to('client/settings', 'Instellingen')}}
+                        </li>
                     </ul>
                 </nav>
             </aside>

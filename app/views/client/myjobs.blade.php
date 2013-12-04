@@ -8,7 +8,7 @@
 
     <section class="block marginTop floatFix">
         <header class="mainTitle">
-            <h1>Welkom terug, {{{ Auth::user()->first_name }}}!</h1>
+            <h1>Uw opdrachten!</h1>
         </header>
 
         <div class="progressSmall">
@@ -27,35 +27,13 @@
             </aside>
 
             <p class="information borderRight">
-                Goed om u terug te zien, er staan weer een hoop nieuwe opdrachten op u te  wachten, in de balk hier naast kunt u de status van uw huidige opdrachten bekijken of zoek een nieuwe opdracht uit om samen aan te werken, alles is mogelijk!
-                <span>{{ Session::get('notice') }}</span>
+                Hieronder vind u een overzicht van alle opdrachten waar u aan bijdraagt. Het is belangrijk om opdrachten op tijd af te hebben, vandaar dat we ze alvast voor u gesorteerd hebben op opleverdatum!
             </p>
         </section>
 
     </section> <!-- End Welcome -->
 
-    <section class="block marginTop mainTitle">
-        <select>
-            <option value="">Categorie</option>
-            <option value="fysiek">Fysiek Werk</option>
-            <option value="adviserend">Adviserend Werk</option>
-            <option value="handarbeid">Handarbeid</option>
-            <option value="technisch">Technisch Werk</option>
-        </select>
-        <select>
-            <option value="">Status</option>
-            <option value="fysiek">Starten</option>
-            <option value="adviserend">Gepauzeerd</option>
-            <option value="handarbeid">Voltooid</option>
-        </select>
-        <select>
-            <option value="">Beschikbaarheid</option>
-            <option value="fysiek">Meer dan 20%</option>
-            <option value="adviserend">Meer dan 50%</option>
-            <option value="handarbeid">Meer dan 70%</option>
-            <option value="technisch">Volledig</option>
-        </select>
-    </section>
+    @include('partials._filter')
 
     <section class="jobs">
 

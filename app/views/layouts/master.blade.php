@@ -23,7 +23,7 @@
 		    <nav>
 		        <ul class="floatRight">
 		            <li class="floatLeft">
-		            	{{ link_to('client/myjobs', 'Mijn Opdrachten', array('class' => 'menuLink borderRight'))}}
+		            	{{ link_to('client/jobs', 'Mijn Opdrachten', array('class' => 'menuLink borderRight'))}}
 		            </li>
 		            <li class="floatLeft">
 		            	<a href="#" class="menuLink borderRight">Instellingen</a>

@@ -26,7 +26,7 @@
 		            	{{ link_to('client/jobs', 'Mijn Opdrachten', array('class' => 'menuLink borderRight'))}}
 		            </li>
 		            <li class="floatLeft">
-		            	<a href="#" class="menuLink borderRight">Instellingen</a>
+		            	{{ link_to('client/settings', 'Instellingen', array('class' => 'menuLink borderRight'))}}
 		            </li>
 		            <li class="floatLeft">
 		            	{{ link_to("client/logout", "Uitloggen", array("class" => "menuLink")) }}

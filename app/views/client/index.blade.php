@@ -21,7 +21,9 @@
                     <!-- TODO: Place 'mijn opdrachten' link in ul -->
                     {{ link_to('client/jobs', 'Mijn Opdrachten', array('class' => 'btn btnWorkIcon'))}}
                     <ul>
-                        <li class="iconItem settingsIcon"><a href="#">Instellingen</a></li>
+                        <li class="iconItem settingsIcon">
+                            {{ link_to('client/settings', 'Instellingen')}}
+                        </li>
                     </ul>
                 </nav>
             </aside>

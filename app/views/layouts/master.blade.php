@@ -52,6 +52,8 @@
 	</div>
 
 	{{ HTML::script('scripts/jquery-2.0.3.min.js') }}
+
+	@yield('scripts')
 	
 </body>
 </html>

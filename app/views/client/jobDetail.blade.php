@@ -28,7 +28,7 @@
 	            </ul>
 
 	            <p class="marginTop centerText">{{ $job->participantsText }}</p>
-				<a class="btn" href="#">Meedoen</a>
+				{{ link_to_route('client.jobs.join', 'Meedoen', array($job->id), array('class' => 'btn')) }}
 	        </aside>
 	        <div class="information borderRight">
 	            <p>

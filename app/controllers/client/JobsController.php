@@ -23,7 +23,7 @@ class JobsController extends \BaseController {
 	{
 		$job = \Job::find($id);
 
-        return \View::make('client.join')->with('join', $job);
+        return \View::make('client.join')->with('job', $job);
 	}
 
 	/**

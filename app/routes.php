@@ -20,7 +20,7 @@ Route::group(array('prefix' => 'client'), function()
 		Route::get('myjobs', 'controllers\client\HomeController@getMyJobs');
 
 		Route::get('jobs/{id}', array('as' => 'client.jobs.show', 'uses' => 'controllers\client\JobsController@show'));
-		Route::get('jobs/{id}', array('as' => 'client.jobs.join', 'uses' => 'controllers\client\JobsController@join'));
+		Route::get('jobs/{id}/join', array('as' => 'client.jobs.join', 'uses' => 'controllers\client\JobsController@join'));
 	});
 
 	Route::get('login', 'controllers\client\AuthController@getLogin');

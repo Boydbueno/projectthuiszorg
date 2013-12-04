@@ -1,4 +1,4 @@
-@extends('layouts.master')	
+@extends('layouts.master')
 
 @section('title')
 	Rework - {{ $job->title }}
@@ -6,7 +6,7 @@
 
 @section('content')
 	<nav class='block marginTop mainTitle'>
-		<a href="../clients">Terug naar het overzicht</a>
+		{{ link_to_route('client', 'Terug naar het overzicht') }}
 	</nav>
 
 	<section class='job'>
@@ -24,20 +24,21 @@
 	                <li class="iconItem dateIcon bold">Nog 5 dagen!</li>
 	                <li class="iconItem timeIcon">Starten</li>
 	                <li class="iconItem moneyIcon">€ {{ $job->payment }}</li>
-	                <li class="iconItem companyIcon">{{ $job->company->company_name }}</li>
+	                <li class="iconItem companyIcon">{{ $job->company->name }}</li>
 	            </ul>
 
-	            <p class="marginTop centerText">Al 15 mensen willen meewerken, doe ook mee!</p>
+	            <p class="marginTop centerText">{{ $job->participantsText }}</p>
 				<a class="btn" href="#">Meedoen</a>
 	        </aside>
 	        <div class="information borderRight">
-	            <p>{{ $job->description }}</p>
+	            <p>
+	            	{{ $job->long_description ? $job->long_description : $job->short_description }}
+	            </p>
 	        </div>
-
-			<div class="floatFix" class="slider">
+	        <div class="floatFix" class="slider">
 			    <input type="text" id="range_1" />
 			</div>
-
+			<script type="text/javascript"> var jobs = {{ $job }} console.log(jobs)</script>
 	    </section>
 	</section>
 </article>

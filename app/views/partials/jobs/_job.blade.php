@@ -10,10 +10,10 @@
         <aside class="details floatRight">
             <ul>
                 <li class="iconItem dateIcon bold">
-                    @if($job->daysLeft === 0)
+                    @if($job->daysLeft() === 0)
                         Alleen vandaag nog!
                     @else
-                        Nog {{ $job->daysLeft }} {{ $job->daysLeft === 1 ? "dag" : "dagen" }}!
+                        Nog {{ $job->daysLeft() }} {{ $job->daysLeft()  === 1 ? "dag" : "dagen" }}!
                     @endif
                 </li>
                 <li class="iconItem timeIcon">Starten</li>

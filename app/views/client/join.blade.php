@@ -21,7 +21,7 @@
 	    <section class="description floatFix">
 	        <aside class="details floatRight">
 	            <ul>
-	                <li class="iconItem dateIcon bold">Nog 5 dagen!</li>
+	                <li class="iconItem dateIcon bold">Nog {{ $job->daysLeft() }} dagen!</li>
 	                <li class="iconItem timeIcon">Starten</li>
 	                <li class="iconItem moneyIcon">€ {{ $job->payment }}</li>
 	                <li class="iconItem companyIcon">{{ $job->company->company_name }}</li>

@@ -13,7 +13,6 @@ class HomeController extends \BaseController {
 		$jobs = \Job::orderBy('start_date')->get();
 
 		foreach($jobs as $job) {
-			$job->daysLeft = Carbon::now()->diffInDays($job->start_date);
 			$job->totalAmount = 0;
 
 			$jobusers = \JobUser::where('job_id','=',$job->id)->get();

@@ -27,12 +27,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public static $rules = array(
 		'email' => 'required|unique:users|email',
 		'password' => 'required|min:6|confirmed',
-		'first_name' => 'required',
-		'last_name' => 'required',
-		'street_name' => 'required',
-		'house_number' => 'required|alpha_num',
-		'zipcode' => 'required|alpha_num',
-		'city' => 'required'
+		'house_number' => 'alpha_num',
+		'zipcode' => 'alpha_num'
 	);
 
 	public function jobs()
@@ -69,5 +65,33 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	{
 		return $this->email;
 	}
+
+	/**
+	 * Get the fist name for the user
+	 *
+	 * @return string
+	 */
+	public function getFirstNameAttribute($value)
+    {
+    	if($value === ""){
+    		return "Rework";
+    	}else{
+    		return ucfirst($value);
+    	}
+    }
+
+    /**
+	 * Get the fist name for the user
+	 *
+	 * @return string
+	 */
+	public function getLastNameAttribute($value)
+    {
+    	if($value === ""){
+    		return "Gebruiker";
+    	}else{
+    		return ucfirst($value);
+    	}
+    }
 
 }

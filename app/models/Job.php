@@ -32,4 +32,17 @@ class Job extends Eloquent {
 		return Carbon::now()->diffInDays($this->start_date);
 	}
 
+	public function percentageComplete()
+	{
+		$totalAmount = 0;
+
+		$jobusers = \JobUser::where('job_id','=',$this->id)->get();
+
+		foreach($jobusers as $jobuser){
+			$totalAmount += $jobuser->amount;
+		}
+
+		return ($totalAmount / $this->amount) * 100;
+	}
+
 }

@@ -1,8 +1,10 @@
 <?php
 
+use \Carbon\Carbon;
+
 class Job extends Eloquent {
+
 	protected $guarded = array();
-	
 	public static $rules = array();
 
 	public function company()
@@ -24,4 +26,10 @@ class Job extends Eloquent {
 	{
 	    return array('created_at', 'updated_at', 'start_date', 'end_date');
 	}
+
+	public function daysLeft()
+	{
+		return Carbon::now()->diffInDays($this->start_date);
+	}
+
 }

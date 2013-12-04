@@ -14,6 +14,11 @@ li {
   list-style: none;
 }
 
+/* line 14, ../sass/partials/_reset.scss */
+a img {
+  border: none;
+}
+
 /* line 1, ../sass/partials/_default.scss */
 body {
   margin: 0;

@@ -44,7 +44,25 @@
 	        <div class="floatFix" class="slider">
 			    <input type="text" id="range_1" />
 			</div>
-			<script type="text/javascript"> var jobs = {{ $job }} console.log(jobs)</script>
+			<script type="text/javascript"> var job = {{ $job }}; console.log(job)</script>
+			<script>
+			    $(document).ready(function(){
+
+			        $("#range_1").ionRangeSlider({
+			            min: 0,
+			            max: job.amount,
+			            from: job.amount/2,
+			            to: 0,
+			            type: 'single',
+			            step: 2,
+			            postfix: "m2",
+			            prefix: "€",
+			            prettify: true,
+			            hasGrid: true
+			        });
+
+			    });
+			</script>
 	    </section>
 	</section>
 </article>

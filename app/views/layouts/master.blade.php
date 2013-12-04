@@ -7,7 +7,7 @@
     {{ HTML::style('css/vendor/unsemantic/unsemantic-grid-responsive-tablet.css')}}
     {{ HTML::style('css/ion.rangeSlider.css') }}
     {{ HTML::style('css/ion.rangeSlider.skinNice.css') }}
-	
+    {{ HTML::script('scripts/jquery-2.0.3.min.js') }}	
 </head>
 <body>
 	
@@ -52,29 +52,7 @@
 	    </footer>
 
 	</div>
-
-	{{ HTML::script('scripts/jquery-2.0.3.min.js') }}
 	{{ HTML::script('scripts/modernizr.js') }}
 	{{ HTML::script('scripts/ion.rangeSlider.js') }}
-
-	<script>
-	    $(document).ready(function(){
-
-	        $("#range_1").ionRangeSlider({
-	            min: 0,
-	            max: 150,
-	            from: 0,
-	            to: 70,
-	            type: 'double',
-	            step: 10,
-	            postfix: "m2",
-	            prefix: "€",
-	            prettify: true,
-	            hasGrid: true
-	        });
-
-	    });
-	</script>
-	
 </body>
 </html>

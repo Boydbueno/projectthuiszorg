@@ -9,7 +9,7 @@
     <section class="block marginTop floatFix">
     
         <header class="mainTitle">
-            <h1>Welkom terug, {{ Auth::user()->first_name }}!</h1>
+            <h1>Welkom terug, {{{ Auth::user()->first_name }}} {{{ Auth::user()->last_name }}}!</h1>
         </header>
 
         <div class="progressSmall">
@@ -19,9 +19,11 @@
             <aside class="floatRight quickMenu">
                 <nav>
                     <!-- TODO: Place 'mijn opdrachten' link in ul -->
-                    {{ link_to('client/myjobs', 'Mijn Opdrachten', array('class' => 'btn btnWorkIcon'))}}
+                    {{ link_to('client/jobs', 'Mijn Opdrachten', array('class' => 'btn btnWorkIcon'))}}
                     <ul>
-                        <li class="iconItem settingsIcon"><a href="#">Instellingen</a></li>
+                        <li class="iconItem settingsIcon">
+                            {{ link_to('client/settings', 'Instellingen')}}
+                        </li>
                     </ul>
                 </nav>
             </aside>
@@ -35,7 +37,7 @@
     </section> <!-- End Welcome -->
 
     <section class="block marginTop mainTitle">
-        {{ Form::select('jobcategory', $jobcategories) }}
+        {{ Form::select('jobcategory', $jobcategories, null, array('id' => 'jobcategoryDropdown')) }}
         <select>
             <option value="">Status</option>
             <option value="fysiek">Starten</option>
@@ -51,13 +53,16 @@
         </select>
     </section>
 
-    <section class="jobs">
+    <section class="jobs" id="jobs">
 
         @foreach ($jobs as $job)
             @include('partials.jobs._job', array('job' => $job))
         @endforeach
 
     </section> <!-- End Jobs -->
+
+    <!-- Todo: See if we can combine this with the php partial -->
+    @include('partials.handlebars._job')
 
     <section class="block marginTop">
 
@@ -91,4 +96,30 @@
         </section>
 
     </section>
+@stop
+
+@section('scripts')
+    {{ HTML::script('scripts/vendor/handlebars-v1.1.2.js') }}
+
+    <script>
+        // Todo: We need some javascript layer to wrap all javascript into or something..
+        // Probably some namespacing stuff
+
+        // Todo: Place in external js file
+        $("#jobcategoryDropdown").on('change', function() { // Todo: Abstract away in named function
+            var jobcategoryId = $(this).val();
+            
+            // Todo: This url should not be hardcoded!!
+            $.getJSON('http://projectthuiszorg.dev/api/jobcategories/' + jobcategoryId + '/jobs', function(data) { // Todo: Abstract away in named func
+
+                var source   = $("#jobsTemplate").html();
+                var template = Handlebars.compile(source);
+
+                $("#jobs").html(template({jobs: data}));
+
+            });
+
+        });
+
+    </script>
 @stop

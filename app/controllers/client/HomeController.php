@@ -12,20 +12,6 @@ class HomeController extends \BaseController {
 		
 		$jobs = \Job::orderBy('start_date')->get();
 
-		foreach($jobs as $job) {
-			$job->daysLeft = Carbon::now()->diffInDays($job->start_date);
-			$job->totalAmount = 0;
-
-			$jobusers = \JobUser::where('job_id','=',$job->id)->get();
-
-			foreach($jobusers as $jobuser){
-				$job->totalAmount += $jobuser->amount;
-			}
-
-			$job->percentageComplete = ($job->totalAmount / $job->amount) * 100;
-
-		}
-
 		return \View::make('client.index')->with('jobs', $jobs)->with('jobcategories', $jobcategories);
 	}
 

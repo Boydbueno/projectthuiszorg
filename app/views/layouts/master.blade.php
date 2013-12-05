@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>@yield('title', 'Rework')</title>
-    {{ HTML::style('css/base.css') }}
     {{ HTML::style('css/vendor/unsemantic/unsemantic-grid-responsive-tablet.css')}}
+    {{ HTML::style('css/base.css') }}
     {{ HTML::style('css/ion.rangeSlider.css') }}
     {{ HTML::style('css/ion.rangeSlider.skinNice.css') }}
     {{ HTML::script('scripts/jquery-2.0.3.min.js') }}	

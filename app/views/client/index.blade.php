@@ -50,7 +50,7 @@
                 <aside class="floatRight quickMenu">
                     <nav>
                         <!-- TODO: Place 'mijn opdrachten' link in ul -->
-                        {{ link_to('client/setting', 'Instellingen', array('class' => 'btn messageBoxBtn btnSettingsIcon'))}}
+                        {{ link_to('client/settings', 'Instellingen', array('class' => 'btn messageBoxBtn btnSettingsIcon'))}}
                     </nav>
                 </aside>
 

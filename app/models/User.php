@@ -94,4 +94,27 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     	}
     }
 
+    /**
+     * Function to check which personal details aren't set
+     *
+     * @return array
+     */
+    public function checkPersonalDetails(){
+
+    	$emptyFields = [];
+
+    	//Loop through the attributes of this user
+    	foreach($this->attributes as $key => $value) {
+
+    		//If a value is not filled in, add it to the array
+    		if($value === ""){
+    			array_push($emptyFields, $key);
+    	    }
+
+    	}
+
+    	return $emptyFields;
+
+    }
+
 }

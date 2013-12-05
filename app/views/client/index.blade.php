@@ -6,35 +6,62 @@
 
 @section('content')
 
-    <section class="block marginTop floatFix">
-    
-        <header class="mainTitle">
-            <h1>Welkom terug, {{{ Auth::user()->first_name }}} {{{ Auth::user()->last_name }}}!</h1>
-        </header>
+    @if(Session::get('notice'))
 
-        <div class="progressSmall">
-        </div>
+        <section class="block marginTop floatFix">
+        
+            <header class="mainTitle">
+                <h1>Welkom terug, {{{ Auth::user()->first_name }}} {{{ Auth::user()->last_name }}}!</h1>
+            </header>
 
-        <section class="description">
-            <aside class="floatRight quickMenu">
-                <nav>
-                    <!-- TODO: Place 'mijn opdrachten' link in ul -->
-                    {{ link_to('client/jobs', 'Mijn Opdrachten', array('class' => 'btn btnWorkIcon'))}}
-                    <ul>
-                        <li class="iconItem settingsIcon">
-                            {{ link_to('client/settings', 'Instellingen')}}
-                        </li>
-                    </ul>
-                </nav>
-            </aside>
+            <div class="progressSmall"></div>
 
-            <p class="information borderRight">
-                Goed om u terug te zien, er staan weer een hoop nieuwe opdrachten op u te  wachten, in de balk hier naast kunt u de status van uw huidige opdrachten bekijken of zoek een nieuwe opdracht uit om samen aan te werken, alles is mogelijk!
-                <span>{{ Session::get('notice') }}</span>
-            </p>
+            <section class="description">
+                <aside class="floatRight quickMenu">
+                    <nav>
+                        <!-- TODO: Place 'mijn opdrachten' link in ul -->
+                        {{ link_to('client/jobs', 'Mijn Opdrachten', array('class' => 'btn messageBoxBtn btnWorkIcon'))}}
+                        <ul>
+                            <li class="iconItem settingsIcon">
+                                {{ link_to('client/settings', 'Instellingen')}}
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
+
+                <p class="information borderRight">
+                    Goed om u terug te zien, er staan weer een hoop nieuwe opdrachten op u te  wachten, in de balk hier naast kunt u de status van uw huidige opdrachten bekijken of zoek een nieuwe opdracht uit om samen aan te werken, alles is mogelijk!
+                </p>
+            </section>
+
+        </section> <!-- End Welcome -->
+
+    @elseif(count(Auth::user()->checkPersonalDetails()) !== 0)
+
+        <section class="block marginTop floatFix">
+
+            <header class="mainTitle">
+                <h1>Er ontbreken gegevens!</h1>
+            </header>
+
+            <div class="progressSmall"></div>
+
+            <section class="description">
+                <aside class="floatRight quickMenu">
+                    <nav>
+                        <!-- TODO: Place 'mijn opdrachten' link in ul -->
+                        {{ link_to('client/setting', 'Instellingen', array('class' => 'btn messageBoxBtn btnSettingsIcon'))}}
+                    </nav>
+                </aside>
+
+                <p class="information borderRight">
+                    U heeft nog niet al uw persoonlijke gegevens ingevuld. Er ontbreken nog {{ count(Auth::user()->checkPersonalDetails()) }} velden! Dit is nodig om mee te kunnen doen aan een opdracht. Via uw instellingen kunnen de persoonlijke gegevens worden ingevuld of veranderd!
+                </p>
+            </section>
+
         </section>
 
-    </section> <!-- End Welcome -->
+    @endif
 
     <section class="block marginTop mainTitle">
         {{ Form::select('jobcategory', $jobcategories, null, array('id' => 'jobcategoryDropdown')) }}

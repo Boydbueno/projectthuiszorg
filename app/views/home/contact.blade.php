@@ -11,8 +11,8 @@
 	<div class="posRelative">
 		<div class="imageOverlay floatFix">
 			<div class="block grid-60">
-				<h1 class="boxTitle">Details</h1>
-				<p class="regularPadding">Wij zijn een nieuw initiatief genaamd Rework. Ons doel is om ouderen weer aan werk te helpen en het liefst in de branche waar ze vroeger werkzaam in waren. We willen dat de keuze en tijdsduur van een opdracht volledig bepaald kan worden door u! Geen verplichtingen en geen valkuilen.</p>
+				<h1 class="boxTitle">Hallo!</h1>
+				<p class="regularPadding">Heeft u een vraag, probleem of suggestie over Rework. Wij staan altijd open voor feedback en helpen u graag met problemen. Ook staat er altijd een werknemer voor u klaar mocht u problemen hebben met het aanmaken van een account of het inloggen op de website! We zullen zo snel mogelijk reageren na het ontvangen van uw email!</p>
 			</div>
 			<div class="block grid-40 contactForm">
 				<header class="boxTitle">

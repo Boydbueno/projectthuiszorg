@@ -84,24 +84,30 @@ $lang-reverse: right !default
 //----------------------------------------------------------------------------------------------------
 
 %grid-columns-all
+  +box-sizing(border-box)
 
-  @if $unsemantic-ie7-support
-    // [1] Remove padding, since IE7 doesn't
-    //     support "box-sizing: border-box".
+  // Set if gutter is non-zero
+  @if $gutter-half != 0
+    padding-left: $gutter-half
+    padding-right: $gutter-half
 
-    /* <IE7> */
-    *padding-left: 0
-    *padding-right: 0
-    /* </IE7> */
+    @if $unsemantic-ie7-support
+      // [1] Remove padding, since IE7 doesn't
+      //     support "box-sizing: border-box".
 
-    //
-    // [2] Fake what would normally be padding,
-    //     for browsers that support box-sizing.
-    & > *
       /* <IE7> */
-      *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$gutter-half}")
-      *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$gutter-half}")
+      *padding-left: 0
+      *padding-right: 0
       /* </IE7> */
+
+      //
+      // [2] Fake what would normally be padding,
+      //     for browsers that support box-sizing.
+      & > *
+        /* <IE7> */
+        *margin-left: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$gutter-half}")
+        *margin-right: expression((!this.className.match(/grid-[1-9]/) && this.currentStyle.display === "block" && this.currentStyle.width === "auto") && "#{$gutter-half}")
+        /* </IE7> */
 
 // `Push & Pull, to rearrange column order (for potential "SEO").
 //----------------------------------------------------------------------------------------------------

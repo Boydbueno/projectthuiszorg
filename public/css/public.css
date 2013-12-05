@@ -370,13 +370,7 @@ h1 {
   padding: 0 0 80px 45px;
 }
 
-/* line 93, ../sass/public.scss */
-.description .grid-66, .description .grid-33 {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-/* line 99, ../sass/public.scss */
+/* line 94, ../sass/public.scss */
 .footer {
   padding: 30px 30px 30px 20px;
   position: absolute;

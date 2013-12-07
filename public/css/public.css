@@ -200,8 +200,7 @@ a:hover {
 }
 
 /* line 47, ../sass/partials/_buttons.scss */
-.btnWorkIcon {
-  background-image: url("../images/icons/work_icon.png");
+.messageBoxBtn {
   background-repeat: no-repeat;
   background-position: 10px 9px;
   padding-left: 40px;
@@ -209,12 +208,22 @@ a:hover {
   width: 180px;
 }
 
-/* line 56, ../sass/partials/_buttons.scss */
+/* line 55, ../sass/partials/_buttons.scss */
+.btnWorkIcon {
+  background-image: url("../images/icons/work_icon.png");
+}
+
+/* line 59, ../sass/partials/_buttons.scss */
+.btnSettingsIcon {
+  background-image: url("../images/icons/settings_icon_white.png");
+}
+
+/* line 63, ../sass/partials/_buttons.scss */
 .jobs .btn {
   margin: 15px 0 35px 35px;
 }
 
-/* line 60, ../sass/partials/_buttons.scss */
+/* line 67, ../sass/partials/_buttons.scss */
 .job .btn {
   margin: 15px 0 35px 20px;
 }

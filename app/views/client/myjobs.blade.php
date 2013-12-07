@@ -8,7 +8,7 @@
 
     <section class="block marginTop floatFix">
         <header class="mainTitle">
-            <h1>Welkom terug, {{{ Auth::user()->first_name }}}!</h1>
+            <h1>Uw opdrachten!</h1>
         </header>
 
         <div class="progressSmall">
@@ -17,7 +17,7 @@
         <section class="description">
             <aside class="floatRight quickMenu">
                 <nav>
-                    {{ link_to('client/jobs', 'Mijn Opdrachten', array('class' => 'btn btnWorkIcon')) }}
+                    {{ link_to('client/jobs', 'Mijn Opdrachten', array('class' => 'btn messageBoxBtn btnWorkIcon')) }}
                     <ul>
                         <li class="iconItem settingsIcon">
                             {{ link_to('client/settings', 'Instellingen')}}
@@ -27,8 +27,7 @@
             </aside>
 
             <p class="information borderRight">
-                Goed om u terug te zien, er staan weer een hoop nieuwe opdrachten op u te  wachten, in de balk hier naast kunt u de status van uw huidige opdrachten bekijken of zoek een nieuwe opdracht uit om samen aan te werken, alles is mogelijk!
-                <span>{{ Session::get('notice') }}</span>
+                Hier staan al uw huidige opdrachten, ook is het mogelijk aan te geven hoeveel er al gewerkt is aan een opdracht. Het is belangrijk om opdrachen op tijd af te hebben, vandaar dat wij ze alvast op datum hebben gesorteerd voor u. Succes!</span>
             </p>
         </section>
 

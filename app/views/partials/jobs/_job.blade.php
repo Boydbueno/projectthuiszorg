@@ -1,26 +1,22 @@
-<article class="block marginTop floatFix {{ camel_case($job->jobcategory->label) }}">
+<article class="block marginTop floatFix {{ $job->jobcategory_classname }}">
     <header class="mainTitle floatFix">
         <h1 class="floatLeft">{{ $job->title }}</h1>
         <span class="subTitle floatRight">{{ $job->jobcategory->label }}</span>
     </header>
     <div class="progress">
-        <div class="progressBar" style="width: {{ $job->percentageComplete() }}%"></div>
+        <div class="progressBar" style="width: {{ $job->percentage_complete }}%"></div>
     </div>
     <section class="description">
         <aside class="details floatRight">
             <ul>
                 <li class="iconItem dateIcon bold">
-                    @if($job->daysLeft() === 0)
-                        Alleen vandaag nog!
-                    @else
-                        Nog {{ $job->daysLeft() }} {{ $job->daysLeft()  === 1 ? "dag" : "dagen" }}!
-                    @endif
+                    {{ $job->days_left_phrase }}
                 </li>
                 <li class="iconItem timeIcon">Starten</li>
-                <li class="iconItem moneyIcon">€ {{ number_format($job->payment, 2, ",", ".") }}</li>
+                <li class="iconItem moneyIcon">€ {{ $job->formatted_payment }}</li>
             </ul>
 
-            {{ link_to_route('client.jobs.show', 'Bekijk Opdracht', array($job->id), array('class' => 'btn')) }}
+            {{ $job->link_to_details }}
         </aside>
         <div class="information borderRight">
             <p>{{ $job->short_description }}</p>

@@ -9,13 +9,10 @@
     <section class="description">
         <aside class="details floatRight">
             <ul>
-                <li class="iconItem dateIcon bold">
-                    {{ $job->days_left_phrase }}
-                </li>
+                <li class="iconItem dateIcon bold">{{ $job->days_left_phrase }}</li>
                 <li class="iconItem timeIcon">Starten</li>
                 <li class="iconItem moneyIcon">€ {{ $job->formatted_payment }}</li>
             </ul>
-
             {{ $job->link_to_details }}
         </aside>
         <div class="information borderRight">

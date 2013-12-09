@@ -52,8 +52,8 @@
 @section('scripts')
 	{{ HTML::script('scripts/ion.rangeSlider.js') }}
 	<script>
+		var job = {{ $job }};
 	    $(document).ready(function(){
-			var job = {{ $job }};
 
 	        $("#range_1").ionRangeSlider({
 	            min: 0,

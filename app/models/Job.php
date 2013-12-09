@@ -5,6 +5,15 @@ use \Carbon\Carbon;
 class Job extends Eloquent {
 
 	protected $guarded = array();
+
+	protected $appends = array(
+		'percentage_complete',
+		'days_left_phrase',
+		'formatted_payment',
+		'jobcategory_classname',
+		'link_to_details'
+	);
+	
 	public static $rules = array();
 
 	public function company()
@@ -19,7 +28,7 @@ class Job extends Eloquent {
 
 	public function users()
 	{
-		return $this->belongsToMany('User')->withPivot('amount', 'amount');
+		return $this->belongsToMany('User')->withPivot('amount');
 	}
 
 	public function getDates()
@@ -27,12 +36,18 @@ class Job extends Eloquent {
 	    return array('created_at', 'updated_at', 'start_date', 'end_date');
 	}
 
-	public function daysLeft()
+	/*
+	|---------------------------------------------------------------------------
+	| Getters and setters
+	|---------------------------------------------------------------------------
+	*/
+
+	public function getDaysLeftAttribute()
 	{
 		return Carbon::now()->diffInDays($this->start_date);
 	}
 
-	public function percentageComplete()
+	public function getPercentageCompleteAttribute()
 	{
 		$totalAmount = 0;
 
@@ -46,6 +61,29 @@ class Job extends Eloquent {
 
 		//Return the percentage
 		return ($totalAmount / $this->amount) * 100;
+	}
+
+	public function getDaysLeftPhraseAttribute()
+	{
+		if($this->daysLeft === 0)
+            return "Alleen vandaag nog!";
+
+        return "Nog {$this->daysLeft} " . ($this->daysLeft  === 1 ? "dag" : "dagen") . "!";
+	}
+
+	public function getFormattedPaymentAttribute()
+	{
+		return number_format($this->payment, 2, ",", ".");
+	}
+
+	public function getJobcategoryClassnameAttribute()
+	{
+		return camel_case($this->jobcategory->label);
+	}
+
+	public function getLinkToDetailsAttribute()
+	{
+		return link_to_route('client.jobs.show', 'Bekijk Opdracht', array($this->id), array('class' => 'btn'));
 	}
 
 }

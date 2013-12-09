@@ -57,6 +57,10 @@
 
 	</div>
     {{ HTML::script('scripts/vendor/jquery-1.10.2.min.js') }}	
+<<<<<<< HEAD
+=======
+	{{ HTML::script('scripts/ion.rangeSlider.js') }}
+>>>>>>> origin/master
 	@yield('scripts')
 </body>
 </html>

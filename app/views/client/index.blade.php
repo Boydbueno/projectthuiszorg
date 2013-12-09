@@ -136,8 +136,16 @@
         $("#jobcategoryDropdown").on('change', function() { // Todo: Abstract away in named function
             var jobcategoryId = $(this).val();
             
+            var url;
+
             // Todo: This url should not be hardcoded!!
-            $.getJSON('http://projectthuiszorg.dev/api/jobcategories/' + jobcategoryId + '/jobs', function(data) { // Todo: Abstract away in named func
+            if (jobcategoryId === "") {
+                url = "http://projectthuiszorg.dev/api/jobs"; 
+            } else {
+                url = 'http://projectthuiszorg.dev/api/jobcategories/' + jobcategoryId + '/jobs';
+            }
+
+            $.getJSON(url, function(data) { // Todo: Abstract away in named func
 
                 var source   = $("#jobsTemplate").html();
                 var template = Handlebars.compile(source);

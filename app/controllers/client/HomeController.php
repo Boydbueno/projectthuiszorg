@@ -7,7 +7,7 @@ class HomeController extends \BaseController {
 	public function index()
 	{
 		// Jobcategories in id => label pairs, for the dropdown in view
-		$dropdownPlaceholder = array('' => 'Category');
+		$dropdownPlaceholder = array('' => 'Categorie');
 		$jobcategories = $dropdownPlaceholder + \Jobcategory::lists('label', 'id');
 		
 		$jobs = \Job::orderBy('start_date')->get();

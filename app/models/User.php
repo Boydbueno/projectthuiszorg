@@ -12,6 +12,11 @@ class User extends ConfideUser{
 	 */
 	protected $hidden = array('password');
 
+	public static $rules = array(
+        'email' => 'required|email',
+        'password' => 'required|between:4,11|confirmed',
+    );
+
 	//User have a role!
 	use HasRole;
 

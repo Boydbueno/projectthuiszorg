@@ -264,20 +264,42 @@ textarea {
 }
 
 /* line 31, ../sass/partials/_form.scss */
-.contactForm ul li {
+fieldset {
+  border: none;
+}
+
+/* line 35, ../sass/partials/_form.scss */
+.contactForm form {
+  padding: 0 45px 55px;
+}
+
+/* line 39, ../sass/partials/_form.scss */
+.contactForm .form-group {
   overflow: hidden;
   margin-bottom: 15px;
 }
 
-/* line 36, ../sass/partials/_form.scss */
+/* line 44, ../sass/partials/_form.scss */
 .contactForm label {
   display: block;
   margin-bottom: 15px;
 }
 
-/* line 41, ../sass/partials/_form.scss */
+/* line 49, ../sass/partials/_form.scss */
 .contactForm input {
   width: 100%;
+}
+
+/* line 53, ../sass/partials/_form.scss */
+.contactForm .btn {
+  display: block;
+  margin: 0 auto;
+}
+
+/* line 58, ../sass/partials/_form.scss */
+#remember {
+  width: auto;
+  margin-left: 10px;
 }
 
 /* line 11, ../sass/base.scss */

@@ -23,8 +23,6 @@
 				    <h1>Inloggen</h1>
 				</header>
 				{{ Confide::makeLoginForm()->render() }}
-
-				@include('partials._errors')
 			</div>
 		</div>
 	</div>

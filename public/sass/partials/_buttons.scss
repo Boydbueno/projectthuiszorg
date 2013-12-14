@@ -44,13 +44,20 @@
 	}
 }
 
-.btnWorkIcon{
-	background-image: url('../images/icons/work_icon.png');
+.messageBoxBtn{
 	background-repeat: no-repeat;
 	background-position: 10px 9px;
 	padding-left:40px;
 	margin-left:20px;
 	width:180px;
+}
+
+.btnWorkIcon{
+	background-image: url('../images/icons/work_icon.png');
+}
+
+.btnSettingsIcon{
+	background-image: url('../images/icons/settings_icon_white.png');
 }
 
 .jobs .btn{

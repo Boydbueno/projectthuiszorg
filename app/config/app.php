@@ -114,6 +114,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'VTalbot\Mailgun\MailgunServiceProvider',
+		'Conarwelsh\MustacheL4\MustacheL4ServiceProvider',
 
 	),
 

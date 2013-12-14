@@ -17,7 +17,7 @@
         <section class="description">
             <aside class="floatRight quickMenu">
                 <nav>
-                    {{ link_to('client/jobs', 'Mijn Opdrachten', array('class' => 'btn btnWorkIcon')) }}
+                    {{ link_to('client/jobs', 'Mijn Opdrachten', array('class' => 'btn messageBoxBtn btnWorkIcon')) }}
                     <ul>
                         <li class="iconItem settingsIcon">
                             {{ link_to('client/settings', 'Instellingen')}}
@@ -27,7 +27,7 @@
             </aside>
 
             <p class="information borderRight">
-                Hieronder vind u een overzicht van alle opdrachten waar u aan bijdraagt. Het is belangrijk om opdrachten op tijd af te hebben, vandaar dat we ze alvast voor u gesorteerd hebben op opleverdatum!
+                Hier staan al uw huidige opdrachten, ook is het mogelijk aan te geven hoeveel er al gewerkt is aan een opdracht. Het is belangrijk om opdrachen op tijd af te hebben, vandaar dat wij ze alvast op datum hebben gesorteerd voor u. Succes!
             </p>
         </section>
 

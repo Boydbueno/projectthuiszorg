@@ -16,7 +16,7 @@
 		<div class="imageOverlay floatFix">
 			<div class="block grid-60">
 				<h1 class="boxTitle">Welkom bij het team!</h1>
-				<p class="regularPadding">Wij zijn een nieuw initiatief genaamd Rework. Ons doel is om ouderen weer aan werk te helpen en het liefst in de branche waar ze vroeger werkzaam in waren. We willen dat de keuze en tijdsduur van een opdracht volledig bepaald kan worden door u! Geen verplichtingen en geen valkuilen.</p>
+				<p class="regularPadding">Registreren bij Rework is heel gemakkelijk! Vul uw email adres in en kies een veilig wachtwoord. Alle andere informatie, zoals uw naam en adres gegevens, kunt u altijd op een later moment aanvullen! Op deze manier kunt u snel aan de slag met Rework!</p>
 			</div>
 			<div class="block grid-40 contactForm">
 				<header class="boxTitle">

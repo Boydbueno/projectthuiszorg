@@ -22,27 +22,7 @@
 				<header class="boxTitle">
 				    <h1>Inloggen</h1>
 				</header>
-				{{ Form::open(array('class' => 'regularPadding')) }}
-					<ul>
-						<li class="form-group">
-							{{ Form::label('email', 'Email:') }}
-							{{ Form::text('email') }}
-						</li>
-
-						<li class="form-group">
-							{{ Form::label('password', 'Password:') }}
-							{{ Form::password('password') }}
-						</li>
-
-						<li class="form-group">
-							{{ Form::submit('Login', array('class' => 'btn btn-primary')) }}
-							{{ Session::get('notice') }}
-						</li>
-						<li>
-							<a href='/client/register'>Maak een account!</a>
-						</li>
-					</ul>
-				{{ Form::close() }}
+				{{ Confide::makeLoginForm()->render() }}
 
 				@include('partials._errors')
 			</div>

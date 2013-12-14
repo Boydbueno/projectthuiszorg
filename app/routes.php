@@ -73,7 +73,13 @@ Route::group(array('prefix' => 'api'), function()
 		Route::get('{id}/{relationship}', 'controllers\api\JobcategoriesController@relationship');
 	});
 
-});// Confide routes
+});
+
+/*
+|---------------------------------------------------------------------------
+| Confidence Routes
+|---------------------------------------------------------------------------
+*/
 Route::get( 'user/create',                 'UserController@create');
 Route::post('user',                        'UserController@store');
 Route::get( 'user/login',                  'UserController@login');

@@ -33,6 +33,9 @@ App::after(function($request, $response)
 |
 */
 
+// If a user is a member of `Administrator`, `Client` or both they will have access.
+Entrust::routeNeedsRole( 'client/advanced*', array('Administrator','Client'), null, false );
+
 Route::filter('auth.client', function()
 {
 	if (Auth::guest()) return Redirect::guest('client/login');

@@ -6,6 +6,8 @@
 	"require": {
 		"laravel/framework": "4.0.*",
 		"conarwelsh/mustache-l4": "dev-master",
+		"zizaco/confide": "2.0.x",
+		"zizaco/entrust": "dev-master",
 		"vtalbot/mailgun": "1.*"
 	},
 	"autoload": {

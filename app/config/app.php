@@ -115,6 +115,8 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'VTalbot\Mailgun\MailgunServiceProvider',
 		'Conarwelsh\MustacheL4\MustacheL4ServiceProvider',
+		'Zizaco\Confide\ConfideServiceProvider',
+		'Zizaco\Entrust\EntrustServiceProvider',
 
 	),
 
@@ -180,7 +182,9 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
-		'Mailgun'		  => 'VTalbot\Mailgun\Facades\Mailgun'
+		'Mailgun'		  => 'VTalbot\Mailgun\Facades\Mailgun',
+		'Confide'    	  => 'Zizaco\Confide\ConfideFacade',
+		'Entrust'    	  => 'Zizaco\Entrust\EntrustFacade',
 
 	),
 

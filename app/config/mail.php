@@ -28,7 +28,7 @@ return array(
 	|
 	*/
 
-	'host' => 'projectthuiszorg.mailgun.org',
+	'host' => 'smtp.mailgun.org',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => "contact@thuiszorg.com", 'name' => "Thuiszorg"),
+	'from' => array('address' => "rework@sandbox8069.mailgun.org", 'name' => "Rework"),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return array(
 	|
 	*/
 
-	'username' => null,
+	'username' => "postmaster@sandbox8069.mailgun.org",
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return array(
 	|
 	*/
 
-	'password' => 'key-7kclm8zus9eqdxqcux5iip73eozehd54',
+	'password' => '3k4zpkup0ev6',
 
 	/*
 	|--------------------------------------------------------------------------

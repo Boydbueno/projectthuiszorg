@@ -11,34 +11,25 @@ class UsersTableSeeder extends Seeder {
 
 		$users = array(
 			array(
+				'username' => 'boydbuenodemesquita', 
 				'email' => 'boydbuenodemesquita@gmail.com', 
 				'password' => Hash::make('Welkom01'),
-				'first_name' => 'Boyd',
-				'last_name' => 'Bueno de Mesquita',
-				'street_name' => 'Bloklandstraat',
-				'house_number' => '116',
-				'zipcode' => '3036TR',
-				'city' => 'Rotterdam'
+				'confirmation_code' => '7896eef2ea334fb0e13f496996b17177',
+				'confirmed' => '1'
 			),
 			array(
+				'username' => 'stefanweck', 
 				'email' => 'stefanweck1@gmail.com', 
 				'password' => Hash::make('Welkom01'),
-				'first_name' => 'Stefan',
-				'last_name' => 'Weck',
-				'street_name' => 'Weteringdreef',
-				'house_number' => '10',
-				'zipcode' => '2724HA',
-				'city' => 'Zoetermeer'
+				'confirmation_code' => '7896eef2ea334fb0e13f496996b17177',
+				'confirmed' => '1'
 			),
 			array(
+				'username' => 'kevinvlietstra', 
 				'email' => 'dmagphone@gmail.com', 
 				'password' => Hash::make('Welkom01'),
-				'first_name' => 'Kevin',
-				'last_name' => 'Vlietstra',
-				'street_name' => 'somewhere',
-				'house_number' => '0',
-				'zipcode' => '1111AA',
-				'city' => 'Gorinchem'
+				'confirmation_code' => '7896eef2ea334fb0e13f496996b17177',
+				'confirmed' => '1'
 			)
 		);
 

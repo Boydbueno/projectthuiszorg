@@ -1,15 +1,9 @@
 <?php
 
 use Zizaco\Confide\ConfideUser;
+use Zizaco\Entrust\HasRole;
 
 class User extends ConfideUser{
-
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
-	protected $table = 'users';
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -18,51 +12,12 @@ class User extends ConfideUser{
 	 */
 	protected $hidden = array('password');
 
-	/**
-	 * Rules for validation
-	 * 
-	 * @var array
-	 */
-	public static $rules = array(
-		'email' => 'required|unique:users|email',
-		'password' => 'required|min:6|confirmed',
-		'house_number' => 'alpha_num',
-		'zipcode' => 'alpha_num'
-	);
+	//User have a role!
+	use HasRole;
 
 	public function jobs()
 	{
 		return $this->belongsToMany('Job');
-	}
-
-	/**
-	 * Get the unique identifier for the user.
-	 *
-	 * @return mixed
-	 */
-	public function getAuthIdentifier()
-	{
-		return $this->getKey();
-	}
-
-	/**
-	 * Get the password for the user.
-	 *
-	 * @return string
-	 */
-	public function getAuthPassword()
-	{
-		return $this->password;
-	}
-
-	/**
-	 * Get the e-mail address where password reminders are sent.
-	 *
-	 * @return string
-	 */
-	public function getReminderEmail()
-	{
-		return $this->email;
 	}
 
 	/**

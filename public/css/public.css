@@ -297,6 +297,11 @@ fieldset {
   margin-left: 10px;
 }
 
+/* line 59, ../sass/partials/_form.scss */
+.buttonTopMargin .btn {
+  margin-top: 15px;
+}
+
 /* line 12, ../sass/public.scss */
 html {
   position: relative;

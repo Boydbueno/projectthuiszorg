@@ -20,6 +20,11 @@
 				</header>
 				{{ Form::open(array('url' => '/contact', 'class' => 'regularPadding')) }} 
 					<ul>
+						@if(isset($message))
+							<li>
+								{{ $message }}
+							</li>
+						@endif
 						<li>
 							{{ Form::label('first_name', 'Voornaam:') }}
 							{{ Form::text('first_name') }}

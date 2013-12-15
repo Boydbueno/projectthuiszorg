@@ -4,6 +4,8 @@
         <meta charset="utf-8">
     </head>
     <body>
-        <p>Something cool!</p>
+        <p>{{ $first_name }} {{ $last_name }} heeft het contactformulier ingevuld:</p>
+        <p>"{{ $text }}"</p>
+        <p>Zijn email adres is {{ $email }}</p>
     </body>
 </html>

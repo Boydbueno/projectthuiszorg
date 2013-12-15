@@ -31,14 +31,13 @@ class HomeController extends BaseController {
 
 		if ($validator->fails()) return Redirect::back()->withErrors($validator)->withInput();
 
-		Mailgun::message(function($mail) use($input) {
-		    $mail->from = 'email@email.com';
-		    $mail->to = 'dmagphone+projectthuiszorg@gmail.com';
-		    $mail->subject = 'test';
-		    $mail->text = View::make('emails.contact')->with('body', $input['text']);
-		})->deliver();
+		Mail::send('emails.contact', $input, function($message)
+		{
+			$message->subject('Contact Formulier');
+		    $message->to('stefanweck1@gmail.com', 'Stefan Weck');
+		});
 
-		return "De mail is verzonden!";
+		return View::make('home.contact', array('message' => 'De mail is succesvol verzonden!'));
 
 	}
 

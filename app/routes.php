@@ -25,7 +25,6 @@ Route::group(array('prefix' => 'client'), function()
 	});
 
 	Route::get('login', 'controllers\client\AuthController@getLogin');
-	Route::post('login', 'controllers\client\AuthController@postLogin');
 	Route::get('logout', 'controllers\client\AuthController@getLogout');
 	Route::get('register', 'controllers\client\AuthController@getRegister');
 	Route::post('register', 'controllers\client\AuthController@postRegister');

@@ -30,7 +30,9 @@
 	            </ul>
 
 	            <p class="marginTop centerText">{{ $job->participantsText }}</p>
-				<a class="btn" href="#">Meedoen</a>
+				{{ Form::open(array('url' => 'client/jobs', 'class' => 'regularPadding')) }}
+				{{ Form::submit('Meedoen', array('class' => 'btn btn-primary')) }}
+				{{ Form::close() }}
 	        </aside>
 	        <div class="information borderRight">
 	            <p>

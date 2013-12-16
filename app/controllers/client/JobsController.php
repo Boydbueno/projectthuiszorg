@@ -26,6 +26,11 @@ class JobsController extends \BaseController {
         return \View::make('client.join')->with('job', $job);
 	}
 
+	public function postJoin()
+	{
+		Input::get('amount');
+	}
+
 	/**
 	 * Get the text about previous participants based on amount of users
 	 * @param  int $usersCount

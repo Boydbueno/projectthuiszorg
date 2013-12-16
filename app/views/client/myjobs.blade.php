@@ -33,8 +33,6 @@
 
     </section> <!-- End Welcome -->
 
-    @include('partials._filter')
-
     <section class="jobs">
 
         @foreach ($jobs as $job)

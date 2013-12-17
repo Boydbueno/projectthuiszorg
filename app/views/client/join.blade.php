@@ -5,6 +5,7 @@
 @stop
 
 @section('content')
+{{ Form::open(array('url' => 'client/jobs/{id}/postJoin', 'class' => 'regularPadding')) }}
 	<nav class='block marginTop mainTitle'>
 		{{ link_to_route('client', 'Terug naar het overzicht') }}
 	</nav>
@@ -30,9 +31,7 @@
 	            </ul>
 
 	            <p class="marginTop centerText">{{ $job->participantsText }}</p>
-				{{ Form::open(array('url' => 'client/jobs', 'class' => 'regularPadding')) }}
-				{{ Form::submit('Meedoen', array('class' => 'btn btn-primary')) }}
-				{{ Form::close() }}
+				{{ Form::submit('Meedoen', array('class' => 'btn btn-primary')) }}				
 	        </aside>
 	        <div class="information borderRight">
 	            <p>
@@ -40,11 +39,14 @@
 	            </p>
 	        </div>
 	        <div class="floatFix" class="slider">
-			    <input type="text" id="range_1" />
+			    <!-- <input type="text" id="range_1" /> -->
+			    {{ Form::label('range_1', ' ') }}
+			    {{ Form::text('range_1') }}
 			</div>
 	    </section>
 	</section>
 </article>
+{{ Form::close() }}
 @stop
 
 @section('scripts')

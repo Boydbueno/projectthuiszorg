@@ -8,6 +8,35 @@ Route::post('clients', 'ClientsController@store'); // Todo: This route is lost, 
 
 /*
 |---------------------------------------------------------------------------
+| Login routes
+|---------------------------------------------------------------------------
+*/
+
+Route::group(array('prefix' => 'login'), function()
+{
+
+	Route::get('client', 'controllers\client\AuthController@getLogin');
+	Route::get('company', 'controllers\company\AuthController@getLogin');
+
+});
+
+/*
+|---------------------------------------------------------------------------
+| Register routes
+|---------------------------------------------------------------------------
+*/
+
+Route::group(array('prefix' => 'register'), function()
+{
+
+	Route::get('register', 'controllers\client\AuthController@getRegister');
+	Route::post('register', 'controllers\client\AuthController@postRegister');
+	Route::get('register', 'controllers\company\AuthController@getRegister');
+
+});
+
+/*
+|---------------------------------------------------------------------------
 | Client routes
 |---------------------------------------------------------------------------
 */
@@ -25,11 +54,6 @@ Route::group(array('prefix' => 'client'), function()
 		Route::post('/jobs', 'controllers\client\JobsController@postJoin');
 	});
 
-	Route::get('login', 'controllers\client\AuthController@getLogin');
-	Route::get('logout', 'controllers\client\AuthController@getLogout');
-	Route::get('register', 'controllers\client\AuthController@getRegister');
-	Route::post('register', 'controllers\client\AuthController@postRegister');
-
 });
 
 /*
@@ -46,9 +70,6 @@ Route::group(array('prefix' => 'opdrachtgever'), function()
 		Route::get('/', 'controllers\company\HomeController@getIndex');
 	});
 
-	Route::get('login', 'controllers\company\AuthController@getLogin');
-	Route::post('login', 'controllers\company\AuthController@postLogin');
-	Route::get('register', 'controllers\company\AuthController@getRegister');
 });
 
 /*
@@ -89,4 +110,4 @@ Route::get( 'user/forgot_password',        'UserController@forgot_password');
 Route::post('user/forgot_password',        'UserController@do_forgot_password');
 Route::get( 'user/reset_password/{token}', 'UserController@reset_password');
 Route::post('user/reset_password',         'UserController@do_reset_password');
-Route::get( 'user/logout',                 'UserController@logout');
+Route::get( 'logout',						'UserController@logout');

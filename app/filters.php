@@ -34,8 +34,8 @@ App::after(function($request, $response)
 */
 
 // Acces based on roles
-//Entrust::routeNeedsRole( 'client*', array('Administrator','Client'), Redirect::guest('client/login'), false );
-//Entrust::routeNeedsRole( 'company*', array('Administrator','Company'), Redirect::guest('opdrachtgever/login'), false );
+Entrust::routeNeedsRole( 'client*', array('Administrator','Client'), Redirect::guest('login/client'), false );
+Entrust::routeNeedsRole( 'company*', array('Administrator','Company'), Redirect::guest('login/opdrachtgever'), false );
 
 Route::filter('auth.client', function()
 {

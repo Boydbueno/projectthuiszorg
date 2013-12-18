@@ -28,7 +28,7 @@ class JobsController extends \BaseController {
 
 	public function postJoin()
 	{
-		Input::get('amount');
+		//job_user::create(array('job_id' => $jobid, 'user_id' => $userid, 'amount' => $amount));
 	}
 
 	/**

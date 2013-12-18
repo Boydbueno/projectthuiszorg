@@ -13,7 +13,7 @@ class CreateJobcategoriesTable extends Migration {
 	public function up()
 	{
 		Schema::create('jobcategories', function(Blueprint $table) {
-			$table->increments('id')->unsigned();
+			$table->increments('id');
 			$table->string('label');
 			$table->text('description');
 			$table->timestamps();

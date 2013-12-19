@@ -18,6 +18,10 @@ class CreateJobsTable extends Migration {
 			$table->text('description');
 			$table->integer('amount');
 			$table->decimal('payment', 10, 2);
+			$table->integer('minimum');
+			$table->integer('step');
+			$table->string('postfix');
+			$table->string('prefix')->default('€');
 			$table->timestamp('start_date')->nullable();
 			$table->timestamp('end_date')->nullable();
 			$table->integer('company_id')->unsigned()->index();

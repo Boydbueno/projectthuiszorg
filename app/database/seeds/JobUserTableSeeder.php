@@ -8,7 +8,7 @@ class JobUserTableSeeder extends Seeder {
 
 		$job_user = array(
 			array(
-				'job_id' => Job::where('title', '=', 'Verven/tapijt leggen')->first()->id,
+				'job_id' => Job::where('title', '=', 'Tapijt leggen')->first()->id,
 				'user_id' => User::where('username', '=', 'boydbuenodemesquita')->first()->id,
 				'amount' => 3
 			),

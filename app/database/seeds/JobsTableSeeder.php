@@ -8,25 +8,33 @@ class JobsTableSeeder extends Seeder {
 
 		$jobs = array(
 			array(
-				"title" => "Verven/tapijt leggen",
+				"title" => "Tapijt leggen",
 				"short_description" => "Wij hebben net een nieuw bedrijfspand gekocht vlakbij Station Blaak in Rotterdam. De muren moeten geverfd worden en er moet tapijt gelegd worden. Hier zoeken wij mensen voor die ervaring hebben met het verven van grote oppervlakken. Aanschaf van de benodigde materialen zullen wij zelf verzorgen.",
 				"long_description" => "Wij hebben net een nieuw bedrijfspand gekocht vlakbij Station Blaak in Rotterdam. De muren moeten geverfd worden en er moet tapijt gelegd worden. Hier zoeken wij mensen voor die ervaring hebben met het verven van grote oppervlakken. Aanschaf van de benodigde materialen zullen wij zelf verzorgen.Wij hebben net een nieuw bedrijfspand gekocht vlakbij Station Blaak in Rotterdam. De muren moeten geverfd worden en er moet tapijt gelegd worden. Hier zoeken wij mensen voor die ervaring hebben met het verven van grote oppervlakken. Aanschaf van de benodigde materialen zullen wij zelf verzorgen.",
-				"amount" => 10,
+				"amount" => 200,
 				"payment" => 10.00,
+				"minimum" => 10,
+				"step" => 5,
+				"prefix" => "",
+				"postfix" => "m2",
 				"start_date" => "2013-11-15 00:00:00",
 				"company_id" => Company::where('name', '=', 'Primark')->first()->id,
-				"jobcategory_id" => Jobcategory::where('label', '=', 'Fysiek werk')->first()->id,
+				"jobcategory_id" => JobCategory::where('label', '=', 'Fysiek werk')->first()->id,
 				"status_id" => Status::where('label', '=', 'Pending')->first()->id
 			),
 			array(
 				"title" => "Finacieel advies",
 				"short_description" => "Beginnend bedrijf zoekt een of meerdere voormalig financieel adviseurs. Ervaring in deze branch is een pre. We heben hulp nodig met onze administratie en het bijhouden van de financiele zaken voor het bedrijf. Ook hebben wij advies nodig op het gebied van afschrijven, inkopen van kantoor artikelen en pensioenen van toekomstige werknemers.",
 				"long_description" => "",
-				"amount" => 1,
-				"payment" => 40.00,
+				"amount" => 10,
+				"payment" => 30.00,
+				"minimum" => 2,
+				"step" => 1,
+				"prefix" => "",
+				"postfix" => "uur",
 				"start_date" => "2013-11-17 00:00:00",
 				"company_id" => Company::where('name', '=', 'Albert Heijn')->first()->id,
-				"jobcategory_id" => Jobcategory::where('label', '=', 'Adviserend werk')->first()->id,
+				"jobcategory_id" => JobCategory::where('label', '=', 'Adviserend werk')->first()->id,
 				"status_id" => Status::where('label', '=', 'Pending')->first()->id
 			),
 			array(
@@ -35,9 +43,13 @@ class JobsTableSeeder extends Seeder {
 				"long_description" => "",
 				"amount" => 800,
 				"payment" => 2.50,
+				"minimum" => 20,
+				"step" => 10,
+				"prefix" => "",
+				"postfix" => "Mutsen",
 				"start_date" => "2013-11-28 00:00:00",
 				"company_id" => Company::where('name', '=', 'Primark')->first()->id,
-				"jobcategory_id" => Jobcategory::where('label', '=', 'Handarbeid')->first()->id,
+				"jobcategory_id" => JobCategory::where('label', '=', 'Handarbeid')->first()->id,
 				"status_id" => Status::where('label', '=', 'Pending')->first()->id
 			),
 			array(
@@ -45,10 +57,14 @@ class JobsTableSeeder extends Seeder {
 				"short_description" => "Wij zijn een van de grootste speelgoed fabrikanten van Nederland, en we zijn op zoek naar mensen die voor ons thuis speelgoed in elkaar kunnen zetten. Materialen en gereedschap zullen worden aangeleverd.  Technische kennis is een vereiste, aangezien er ook wat soldeer werk aan te pas komt om de chips aan te sluiten op de batterijen.",
 				"long_description" => "",
 				"amount" => 200,
-				"payment" => 40.00,
+				"payment" => 5.00,
+				"minimum" => 20,
+				"step" => 10,
+				"prefix" => "",
+				"postfix" => "Stuks",
 				"start_date" => "2013-12-02 00:00:00",
 				"company_id" => Company::where('name', '=', 'Albert Heijn')->first()->id,
-				"jobcategory_id" => Jobcategory::where('label', '=', 'Technisch werk')->first()->id,
+				"jobcategory_id" => JobCategory::where('label', '=', 'Technisch werk')->first()->id,
 				"status_id" => Status::where('label', '=', 'Pending')->first()->id
 			)
 		);

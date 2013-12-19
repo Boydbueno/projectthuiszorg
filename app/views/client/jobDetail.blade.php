@@ -5,6 +5,11 @@
 @stop
 
 @section('content')
+
+	@if(Session::get('notice'))
+		{{{ Session::get('notice') }}}
+	@endif
+
 	<nav class='block marginTop mainTitle'>
 		{{ link_to_route('client', 'Terug naar het overzicht') }}
 	</nav>
@@ -34,7 +39,13 @@
 	            </ul>
 
 	            <p class="marginTop centerText">{{ $job->participantsText }}</p>
-				{{ link_to_route('client.jobs.join', 'Meedoen', array($job->id), array('class' => 'btn')) }}
+				@if(Session::get('notice'))
+					{{{ Session::get('notice') }}}
+
+				@else 
+					{{ link_to_route('client.jobs.join', 'Meedoen', array($job->id), array('class' => 'btn')) }}
+				@endif
+
 	        </aside>
 	        <div class="information borderRight">
 	            <p>

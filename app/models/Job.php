@@ -26,6 +26,11 @@ class Job extends Eloquent {
 		return $this->belongsTo('Jobcategory');
 	}
 
+	public function status()
+	{
+		return $this->belongsTo('status');
+	}
+
 	public function users()
 	{
 		return $this->belongsToMany('User')->withPivot('amount');

@@ -12,13 +12,13 @@
 		<div class="imageOverlay floatFix">
 			<div class="block grid-33">
 				<div class="buttonHolder fysiekWerk">
-					<a href="/client" class="btn">Meedoen!</a>
+					<a href="login/client" class="btn">Meedoen!</a>
 				</div>
 				<p>Werken aan opdrachten onder eigen voorwaarden en eigen tijdsindeling? Waar wacht u nog op!</p>
 			</div>
 			<div class="block grid-33">
 				<div class="buttonHolder">
-					<a href="/opdrachtgever" class="btn">Opdracht Plaatsen</a>
+					<a href="login/company" class="btn">Opdracht Plaatsen</a>
 				</div>
 				<p>Natuurlijk zijn we ook altijd op zoek naar enthousiaste bedrijven die een opdracht willen plaatsen!</p>
 			</div>

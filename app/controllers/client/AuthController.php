@@ -7,7 +7,18 @@ class AuthController extends \BaseController {
 	 */
 	public function getLogin()
 	{
-		return \View::make('client.auth.login');
+
+		if( \Confide::user() )
+        {
+            // If user is logged, redirect to internal 
+            // page, change it to '/admin', '/dashboard' or something
+            return \Redirect::to('/client');
+        }
+        else
+        {
+            return \View::make('client.auth.login');
+        }
+		
 	}
 
 	/**

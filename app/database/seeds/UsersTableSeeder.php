@@ -4,10 +4,7 @@ class UsersTableSeeder extends Seeder {
 
 	public function run()
 	{
-		// Uncomment the below to wipe the table clean before populating
-		// TODO: Abstract below two lines
 		DB::table('users')->delete();
-		DB::statement('ALTER TABLE users AUTO_INCREMENT=1');
 
 		$users = array(
 			array(
@@ -33,7 +30,6 @@ class UsersTableSeeder extends Seeder {
 			)
 		);
 
-		// Uncomment the below to run the seeder
 		DB::table('users')->insert($users);
 	}
 

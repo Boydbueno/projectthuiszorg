@@ -8,6 +8,7 @@ class Job extends Eloquent {
 
 	protected $appends = array(
 		'category',
+		'jobstatus', // status is reserved
 		'percentage_complete',
 		'days_left_phrase',
 		'formatted_payment',
@@ -40,7 +41,7 @@ class Job extends Eloquent {
 
 	public function status()
 	{
-		return $this->belongsTo('status');
+		return $this->belongsTo('Status');
 	}
 
 	public function users()
@@ -57,6 +58,11 @@ class Job extends Eloquent {
 	public function getCategoryAttribute()
 	{
 		return $this->jobcategory->label;
+	}
+
+	public function getJobStatusAttribute() // status is reserved
+	{
+		return $this->status->label;
 	}
 
 	public function getDaysLeftAttribute()

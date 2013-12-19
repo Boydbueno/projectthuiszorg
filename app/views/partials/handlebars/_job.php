@@ -12,7 +12,7 @@
                 <aside class="details floatRight">
                     <ul>
                         <li class="iconItem dateIcon bold">{{ days_left_phrase }}</li>
-                        <li class="iconItem timeIcon">Starten</li>
+                        <li class="iconItem timeIcon">{{ jobstatus }}</li>
                         <li class="iconItem moneyIcon">€ {{ formatted_payment }}</li>
                     </ul>
                     {{{ link_to_details }}}

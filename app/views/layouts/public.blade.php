@@ -28,7 +28,7 @@
 			            	<a href="#" class="menuLink borderRight">Registreren</a>
 			            </li>
 			            <li class="floatLeft">
-			            	{{ link_to("client/logout", "Uitloggen", array("class" => "menuLink")) }}
+			            	{{ link_to("logout", "Uitloggen", array("class" => "menuLink")) }}
 			            </li>
 			        </ul>
 			    </nav>

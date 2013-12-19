@@ -3,7 +3,7 @@
         <article class="block marginTop floatFix {{ jobcategory_classname }}">
             <header class="mainTitle floatFix">
                 <h1 class="floatLeft">{{ title }}</h1>
-                <span class="subTitle floatRight"></span>
+                <span class="subTitle floatRight">{{ category }}</span>
             </header>
             <div class="progress">
                 <div class="progressBar" style="width: {{ percentage_complete }}%"></div>

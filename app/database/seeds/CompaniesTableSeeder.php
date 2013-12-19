@@ -4,10 +4,7 @@ class CompaniesTableSeeder extends Seeder {
 
 	public function run()
 	{
-		// Uncomment the below to wipe the table clean before populating
-		// TODO: Abstract below two lines
 		DB::table('companies')->delete();
-		DB::statement('ALTER TABLE companies AUTO_INCREMENT=1');
 
 		$companies = array(
 			array(
@@ -34,7 +31,6 @@ class CompaniesTableSeeder extends Seeder {
 			)
 		);
 
-		// Uncomment the below to run the seeder
 		DB::table('companies')->insert($companies);
 	}
 

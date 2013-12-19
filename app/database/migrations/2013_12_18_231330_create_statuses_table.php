@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 
-class CreateJobcategoriesTable extends Migration {
+class CreateStatusesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +11,13 @@ class CreateJobcategoriesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('jobcategories', function(Blueprint $table) {
+		Schema::create('statuses', function($table)
+		{
 			$table->increments('id');
 			$table->string('label');
-			$table->text('description');
-			$table->timestamps();
+			$table->string('description');
 		});
 	}
-
 
 	/**
 	 * Reverse the migrations.
@@ -28,7 +26,7 @@ class CreateJobcategoriesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('jobcategories');
+		Schema::drop('statuses');
 	}
 
 }

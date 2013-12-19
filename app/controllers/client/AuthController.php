@@ -27,38 +27,43 @@ class AuthController extends \BaseController {
 	public function postLogin()
 	{
 
-		//Get all input
-		$input = \Input::all();
-
-		//Create validator instance
-		$validator = \Validator::make(
-		    $input,
-		    array(
-	            'email' => 'required|email',
-	            'password' => 'required'
-	        )
+		$input = array(
+		    'email'    => Input::get( 'email' ), // May be the username too
+		    'username' => Input::get( 'email' ), // so we have to pass both
+		    'password' => Input::get( 'password' ),
+		    'remember' => Input::get( 'remember' ),
 		);
 
-		if ($validator->fails()) return \Redirect::back()->withErrors($validator)->withInput();
+		// If you wish to only allow login from confirmed users, call logAttempt
+		// with the second parameter as true.
+		// logAttempt will check if the 'email' perhaps is the username.
+		if ( \Confide::logAttempt( $input, true ) ) 
+		{
+		    return Redirect::intended('/client'); 
+		}
+		else
+		{
+		    $user = new User;
 
-		$attempt = \Auth::attempt(array(
-			'email' => $input['email'],
-			'password' => $input['password']
-		));
+		    // Check if there was too many login attempts
+		    if( \Confide::isThrottled( $input ) )
+		    {
+		        $err_msg = \Lang::get('confide::confide.alerts.too_many_attempts');
+		    }
+		    elseif( $user->checkUserExists( $input ) and ! $user->isConfirmed( $input ) )
+		    {
+		        $err_msg = \Lang::get('confide::confide.alerts.not_confirmed');
+		    }
+		    else
+		    {
+		        $err_msg = \Lang::get('confide::confide.alerts.wrong_credentials');
+		    }
 
-		if($attempt) return \Redirect::intended('/clients')->with('notice', 'You have been logged in!');
+		                return Redirect::action('controllers\client\AuthController@getLogin')
+		                    ->withInput(Input::except('password'))
+		        ->with( 'error', $err_msg );
+		}
 
-		return \Redirect::back()->with('notice', 'Invalid credentials')->withInput();
-
-	}
-
-	/**
-	 * Logs out the current user
-	 */
-	public function getLogout()
-	{
-		\Auth::logout();
-		return \Redirect::to('/');
 	}
 
 	/**

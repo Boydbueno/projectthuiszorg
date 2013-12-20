@@ -12,13 +12,13 @@
 		<div class="imageOverlay floatFix">
 			<div class="block grid-33">
 				<div class="buttonHolder fysiekWerk">
-					<a href="login/client" class="btn">Meedoen!</a>
+					{{ link_to_route('client.login', 'Meedoen!', null, array('class' => 'btn')) }}
 				</div>
 				<p>Werken aan opdrachten onder eigen voorwaarden en eigen tijdsindeling? Waar wacht u nog op!</p>
 			</div>
 			<div class="block grid-33">
 				<div class="buttonHolder">
-					<a href="login/company" class="btn">Opdracht Plaatsen</a>
+					{{ link_to_route('company.login', 'Opdracht Plaatsen', null, array('class' => 'btn')) }}
 				</div>
 				<p>Natuurlijk zijn we ook altijd op zoek naar enthousiaste bedrijven die een opdracht willen plaatsen!</p>
 			</div>

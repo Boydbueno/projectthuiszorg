@@ -15,8 +15,8 @@ Route::post('clients', 'ClientsController@store'); // Todo: This route is lost, 
 Route::group(array('prefix' => 'login'), function()
 {
 
-	Route::get('client', 'controllers\client\AuthController@getLogin');
-	Route::get('company', 'controllers\company\AuthController@getLogin');
+	Route::get('client', array('as' => 'client.login', 'uses' => 'controllers\client\AuthController@getLogin'));
+	Route::get('company', array('as' => 'company.login', 'uses' => 'controllers\company\AuthController@getLogin'));
 
 });
 
@@ -91,6 +91,7 @@ Route::group(array('prefix' => 'api'), function()
 | Confidence Routes
 |---------------------------------------------------------------------------
 */
+// TODO: Cleanup?
 Route::get( 'user/create',                 'UserController@create');
 Route::post('user',                        'UserController@store');
 Route::get( 'user/login',                  'UserController@login');

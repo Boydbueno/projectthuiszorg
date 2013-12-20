@@ -59,7 +59,7 @@
 						</fieldset>
 
 						<div class="form-group">
-								<a href='/opdrachtgever/register'>Maak een account!</a>
+								<a href='/register/client'>Maak een account!</a>
 						</div>
 
 					{{ Form::close() }}

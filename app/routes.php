@@ -23,14 +23,26 @@ Route::group(array('prefix' => 'login'), function()
 
 /*
 |---------------------------------------------------------------------------
+| Register routes
+|---------------------------------------------------------------------------
+*/
+
+Route::group(array('prefix' => 'register'), function()
+{
+
+	Route::get('client', 'controllers\client\AuthController@getRegister');
+	Route::post('client', 'controllers\client\AuthController@postRegister');
+	Route::get('company', 'controllers\company\AuthController@getRegister');
+
+});
+
+/*
+|---------------------------------------------------------------------------
 | Client routes
 |---------------------------------------------------------------------------
 */
 Route::group(array('prefix' => 'client'), function()
 {
-
-	Route::get('register', 'controllers\client\AuthController@getRegister');
-	Route::post('register', 'controllers\client\AuthController@postRegister');
 
 	Route::group(array('before' => 'auth.client'), function() 
 	{
@@ -53,8 +65,6 @@ Route::group(array('prefix' => 'client'), function()
 
 Route::group(array('prefix' => 'opdrachtgever'), function()
 {
-
-	Route::get('register', 'controllers\company\AuthController@getRegister');
 
 	Route::group(array('before' => 'auth.company'), function() 
 	{

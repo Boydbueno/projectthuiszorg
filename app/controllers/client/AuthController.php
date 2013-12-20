@@ -35,10 +35,9 @@ class AuthController extends \BaseController {
 			'password' => $input['password']
 		));
 
-		if($attempt) return \Redirect::intended('/clients')->with('notice', 'You have been logged in!');
+		if(!$attempt) return \Redirect::back()->with('notice', 'Invalid credentials')->withInput();
 
-		return \Redirect::back()->with('notice', 'Invalid credentials')->withInput();
-
+		return \Redirect::intended('/clients')->with('notice', 'You have been logged in!');
 	}
 
 	/**

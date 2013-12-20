@@ -4,8 +4,6 @@ Route::get('/', 'HomeController@getIndex');
 Route::get('/contact', 'HomeController@getContact');
 Route::post('/contact', 'HomeController@postContact');
 
-Route::post('clients', 'ClientsController@store'); // Todo: This route is lost, please give it a new home.
-
 /*
 |---------------------------------------------------------------------------
 | Login routes

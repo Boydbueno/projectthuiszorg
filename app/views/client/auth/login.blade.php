@@ -28,17 +28,17 @@
 						<input type="hidden" name="_token" value="{{{ Session::getToken() }}}">
 						<fieldset>
 						    <div class="form-group">
-						        <label for="email">{{{ Lang::get('confide::confide.username_e_mail') }}}</label>
-						        <input class="form-control" tabindex="1" placeholder="{{{ Lang::get('confide::confide.username_e_mail') }}}" type="text" name="email" id="email" value="{{{ Input::old('email') }}}">
+						        <label for="email">E-mail Adres</label>
+						        <input class="form-control" tabindex="1" type="text" name="email" id="email" value="{{{ Input::old('email') }}}">
 						    </div>
 						    <div class="form-group">
 						    <label for="password">
 						        {{{ Lang::get('confide::confide.password') }}}
 						        <small>
-						            <a href="{{{ (Confide::checkAction('UserController@forgot_password')) ?: 'forgot' }}}">{{{ Lang::get('confide::confide.login.forgot_password') }}}</a>
+						            <a href="{{{ (Confide::checkAction('controllers/HomeController@forgot_password')) ?: 'forgot' }}}">{{{ Lang::get('confide::confide.login.forgot_password') }}}</a>
 						        </small>
 						    </label>
-						    <input tabindex="2" placeholder="{{{ Lang::get('confide::confide.password') }}}" type="password" name="password" id="password">
+						    <input tabindex="2" type="password" name="password" id="password">
 						    </div>
 						    <div class="form-group">
 						        <label for="remember" class="checkbox">{{{ Lang::get('confide::confide.login.remember') }}}

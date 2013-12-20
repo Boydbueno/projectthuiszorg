@@ -3,6 +3,8 @@
 Route::get('/', 'HomeController@getIndex');
 Route::get('/contact', 'HomeController@getContact');
 Route::post('/contact', 'HomeController@postContact');
+Route::get( '/forgot_password', 'HomeController@forgot_password');
+Route::post('/forgot_password', 'HomeController@do_forgot_password');
 
 /*
 |---------------------------------------------------------------------------
@@ -14,6 +16,7 @@ Route::group(array('prefix' => 'login'), function()
 {
 
 	Route::get('client', array('as' => 'client.login', 'uses' => 'controllers\client\AuthController@getLogin'));
+	Route::post('client', array('as' => 'client.doLogin', 'uses' => 'controllers\client\AuthController@postLogin'));
 	Route::get('company', array('as' => 'company.login', 'uses' => 'controllers\company\AuthController@getLogin'));
 
 });
@@ -95,8 +98,6 @@ Route::post('user',                        'UserController@store');
 Route::get( 'user/login',                  'UserController@login');
 Route::post('user/login',                  'UserController@do_login');
 Route::get( 'user/confirm/{code}',         'UserController@confirm');
-Route::get( 'user/forgot_password',        'UserController@forgot_password');
-Route::post('user/forgot_password',        'UserController@do_forgot_password');
 Route::get( 'user/reset_password/{token}', 'UserController@reset_password');
 Route::post('user/reset_password',         'UserController@do_reset_password');
 Route::get('logout', array('as' => 'logout', 'uses' => 'UserController@logout'));

@@ -41,4 +41,34 @@ class HomeController extends BaseController {
 
 	}
 
+	/**
+	 * Displays the forgot password form
+	 *
+	 */
+	public function forgot_password()
+	{
+	    return View::make('home.auth.password');
+	}
+
+	/**
+	 * Attempt to send change password link to the given email
+	 *
+	 */
+	public function do_forgot_password()
+	{
+	    if( Confide::forgotPassword( Input::get( 'email' ) ) )
+	    {
+	        $notice_msg = Lang::get('confide::confide.alerts.password_forgot');
+	                    return Redirect::action('UserController@login')
+	                        ->with( 'notice', $notice_msg );
+	    }
+	    else
+	    {
+	        $error_msg = Lang::get('confide::confide.alerts.wrong_password_forgot');
+	                    return Redirect::action('UserController@forgot_password')
+	                        ->withInput()
+	            ->with( 'error', $error_msg );
+	    }
+	}
+
 }

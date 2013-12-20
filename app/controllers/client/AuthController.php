@@ -28,10 +28,10 @@ class AuthController extends \BaseController {
 	{
 
 		$input = array(
-		    'email'    => Input::get( 'email' ), // May be the username too
-		    'username' => Input::get( 'email' ), // so we have to pass both
-		    'password' => Input::get( 'password' ),
-		    'remember' => Input::get( 'remember' ),
+		    'email'    => \Input::get( 'email' ), // May be the username too
+		    'username' => \Input::get( 'email' ), // so we have to pass both
+		    'password' => \Input::get( 'password' ),
+		    'remember' => \Input::get( 'remember' ),
 		);
 
 		// If you wish to only allow login from confirmed users, call logAttempt
@@ -39,11 +39,11 @@ class AuthController extends \BaseController {
 		// logAttempt will check if the 'email' perhaps is the username.
 		if ( \Confide::logAttempt( $input, true ) ) 
 		{
-		    return Redirect::intended('/client'); 
+		    return \Redirect::intended('/client'); 
 		}
 		else
 		{
-		    $user = new User;
+		    $user = new \User;
 
 		    // Check if there was too many login attempts
 		    if( \Confide::isThrottled( $input ) )
@@ -59,8 +59,8 @@ class AuthController extends \BaseController {
 		        $err_msg = \Lang::get('confide::confide.alerts.wrong_credentials');
 		    }
 
-		                return Redirect::action('controllers\client\AuthController@getLogin')
-		                    ->withInput(Input::except('password'))
+		                return \Redirect::action('controllers\client\AuthController@getLogin')
+		                    ->withInput(\Input::except('password'))
 		        ->with( 'error', $err_msg );
 		}
 

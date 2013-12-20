@@ -7,6 +7,8 @@ class Job extends Eloquent {
 	protected $guarded = array();
 
 	protected $appends = array(
+		'category',
+		'jobstatus', // status is reserved
 		'percentage_complete',
 		'days_left_phrase',
 		'formatted_payment',
@@ -15,6 +17,17 @@ class Job extends Eloquent {
 	);
 	
 	public static $rules = array();
+
+	public function getDates()
+	{
+	    return array('created_at', 'updated_at', 'start_date', 'end_date');
+	}
+
+	/*
+	|---------------------------------------------------------------------------
+	| Relationships
+	|---------------------------------------------------------------------------
+	*/
 
 	public function company()
 	{
@@ -26,14 +39,14 @@ class Job extends Eloquent {
 		return $this->belongsTo('Jobcategory');
 	}
 
+	public function status()
+	{
+		return $this->belongsTo('Status');
+	}
+
 	public function users()
 	{
 		return $this->belongsToMany('User')->withPivot('amount');
-	}
-
-	public function getDates()
-	{
-	    return array('created_at', 'updated_at', 'start_date', 'end_date');
 	}
 
 	/*
@@ -41,6 +54,16 @@ class Job extends Eloquent {
 	| Getters and setters
 	|---------------------------------------------------------------------------
 	*/
+
+	public function getCategoryAttribute()
+	{
+		return $this->jobcategory->label;
+	}
+
+	public function getJobStatusAttribute() // status is reserved
+	{
+		return $this->status->label;
+	}
 
 	public function getDaysLeftAttribute()
 	{

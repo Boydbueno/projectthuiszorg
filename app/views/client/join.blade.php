@@ -5,7 +5,7 @@
 @stop
 
 @section('content')
-{{ Form::open(array('url' => 'client/jobs/{id}/postJoin', 'class' => 'regularPadding')) }}
+{{ Form::open(array('url' => 'client/jobs/' . $job->id . '/join', 'class' => 'regularPadding')) }}
 	<nav class='block marginTop mainTitle'>
 		{{ link_to_route('client', 'Terug naar het overzicht') }}
 	</nav>
@@ -39,8 +39,7 @@
 	            </p>
 	        </div>
 	        <div class="floatFix" class="slider">
-			    <!-- <input type="text" id="range_1" /> -->
-			    {{ Form::label('range_1', ' ') }}
+			    {{ Form::label('range_1', 'Slider', array('class' => 'hidden' )); }}
 			    {{ Form::text('range_1') }}
 			</div>
 	    </section>

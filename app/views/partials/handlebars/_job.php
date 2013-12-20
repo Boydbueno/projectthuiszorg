@@ -3,7 +3,7 @@
         <article class="block marginTop floatFix {{ jobcategory_classname }}">
             <header class="mainTitle floatFix">
                 <h1 class="floatLeft">{{ title }}</h1>
-                <span class="subTitle floatRight"></span>
+                <span class="subTitle floatRight">{{ category }}</span>
             </header>
             <div class="progress">
                 <div class="progressBar" style="width: {{ percentage_complete }}%"></div>
@@ -12,7 +12,7 @@
                 <aside class="details floatRight">
                     <ul>
                         <li class="iconItem dateIcon bold">{{ days_left_phrase }}</li>
-                        <li class="iconItem timeIcon">Starten</li>
+                        <li class="iconItem timeIcon">{{ jobstatus }}</li>
                         <li class="iconItem moneyIcon">€ {{ formatted_payment }}</li>
                     </ul>
                     {{{ link_to_details }}}

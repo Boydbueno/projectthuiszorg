@@ -30,7 +30,7 @@
 		            <li class="floatLeft">
 		            	{{ link_to('client/settings', 'Instellingen', array('class' => 'menuLink borderRight'))}}
 		            </li>
-		            <li class="floatLeft">{{ link_to("logout", "Uitloggen", array("class" => "menuLink")) }}</li>
+		            <li class="floatLeft">{{ link_to_route("logout", "Uitloggen", null, array("class" => "menuLink")) }}</li>
 		        </ul>
 		    </nav>
 

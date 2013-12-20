@@ -19,6 +19,14 @@ class HomeController extends \BaseController {
 	{
 		$jobs = \Auth::user()->jobs;
 
+		// Split jobs array into
+		
+		// Started jobs
+		
+		// Pending jobs
+
+		// To make this possible.. we need to add a status to the job.
+
 		return \View::make('client.myjobs')->with('jobs', $jobs);
 	}
 	

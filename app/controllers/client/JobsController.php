@@ -26,9 +26,13 @@ class JobsController extends \BaseController {
         return \View::make('client.join')->with('job', $job);
 	}
 
-	public function postJoin()
+	public function postJoin($id)
 	{
-		//job_user::create(array('job_id' => $jobid, 'user_id' => $userid, 'amount' => $amount));
+		$userid = \Auth::user()->id;
+		$amount = \Input::get('range_1');
+		\JobUser::create(array('job_id' => $id, 'user_id' => $userid, 'amount' => $amount));
+
+		return \Redirect::to('client/jobs/' . $id . '/')->with('notice', 'U bent nu succesvol ingeschreven!');
 	}
 
 	/**

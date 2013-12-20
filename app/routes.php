@@ -4,8 +4,6 @@ Route::get('/', 'HomeController@getIndex');
 Route::get('/contact', 'HomeController@getContact');
 Route::post('/contact', 'HomeController@postContact');
 
-Route::post('clients', 'ClientsController@store'); // Todo: This route is lost, please give it a new home.
-
 /*
 |---------------------------------------------------------------------------
 | Login routes
@@ -15,23 +13,8 @@ Route::post('clients', 'ClientsController@store'); // Todo: This route is lost, 
 Route::group(array('prefix' => 'login'), function()
 {
 
-	Route::get('client', 'controllers\client\AuthController@getLogin');
-	Route::get('company', 'controllers\company\AuthController@getLogin');
-
-});
-
-/*
-|---------------------------------------------------------------------------
-| Register routes
-|---------------------------------------------------------------------------
-*/
-
-Route::group(array('prefix' => 'register'), function()
-{
-
-	Route::get('register', 'controllers\client\AuthController@getRegister');
-	Route::post('register', 'controllers\client\AuthController@postRegister');
-	Route::get('register', 'controllers\company\AuthController@getRegister');
+	Route::get('client', array('as' => 'client.login', 'uses' => 'controllers\client\AuthController@getLogin'));
+	Route::get('company', array('as' => 'company.login', 'uses' => 'controllers\company\AuthController@getLogin'));
 
 });
 
@@ -43,6 +26,9 @@ Route::group(array('prefix' => 'register'), function()
 Route::group(array('prefix' => 'client'), function()
 {
 
+	Route::get('register', 'controllers\client\AuthController@getRegister');
+	Route::post('register', 'controllers\client\AuthController@postRegister');
+
 	Route::group(array('before' => 'auth.client'), function() 
 	{
 		Route::get('/', array('as' => 'client', 'uses' => 'controllers\client\HomeController@index'));
@@ -51,7 +37,7 @@ Route::group(array('prefix' => 'client'), function()
 
 		Route::get('jobs/{id}', array('as' => 'client.jobs.show', 'uses' => 'controllers\client\JobsController@show'));
 		Route::get('jobs/{id}/join', array('as' => 'client.jobs.join', 'uses' => 'controllers\client\JobsController@join'));
-		Route::post('jobs', 'controllers\client\JobsController@postJoin');
+		Route::post('jobs/{id}/join', 'controllers\client\JobsController@postJoin');
 	});
 
 });
@@ -62,9 +48,11 @@ Route::group(array('prefix' => 'client'), function()
 |---------------------------------------------------------------------------
 */
 
-// Todo: These still need some refactoring
 Route::group(array('prefix' => 'opdrachtgever'), function()
 {
+
+	Route::get('register', 'controllers\company\AuthController@getRegister');
+
 	Route::group(array('before' => 'auth.company'), function() 
 	{
 		Route::get('/', 'controllers\company\HomeController@getIndex');
@@ -101,6 +89,7 @@ Route::group(array('prefix' => 'api'), function()
 | Confidence Routes
 |---------------------------------------------------------------------------
 */
+// TODO: Cleanup?
 Route::get( 'user/create',                 'UserController@create');
 Route::post('user',                        'UserController@store');
 Route::get( 'user/login',                  'UserController@login');
@@ -110,4 +99,4 @@ Route::get( 'user/forgot_password',        'UserController@forgot_password');
 Route::post('user/forgot_password',        'UserController@do_forgot_password');
 Route::get( 'user/reset_password/{token}', 'UserController@reset_password');
 Route::post('user/reset_password',         'UserController@do_reset_password');
-Route::get( 'logout',						'UserController@logout');
+Route::get('logout', array('as' => 'logout', 'uses' => 'UserController@logout'));

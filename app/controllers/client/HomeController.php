@@ -1,6 +1,8 @@
 <?php namespace controllers\client;
 
 use \Carbon\Carbon;
+use Jobcategory;
+use Job;
 
 class HomeController extends \BaseController {
 
@@ -8,7 +10,7 @@ class HomeController extends \BaseController {
 	{
 		// Jobcategories in id => label pairs, for the dropdown in view
 		$dropdownPlaceholder = array('' => 'Categorie');
-		$jobcategories = $dropdownPlaceholder + \Jobcategory::lists('label', 'id');
+		$jobcategories = $dropdownPlaceholder + Jobcategory::lists('label', 'id');
 		
 		// TODO: Only get jobs which the user didn't join
 		$jobs = \Job::orderBy('start_date')->get();

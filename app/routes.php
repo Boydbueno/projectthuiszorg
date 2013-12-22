@@ -18,7 +18,7 @@ Route::group(array('prefix' => 'login'), function()
 	Route::get('client', array('as' => 'client.login', 'uses' => 'controllers\client\AuthController@getLogin'));
 	Route::post('client', array('as' => 'client.doLogin', 'uses' => 'controllers\client\AuthController@postLogin'));
 	Route::get('company', array('as' => 'company.login', 'uses' => 'controllers\company\AuthController@getLogin'));
-	Route::get('company', array('as' => 'company.doLogin', 'uses' => 'controllers\company\AuthController@postLogin'));
+	Route::post('company', array('as' => 'company.doLogin', 'uses' => 'controllers\company\AuthController@postLogin'));
 
 });
 
@@ -64,7 +64,7 @@ Route::group(array('prefix' => 'client'), function()
 |---------------------------------------------------------------------------
 */
 
-Route::group(array('prefix' => 'opdrachtgever'), function()
+Route::group(array('prefix' => 'company'), function()
 {
 
 	Route::group(array('before' => 'auth.company'), function() 

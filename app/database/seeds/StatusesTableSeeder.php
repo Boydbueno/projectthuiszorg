@@ -15,10 +15,9 @@ class StatusesTableSeeder extends Seeder {
 				'label' => 'Gepauzeerd',
 				'description' => 'De opdracht is gepauzeerd door de opdrachtgever'
 			),
-			// TODO: Change name of pending
 			array(
-				'label' => 'Pending',
-				'description' => 'De opdracht is nog niet gestart'
+				'label' => 'Open',
+				'description' => 'De opdracht staat open voor inschrijvingen'
 			)
 		);
 

@@ -45,7 +45,7 @@ Route::group(array('prefix' => 'register'), function()
 Route::group(array('prefix' => 'client'), function()
 {
 
-	Route::group(array('before' => 'auth.client'), function() 
+	Route::group(array('before' => 'clientOrAdmin'), function() 
 	{
 		Route::get('/', array('as' => 'client', 'uses' => 'controllers\client\HomeController@index'));
 		Route::get('jobs', 'controllers\client\HomeController@getMyJobs');
@@ -67,7 +67,7 @@ Route::group(array('prefix' => 'client'), function()
 Route::group(array('prefix' => 'company'), function()
 {
 
-	Route::group(array('before' => 'auth.company'), function() 
+	Route::group(array('before' => 'companyOrAdmin'), function() 
 	{
 		Route::get('/', array('as' => 'company', 'uses' => 'controllers\company\HomeController@index'));
 	});

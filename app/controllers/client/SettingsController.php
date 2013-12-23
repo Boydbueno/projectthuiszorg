@@ -1,5 +1,7 @@
 <?php namespace controllers\client;
 
+use User;
+
 class SettingsController extends \BaseController {
 
 	/**
@@ -20,11 +22,11 @@ class SettingsController extends \BaseController {
 		// TODO: Store part in the user table and part in the client table
 		$input = \Input::all();
 
-		$validator = \Validator::make($input, \User::$rules);
+		$validator = \Validator::make($input, User::$rules);
 
 		if($validator->fails()) return \Redirect::back()->withInput()->withErrors($validator);
 
-		$user = new \User();
+		$user = new User();
 
 		$user->email = $input['email'];
 		$user->password = \Hash::make($input['password']);

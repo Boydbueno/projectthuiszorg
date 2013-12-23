@@ -1,5 +1,8 @@
 <?php namespace controllers\client;
 
+use JobUser;
+use Job;
+
 class JobsController extends \BaseController {
 
 	/**
@@ -10,7 +13,7 @@ class JobsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$job = \Job::find($id);
+		$job = Job::find($id);
 
 		$usersCount = count($job->users);
 
@@ -21,7 +24,7 @@ class JobsController extends \BaseController {
 
 	public function join($id)
 	{
-		$job = \Job::find($id);
+		$job = Job::find($id);
 
         return \View::make('client.join')->with('job', $job);
 	}
@@ -30,7 +33,7 @@ class JobsController extends \BaseController {
 	{
 		$userid = \Auth::user()->id;
 		$amount = \Input::get('range_1');
-		\JobUser::create(array('job_id' => $id, 'user_id' => $userid, 'amount' => $amount));
+		JobUser::create(array('job_id' => $id, 'user_id' => $userid, 'amount' => $amount));
 
 		return \Redirect::to('client/jobs/' . $id . '/')->with('notice', 'U bent nu succesvol ingeschreven!');
 	}

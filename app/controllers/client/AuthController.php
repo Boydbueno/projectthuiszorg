@@ -19,7 +19,7 @@ class AuthController extends \BaseController {
 			}elseif(\Confide::user()->hasRole("Company")){
 				
 				return \Redirect::to('/login/company');
-				
+
 			}
 		
 		}
@@ -67,9 +67,9 @@ class AuthController extends \BaseController {
 				$err_msg = \Lang::get('confide::confide.alerts.wrong_credentials');
 			}
 
-						return \Redirect::action('controllers\client\AuthController@getLogin')
-							->withInput(\Input::except('password'))
-				->with( 'error', $err_msg );
+				return \Redirect::action('controllers\client\AuthController@getLogin')
+					->withInput(\Input::except('password'))
+					->with( 'error', $err_msg );
 		}
 
 	}

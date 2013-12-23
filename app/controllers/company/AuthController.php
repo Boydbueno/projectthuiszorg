@@ -8,15 +8,25 @@ class AuthController extends \BaseController {
 	public function getLogin()
 	{
 		if( \Confide::user() )
-        {
-            // If user is logged, redirect to internal 
-            // page, change it to '/admin', '/dashboard' or something
-            return \Redirect::to('/company');
-        }
-        else
-        {
-            return \View::make('company.auth.login');
-        }
+		{
+
+			if(\Confide::user()->hasRole("Company") || \Confide::user()->hasRole("Administrator")){
+				
+				// If user is logged, redirect to internal 
+				return \Redirect::to('/company');
+
+			}elseif(\Confide::user()->hasRole("Client")){
+				
+				return \Redirect::to('/login/client');
+
+			}
+		
+		}
+		else
+		{
+			return \View::make('company.auth.login');
+		}
+
 	}
 
 	/**
@@ -26,8 +36,7 @@ class AuthController extends \BaseController {
 	{
 
 		$input = array(
-		    'email'    => \Input::get( 'email' ), // May be the username too
-		    'username' => \Input::get( 'email' ), // so we have to pass both
+		    'email'    => \Input::get( 'email' ),
 		    'password' => \Input::get( 'password' ),
 		    'remember' => \Input::get( 'remember' ),
 		);
@@ -65,9 +74,55 @@ class AuthController extends \BaseController {
 	}
 
 
+	/**
+	 * Show the registration form
+	 */
 	public function getRegister()
 	{
 		return \View::make('company.auth.register');
+	}
+
+	/**
+	 * Register a new user in the database
+	 *
+	 * @return Redirect
+	 */
+	public function postRegister()
+	{
+		$user = new \User;
+
+		$user->email = \Input::get( 'email' );
+		$user->password = \Input::get( 'password' );
+
+		// The password confirmation will be removed from model
+		// before saving. This field will be used in Ardent's
+		// auto validation.
+		$user->password_confirmation = \Input::get( 'password_confirmation' );
+
+		// Save if valid. Password field will be hashed before save
+		$user->save();
+
+		if ( $user->id )
+		{
+			//Assign the company role to this person
+			$roleId = \Role::where('name', '=', 'Company')->first()->id;
+			$user->attachRole($roleId);
+
+			// Redirect with success message, You may replace "Lang::get(..." for your custom message.
+			return \Redirect::action('controllers\company\AuthController@getLogin')
+				->with( 'notice', \Lang::get('confide::confide.alerts.account_created') );
+		}
+		else
+		{
+			// Get validation errors (see Ardent package)
+			$error = $user->errors()->all(':message');
+
+			return \Redirect::action('controllers\company\AuthController@getRegister')
+				->withInput(\Input::except('password'))
+				->with( 'error', $error );
+
+		}
+
 	}
 
 }

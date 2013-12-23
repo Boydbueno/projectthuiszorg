@@ -35,7 +35,7 @@
 						    <label for="password">
 						        {{{ Lang::get('confide::confide.password') }}}
 						        <small>
-						            <a href="{{{ (Confide::checkAction('controllers/HomeController@forgot_password')) ?: 'forgot' }}}">{{{ Lang::get('confide::confide.login.forgot_password') }}}</a>
+						            <a href="{{{ (Confide::checkAction('controllers/HomeController@forgot_password')) ?: '/forgot_password' }}}">{{{ Lang::get('confide::confide.login.forgot_password') }}}</a>
 						        </small>
 						    </label>
 						    <input tabindex="2" type="password" name="password" id="password">

@@ -24,7 +24,7 @@
 				</header>
 				<div class="regularPadding buttonTopMargin">
 					{{ Confide::makeForgotPasswordForm()->render() }}
-					<a href='/client/register'>Maak een account!</a>
+					<a href='register/client'>Maak een account!</a>
 				</div>
 			</div>
 		</div>

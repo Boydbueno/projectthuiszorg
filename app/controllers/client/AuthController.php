@@ -10,8 +10,18 @@ class AuthController extends \BaseController {
 
 		if( \Confide::user() )
 		{
-			// If user is logged, redirect to internal 
-			return \Redirect::to('/client');
+
+			if(\Confide::user()->hasRole("Client") || \Confide::user()->hasRole("Administrator")){
+				
+				// If user is logged, redirect to internal 
+				return \Redirect::to('/client');
+
+			}elseif(\Confide::user()->hasRole("Company")){
+				
+				return \Redirect::to('/login/company');
+				
+			}
+		
 		}
 		else
 		{
@@ -94,6 +104,10 @@ class AuthController extends \BaseController {
 
 		if ( $user->id )
 		{
+			//Assign the client role to this person
+			$roleId = \Role::where('name', '=', 'Client')->first()->id;
+			$user->attachRole($roleId);
+
 			// Redirect with success message, You may replace "Lang::get(..." for your custom message.
 			return \Redirect::action('controllers\client\AuthController@getLogin')
 				->with( 'notice', \Lang::get('confide::confide.alerts.account_created') );

@@ -81,21 +81,35 @@ class AuthController extends \BaseController {
 	 */
 	public function postRegister()
 	{
-		// TODO: Store part in the user table and part in the client table
-		$input = \Input::all();
+		$user = new \User;
 
-		$validator = \Validator::make($input, \User::$rules);
+		$user->email = \Input::get( 'email' );
+		$user->password = \Input::get( 'password' );
 
-		if($validator->fails()) return \Redirect::back()->withInput()->withErrors($validator);
+		// The password confirmation will be removed from model
+		// before saving. This field will be used in Ardent's
+		// auto validation.
+		$user->password_confirmation = \Input::get( 'password_confirmation' );
 
-		$user = new \User();
-
-		$user->email = $input['email'];
-		$user->password = \Hash::make($input['password']);
-
+		// Save if valid. Password field will be hashed before save
 		$user->save();
 
-		return \Redirect::to('/client');
+		if ( $user->id )
+		{
+		    // Redirect with success message, You may replace "Lang::get(..." for your custom message.
+		                return \Redirect::action('controllers\client\AuthController@getLogin')
+		                    ->with( 'notice', \Lang::get('confide::confide.alerts.account_created') );
+		}
+		else
+		{
+		    // Get validation errors (see Ardent package)
+		    $error = $user->errors()->all(':message');
+
+		                return \Redirect::action('UserController@create')
+		                    ->withInput(\Input::except('password'))
+		        ->with( 'error', $error );
+		}
+
 	}
 
 }

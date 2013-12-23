@@ -20,7 +20,7 @@ class JobsTableSeeder extends Seeder {
 				"start_date" => "2013-11-15 00:00:00",
 				"company_id" => Company::where('name', '=', 'Primark')->first()->id,
 				"jobcategory_id" => JobCategory::where('label', '=', 'Fysiek werk')->first()->id,
-				"status_id" => Status::where('label', '=', 'Pending')->first()->id
+				"status_id" => Status::where('label', '=', 'Open')->first()->id
 			),
 			array(
 				"title" => "Finacieel advies",
@@ -35,7 +35,7 @@ class JobsTableSeeder extends Seeder {
 				"start_date" => "2013-11-17 00:00:00",
 				"company_id" => Company::where('name', '=', 'Albert Heijn')->first()->id,
 				"jobcategory_id" => JobCategory::where('label', '=', 'Adviserend werk')->first()->id,
-				"status_id" => Status::where('label', '=', 'Pending')->first()->id
+				"status_id" => Status::where('label', '=', 'Open')->first()->id
 			),
 			array(
 				"title" => "Mutsen breien",
@@ -50,7 +50,7 @@ class JobsTableSeeder extends Seeder {
 				"start_date" => "2013-11-28 00:00:00",
 				"company_id" => Company::where('name', '=', 'Primark')->first()->id,
 				"jobcategory_id" => JobCategory::where('label', '=', 'Handarbeid')->first()->id,
-				"status_id" => Status::where('label', '=', 'Pending')->first()->id
+				"status_id" => Status::where('label', '=', 'Open')->first()->id
 			),
 			array(
 				"title" => "Speelgoed monteren",
@@ -65,7 +65,7 @@ class JobsTableSeeder extends Seeder {
 				"start_date" => "2013-12-02 00:00:00",
 				"company_id" => Company::where('name', '=', 'Albert Heijn')->first()->id,
 				"jobcategory_id" => JobCategory::where('label', '=', 'Technisch werk')->first()->id,
-				"status_id" => Status::where('label', '=', 'Pending')->first()->id
+				"status_id" => Status::where('label', '=', 'Open')->first()->id
 			)
 		);
 

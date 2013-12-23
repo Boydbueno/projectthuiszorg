@@ -9,15 +9,14 @@ class AuthController extends \BaseController {
 	{
 
 		if( \Confide::user() )
-        {
-            // If user is logged, redirect to internal 
-            // page, change it to '/admin', '/dashboard' or something
-            return \Redirect::to('/client');
-        }
-        else
-        {
-            return \View::make('client.auth.login');
-        }
+		{
+			// If user is logged, redirect to internal 
+			return \Redirect::to('/client');
+		}
+		else
+		{
+			return \View::make('client.auth.login');
+		}
 		
 	}
 
@@ -28,10 +27,9 @@ class AuthController extends \BaseController {
 	{
 
 		$input = array(
-		    'email'    => \Input::get( 'email' ), // May be the username too
-		    'username' => \Input::get( 'email' ), // so we have to pass both
-		    'password' => \Input::get( 'password' ),
-		    'remember' => \Input::get( 'remember' ),
+			'email'	=> \Input::get( 'email' ), 
+			'password' => \Input::get( 'password' ),
+			'remember' => \Input::get( 'remember' ),
 		);
 
 		// If you wish to only allow login from confirmed users, call logAttempt
@@ -39,29 +37,29 @@ class AuthController extends \BaseController {
 		// logAttempt will check if the 'email' perhaps is the username.
 		if ( \Confide::logAttempt( $input, true ) ) 
 		{
-		    return \Redirect::intended('/client'); 
+			return \Redirect::intended('/client'); 
 		}
 		else
 		{
-		    $user = new \User;
+			$user = new \User;
 
-		    // Check if there was too many login attempts
-		    if( \Confide::isThrottled( $input ) )
-		    {
-		        $err_msg = \Lang::get('confide::confide.alerts.too_many_attempts');
-		    }
-		    elseif( $user->checkUserExists( $input ) and ! $user->isConfirmed( $input ) )
-		    {
-		        $err_msg = \Lang::get('confide::confide.alerts.not_confirmed');
-		    }
-		    else
-		    {
-		        $err_msg = \Lang::get('confide::confide.alerts.wrong_credentials');
-		    }
+			// Check if there was too many login attempts
+			if( \Confide::isThrottled( $input ) )
+			{
+				$err_msg = \Lang::get('confide::confide.alerts.too_many_attempts');
+			}
+			elseif( $user->checkUserExists( $input ) and ! $user->isConfirmed( $input ) )
+			{
+				$err_msg = \Lang::get('confide::confide.alerts.not_confirmed');
+			}
+			else
+			{
+				$err_msg = \Lang::get('confide::confide.alerts.wrong_credentials');
+			}
 
-		                return \Redirect::action('controllers\client\AuthController@getLogin')
-		                    ->withInput(\Input::except('password'))
-		        ->with( 'error', $err_msg );
+						return \Redirect::action('controllers\client\AuthController@getLogin')
+							->withInput(\Input::except('password'))
+				->with( 'error', $err_msg );
 		}
 
 	}
@@ -96,18 +94,19 @@ class AuthController extends \BaseController {
 
 		if ( $user->id )
 		{
-		    // Redirect with success message, You may replace "Lang::get(..." for your custom message.
-		                return \Redirect::action('controllers\client\AuthController@getLogin')
-		                    ->with( 'notice', \Lang::get('confide::confide.alerts.account_created') );
+			// Redirect with success message, You may replace "Lang::get(..." for your custom message.
+			return \Redirect::action('controllers\client\AuthController@getLogin')
+				->with( 'notice', \Lang::get('confide::confide.alerts.account_created') );
 		}
 		else
 		{
-		    // Get validation errors (see Ardent package)
-		    $error = $user->errors()->all(':message');
+			// Get validation errors (see Ardent package)
+			$error = $user->errors()->all(':message');
 
-		                return \Redirect::action('UserController@create')
-		                    ->withInput(\Input::except('password'))
-		        ->with( 'error', $error );
+			return \Redirect::action('controllers\client\AuthController@getRegister')
+				->withInput(\Input::except('password'))
+				->with( 'error', $error );
+
 		}
 
 	}

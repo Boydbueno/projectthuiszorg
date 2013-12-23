@@ -69,7 +69,7 @@ Route::group(array('prefix' => 'company'), function()
 
 	Route::group(array('before' => 'auth.company'), function() 
 	{
-		Route::get('/', 'controllers\company\HomeController@getIndex');
+		Route::get('/', array('as' => 'company', 'uses' => 'controllers\company\HomeController@index'));
 	});
 
 });

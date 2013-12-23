@@ -17,7 +17,7 @@ class AuthController extends \BaseController {
 
 			}elseif(\Confide::user()->hasRole("Client")){
 				
-				return \Redirect::to('/login/client');
+				return \View::make('company.auth.login');
 
 			}
 		

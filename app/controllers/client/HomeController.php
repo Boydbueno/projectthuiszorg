@@ -12,8 +12,12 @@ class HomeController extends \BaseController {
 		$dropdownPlaceholder = array('' => 'Categorie');
 		$jobcategories = $dropdownPlaceholder + Jobcategory::lists('label', 'id');
 		
-		// TODO: Only get jobs which the user didn't join
 		$jobs = \Job::orderBy('start_date')->get();
+
+		// Get the jobs the user didn't join
+		$jobs = array_filter($jobs->toArray(), function($job){
+			return ($job['id'] != \Auth::user()->id);
+		});
 
 		return \View::make('client.index')->with('jobs', $jobs)->with('jobcategories', $jobcategories);
 	}

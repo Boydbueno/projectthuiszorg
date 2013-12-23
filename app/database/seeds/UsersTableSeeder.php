@@ -64,7 +64,7 @@ class UsersTableSeeder extends Seeder {
 				'confirmed' => '1'
 			),
 			array(
-				'username' => 'kevinvlietstra', 
+				'username' => 'kevinvlietstracompany', 
 				'email' => 'dmagphone+company@gmail.com', 
 				'password' => Hash::make('Welkom01'),
 				'confirmation_code' => '7896eef2ea334fb0e13f496996b17177',

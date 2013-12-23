@@ -34,8 +34,25 @@ App::after(function($request, $response)
 */
 
 // Acces based on roles
-Entrust::routeNeedsRole( 'client*', array('Administrator','Client'), Redirect::to('/'), false);
-Entrust::routeNeedsRole( 'company*', array('Administrator','Company'), Redirect::to('/'), false);
+//Entrust::routeNeedsRole( 'client*', array('Administrator','Client'), Redirect::to('/login/client'), false);
+//Entrust::routeNeedsRole( 'company*', array('Administrator','Company'), Redirect::to('/login/company'), false);
+
+Route::filter('clientOrAdmin', function()
+{
+    if (!Entrust::hasRole('Client') && !Entrust::hasRole('Administrator')) // Checks the current user
+    {
+        return Redirect::guest(route('client.login'));
+    }
+});
+
+Route::filter('companyOrAdmin', function()
+{
+    if (!Entrust::hasRole('Company') && !Entrust::hasRole('Administrator')) // Checks the current user
+    {
+        return Redirect::guest(route('company.login'));
+    }
+});
+
 
 /*
 |--------------------------------------------------------------------------

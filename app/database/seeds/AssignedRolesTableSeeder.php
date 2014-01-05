@@ -17,7 +17,7 @@ class AssignedRolesTableSeeder extends Seeder {
 			),
 			array(
 				'user_id' => User::where('username', '=', 'boydbuenodemesquitacompany')->first()->id,
-				'role_id' => Role::where('name', '=', 'Company')->first()->id
+				'role_id' => Role::where('name', '=', 'CompanyOwner')->first()->id
 			),
 			array(
 				'user_id' => User::where('username', '=', 'stefanweck')->first()->id,
@@ -29,7 +29,7 @@ class AssignedRolesTableSeeder extends Seeder {
 			),
 			array(
 				'user_id' => User::where('username', '=', 'stefanweckcompany')->first()->id,
-				'role_id' => Role::where('name', '=', 'Company')->first()->id
+				'role_id' => Role::where('name', '=', 'CompanyOwner')->first()->id
 			),
 			array(
 				'user_id' => User::where('username', '=', 'kevinvlietstra')->first()->id,
@@ -41,7 +41,7 @@ class AssignedRolesTableSeeder extends Seeder {
 			),
 			array(
 				'user_id' => User::where('username', '=', 'kevinvlietstracompany')->first()->id,
-				'role_id' => Role::where('name', '=', 'Company')->first()->id
+				'role_id' => Role::where('name', '=', 'CompanyOwner')->first()->id
 			),
 		);
 

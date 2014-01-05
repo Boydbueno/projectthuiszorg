@@ -14,7 +14,7 @@ class AuthController extends \BaseController {
 			if(\Confide::user()->hasRole("Client") || \Confide::user()->hasRole("Administrator")){
 				
 				// If user is logged, redirect to internal 
-				return \Redirect::to('/client');
+				return \Redirect::to('/client')->with('notice', 'Login Succeeded');
 
 			}elseif(\Confide::user()->hasRole("Company")){
 				
@@ -47,7 +47,7 @@ class AuthController extends \BaseController {
 		// logAttempt will check if the 'email' perhaps is the username.
 		if ( \Confide::logAttempt( $input, true ) ) 
 		{
-			return \Redirect::intended('/client'); 
+			return \Redirect::intended('/client')->with('notice', 'Login Succeeded');
 		}
 		else
 		{

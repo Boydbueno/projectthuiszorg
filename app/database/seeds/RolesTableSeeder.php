@@ -18,10 +18,15 @@ class RolesTableSeeder extends Seeder {
 				'updated_at' => "2013-12-23 15:19:18"
 			),			
 			array(
-				'name' => "Company",
+				'name' => "CompanyOwner",
 				'created_at' => "2013-12-23 15:19:18",
 				'updated_at' => "2013-12-23 15:19:18"
 			),
+			array(
+				'name' => "CompanyEmployee",
+				'created_at' => "2013-12-23 15:19:18",
+				'updated_at' => "2013-12-23 15:19:18"
+			)
 		);
 
 		DB::table('roles')->insert($roles);

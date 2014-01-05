@@ -35,9 +35,21 @@
 
     <section class="jobs">
 
-        @foreach ($jobs as $job)
-            @include('partials.jobs._job', array('job' => $job))
-        @endforeach
+        @if(isset($jobs['Start']))
+
+            @foreach ($jobs['Start'] as $job)
+                @include('partials.jobs._job', array('job' => $job))
+            @endforeach
+
+        @endif
+
+        @if(isset($jobs['Open']))
+
+            @foreach ($jobs['Open'] as $job)
+                @include('partials.jobs._job', array('job' => $job))
+            @endforeach
+
+        @endif
 
     </section> <!-- End Jobs -->
 

@@ -39,17 +39,17 @@ class HomeController extends \BaseController {
 
 	public function getMyjobs() 
 	{
-		$jobs = \Auth::user()->jobs()->with('jobcategory', 'status')->get();
+		$jobs = \Auth::user()->jobs()->with('jobcategory', 'status')->get()->toArray();
 
-		// Split jobs array into
+		// Split jobs array into groups per status
 		
-		// Started jobs
-		
-		// Pending jobs
+		$jobsInGroups = [];
 
-		// To make this possible.. we need to add a status to the job.
+		foreach ($jobs as $job) {
+    		$jobsInGroups[$job['status']['label']][] = $job;
+		}
 
-		return \View::make('client.myjobs')->with('jobs', $jobs);
+		return \View::make('client.myjobs')->with('jobs', $jobsInGroups);
 	}
 	
 }

@@ -25,6 +25,11 @@ class User extends ConfideUser{
 		return $this->belongsToMany('Job');
 	}
 
+    public function userInfo()
+    {
+        return $this->hasOne('UserInfo', 'user_id');
+    }
+
 	/**
 	 * Get the fist name for the user
 	 *
@@ -63,12 +68,12 @@ class User extends ConfideUser{
     	$emptyFields = [];
 
     	//Loop through the attributes of this user
-    	foreach($this->attributes as $key => $value) {
+    	foreach($this->userInfo->attributes as $key => $value) {
 
     		//If a value is not filled in, add it to the array
     		if($value === ""){
     			array_push($emptyFields, $key);
-    	    }
+    	   }
 
     	}
 

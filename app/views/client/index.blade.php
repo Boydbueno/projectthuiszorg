@@ -11,7 +11,7 @@
         <section class="block marginTop floatFix">
         
             <header class="mainTitle">
-                <h1>Welkom terug, {{{ Auth::user()->first_name }}} {{{ Auth::user()->last_name }}}!</h1>
+                <h1>Welkom terug, {{{ Auth::user()->userInfo->firstName }}} {{{ Auth::user()->userInfo->lastName }}}!</h1>
             </header>
 
             <div class="progressSmall"></div>

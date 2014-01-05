@@ -4,9 +4,9 @@ class CompanyUserTableSeeder extends Seeder {
 
 	public function run()
 	{
-		DB::table('job_user')->truncate();
+		DB::table('company_user')->truncate();
 
-		$job_user = array(
+		$company_user = array(
 			array(
 				'company_id' => Company::where('name', '=', 'Primark')->first()->id,
 				'user_id' => User::where('username', '=', 'stefanweckcompany')->first()->id
@@ -21,7 +21,7 @@ class CompanyUserTableSeeder extends Seeder {
 			),
 		);
 
-		DB::table('job_user')->insert($job_user);
+		DB::table('company_user')->insert($company_user);
 	}
 
 }

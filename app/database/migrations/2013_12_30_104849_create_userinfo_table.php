@@ -20,7 +20,7 @@ class CreateUserinfoTable extends Migration {
 			$table->string('houseNumber', 5);
 			$table->string('city', 100);
 			$table->string('phoneNumber', 10);
-
+			$table->integer('user_id')->unsigned();
 			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 		});
 	}

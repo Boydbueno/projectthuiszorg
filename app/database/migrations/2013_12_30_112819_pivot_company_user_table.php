@@ -11,9 +11,12 @@ class PivotCompanyUserTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('company_user', function(Blueprint $table) {
+		Schema::create('company_user', function($table) 
+		{
 			$table->increments('id');
+			$table->integer('company_id')->unsigned();
 			$table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
+			$table->integer('user_id')->unsigned();
 			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 		});
 	}

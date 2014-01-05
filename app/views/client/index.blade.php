@@ -76,7 +76,7 @@
     <!-- Todo: See if we can combine this with the php partial -->
     @include('partials.handlebars._job')
 
-    @include('partials.client.footer')
+    @include('partials.client._footer')
 @stop
 
 @section('scripts')

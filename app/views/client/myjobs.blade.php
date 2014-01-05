@@ -53,6 +53,6 @@
 
     </section> <!-- End Jobs -->
 
-    @include('partials.client.footer')
+    @include('partials.client._footer')
 
 @stop

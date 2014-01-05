@@ -25,7 +25,7 @@ class PivotCompanyUserTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('company_user');
 	}
 
 }

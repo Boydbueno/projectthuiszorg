@@ -57,12 +57,12 @@
 	        $("#range_1").ionRangeSlider({
 	            min: 0,
 	            max: job.payment,
-	            from: job.payment/2,
+	            from: job.minimum,
 	            to: 0,
 	            type: 'single',
 	            step: 2,
-	            postfix: "m2",
-	            prefix: "€",
+	            postfix: job.postfix,
+	            prefix: job.prefix,
 	            prettify: true,
 	            hasGrid: true
 	        });

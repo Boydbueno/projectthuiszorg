@@ -39,7 +39,7 @@ class HomeController extends \BaseController {
 
 	public function getMyjobs() 
 	{
-		$jobs = \Auth::user()->jobs()->with('jobcategory', 'status')->get()->toArray();
+		$jobs = \Auth::user()->jobs()->with('jobcategory', 'status')->get();
 
 		// Split jobs array into groups per status
 		

@@ -49,11 +49,13 @@ Route::group(array('prefix' => 'client'), function()
 	{
 		Route::get('/', array('as' => 'client', 'uses' => 'controllers\client\HomeController@index'));
 		Route::get('jobs', 'controllers\client\HomeController@getMyJobs');
-		Route::get('settings', 'controllers\client\SettingsController@getSettings');
+		Route::get('settings', array('as' => 'client.settings', 'uses' => 'controllers\client\SettingsController@getSettings'));
 
 		Route::get('jobs/{id}', array('as' => 'client.jobs.show', 'uses' => 'controllers\client\JobsController@show'));
 		Route::get('jobs/{id}/join', array('as' => 'client.jobs.join', 'uses' => 'controllers\client\JobsController@join'));
 		Route::post('jobs/{id}/join', 'controllers\client\JobsController@postJoin');
+
+		Route::get('jobs/{id}/edit', array('as' => 'client.jobs.edit', 'uses' => 'controllers\clients\JobsController@edit'));
 	});
 
 });

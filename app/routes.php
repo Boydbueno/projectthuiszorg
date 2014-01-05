@@ -104,10 +104,6 @@ Route::group(array('prefix' => 'api'), function()
 |---------------------------------------------------------------------------
 */
 // TODO: Cleanup?
-Route::get( 'user/create',                 'UserController@create');
-Route::post('user',                        'UserController@store');
-Route::get( 'user/login',                  'UserController@login');
-Route::post('user/login',                  'UserController@do_login');
 Route::get( 'user/confirm/{code}',         'UserController@confirm');
 Route::get( 'user/reset_password/{token}', 'UserController@reset_password');
 Route::post('user/reset_password',         'UserController@do_reset_password');

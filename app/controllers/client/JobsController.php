@@ -3,6 +3,11 @@
 use JobUser;
 use Job;
 
+use Auth;
+use Input;
+use Redirect;
+use View;
+
 class JobsController extends \BaseController {
 
 	/**
@@ -19,23 +24,32 @@ class JobsController extends \BaseController {
 
 		$job->participantsText = $this->getParticipantsText(count($job->users));
 
-        return \View::make('client.jobDetail')->with('job', $job);
+        return View::make('client.jobDetail')->with('job', $job);
 	}
 
 	public function join($id)
 	{
 		$job = Job::find($id);
 
-        return \View::make('client.join')->with('job', $job);
+        return View::make('client.join')->with('job', $job);
 	}
 
 	public function postJoin($id)
 	{
-		$userid = \Auth::user()->id;
-		$amount = \Input::get('range_1');
+		$userid = Auth::user()->id;
+		$amount = Input::get('range_1');
 		JobUser::create(array('job_id' => $id, 'user_id' => $userid, 'amount' => $amount));
 
-		return \Redirect::to('client/jobs/' . $id . '/')->with('notice', 'U bent nu succesvol ingeschreven!');
+		return Redirect::to('client/jobs/' . $id . '/')->with('notice', 'U bent nu succesvol ingeschreven!');
+	}
+
+	public function edit($id)
+	{
+		$userid = Auth::user()->id;
+
+		$job = Job::find($id);
+
+		return View::make('client.jobEdit', compact('job'));	
 	}
 
 	/**

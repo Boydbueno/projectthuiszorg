@@ -55,7 +55,7 @@ Route::group(array('prefix' => 'client'), function()
 		Route::get('jobs/{id}/join', array('as' => 'client.jobs.join', 'uses' => 'controllers\client\JobsController@join'));
 		Route::post('jobs/{id}/join', 'controllers\client\JobsController@postJoin');
 
-		Route::get('jobs/{id}/edit', array('as' => 'client.jobs.edit', 'uses' => 'controllers\clients\JobsController@edit'));
+		Route::get('jobs/{id}/edit', array('as' => 'client.jobs.edit', 'uses' => 'controllers\client\JobsController@edit'));
 	});
 
 });

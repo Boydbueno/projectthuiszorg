@@ -19,9 +19,9 @@ class UserInfoTableSeeder extends Seeder {
 			array(
 				"firstName" => "Stefan",
 				"lastName" => "Client",
-				"adress" => "StefanStraat",
+				"adress" => "",
 				"houseNumber" => 9,
-				"city" => "Gorinchem",
+				"city" => "",
 				"phoneNumber" => "06348939",
 				"user_id" => User::where('username', '=', 'stefanweckclient')->first()->id
 			),
@@ -48,8 +48,8 @@ class UserInfoTableSeeder extends Seeder {
 				"lastName" => "Client",
 				"adress" => "KevinStraat",
 				"houseNumber" => 6,
-				"city" => "Zoetermeer",
-				"phoneNumber" => "063768139",
+				"city" => "",
+				"phoneNumber" => "",
 				"user_id" => User::where('username', '=', 'kevinvlietstraclient')->first()->id
 			),
 			array(
@@ -73,9 +73,9 @@ class UserInfoTableSeeder extends Seeder {
 			array(
 				"firstName" => "Boyd",
 				"lastName" => "Bueno de Client",
-				"adress" => "BoydStraat",
+				"adress" => "",
 				"houseNumber" => 8,
-				"city" => "Rotterdam",
+				"city" => "",
 				"phoneNumber" => "061168139",
 				"user_id" => User::where('username', '=', 'boydbuenodemesquitaclient')->first()->id
 			),

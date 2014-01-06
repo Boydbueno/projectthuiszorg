@@ -10,7 +10,7 @@ class AuthController extends \BaseController {
 		if( \Confide::user() )
 		{
 
-			if(\Confide::user()->hasRole("Company") || \Confide::user()->hasRole("Administrator")){
+			if(\Confide::user()->hasRole("CompanyOwner") || \Confide::user()->hasRole("CompanyEmployee") || \Confide::user()->hasRole("Administrator")){
 				
 				// If user is logged, redirect to internal 
 				return \Redirect::to('/company');

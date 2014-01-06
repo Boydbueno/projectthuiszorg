@@ -47,7 +47,7 @@ Route::filter('clientOrAdmin', function()
 
 Route::filter('companyOrAdmin', function()
 {
-    if (!Entrust::hasRole('Company') && !Entrust::hasRole('Administrator')) // Checks the current user
+    if (!Entrust::hasRole('CompanyOwner') && !Entrust::hasRole('CompanyEmployee') && !Entrust::hasRole('Administrator')) // Checks the current user
     {
         return Redirect::guest(route('company.login'));
     }

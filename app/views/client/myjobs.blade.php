@@ -35,19 +35,27 @@
 
     <section class="jobs">
 
-        @if(isset($jobs['Start']))
+        @if(isset($jobs['Gestart']))
 
-            @foreach ($jobs['Start'] as $job)
+        <section class="started-jobs">            
+            <h1 class="block marginTop mainTitle">Opdrachten die gestart zijn</h1>
+
+            @foreach ($jobs['Gestart'] as $job)
                 @include('partials.client._jobEdit', $job)
             @endforeach
+        </section>
 
         @endif
 
         @if(isset($jobs['Open']))
+        
+        <section class="pending-jobs">
+            <h1 class="block marginTop mainTitle">Opdrachten die nog niet gestart zijn</h1>
 
             @foreach ($jobs['Open'] as $job)
                 @include('partials.client._jobEdit', $job)
             @endforeach
+        </section>
 
         @endif
 

@@ -9,7 +9,7 @@
     <section class="block marginTop floatFix">
     
         <header class="mainTitle">
-            <h1>Dit is de tijdelijke company pagina!</h1>
+            <h1>Klaar om nieuwe opdrachten te plaatsen?</h1>
         </header>
 
         <div class="progressSmall">
@@ -27,7 +27,7 @@
             </aside>
 
             <p class="information borderRight">
-                Goed om u terug te zien, er staan weer een hoop nieuwe opdrachten op u te  wachten, in de balk hier naast kunt u de status van uw huidige opdrachten bekijken of zoek een nieuwe opdracht uit om samen aan te werken, alles is mogelijk!
+                Goed om u terug te zien, er staan weer een hoop nieuwe klanten op u te  wachten, in de balk hier naast kunt u de status van uw huidige opdrachten bekijken of begin met het aanmaken van een nieuwe opdracht!
                 <span>{{ Session::get('notice') }}</span>
             </p>
         </section>

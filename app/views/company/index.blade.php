@@ -19,7 +19,7 @@
             <aside class="floatRight quickMenu">
                 <nav>
                     <!-- TODO: Place 'mijn opdrachten' link in ul -->
-                    {{ link_to('client/myjobs', 'Mijn Opdrachten', array('class' => 'btn btnWorkIcon'))}}
+                    {{ link_to('client/myjobs', 'Mijn Opdrachten', array('class' => 'btn messageBoxBtn btnWorkIcon'))}}
                     <ul>
                         <li class="iconItem settingsIcon"><a href="#">Instellingen</a></li>
                     </ul>

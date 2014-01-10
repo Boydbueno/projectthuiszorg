@@ -13,7 +13,6 @@
                 <li class="iconItem timeIcon">{{ $job->status->label }}</li>
                 <li class="iconItem moneyIcon">€ {{ $job->formatted_payment }}</li>
             </ul>
-            {{ link_to_route('client.jobs.edit', 'Bekijk Opdracht', ['id' => 1], ['class' => 'btn'])}}
         </aside>
         <div class="information borderRight">
             <p>{{ $job->short_description }}</p>

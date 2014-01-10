@@ -6,10 +6,6 @@
 
 @section('content')
 
-	@if(Session::get('notice'))
-		{{{ Session::get('notice') }}}
-	@endif
-
 	<nav class='block marginTop mainTitle'>
 		{{ link_to_route('client', 'Terug naar het overzicht') }}
 	</nav>

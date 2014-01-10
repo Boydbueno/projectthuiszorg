@@ -56,7 +56,7 @@
 
 	        $("#range_1").ionRangeSlider({
 	            min: 0,
-	            max: job.payment,
+	            max: job.amount,
 	            from: job.minimum,
 	            to: 0,
 	            type: 'single',

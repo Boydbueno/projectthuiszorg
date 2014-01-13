@@ -7,6 +7,9 @@
             </header>
             <div class="progress">
                 <div class="progressBar" style="width: {{ percentage_complete }}%"></div>
+                <div class="progressDescription">
+                    Nog {{ job.amount_left }} {{ job.postfix }}
+                </div>
             </div>
             <section class="description">
                 <aside class="details floatRight">

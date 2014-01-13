@@ -105,7 +105,7 @@ Route::group(array('prefix' => 'api'), function()
 | Confidence Routes
 |---------------------------------------------------------------------------
 */
-// TODO: Cleanup?
+
 Route::get( 'user/confirm/{code}',         'UserController@confirm');
 Route::get( 'user/reset_password/{token}', 'UserController@reset_password');
 Route::post('user/reset_password',         'UserController@do_reset_password');

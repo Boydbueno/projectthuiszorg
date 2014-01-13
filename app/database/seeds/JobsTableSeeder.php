@@ -18,6 +18,7 @@ class JobsTableSeeder extends Seeder {
 				"prefix" => "",
 				"postfix" => "m2",
 				"start_date" => "2014-02-15 00:00:00",
+				"end_date" => "2014-03-15 00:00:00",
 				"company_id" => Company::where('name', '=', 'Primark')->first()->id,
 				"jobcategory_id" => JobCategory::where('label', '=', 'Fysiek werk')->first()->id,
 				"status_id" => Status::where('label', '=', 'Open')->first()->id
@@ -33,6 +34,7 @@ class JobsTableSeeder extends Seeder {
 				"prefix" => "",
 				"postfix" => "uur",
 				"start_date" => "2014-02-17 00:00:00",
+				"end_date" => "2014-03-17 00:00:00",
 				"company_id" => Company::where('name', '=', 'Albert Heijn')->first()->id,
 				"jobcategory_id" => JobCategory::where('label', '=', 'Adviserend werk')->first()->id,
 				"status_id" => Status::where('label', '=', 'Open')->first()->id
@@ -48,6 +50,7 @@ class JobsTableSeeder extends Seeder {
 				"prefix" => "",
 				"postfix" => "Mutsen",
 				"start_date" => "2014-02-28 00:00:00",
+				"end_date" => "2014-03-28 00:00:00",
 				"company_id" => Company::where('name', '=', 'Primark')->first()->id,
 				"jobcategory_id" => JobCategory::where('label', '=', 'Handarbeid')->first()->id,
 				"status_id" => Status::where('label', '=', 'Open')->first()->id
@@ -63,9 +66,26 @@ class JobsTableSeeder extends Seeder {
 				"prefix" => "",
 				"postfix" => "Stuks",
 				"start_date" => "2014-02-02 00:00:00",
+				"end_date" => "2014-03-02 00:00:00",
 				"company_id" => Company::where('name', '=', 'Albert Heijn')->first()->id,
 				"jobcategory_id" => JobCategory::where('label', '=', 'Technisch werk')->first()->id,
 				"status_id" => Status::where('label', '=', 'Open')->first()->id
+			),
+			array(
+				"title" => "Gadgets monteren",
+				"short_description" => "Wij zijn een van de grootste speelgoed fabrikanten van Nederland, en we zijn op zoek naar mensen die voor ons thuis speelgoed in elkaar kunnen zetten. Materialen en gereedschap zullen worden aangeleverd.  Technische kennis is een vereiste, aangezien er ook wat soldeer werk aan te pas komt om de chips aan te sluiten op de batterijen.",
+				"long_description" => "",
+				"amount" => 100,
+				"payment" => 5.00,
+				"minimum" => 10,
+				"step" => 10,
+				"prefix" => "",
+				"postfix" => "Stuks",
+				"start_date" => "2014-01-01 00:00:00",
+				"end_date" => "2014-01-01 00:00:00",
+				"company_id" => Company::where('name', '=', 'Albert Heijn')->first()->id,
+				"jobcategory_id" => JobCategory::where('label', '=', 'Technisch werk')->first()->id,
+				"status_id" => Status::where('label', '=', 'Gestart')->first()->id
 			)
 		);
 

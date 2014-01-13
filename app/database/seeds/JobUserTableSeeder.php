@@ -37,6 +37,21 @@ class JobUserTableSeeder extends Seeder {
 				'user_id' => User::where('username', '=', 'kevinvlietstra')->first()->id,
 				'amount' => 5
 			),
+			array(
+				'job_id' => Job::where('title', '=', 'Gadgets monteren')->first()->id,
+				'user_id' => User::where('username', '=', 'boydbuenodemesquita')->first()->id,
+				'amount' => 10
+			),
+			array(
+				'job_id' => Job::where('title', '=', 'Gadgets monteren')->first()->id,
+				'user_id' => User::where('username', '=', 'stefanweck')->first()->id,
+				'amount' => 10
+			),			
+			array(
+				'job_id' => Job::where('title', '=', 'Gadgets monteren')->first()->id,
+				'user_id' => User::where('username', '=', 'kevinvlietstra')->first()->id,
+				'amount' => 10
+			),
 		);
 
 		DB::table('job_user')->insert($job_user);

@@ -10,6 +10,7 @@ class Job extends Eloquent {
 		'category',
 		'jobstatus', // status is reserved
 		'percentage_complete',
+		'amount_left',
 		'days_left_phrase',
 		'formatted_payment',
 		'jobcategory_classname',
@@ -68,6 +69,21 @@ class Job extends Eloquent {
 	public function getDaysLeftAttribute()
 	{
 		return Carbon::now()->diffInDays($this->start_date);
+	}
+
+	public function getAmountLeftAttribute()
+	{
+		$totalAmount = 0;
+
+		//Get all the contributors to this job
+		$jobusers = \JobUser::where('job_id','=',$this->id)->get();
+
+		//Calculate the total amount
+		foreach($jobusers as $jobuser){
+			$totalAmount += $jobuser->amount;
+		}
+
+		return $this->amount - $totalAmount;
 	}
 
 	public function getPercentageCompleteAttribute()

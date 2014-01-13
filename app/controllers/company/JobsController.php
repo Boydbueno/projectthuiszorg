@@ -27,29 +27,9 @@ class JobsController extends \BaseController {
         return View::make('company.jobDetail')->with('job', $job);
 	}
 
-	public function join($id)
+	public function create()
 	{
-		$job = Job::find($id);
-
-        return View::make('company.join')->with('job', $job);
-	}
-
-	public function postJoin($id)
-	{
-		$userid = Auth::user()->id;
-		$amount = Input::get('range_1');
-		JobUser::create(array('job_id' => $id, 'user_id' => $userid, 'amount' => $amount));
-
-		return Redirect::to('company/jobs/' . $id . '/')->with('notice', 'U bent nu succesvol ingeschreven!');
-	}
-
-	public function edit($id)
-	{
-		$userid = Auth::user()->id;
-
-		$job = Job::find($id);
-
-		return View::make('company.jobEdit', compact('job'));	
+		return View::make('company.jobCreate');
 	}
 
 	/**
@@ -60,14 +40,14 @@ class JobsController extends \BaseController {
 	private function getParticipantsText($usersCount) 
 	{
 		if ($usersCount === 0) {
-			return "Er doet nog niemand mee, word de eerste!";
+			return "Er doet nog niemand mee met uw opdracht.";
 		} 
 
 		if ($usersCount === 1) {
-			return "Al één iemand doet mee, doe ook mee!";
+			return "Er is een participant voor uw opdracht!";
 		}
 
-		return "Al {$usersCount} mensen willen meewerken, doe ook mee!";
+		return "Al {$usersCount} mensen doen mee!";
 	}
 
 }

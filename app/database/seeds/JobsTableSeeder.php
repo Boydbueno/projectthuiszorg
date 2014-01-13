@@ -9,15 +9,15 @@ class JobsTableSeeder extends Seeder {
 		$jobs = array(
 			array(
 				"title" => "Tapijt leggen",
-				"short_description" => "Wij hebben net een nieuw bedrijfspand gekocht vlakbij Station Blaak in Rotterdam. De muren moeten geverfd worden en er moet tapijt gelegd worden. Hier zoeken wij mensen voor die ervaring hebben met het verven van grote oppervlakken. Aanschaf van de benodigde materialen zullen wij zelf verzorgen.",
-				"long_description" => "Wij hebben net een nieuw bedrijfspand gekocht vlakbij Station Blaak in Rotterdam. De muren moeten geverfd worden en er moet tapijt gelegd worden. Hier zoeken wij mensen voor die ervaring hebben met het verven van grote oppervlakken. Aanschaf van de benodigde materialen zullen wij zelf verzorgen.Wij hebben net een nieuw bedrijfspand gekocht vlakbij Station Blaak in Rotterdam. De muren moeten geverfd worden en er moet tapijt gelegd worden. Hier zoeken wij mensen voor die ervaring hebben met het verven van grote oppervlakken. Aanschaf van de benodigde materialen zullen wij zelf verzorgen.",
+				"short_description" => "Wij hebben net een nieuw bedrijfspand gekocht vlakbij Station Blaak in Rotterdam. De muren zijn geverfd en nu moet er moet tapijt gelegd worden. Hier zoeken wij mensen voor die ervaring hebben met het leggen van grote oppervlakken. Aanschaf van de benodigde materialen zullen wij zelf verzorgen.",
+				"long_description" => "Wij hebben net een nieuw bedrijfspand gekocht vlakbij Station Blaak in Rotterdam. De muren zijn geverfd en nu moet er moet tapijt gelegd worden. Hier zoeken wij mensen voor die ervaring hebben met het leggen van grote oppervlakken. Aanschaf van de benodigde materialen zullen wij zelf verzorgen. Wij hebben net een nieuw bedrijfspand gekocht vlakbij Station Blaak in Rotterdam. De muren moeten geverfd worden en er moet tapijt gelegd worden. Hier zoeken wij mensen voor die ervaring hebben met het verven van grote oppervlakken. Aanschaf van de benodigde materialen zullen wij zelf verzorgen.",
 				"amount" => 200,
 				"payment" => 10.00,
 				"minimum" => 10,
 				"step" => 5,
 				"prefix" => "",
 				"postfix" => "m2",
-				"start_date" => "2013-11-15 00:00:00",
+				"start_date" => "2014-02-15 00:00:00",
 				"company_id" => Company::where('name', '=', 'Primark')->first()->id,
 				"jobcategory_id" => JobCategory::where('label', '=', 'Fysiek werk')->first()->id,
 				"status_id" => Status::where('label', '=', 'Open')->first()->id
@@ -32,7 +32,7 @@ class JobsTableSeeder extends Seeder {
 				"step" => 1,
 				"prefix" => "",
 				"postfix" => "uur",
-				"start_date" => "2013-11-17 00:00:00",
+				"start_date" => "2014-02-17 00:00:00",
 				"company_id" => Company::where('name', '=', 'Albert Heijn')->first()->id,
 				"jobcategory_id" => JobCategory::where('label', '=', 'Adviserend werk')->first()->id,
 				"status_id" => Status::where('label', '=', 'Open')->first()->id
@@ -47,7 +47,7 @@ class JobsTableSeeder extends Seeder {
 				"step" => 10,
 				"prefix" => "",
 				"postfix" => "Mutsen",
-				"start_date" => "2013-11-28 00:00:00",
+				"start_date" => "2014-02-28 00:00:00",
 				"company_id" => Company::where('name', '=', 'Primark')->first()->id,
 				"jobcategory_id" => JobCategory::where('label', '=', 'Handarbeid')->first()->id,
 				"status_id" => Status::where('label', '=', 'Open')->first()->id
@@ -62,7 +62,7 @@ class JobsTableSeeder extends Seeder {
 				"step" => 10,
 				"prefix" => "",
 				"postfix" => "Stuks",
-				"start_date" => "2013-12-02 00:00:00",
+				"start_date" => "2014-02-02 00:00:00",
 				"company_id" => Company::where('name', '=', 'Albert Heijn')->first()->id,
 				"jobcategory_id" => JobCategory::where('label', '=', 'Technisch werk')->first()->id,
 				"status_id" => Status::where('label', '=', 'Open')->first()->id

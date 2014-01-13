@@ -18,6 +18,9 @@
 	    </header>
 	    <div class="progress">
 	        <div class="progressBar" style="width: {{ $job->percentageComplete }}%"></div>
+	        <div class="progressDescription">
+	            Nog {{ $job->amount_left }} {{ $job->postfix }}
+	        </div>
 	    </div>
 	    <section class="description floatFix">
 	        <aside class="details floatRight">

@@ -38,7 +38,7 @@
 	            	{{ $job->long_description ? $job->long_description : $job->short_description }}
 	            </p>
 	        </div>
-	        <div class="floatFix" class="slider">
+	        <div class="jobSlider floatFix" class="slider">
 			    {{ Form::label('range_1', 'Slider', array('class' => 'hidden' )); }}
 			    {{ Form::text('range_1') }}
 			</div>
@@ -55,13 +55,11 @@
 	    $(document).ready(function(){
 
 	        $("#range_1").ionRangeSlider({
-	            min: 0,
-	            max: job.amount,
-	            from: job.minimum,
-	            to: 0,
+	            min: job.minimum,
+	            max: job.amount_left,
 	            type: 'single',
-	            step: 2,
-	            postfix: job.postfix,
+	            step: job.step,
+	            postfix: ' '+job.postfix,
 	            prefix: job.prefix,
 	            prettify: true,
 	            hasGrid: true

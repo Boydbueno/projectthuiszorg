@@ -25,20 +25,52 @@
 				{{ Form::open(array('url' => '/company/jobs/create', 'class' => 'regularPadding marginTop contactForm')) }} 
 					<ul>
 						<li>
-							{{ Form::label('first_name', 'Voornaam:') }}
-							{{ Form::text('first_name') }}
+							{{ Form::label('title', 'Titel:') }}
+							{{ Form::text('title') }}
 						</li>
 						<li>
-							{{ Form::label('last_name', 'Achternaam:') }}
-							{{ Form::text('last_name') }}
+							{{ Form::label('short_description', 'Korte Beschrijving:') }}
+							{{ Form::textarea('short_description') }}
 						</li>
 						<li>
-							{{ Form::label('email', 'Email:') }}
-							{{ Form::text('email') }}
+							{{ Form::label('long_description', 'Volledige Beschrijving:') }}
+							{{ Form::textarea('long_description') }}
 						</li>
 						<li>
-							{{ Form::label('text', 'Bericht:') }}
-							{{ Form::textarea('text') }}
+							{{ Form::label('amount', 'Totale Aantal:') }}
+							{{ Form::text('amount') }}
+						</li>
+						<li>
+							{{ Form::label('payment', 'Tarief Per Product:') }}
+							{{ Form::text('payment') }}
+						</li>
+						<li>
+							{{ Form::label('minimum', 'Minimum Afname:') }}
+							{{ Form::text('minimum') }}
+						</li>
+						<li>
+							{{ Form::label('step', 'Step:') }}
+							{{ Form::text('step') }}
+						</li>
+						<li>
+							{{ Form::label('postfix', 'Type:') }}
+							{{ Form::text('postfix') }}
+						</li>
+						<li>
+							{{ Form::label('prefix', 'prefix:') }}
+							{{ Form::text('prefix') }}
+						</li>
+						<li>
+							{{ Form::label('start_date', 'Opdracht Start Op:') }}
+							{{ Form::text('start_date') }}
+						</li>
+						<li>
+							{{ Form::label('end_date', 'Oplevering Op:') }}
+							{{ Form::text('end_date') }}
+						</li>
+						<li>
+							{{ Form::label('category_id', 'Categorie:') }}
+							{{ Form::select('category_id', $statusList) }}
 						</li>
 						<li>
 							{{ Form::submit('Verzend', array('class' => 'btn btn-primary center')) }}

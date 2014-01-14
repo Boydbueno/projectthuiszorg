@@ -74,7 +74,7 @@ Route::group(array('prefix' => 'company'), function()
 		Route::get('/', array('as' => 'company', 'uses' => 'controllers\company\HomeController@index'));
 
 		Route::get('jobs/create', array('as' => 'company.jobs.create', 'uses' => 'controllers\company\JobsController@create'));
-		Route::post('jobs/create', 'controllers\company\JobsController@createJoin');
+		Route::post('jobs/create', 'controllers\company\JobsController@postCreate');
 	});
 
 });

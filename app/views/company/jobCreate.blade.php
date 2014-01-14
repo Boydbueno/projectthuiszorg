@@ -69,8 +69,12 @@
 							{{ Form::text('end_date') }}
 						</li>
 						<li>
+							{{ Form::label('status_id', 'Status:') }}
+							{{ Form::select('status_id', $statusList) }}
+						</li>
+						<li>
 							{{ Form::label('category_id', 'Categorie:') }}
-							{{ Form::select('category_id', $statusList) }}
+							{{ Form::select('category_id', $categoryList) }}
 						</li>
 						<li>
 							{{ Form::submit('Verzend', array('class' => 'btn btn-primary center')) }}

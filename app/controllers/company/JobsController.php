@@ -18,7 +18,7 @@ class JobsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$job = Job::find($id);
+		$job = \Job::find($id);
 
 		$usersCount = count($job->users);
 
@@ -29,7 +29,9 @@ class JobsController extends \BaseController {
 
 	public function create()
 	{
-		return View::make('company.jobCreate');
+		$statusList = \Status::lists('label', 'id');
+
+		return View::make('company.jobCreate')->with('statusList', $statusList);
 	}
 
 	/**

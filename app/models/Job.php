@@ -26,6 +26,17 @@ class Job extends Eloquent {
 
 	/*
 	|---------------------------------------------------------------------------
+	| Functions
+	|---------------------------------------------------------------------------
+	*/
+
+	public function differenceInDates($dateToCompare)
+	{
+		return Carbon::now()->diffInDays($this->start_date);
+	}
+
+	/*
+	|---------------------------------------------------------------------------
 	| Relationships
 	|---------------------------------------------------------------------------
 	*/
@@ -66,11 +77,6 @@ class Job extends Eloquent {
 		return $this->status->label;
 	}
 
-	public function getDaysLeftAttribute()
-	{
-		return Carbon::now()->diffInDays($this->start_date);
-	}
-
 	public function getAmountLeftAttribute()
 	{
 		$totalAmount = 0;
@@ -104,10 +110,19 @@ class Job extends Eloquent {
 
 	public function getDaysLeftPhraseAttribute()
 	{
-		if($this->daysLeft === 0)
-            return "Alleen vandaag nog!";
+		if($this->start_date >= new \DateTime('today')){
+			if($this->differenceInDates($this->start_date) === 0){
+	            return "Alleen vandaag nog!";
+			}
 
-        return "Nog {$this->daysLeft} " . ($this->daysLeft  === 1 ? "dag" : "dagen") . "!";
+	        return "Nog {$this->differenceInDates($this->start_date)} " . ($this->differenceInDates($this->start_date)  === 1 ? "dag" : "dagen") . "!";
+	    }else{
+	    	if($this->differenceInDates($this->end_date) === 0){
+	            return "Uiterlijk vandaag opleveren!";
+	    	}
+
+	        return "Opleveren over {$this->differenceInDates($this->end_date)} " . ($this->differenceInDates($this->end_date)  === 1 ? "dag" : "dagen") . "!";
+	    }
 	}
 
 	public function getFormattedPaymentAttribute()

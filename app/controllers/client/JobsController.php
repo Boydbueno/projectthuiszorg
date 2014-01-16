@@ -18,13 +18,28 @@ class JobsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$job = Job::find($id);
+		$job = \Job::find($id);
+		$user = \Auth::user();
+		$users = \Job::find($id)->users;
+
+		$jobUserCheck = \DB::table('job_user')->where('user_id', '=', $user->id)->where('job_id', '=', $job->id)->get();
+
+		if(count($jobUserCheck) === 0)
+		{
+			$showButton = true;
+		}
+		else
+		{
+			$showButton = false;
+		}
+
+		//dd($showButton);
 
 		$usersCount = count($job->users);
 
 		$job->participantsText = $this->getParticipantsText(count($job->users));
 
-        return View::make('client.jobDetail')->with('job', $job);
+        return View::make('client.jobDetail')->with('job', $job)->with('showButton', $showButton);
 	}
 
 	public function join($id)

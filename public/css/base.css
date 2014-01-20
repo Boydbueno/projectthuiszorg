@@ -317,16 +317,17 @@ fieldset {
   width: 100%;
   height: 24px;
   background-color: #989898;
+  overflow: hidden;
 }
 
-/* line 21, ../sass/base.scss */
+/* line 22, ../sass/base.scss */
 .progressSmall {
   width: 100%;
   background-color: #989898;
   height: 5px;
 }
 
-/* line 27, ../sass/base.scss */
+/* line 28, ../sass/base.scss */
 .progressDescription {
   color: #FAFAFA;
   padding-left: 20px;
@@ -335,7 +336,7 @@ fieldset {
   float: left;
 }
 
-/* line 35, ../sass/base.scss */
+/* line 36, ../sass/base.scss */
 .progressBar {
   width: 0%;
   max-width: 100%;
@@ -344,127 +345,127 @@ fieldset {
   float: left;
 }
 
-/* line 44, ../sass/base.scss */
+/* line 45, ../sass/base.scss */
 .fysiekWerk .progress {
   background-color: #fec606;
 }
 
-/* line 48, ../sass/base.scss */
+/* line 49, ../sass/base.scss */
 .fysiekWerk .progressBar {
   background-color: #fedf73;
 }
 
-/* line 52, ../sass/base.scss */
+/* line 53, ../sass/base.scss */
 .fysiekWerk h1 {
   color: #fec606;
 }
 
-/* line 57, ../sass/base.scss */
+/* line 58, ../sass/base.scss */
 .adviserendWerk .progress {
   background-color: #0692fe;
 }
 
-/* line 61, ../sass/base.scss */
+/* line 62, ../sass/base.scss */
 .adviserendWerk .progressBar {
   background-color: #73c2fe;
 }
 
-/* line 65, ../sass/base.scss */
+/* line 66, ../sass/base.scss */
 .adviserendWerk h1 {
   color: #0692fe;
 }
 
-/* line 70, ../sass/base.scss */
+/* line 71, ../sass/base.scss */
 .handarbeid .progress {
   background-color: #6bcd3b;
 }
 
-/* line 74, ../sass/base.scss */
+/* line 75, ../sass/base.scss */
 .handarbeid .progressBar {
   background-color: #ace391;
 }
 
-/* line 78, ../sass/base.scss */
+/* line 79, ../sass/base.scss */
 .handarbeid h1 {
   color: #6bcd3b;
 }
 
-/* line 83, ../sass/base.scss */
+/* line 84, ../sass/base.scss */
 .technischWerk .progress {
   background-color: #fe0606;
 }
 
-/* line 87, ../sass/base.scss */
+/* line 88, ../sass/base.scss */
 .technischWerk .progressBar {
   background-color: #fe7373;
 }
 
-/* line 91, ../sass/base.scss */
+/* line 92, ../sass/base.scss */
 .technischWerk h1 {
   color: #fe0606;
 }
 
-/* line 95, ../sass/base.scss */
+/* line 96, ../sass/base.scss */
 .description {
   padding: 30px 30px 30px 20px;
 }
 
-/* line 99, ../sass/base.scss */
+/* line 100, ../sass/base.scss */
 .information {
   margin-right: 220px;
   padding-right: 30px;
 }
 
-/* line 104, ../sass/base.scss */
+/* line 105, ../sass/base.scss */
 .details, .quickMenu {
   width: 210px;
 }
 
-/* line 107, ../sass/base.scss */
+/* line 108, ../sass/base.scss */
 .details ul {
   margin-top: 5px;
   margin-left: 50px;
 }
 
-/* line 112, ../sass/base.scss */
+/* line 113, ../sass/base.scss */
 .quickMenu ul {
   margin-top: 15px;
   margin-left: 30px;
 }
 
-/* line 117, ../sass/base.scss */
+/* line 118, ../sass/base.scss */
 .iconItem {
   padding: 0 0 0 40px;
   margin-bottom: 15px;
   font-size: 15px;
 }
 
-/* line 123, ../sass/base.scss */
+/* line 124, ../sass/base.scss */
 .dateIcon {
   background: url("../images/icons/date_icon.png") no-repeat;
 }
 
-/* line 127, ../sass/base.scss */
+/* line 128, ../sass/base.scss */
 .timeIcon {
   background: url("../images/icons/time_icon.png") no-repeat;
 }
 
-/* line 131, ../sass/base.scss */
+/* line 132, ../sass/base.scss */
 .moneyIcon {
   background: url("../images/icons/money_icon.png") no-repeat;
 }
 
-/* line 135, ../sass/base.scss */
+/* line 136, ../sass/base.scss */
 .settingsIcon {
   background: url("../images/icons/settings_icon.png") no-repeat;
 }
 
-/* line 139, ../sass/base.scss */
+/* line 140, ../sass/base.scss */
 .companyIcon {
   background: url("../images/icons/company_icon.png") no-repeat;
 }
 
-/* line 144, ../sass/base.scss */
+/* line 145, ../sass/base.scss */
 .jobSlider {
   position: relative;
   padding: 30px 20px 0 0;

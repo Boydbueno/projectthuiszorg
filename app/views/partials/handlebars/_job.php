@@ -8,7 +8,7 @@
             <div class="progress">
                 <div class="progressBar" style="width: {{ percentage_complete }}%"></div>
                 <div class="progressDescription">
-                    Nog {{ job.amount_left }} {{ job.postfix }}
+                    Nog {{ amount_left }} {{ postfix }}
                 </div>
             </div>
             <section class="description">

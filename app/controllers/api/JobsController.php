@@ -7,6 +7,13 @@ use JobCategory;
 
 class JobsController extends \BaseController {
 
+	protected $job;
+
+	public function __construct(Job $job)
+	{
+		$this->job = $job;
+	}
+
 	/**
 	 * Return a listing of the resource as JSON.
 	 *
@@ -14,7 +21,7 @@ class JobsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return \Job::all();
+		return $this->job->notExpired()->orderBy('start_date')->get();
 	}
 
 	/**
@@ -26,8 +33,9 @@ class JobsController extends \BaseController {
 	public function show($id)
 	{
 		// TODO: Error handling if resource isn't found
-		return \Job::find($id);
 		return Job::find($id);
+	}
+
 	/**
 	 * Return a listing of jobs by jobCategory
 	 * 

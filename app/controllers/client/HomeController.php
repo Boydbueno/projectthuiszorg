@@ -15,7 +15,6 @@ class HomeController extends \BaseController {
 		$dropdownPlaceholder = array('' => 'Categorie');
 		$jobcategories = $dropdownPlaceholder + Jobcategory::lists('label', 'id');
 
-		$jobs = Job::with('users')->where('start_date', '>', new DateTime('today'))->orderBy('start_date')->get();
 		$jobavailability = [
 			'' => 'Beschikbaarheid',
 			'20' => 'Meer dan 20%',
@@ -23,6 +22,8 @@ class HomeController extends \BaseController {
 			'70' => 'Meer dan 70%',
 			'100' => 'Volledig'
 		];
+
+		$jobs = Job::with('users')->notExpired()->orderBy('start_date')->get();
 
 		// Get the jobs the user didn't join
 		$jobs = array_filter($jobs->toArray(), function($job){

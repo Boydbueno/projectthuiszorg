@@ -1,5 +1,10 @@
 <?php namespace controllers\api;
 
+use Job;
+use Auth;
+use DateTime;
+use JobCategory;
+
 class JobsController extends \BaseController {
 
 	/**
@@ -22,6 +27,7 @@ class JobsController extends \BaseController {
 	{
 		// TODO: Error handling if resource isn't found
 		return \Job::find($id);
+		return Job::find($id);
 	/**
 	 * Return a listing of jobs by jobCategory
 	 * 

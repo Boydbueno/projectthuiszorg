@@ -22,6 +22,15 @@ class JobsController extends \BaseController {
 	{
 		// TODO: Error handling if resource isn't found
 		return \Job::find($id);
+	/**
+	 * Return a listing of jobs by jobCategory
+	 * 
+	 * @param  int $id id of jobcategory
+	 * @return Response
+	 */
+	public function byCategory($id)
+	{
+		return JobCategory::find($id)->jobs;
 	}
 
 }

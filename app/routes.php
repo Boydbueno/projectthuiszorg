@@ -88,18 +88,14 @@ Route::group(array('prefix' => 'company'), function()
 Route::group(array('prefix' => 'api'), function()
 {
 
-	Route::group(array('prefix' => 'jobs'), function() 
-	{
-		Route::get('/', 'controllers\api\JobsController@index');
-		Route::get('{id}', 'controllers\api\JobsController@show');
-	});
+	# Job routes
+	Route::get('jobs', 'controllers\api\JobsController@index');
+	Route::get('jobs/{id}', 'controllers\api\JobsController@show');
+	Route::get('jobcategories/{id}/jobs', 'controllers\api\JobsController@byCategory');
 
-	Route::group(array('prefix' => 'jobcategories'), function()
-	{
-		Route::get('/', 'controllers\api\JobcategoriesController@index');
-		Route::get('{id}', 'controllers\api\JobcategoriesController@show');
-		Route::get('{id}/{relationship}', 'controllers\api\JobcategoriesController@relationship');
-	});
+	# Jobcategory routes
+	Route::get('jobcategories', 'controllers\api\JobcategoriesController@index');
+	Route::get('jobcategories/{id}', 'controllers\api\JobcategoriesController@show');
 
 });
 

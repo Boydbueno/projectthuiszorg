@@ -87,14 +87,14 @@
         // Probably some namespacing stuff
 
         // Todo: Place in external js file
-        $("#jobcategoryDropdown").on('change', function() { // Todo: Abstract away in named function
+        $('#js-jobcategoryDropdown').on('change', function() { // Todo: Abstract away in named function
             var jobcategoryId = $(this).val();
             
             var url;
 
             // Todo: This url should not be hardcoded!!
             if (jobcategoryId === "") {
-                url = "http://projectthuiszorg.dev/api/jobs"; 
+                url = 'http://projectthuiszorg.dev/api/jobs'; 
             } else {
                 url = 'http://projectthuiszorg.dev/api/jobcategories/' + jobcategoryId + '/jobs';
             }
@@ -107,6 +107,11 @@
                 $("#jobs").html(template({jobs: data}));
 
             });
+        });
+
+        $('#js-jobAvailabilityDropdown').on('change', function() {
+
+            console.log("Pizza");
 
         });
 

@@ -16,13 +16,26 @@ class HomeController extends \BaseController {
 		$jobcategories = $dropdownPlaceholder + Jobcategory::lists('label', 'id');
 
 		$jobs = Job::with('users')->where('start_date', '>', new DateTime('today'))->orderBy('start_date')->get();
+		$jobavailability = [
+			'' => 'Beschikbaarheid',
+			'20' => 'Meer dan 20%',
+			'50' => 'Meer dan 50%',
+			'70' => 'Meer dan 70%',
+			'100' => 'Volledig'
+		];
 
 		// Get the jobs the user didn't join
 		$jobs = array_filter($jobs->toArray(), function($job){
 			return !$this->usersContains($job['users'], Auth::user()->id);
 		});
 
-		return View::make('client.index')->with('jobs', $jobs)->with('jobcategories', $jobcategories);
+		// TODO: Abstract away the filter variables into a view composer
+
+		return View::make('client.index', [
+			'jobs' => $jobs, 
+			'jobcategories' => $jobcategories, 
+			'jobavailability' => $jobavailability
+		]);
 	}
 
 	private function usersContains($users, $user_id)

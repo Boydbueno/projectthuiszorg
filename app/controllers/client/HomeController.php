@@ -11,18 +11,6 @@ class HomeController extends \BaseController {
 
 	public function index()
 	{
-		// Jobcategories in id => label pairs, for the dropdown in view
-		$dropdownPlaceholder = array('' => 'Categorie');
-		$jobcategories = $dropdownPlaceholder + Jobcategory::lists('label', 'id');
-
-		$jobavailability = [
-			'' => 'Beschikbaarheid',
-			'20' => 'Meer dan 20%',
-			'50' => 'Meer dan 50%',
-			'70' => 'Meer dan 70%',
-			'100' => 'Volledig'
-		];
-
 		$jobs = Job::with('users')->notExpired()->orderBy('start_date')->get();
 
 		// Get the jobs the user didn't join
@@ -30,13 +18,7 @@ class HomeController extends \BaseController {
 			return !$this->usersContains($job['users'], Auth::user()->id);
 		});
 
-		// TODO: Abstract away the filter variables into a view composer
-
-		return View::make('client.index', [
-			'jobs' => $jobs, 
-			'jobcategories' => $jobcategories, 
-			'jobavailability' => $jobavailability
-		]);
+		return View::make('client.index', compact('jobs'));
 	}
 
 	private function usersContains($users, $user_id)

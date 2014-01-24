@@ -90,30 +90,15 @@ class Job extends Eloquent {
 
 	public function getAmountLeftAttribute()
 	{
-		$totalAmount = 0;
-
-		//Get all the contributors to this job
-		$jobusers = \JobUser::where('job_id','=',$this->id)->get();
-
-		//Calculate the total amount
-		foreach($jobusers as $jobuser){
-			$totalAmount += $jobuser->amount;
-		}
+		$totalAmount = \JobUser::where('job_id','=',$this->id)->sum('amount');
 
 		return $this->amount - $totalAmount;
 	}
 
 	public function getPercentageCompleteAttribute()
 	{
-		$totalAmount = 0;
-
 		//Get all the contributors to this job
-		$jobusers = \JobUser::where('job_id','=',$this->id)->get();
-
-		//Calculate the total amount
-		foreach($jobusers as $jobuser){
-			$totalAmount += $jobuser->amount;
-		}
+		$totalAmount = \JobUser::where('job_id','=',$this->id)->sum('amount');
 
 		//Return the percentage
 		return ($totalAmount / $this->amount) * 100;

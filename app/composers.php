@@ -1,17 +1,3 @@
 <?php
 
-View::composer('client.index', function($view)
-{
-	$dropdownPlaceholder = array('' => 'Categorie');
-	$jobcategories = $dropdownPlaceholder + Jobcategory::lists('label', 'id');
-
-	$jobavailability = [
-		'' => 'Beschikbaarheid',
-		'20' => 'Meer dan 20%',
-		'50' => 'Meer dan 50%',
-		'70' => 'Meer dan 70%',
-		'100' => 'Volledig'
-	];
-
-	$view->with('jobcategories', $jobcategories)->with('jobavailability', $jobavailability);
-});
+View::composer('client.index', 'Rework\Composers\FilterComposer');

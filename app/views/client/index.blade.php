@@ -6,6 +6,10 @@
 
 @section('content')
 
+    @foreach ($friends as $friend)
+        {{ $friend->user_id }}
+    @endforeach
+
     @if(Session::get('notice'))
 
         <section class="block marginTop floatFix">

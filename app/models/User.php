@@ -17,7 +17,7 @@ class User extends ConfideUser{
 		'password' => 'required|between:4,11|confirmed',
 	);
 
-	//User have a role!
+	//Users have a role!
 	use HasRole;
 
 	public function jobs()
@@ -28,6 +28,17 @@ class User extends ConfideUser{
     public function userInfo()
     {
         return $this->hasOne('UserInfo', 'user_id');
+    }
+
+    public function friendList()
+    {
+        $first = DB::table('friend_list')
+                    ->where('user_id', '=', $this->attributes["id"])
+                    ->select('friend_id');
+        return DB::table('friend_list')
+                    ->where('friend_id', '=', $this->attributes["id"])
+                    ->select('user_id')->union($first)
+                    ->get();
     }
 
 	/**

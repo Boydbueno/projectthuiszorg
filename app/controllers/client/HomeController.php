@@ -2,6 +2,9 @@
 
 use \Carbon\Carbon;
 use Jobcategory;
+use DateTime;
+use View;
+use Auth;
 use Job;
 
 //Send friendlist data to each of these views
@@ -18,14 +21,28 @@ class HomeController extends \BaseController {
 		$dropdownPlaceholder = array('' => 'Categorie');
 		$jobcategories = $dropdownPlaceholder + Jobcategory::lists('label', 'id');
 
-		$jobs = \Job::with('users')->where('start_date', '>', new \DateTime('today'))->orderBy('start_date')->get();
+		$jobavailability = [
+			'' => 'Beschikbaarheid',
+			'20' => 'Meer dan 20%',
+			'50' => 'Meer dan 50%',
+			'70' => 'Meer dan 70%',
+			'100' => 'Volledig'
+		];
+
+		$jobs = Job::with('users')->notExpired()->orderBy('start_date')->get();
 
 		// Get the jobs the user didn't join
 		$jobs = array_filter($jobs->toArray(), function($job){
-			return !$this->usersContains($job['users'], \Auth::user()->id);
+			return !$this->usersContains($job['users'], Auth::user()->id);
 		});
 
-		return \View::make('client.index')->with('jobs', $jobs)->with('jobcategories', $jobcategories);
+		// TODO: Abstract away the filter variables into a view composer
+
+		return View::make('client.index', [
+			'jobs' => $jobs, 
+			'jobcategories' => $jobcategories, 
+			'jobavailability' => $jobavailability
+		]);
 	}
 
 	private function usersContains($users, $user_id)
@@ -45,7 +62,7 @@ class HomeController extends \BaseController {
 
 	public function getMyjobs() 
 	{
-		$jobs = \Auth::user()->jobs()->with('jobcategory', 'status')->get();
+		$jobs = Auth::user()->jobs()->with('jobcategory', 'status')->get();
 
 		// Split jobs array into groups per status
 		
@@ -55,7 +72,7 @@ class HomeController extends \BaseController {
     		$jobsInGroups[$job['status']['label']][] = $job;
 		}
 
-		return \View::make('client.myjobs')->with('jobs', $jobsInGroups);
+		return View::make('client.myjobs')->with('jobs', $jobsInGroups);
 	}
 	
 }

@@ -233,6 +233,15 @@ a:hover {
   margin: 15px 0 35px 20px;
 }
 
+/* line 71, ../sass/partials/_buttons.scss */
+.confirmOverlay .grey {
+  background-color: #989898;
+}
+/* line 75, ../sass/partials/_buttons.scss */
+.confirmOverlay .grey:hover {
+  background-color: #c5c5c5;
+}
+
 /* line 1, ../sass/partials/_form.scss */
 select:first-child {
   background-color: #dcdcdc;
@@ -512,6 +521,15 @@ fieldset {
 /* line 183, ../sass/base.scss */
 .droppableOverlay {
   background: rgba(255, 255, 255, 0.7);
+}
+
+/* line 187, ../sass/base.scss */
+.confirmOverlay {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* line 191, ../sass/base.scss */
+.droppableOverlay, .confirmOverlay {
   position: absolute;
   left: 0;
   right: 0;
@@ -520,13 +538,18 @@ fieldset {
   display: none;
 }
 
-/* line 193, ../sass/base.scss */
-.droppableOverlay h1 {
+/* line 200, ../sass/base.scss */
+.droppableOverlay, .confirmOverlay {
   text-align: center;
-  margin-top: 150px;
+  padding-top: 120px;
 }
 
-/* line 198, ../sass/base.scss */
-.droppable .droppableOverlay {
+/* line 205, ../sass/base.scss */
+.confirmOverlay h1 {
+  margin-bottom: 20px;
+}
+
+/* line 209, ../sass/base.scss */
+.droppable .droppableOverlay, .active .confirmOverlay {
   display: block;
 }

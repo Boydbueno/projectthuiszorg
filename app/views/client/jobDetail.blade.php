@@ -42,7 +42,7 @@
 					{{{ Session::get('notice') }}}
 
 				@else 
-					@if($showButton == true)
+					@if(!$userJoined)
 						{{ link_to_route('client.jobs.join', 'Meedoen', array($job->id), array('class' => 'btn')) }}
 					@endif
 				@endif

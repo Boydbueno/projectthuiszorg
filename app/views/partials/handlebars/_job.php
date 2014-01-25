@@ -1,6 +1,9 @@
 <script id="jobsTemplate" type="text/x-handlebars-template">
     {{#each jobs}}
-        <article class="block marginTop floatFix {{ jobcategory_classname }}">
+        <article class="block droppableJob marginTop floatFix {{ jobcategory_classname }}">
+            <div class="droppableOverlay">
+                <h1>Deze persoon uitnodigen voor {{ title }}</h1>
+            </div>
             <header class="mainTitle floatFix">
                 <h1 class="floatLeft">{{ title }}</h1>
                 <span class="subTitle floatRight">{{ category }}</span>

@@ -7,12 +7,6 @@ use View;
 use Auth;
 use Job;
 
-//Send friendlist data to each of these views
-\View::composer(array('client.index','dashboard'), function($view)
-{
-    $view->with('friends', \Auth::user()->friendList());
-});
-
 class HomeController extends \BaseController {
 
 	public function index()

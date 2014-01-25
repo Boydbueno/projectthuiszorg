@@ -6,10 +6,6 @@
 
 @section('content')
 
-    @foreach ($friends as $friend)
-        {{ $friend->user_id }}
-    @endforeach
-
     @if(Session::get('notice'))
 
         <section class="block marginTop floatFix">
@@ -80,11 +76,49 @@
     <!-- Todo: See if we can combine this with the php partial -->
     @include('partials.handlebars._job')
 
+    <!-- Friendlist -->
+    <section class="block friendList" id="friendList">
+        <header class='mainTitle floatFix'>
+            <h1 class="floatLeft">Vriendenlijst</h1>
+            <span class="subTitle floatRight">Verbergen</span>
+        </header>
+        <section>
+            <ul>
+                @foreach ($friends as $friend)
+                    <li class="friend">{{ $friend->userInfo->firstName }} {{ $friend->userInfo->lastName }}</li>
+                @endforeach
+            </ul>
+        </section>
+    </section>
+
     @include('partials.client._footer')
 @stop
 
 @section('scripts')
     {{ HTML::script('scripts/vendor/handlebars-v1.1.2.js') }}
+
+    <script>
+        // Todo: Place in external js file
+
+        //Make friends draggable
+        $( ".friend" ).draggable({ 
+            cursor: 'move',
+            containment: 'document',
+            revert: true 
+        });
+
+        //Make jobs droppable 
+        $('.droppableJob').droppable( {
+            drop: handleDropEvent,
+            hoverClass: "droppable"
+        });
+
+        function handleDropEvent( event, ui ) {
+            var draggable = ui.draggable;
+            alert( 'The square with Class "' + draggable.attr('class') + '" was dropped onto me!' );
+        }
+
+    </script>
 
     <script>
         // Todo: We need some javascript layer to wrap all javascript into or something..

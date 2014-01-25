@@ -114,9 +114,21 @@
         });
 
         function handleDropEvent( event, ui ) {
+
+            //Get dragged object and text
             var draggable = ui.draggable;
-            alert( 'The square with Class "' + draggable.attr('class') + '" was dropped onto me!' );
+            var friendsName = draggable.context.innerText;
+
+            //Add class and edit text
+            $(this).addClass("active");
+            $(this).find("#droppableName").text(friendsName);
         }
+
+        //Button events
+        $(".confirmOverlay").on( "click", "a.cancel", function(e) {
+            e.preventDefault();
+            $(this).parent().parent().removeClass("active");
+        });
 
     </script>
 

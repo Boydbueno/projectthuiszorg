@@ -4,6 +4,10 @@
             <div class="droppableOverlay">
                 <h1>Deze persoon uitnodigen voor {{ title }}</h1>
             </div>
+            <div class="confirmOverlay">
+                <h1>Wilt u <span id="droppableName"></span> uitnodigen voor {{ title }}?</h1>
+                <a href="#" class="btn">Ja, uitnodigen!</a><a href="#" class="btn grey cancel">Nee, helaas!</a>
+            </div>
             <header class="mainTitle floatFix">
                 <h1 class="floatLeft">{{ title }}</h1>
                 <span class="subTitle floatRight">{{ category }}</span>

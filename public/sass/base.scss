@@ -181,7 +181,14 @@
 }
 
 .droppableOverlay{
-	background: rgba(255, 255, 255, 0.7); 
+	background: rgba(255, 255, 255, 0.7);
+}
+
+.confirmOverlay{
+	background: rgba(255, 255, 255, 0.8); 
+}
+
+.droppableOverlay, .confirmOverlay{
 	position:absolute;
 	left:0;
 	right:0;
@@ -190,11 +197,15 @@
 	display:none;
 }
 
-.droppableOverlay h1{
+.droppableOverlay, .confirmOverlay{
 	text-align:center;
-	margin-top:150px;
+	padding-top:120px;
 }
 
-.droppable .droppableOverlay{
+.confirmOverlay h1{
+	margin-bottom:20px;
+}
+
+.droppable .droppableOverlay, .active .confirmOverlay{
 	display:block;
 }

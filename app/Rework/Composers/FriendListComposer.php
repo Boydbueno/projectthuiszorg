@@ -4,7 +4,15 @@ class FriendListComposer {
 
 	public function compose($view)
 	{
-		$view->with('friends', \Auth::user()->friendList());
+
+		$friendList = array();
+		$friends = \Auth::user()->friendList();
+
+		foreach ($friends as $friend) {
+			array_push($friends, \User::find($friend->user_id));
+		}
+
+		$view->with('friends', $friendList);
 	}
 
 }

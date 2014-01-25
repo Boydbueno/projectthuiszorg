@@ -2,6 +2,7 @@
 
 use Job;
 use Auth;
+use Input;
 use DateTime;
 use JobCategory;
 
@@ -21,7 +22,14 @@ class JobsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return $this->job->notExpired()->orderBy('start_date')->get();
+		$jobs = $this->job->notExpired()->orderBy('start_date'); 
+		
+		if(Input::get('availability'))
+		{
+			$jobs->availability(Input::get('availability'));
+		}
+		
+		return $jobs->get();
 	}
 
 	/**

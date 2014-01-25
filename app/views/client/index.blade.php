@@ -124,17 +124,20 @@
         // Todo: We need some javascript layer to wrap all javascript into or something..
         // Probably some namespacing stuff
 
-        // Todo: Place in external js file
-        $('#js-jobcategoryDropdown').on('change', function() { // Todo: Abstract away in named function
-            var jobcategoryId = $(this).val();
-            
+        var filter = function() {
             var url;
-
-            // Todo: This url should not be hardcoded!!
+            var baseUrl = 'http://projectthuiszorg.dev/api';
+            var jobcategoryId = $("#js-jobcategoryDropdown").val();
+            var availability = $("#js-jobAvailabilityDropdown").val();
+            
             if (jobcategoryId === "") {
-                url = 'http://projectthuiszorg.dev/api/jobs'; 
+                url = baseUrl + '/jobs'; 
             } else {
-                url = 'http://projectthuiszorg.dev/api/jobcategories/' + jobcategoryId + '/jobs';
+                url = baseUrl + '/jobcategories/' + jobcategoryId + '/jobs';
+            }
+
+            if (availability !== "") {
+                url += "?availability=" + availability;
             }
 
             $.getJSON(url, function(data) { // Todo: Abstract away in named func
@@ -145,13 +148,12 @@
                 $("#jobs").html(template({jobs: data}));
 
             });
-        });
+        }
 
-        $('#js-jobAvailabilityDropdown').on('change', function() {
 
-            console.log("Pizza");
-
-        });
+        // Todo: Place in external js file
+        $('#js-jobcategoryDropdown').on('change', filter);
+        $('#js-jobAvailabilityDropdown').on('change', filter);
 
     </script>
 @stop

@@ -33,33 +33,19 @@
 
     </section> <!-- End Welcome -->
 
-    <section class="jobs">
+    <section class="block marginTop friends">
 
-        @if(isset($jobs['Gestart']))
+        <header class="mainTitle">
+            <h1>Vriendenlijst</h1>
+        </header>
 
-        <section class="started-jobs">            
-            <h1 class="block marginTop mainTitle">Opdrachten die gestart zijn</h1>
-
-            @foreach ($jobs['Gestart'] as $job)
-                @include('partials.client._jobEdit', $job)
+        <ul>
+            @foreach ($friends as $friend)
+                <li id="{{ $friend->id }}" class="friend">{{ $friend->userInfo->firstName }} {{ $friend->userInfo->lastName }}</li>
             @endforeach
-        </section>
+        </ul>
 
-        @endif
-
-        @if(isset($jobs['Open']))
-        
-        <section class="pending-jobs">
-            <h1 class="block marginTop mainTitle">Opdrachten die nog niet gestart zijn</h1>
-
-            @foreach ($jobs['Open'] as $job)
-                @include('partials.client._jobEdit', $job)
-            @endforeach
-        </section>
-
-        @endif
-
-    </section> <!-- End Jobs -->
+    </section> <!-- End Friends -->
 
     @include('partials.client._footer')
 

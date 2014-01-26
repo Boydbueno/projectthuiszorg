@@ -11,7 +11,7 @@ class HomeController extends \BaseController {
 
 	public function index()
 	{
-		$jobs = Job::with('users')->notExpired()->orderBy('start_date')->get();
+		$jobs = Job::with('users', 'status', 'jobcategory')->notExpired()->orderBy('start_date')->get();
 
 		// Get the jobs the user didn't join
 		$jobs = array_filter($jobs->toArray(), function($job){

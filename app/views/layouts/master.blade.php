@@ -8,6 +8,7 @@
     {{ HTML::style('css/ion.rangeSlider.css') }}
     {{ HTML::style('css/ion.rangeSlider.skinNice.css') }}
 	{{ HTML::script('scripts/modernizr.js') }}
+	{{ HTML::script('scripts/shepherd.min.js') }}
 </head>
 <body>
 	
@@ -58,5 +59,27 @@
 	</div>
     {{ HTML::script('scripts/vendor/jquery-1.10.2.min.js') }}	
 	@yield('scripts')
+	<script>
+	var tour;
+
+	tour = new Shepherd.Tour({
+  		defaults: {
+    	classes: 'shepherd-theme-arrows',
+    	scrollTo: true
+  		}
+	});
+
+	tour.addStep('example-step', {
+  		text: 'This step is attached to the bottom of the <code>.example-css-selector</code> element.',
+  		attachTo: '.floatLeft bottom',
+  		classes: 'example-step-extra-class',
+  		buttons: [{
+      		text: 'Next',
+      		action: tour.next
+    	}]
+	});
+
+	tour.start();
+	</script>
 </body>
 </html>

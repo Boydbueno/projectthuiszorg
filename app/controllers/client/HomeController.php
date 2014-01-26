@@ -1,39 +1,28 @@
 <?php namespace controllers\client;
 
-use \Carbon\Carbon;
-use Jobcategory;
-use DateTime;
-use View;
-use Auth;
 use Job;
+use Auth;
+use View;
+use DateTime;
+use Jobcategory;
+use \Carbon\Carbon;
+use Rework\Repositories\EloquentJobRepository;
 
 class HomeController extends \BaseController {
 
-	public function index()
+	private $job;
+
+	public function __construct(EloquentJobRepository $job)
 	{
-		$jobs = Job::with('users', 'status', 'jobcategory')->notExpired()->orderBy('start_date')->get();
-
-		// Get the jobs the user didn't join
-		$jobs = array_filter($jobs->toArray(), function($job){
-			return !$this->usersContains($job['users'], Auth::user()->id);
-		});
-
-		return View::make('client.index', compact('jobs'));
+		$this->job = $job;
 	}
 
-	private function usersContains($users, $user_id)
+
+	public function index()
 	{
-		$contains = false;
-		foreach($users as $user)
-		{
-			if($user['id'] === $user_id){
-				$contains = true;
-				break;
-			}
-		}
+		$jobs = $this->job->all();
 
-		return $contains;
-
+		return View::make('client.index', compact('jobs'));
 	}
 
 	public function getMyjobs() 

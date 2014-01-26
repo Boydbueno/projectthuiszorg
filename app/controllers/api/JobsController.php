@@ -5,13 +5,14 @@ use Auth;
 use Input;
 use DateTime;
 use JobCategory;
+use Rework\Repositories\EloquentJobRepository;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 
 class JobsController extends \BaseController {
 
-	protected $job;
+	private $job;
 
-	public function __construct(Job $job)
+	public function __construct(EloquentJobRepository $job)
 	{
 		$this->job = $job;
 	}
@@ -23,34 +24,16 @@ class JobsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$jobs = $this->job->notExpired()->orderBy('start_date'); 
-		
-		$jobs = $jobs->get();
+		$params = [];
 
 		if(Input::get('availability'))
 		{
-			// Throw the jobs through some method to filter out the ones with wrong availability
-			$jobs = $this->filterAvailability($jobs, Input::get('availability'));
+			$params['availability'] = Input::get('availability');
 		}
+
+		$jobs = $this->job->all($params); 
 		
 		return $jobs;
-	}
-
-	private function filterAvailability($jobs, $availability)
-	{
-
-		$filteredJobs = new EloquentCollection;
-
-		foreach($jobs as $job)
-		{
-			$jobAvailability = 100 - $job->percentage_complete;
-
-			if($jobAvailability >= $availability) {
-				$filteredJobs->add( $job );
-			}
-		}
-
-		return $filteredJobs;
 	}
 
 	/**
@@ -62,7 +45,7 @@ class JobsController extends \BaseController {
 	public function show($id)
 	{
 		// TODO: Error handling if resource isn't found
-		return Job::find($id);
+		return $this->job->find($id);
 	}
 
 	/**
@@ -73,7 +56,14 @@ class JobsController extends \BaseController {
 	 */
 	public function byCategory($id)
 	{
-		return JobCategory::find($id)->jobs;
+		$params = [];
+
+		if(Input::get('availability'))
+		{
+			$params['availability'] = Input::get('availability');
+		}
+
+		return $this->job->byCategory($id, $params);
 	}
 
 }

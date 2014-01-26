@@ -130,14 +130,14 @@
         }
 
         //Button events
-        $(".confirmOverlay").on( "click", "a.cancel", function(e) {
+        $(".jobs").on( "click", "a.cancel", function(e) {
             e.preventDefault();
 
             //Remove the overlay
             $(this).parent().parent().removeClass("active");
         });
 
-        $(".confirmOverlay").on( "click", "a.accept", function(e) {
+        $(".jobs").on( "click", "a.accept", function(e) {
             e.preventDefault();
 
             var button = $(this);

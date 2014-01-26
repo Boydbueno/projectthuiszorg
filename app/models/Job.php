@@ -35,12 +35,6 @@ class Job extends Eloquent {
 		return $query->where('start_date', '>', new DateTime('today'));
 	}
 
-	public function scopeAvailability($query, $availability)
-	{
-		// Todo: Implement
-		return $query->where('amount', '>', 0);
-	}
-
 	/*
 	|---------------------------------------------------------------------------
 	| Functions

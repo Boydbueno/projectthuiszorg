@@ -80,7 +80,7 @@
     <section class="block friendList" id="friendList">
         <header class='mainTitle floatFix'>
             <h1 class="floatLeft">Vriendenlijst</h1>
-            <span class="subTitle floatRight">Verbergen</span>
+            <a class="subTitle floatRight">Verbergen</a>
         </header>
         <section>
             <ul>
@@ -208,7 +208,14 @@
 
                 $("#jobs").html(template({jobs: data}));
 
+                //Make jobs droppable 
+                $('.droppableJob').droppable( {
+                    drop: handleDropEvent,
+                    hoverClass: "droppable"
+                });
+
             });
+
         }
 
 

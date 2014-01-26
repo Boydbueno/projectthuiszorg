@@ -23,7 +23,7 @@ class JobsController extends \BaseController {
 
 		$jobUserCount = JobUser::where('user_id', '=', $user->id)->where('job_id', '=', $job->id)->count();
 
-		$userJoined = !(bool) $jobUserCount;
+		$userJoined = (bool) $jobUserCount;
 
 		$job->participantsText = $this->getParticipantsText(count($job->users));
 

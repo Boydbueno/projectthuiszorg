@@ -12,8 +12,8 @@ class FriendListTableSeeder extends Seeder {
 				"friend_id" => User::where('username', '=', 'kevinvlietstraclient')->first()->id
 			),
 			array(
-				"user_id" => User::where('username', '=', 'stefanweckclient')->first()->id,
-				"friend_id" => User::where('username', '=', 'boydbuenodemesquitaclient')->first()->id
+				"user_id" => User::where('username', '=', 'boydbuenodemesquitaclient')->first()->id,
+				"friend_id" => User::where('username', '=', 'stefanweckclient')->first()->id
 			),
 			array(
 				"user_id" => User::where('username', '=', 'boydbuenodemesquitaclient')->first()->id,

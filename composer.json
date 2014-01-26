@@ -4,9 +4,9 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.0.*",
+		"laravel/framework": "4.1.*",
 		"conarwelsh/mustache-l4": "dev-master",
-		"zizaco/confide": "2.0.x",
+		"zizaco/confide": "3.1.x",
 		"zizaco/entrust": "dev-master",
 		"vtalbot/mailgun": "1.*"
 	},
@@ -18,7 +18,10 @@
 			"app/database/migrations",
 			"app/database/seeds",
 			"app/tests/TestCase.php"
-		]
+		],
+		"psr-0": {
+			"Rework": "app/"
+		}
 	},
 	"scripts": {
 		"post-install-cmd": [

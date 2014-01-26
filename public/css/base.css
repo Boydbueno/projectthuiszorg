@@ -233,6 +233,15 @@ a:hover {
   margin: 15px 0 35px 20px;
 }
 
+/* line 71, ../sass/partials/_buttons.scss */
+.confirmOverlay .grey {
+  background-color: #989898;
+}
+/* line 75, ../sass/partials/_buttons.scss */
+.confirmOverlay .grey:hover {
+  background-color: #c5c5c5;
+}
+
 /* line 1, ../sass/partials/_form.scss */
 select:first-child {
   background-color: #dcdcdc;
@@ -469,4 +478,78 @@ fieldset {
 .jobSlider {
   position: relative;
   padding: 30px 20px 0 0;
+}
+
+/* line 151, ../sass/base.scss */
+.friendList {
+  position: fixed;
+  width: 250px;
+  height: 300px;
+  bottom: 0;
+  right: 50%;
+  margin-right: -745px;
+}
+
+/* line 160, ../sass/base.scss */
+.friendList ul {
+  margin-bottom: 25px;
+}
+
+/* line 164, ../sass/base.scss */
+.friend {
+  padding: 15px 20px;
+  border-top: 1px solid #eaeaea;
+  font-size: 15px;
+  background-color: #fff;
+}
+
+/* line 171, ../sass/base.scss */
+.friend:hover {
+  background-color: #eaeaea;
+}
+
+/* line 175, ../sass/base.scss */
+.friend:last-child {
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* line 179, ../sass/base.scss */
+.droppableJob {
+  position: relative;
+}
+
+/* line 183, ../sass/base.scss */
+.droppableOverlay {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* line 187, ../sass/base.scss */
+.confirmOverlay {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* line 191, ../sass/base.scss */
+.droppableOverlay, .confirmOverlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: none;
+}
+
+/* line 200, ../sass/base.scss */
+.droppableOverlay, .confirmOverlay {
+  text-align: center;
+  padding-top: 120px;
+}
+
+/* line 205, ../sass/base.scss */
+.confirmOverlay h1 {
+  margin-bottom: 20px;
+}
+
+/* line 209, ../sass/base.scss */
+.droppable .droppableOverlay, .active .confirmOverlay {
+  display: block;
 }

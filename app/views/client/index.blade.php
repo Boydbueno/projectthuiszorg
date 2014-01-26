@@ -123,6 +123,8 @@
             //Add class and edit text
             $(this).addClass("active");
             $(this).find("#droppableName").text(friendsName);
+
+            //Edit rel attribute and add friendsId to it
             var oldRel = $(this).find("a.accept").attr('rel');
             $(this).find("a.accept").attr('rel', oldRel + "-" + friendsId);
         }
@@ -140,6 +142,7 @@
 
             var button = $(this);
 
+            //Change text to busy and split rel attribute
             button.html("Bezig...");
             var rel = button.attr('rel').split("-");
 
@@ -150,12 +153,14 @@
             var baseUrl = 'http://projectthuiszorg.dev/api/jobs/';
             var url = baseUrl + jobId + '/invite/' + userId;
 
+            //Ajax request to execute the invite
             var inviteRequest = $.ajax({
                 type: "GET",
                 dataType: "text",
                 url: url
             });
 
+            //When it's done, give the user feedback
             inviteRequest.done(function(result){
                 if(result == "succes"){
                     button.html("Gelukt!");
@@ -166,7 +171,8 @@
                     },2000);
                 }
             });
-             
+            
+            //When the request fails, give them an ugly alert!
             inviteRequest.fail(function( jqXHR, textStatus ) {
                 alert( "Helaas, probeer het nogmaals: " + textStatus );
             });

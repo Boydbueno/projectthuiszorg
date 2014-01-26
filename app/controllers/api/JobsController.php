@@ -5,6 +5,7 @@ use Auth;
 use Input;
 use DateTime;
 use JobCategory;
+use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 
 class JobsController extends \BaseController {
 
@@ -24,12 +25,32 @@ class JobsController extends \BaseController {
 	{
 		$jobs = $this->job->notExpired()->orderBy('start_date'); 
 		
+		$jobs = $jobs->get();
+
 		if(Input::get('availability'))
 		{
-			$jobs->availability(Input::get('availability'));
+			// Throw the jobs through some method to filter out the ones with wrong availability
+			$jobs = $this->filterAvailability($jobs, Input::get('availability'));
 		}
 		
-		return $jobs->get();
+		return $jobs;
+	}
+
+	private function filterAvailability($jobs, $availability)
+	{
+
+		$filteredJobs = new EloquentCollection;
+
+		foreach($jobs as $job)
+		{
+			$jobAvailability = 100 - $job->percentage_complete;
+
+			if($jobAvailability >= $availability) {
+				$filteredJobs->add( $job );
+			}
+		}
+
+		return $filteredJobs;
 	}
 
 	/**

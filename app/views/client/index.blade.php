@@ -79,8 +79,8 @@
     <!-- Friendlist -->
     <section class="block friendList" id="friendList">
         <header class='mainTitle floatFix'>
-            <h1 class="floatLeft">Vriendenlijst</h1>
-            <span class="subTitle floatRight">Verbergen</span>
+            <h1 class="floatLeft">{{ link_to('client/friendlist', 'Vriendenlijst')}}</h1>
+            <a class="subTitle floatRight">Verbergen</a>
         </header>
         <section>
             <ul>
@@ -130,14 +130,14 @@
         }
 
         //Button events
-        $(".confirmOverlay").on( "click", "a.cancel", function(e) {
+        $(".jobs").on( "click", "a.cancel", function(e) {
             e.preventDefault();
 
             //Remove the overlay
             $(this).parent().parent().removeClass("active");
         });
 
-        $(".confirmOverlay").on( "click", "a.accept", function(e) {
+        $(".jobs").on( "click", "a.accept", function(e) {
             e.preventDefault();
 
             var button = $(this);
@@ -208,7 +208,14 @@
 
                 $("#jobs").html(template({jobs: data}));
 
+                //Make jobs droppable 
+                $('.droppableJob').droppable( {
+                    drop: handleDropEvent,
+                    hoverClass: "droppable"
+                });
+
             });
+
         }
 
 

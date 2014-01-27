@@ -7,8 +7,9 @@
     {{ HTML::style('css/base.css') }}
     {{ HTML::style('css/ion.rangeSlider.css') }}
     {{ HTML::style('css/ion.rangeSlider.skinNice.css') }}
+    {{ HTML::style('css/shepherd-theme-arrows.css') }}
 	{{ HTML::script('scripts/modernizr.js') }}
-	{{ HTML::script('scripts/shepherd.min.js') }}
+	{{ HTML::script('scripts/shepherd.js') }}
 </head>
 <body>
 	
@@ -72,7 +73,7 @@
 
 	tour.addStep('example-step', {
   		text: 'This step is attached to the bottom of the <code>.example-css-selector</code> element.',
-  		attachTo: '.floatLeft bottom',
+  		attachTo: '.progressBar bottom',
   		classes: 'example-step-extra-class',
   		buttons: [{
       		text: 'Next',

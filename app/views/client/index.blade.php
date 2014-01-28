@@ -67,9 +67,21 @@
 
     <section class="jobs" id="jobs">
 
-        @foreach ($jobs as $job)
-            @include('partials.jobs._job', array('job' => $job))
-        @endforeach
+        @if(count($jobs))
+            @foreach ($jobs as $job)
+                @include('partials.jobs._job', array('job' => $job))
+            @endforeach
+        @else
+            <article class="block marginTop ">
+                <header class="mainTitle"><h1>Er zijn geen opdrachten beschikbaar</h1></header>
+                <div class="progressSmall"></div>
+                <section class="description">
+                    <p class="information wide">
+                        Op dit moment zijn er helaas geen opdrachten om weer te geven. Er zullen spoedig nieuwe opdrachten beschikbaar komen.
+                    </p>
+                </section>
+            </article>
+        @endif
 
     </section> <!-- End Jobs -->
 

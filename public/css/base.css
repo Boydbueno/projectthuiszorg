@@ -504,7 +504,7 @@ fieldset {
 }
 
 /* line 171, ../sass/base.scss */
-.friend:hover {
+.friendList .friend:hover {
   background-color: #eaeaea;
 }
 

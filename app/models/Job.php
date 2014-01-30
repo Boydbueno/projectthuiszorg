@@ -79,6 +79,16 @@ class Job extends Eloquent {
 	|---------------------------------------------------------------------------
 	*/
 
+	public function getIsStartedAttribute()
+	{
+		return ($this->status->label == 'Gestart');
+	}
+
+	public function getIsOpenAttribute()
+	{
+		return ($this->status->label == 'Open');
+	}
+
 	public function getCategoryAttribute()
 	{
 		return $this->jobcategory->label;

@@ -43,10 +43,16 @@
 					{{{ Session::get('notice') }}}
 				@endif
 
-				{{ link_to_route('client.jobs.join', 'Voortgang doorgeven', [$job->id], ['class' => 'btn']) }}
-				{{ Form::open(['method' => 'delete', 'route' => ['client.jobs.delete', $job->id]])}}
-					{{ Form::submit('Afmelden', ['class' => 'btn grey', 'id' => 'js-unsubscribe']) }}
-				{{ Form::close() }}
+				@if($job->isStarted)
+					{{ link_to_route('client.jobs.join', 'Voortgang doorgeven', [$job->id], ['class' => 'btn']) }}
+				@endif
+
+				@if($job->isOpen)
+					{{ Form::open(['method' => 'delete', 'route' => ['client.jobs.delete', $job->id]])}}
+						{{ Form::submit('Afmelden', ['class' => 'btn grey', 'id' => 'js-unsubscribe']) }}
+					{{ Form::close() }}
+				@endif
+
 	        </aside>
 	        <div class="information borderRight">
 	            <p>

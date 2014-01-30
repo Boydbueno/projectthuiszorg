@@ -50,12 +50,8 @@
 	}
 }
 
-.btn.btnWarning{
-	background-color:$warning;
-
-	&:hover{
-		background-color:lighten($warning, 15);
-	}
+.btn.grey{
+	background-color: $grey;
 }
 
 .messageBoxBtn{

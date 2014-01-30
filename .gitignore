@@ -4,3 +4,5 @@ composer.phar
 composer.lock
 .DS_Store
 .sass-cache
+public/scripts/.module-cache/
+public/scripts/.lock.pid

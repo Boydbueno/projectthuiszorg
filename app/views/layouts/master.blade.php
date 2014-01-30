@@ -56,6 +56,8 @@
 	    </footer>
 
 	</div>
+    {{ HTML::script('scripts/vendor/react.min.js') }}	
+    {{ HTML::script('scripts/vendor/JSXtransformer.js') }}	
     {{ HTML::script('scripts/vendor/jquery-1.10.2.min.js') }}	
 	@yield('scripts')
 </body>

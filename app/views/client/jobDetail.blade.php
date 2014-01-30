@@ -55,5 +55,35 @@
 	        </div>
 	    </section>
 	</section>
-</article>
+
+	<section id="comments">
+
+	</section>
+
+@stop
+
+@section('scripts')
+
+	<script type="text/jsx">
+		/**
+		* @jsx React.DOM
+		*/
+		
+		var CommentBox = React.createClass({
+			render:function(){
+				return(
+					<div class='commentBox'>
+						Ewa Comments hier
+					</div>
+				);
+			}
+		});
+
+		React.renderComponent(
+			<CommentBox />
+			document.getElementById('comments');
+		)
+
+	</script>
+
 @stop

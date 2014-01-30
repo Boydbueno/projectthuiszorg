@@ -43,7 +43,7 @@
                 <h1 class="block marginTop mainTitle">Opdrachten die gestart zijn</h1>
 
                 @foreach ($jobs['Gestart'] as $job)
-                    @include('partials.client._jobEdit', $job)
+                    @include('partials.jobs._myJob', $job)
                 @endforeach
             </section>
 
@@ -55,7 +55,7 @@
                 <h1 class="block marginTop mainTitle">Opdrachten die nog niet gestart zijn</h1>
 
                 @foreach ($jobs['Open'] as $job)
-                    @include('partials.client._jobEdit', $job)
+                    @include('partials.jobs._myJob', $job)
                 @endforeach
             </section>
 

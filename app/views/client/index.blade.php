@@ -237,9 +237,9 @@
         $('#js-jobAvailabilityDropdown').on('change', filter);
 
     </script>
-    @section('scripts')
-        {{ HTML::style('css/shepherd-theme-arrows.css') }}
-        {{ HTML::script('scripts/shepherd.min.js') }}
-        {{ HTML::script('scripts/tour.js') }}
-    @stop
+
+    {{ HTML::style('css/shepherd-theme-arrows.css') }}
+    {{ HTML::script('scripts/shepherd.min.js') }}
+    {{ HTML::script('scripts/tour.js') }}
+    
 @stop

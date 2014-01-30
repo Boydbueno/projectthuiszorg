@@ -43,23 +43,20 @@ Route::group(['prefix' => 'register'], function()
 |---------------------------------------------------------------------------
 */
 
-Route::group(['prefix' => 'client', 'namespace' => 'controllers\client'], function()
+Route::group(['prefix' => 'client', 'namespace' => 'controllers\client', 'before' => 'clientOrAdmin'], function()
 {
 
-	Route::group(['before' => 'clientOrAdmin'], function() 
-	{
-		Route::get('/', ['as' => 'client', 'uses' => 'HomeController@index']);
-		Route::get('jobs', ['as' => 'client.jobs', 'uses' => 'HomeController@getMyJobs']);
-		Route::get('settings', ['as' => 'client.settings', 'uses' => 'client\SettingsController@getSettings']);
-		Route::get('friendlist', ['as' => 'client.friendlist', 'uses' => 'FriendListController@getFriendList']);
+	Route::get('/', ['as' => 'client', 'uses' => 'HomeController@index']);
+	Route::get('jobs', ['as' => 'client.jobs', 'uses' => 'HomeController@getMyJobs']);
+	Route::get('settings', ['as' => 'client.settings', 'uses' => 'client\SettingsController@getSettings']);
+	Route::get('friendlist', ['as' => 'client.friendlist', 'uses' => 'FriendListController@getFriendList']);
 
-		Route::get('jobs/{id}', ['as' => 'client.jobs.show', 'uses' => 'JobsController@show']);
-		Route::get('jobs/{id}/join', ['as' => 'client.jobs.join', 'uses' => 'JobsController@join']);
-		Route::post('jobs/{id}/join', 'JobsController@postJoin');
+	Route::get('jobs/{id}', ['as' => 'client.jobs.show', 'uses' => 'JobsController@show']);
+	Route::get('jobs/{id}/join', ['as' => 'client.jobs.join', 'uses' => 'JobsController@join']);
+	Route::post('jobs/{id}/join', 'JobsController@postJoin');
 
-		Route::get('jobs/{id}/edit', ['as' => 'client.jobs.edit', 'uses' => 'JobsController@edit']);
-		Route::delete('jobs/{id}', ['as' => 'client.jobs.delete', 'uses' => 'JobsController@destroy']); // Doesn't destroy the job, just connection with user
-	});
+	Route::get('jobs/{id}/edit', ['as' => 'client.jobs.edit', 'uses' => 'JobsController@edit']);
+	Route::delete('jobs/{id}', ['as' => 'client.jobs.delete', 'uses' => 'JobsController@destroy']); // Doesn't destroy the job, just connection with user
 
 });
 
@@ -69,16 +66,13 @@ Route::group(['prefix' => 'client', 'namespace' => 'controllers\client'], functi
 |---------------------------------------------------------------------------
 */
 
-Route::group(['prefix' => 'company', 'namespace' => 'controllers\company'], function()
+Route::group(['prefix' => 'company', 'namespace' => 'controllers\company', 'before' => 'companyOrAdmin'], function()
 {
 
-	Route::group(['before' => 'companyOrAdmin'], function() 
-	{
-		Route::get('/', ['as' => 'company', 'uses' => 'HomeController@index']);
+	Route::get('/', ['as' => 'company', 'uses' => 'HomeController@index']);
 
-		Route::get('jobs/create', ['as' => 'company.jobs.create', 'uses' => 'JobsController@create']);
-		Route::post('jobs/create', 'JobsController@postCreate');
-	});
+	Route::get('jobs/create', ['as' => 'company.jobs.create', 'uses' => 'JobsController@create']);
+	Route::post('jobs/create', 'JobsController@postCreate');
 
 });
 

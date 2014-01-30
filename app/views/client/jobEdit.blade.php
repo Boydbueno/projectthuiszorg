@@ -11,6 +11,7 @@
 	</nav>
 
 	<section class='job'>
+		<div class="droppableOverlay"></div>
 		<article class="block marginTop floatFix {{ camel_case($job->jobcategory->label) }}">
 	    <header class="mainTitle floatFix">
 	        <h1 class="floatLeft">{{ $job->title }}</h1>
@@ -42,9 +43,9 @@
 					{{{ Session::get('notice') }}}
 				@endif
 
-				{{ link_to_route('client.jobs.join', 'Voortgang doorgeven', array($job->id), array('class' => 'btn')) }}
+				{{ link_to_route('client.jobs.join', 'Voortgang doorgeven', [$job->id], ['class' => 'btn']) }}
 				{{ Form::open(['method' => 'delete', 'route' => ['client.jobs.delete', $job->id]])}}
-					{{ Form::submit('Afmelden', array('class' => 'btn btnWarning')) }}
+					{{ Form::submit('Afmelden', ['class' => 'btn grey', 'id' => 'js-unsubscribe']) }}
 				{{ Form::close() }}
 	        </aside>
 	        <div class="information borderRight">
@@ -53,5 +54,45 @@
 	            </p>
 	        </div>
 	    </section>
+
+    	<div id="js-confirm" class="confirmOverlay confirmUnsubscribe hidden" title="Weet u het zeker?">
+			<p>Weet u zeker dat u zich wilt uitschrijven voor deze opdracht?</p>
+			{{ Form::open(['method' => 'delete', 'route' => ['client.jobs.delete', $job->id]])}}
+				{{ Form::submit('Afmelden', ['class' => 'btn grey']) }}
+			{{ Form::close() }}
+			<a href="#" class="btn" id="js-confirm-cancel">Annuleren</a>
+		</div>
 	</section>
+ 
+@stop
+
+@section('scripts')
+	<script>
+		// Sorry for more internal javascript. :( 
+		(function(){
+			"use strict"
+
+    		$("#js-unsubscribe").on('click', function(e) {
+    			e.preventDefault();
+
+    			$("#js-confirm, .droppableOverlay").show();
+    		});
+
+    		$("#js-confirm-proceed").on('click', function(e) {
+    			e.preventDefault();
+    			
+    			$("#js-confirm, .droppableOverlay").hide();
+    		});
+
+    		$("#js-confirm-cancel").on('click', function(e) {
+    			e.preventDefault();
+
+    			$("#js-confirm, .droppableOverlay").hide();
+    		});
+
+
+
+		})();
+	</script>
+
 @stop

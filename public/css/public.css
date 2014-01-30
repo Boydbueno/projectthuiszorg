@@ -211,15 +211,11 @@ a:hover {
 }
 
 /* line 53, ../sass/partials/_buttons.scss */
-.btn.btnWarning {
-  background-color: #e35340;
-}
-/* line 56, ../sass/partials/_buttons.scss */
-.btn.btnWarning:hover {
-  background-color: #ed8f83;
+.btn.grey {
+  background-color: #989898;
 }
 
-/* line 61, ../sass/partials/_buttons.scss */
+/* line 57, ../sass/partials/_buttons.scss */
 .messageBoxBtn {
   background-repeat: no-repeat;
   background-position: 10px 9px;
@@ -228,31 +224,31 @@ a:hover {
   width: 180px;
 }
 
-/* line 69, ../sass/partials/_buttons.scss */
+/* line 65, ../sass/partials/_buttons.scss */
 .btnWorkIcon {
   background-image: url("../images/icons/work_icon.png");
 }
 
-/* line 73, ../sass/partials/_buttons.scss */
+/* line 69, ../sass/partials/_buttons.scss */
 .btnSettingsIcon {
   background-image: url("../images/icons/settings_icon_white.png");
 }
 
-/* line 77, ../sass/partials/_buttons.scss */
+/* line 73, ../sass/partials/_buttons.scss */
 .jobs .btn {
   margin: 15px 0 5px 35px;
 }
 
-/* line 81, ../sass/partials/_buttons.scss */
+/* line 77, ../sass/partials/_buttons.scss */
 .job .btn {
   margin: 15px 0 5px 20px;
 }
 
-/* line 85, ../sass/partials/_buttons.scss */
+/* line 81, ../sass/partials/_buttons.scss */
 .confirmOverlay .grey {
   background-color: #989898;
 }
-/* line 89, ../sass/partials/_buttons.scss */
+/* line 85, ../sass/partials/_buttons.scss */
 .confirmOverlay .grey:hover {
   background-color: #c5c5c5;
 }

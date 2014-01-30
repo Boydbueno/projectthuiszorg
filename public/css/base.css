@@ -211,15 +211,11 @@ a:hover {
 }
 
 /* line 53, ../sass/partials/_buttons.scss */
-.btn.btnWarning {
-  background-color: #e35340;
-}
-/* line 56, ../sass/partials/_buttons.scss */
-.btn.btnWarning:hover {
-  background-color: #ed8f83;
+.btn.grey {
+  background-color: #989898;
 }
 
-/* line 61, ../sass/partials/_buttons.scss */
+/* line 57, ../sass/partials/_buttons.scss */
 .messageBoxBtn {
   background-repeat: no-repeat;
   background-position: 10px 9px;
@@ -228,31 +224,31 @@ a:hover {
   width: 180px;
 }
 
-/* line 69, ../sass/partials/_buttons.scss */
+/* line 65, ../sass/partials/_buttons.scss */
 .btnWorkIcon {
   background-image: url("../images/icons/work_icon.png");
 }
 
-/* line 73, ../sass/partials/_buttons.scss */
+/* line 69, ../sass/partials/_buttons.scss */
 .btnSettingsIcon {
   background-image: url("../images/icons/settings_icon_white.png");
 }
 
-/* line 77, ../sass/partials/_buttons.scss */
+/* line 73, ../sass/partials/_buttons.scss */
 .jobs .btn {
   margin: 15px 0 5px 35px;
 }
 
-/* line 81, ../sass/partials/_buttons.scss */
+/* line 77, ../sass/partials/_buttons.scss */
 .job .btn {
   margin: 15px 0 5px 20px;
 }
 
-/* line 85, ../sass/partials/_buttons.scss */
+/* line 81, ../sass/partials/_buttons.scss */
 .confirmOverlay .grey {
   background-color: #989898;
 }
-/* line 89, ../sass/partials/_buttons.scss */
+/* line 85, ../sass/partials/_buttons.scss */
 .confirmOverlay .grey:hover {
   background-color: #c5c5c5;
 }
@@ -337,6 +333,11 @@ fieldset {
 }
 
 /* line 15, ../sass/base.scss */
+.job {
+  position: relative;
+}
+
+/* line 19, ../sass/base.scss */
 .progress {
   width: 100%;
   height: 24px;
@@ -344,14 +345,14 @@ fieldset {
   overflow: hidden;
 }
 
-/* line 22, ../sass/base.scss */
+/* line 26, ../sass/base.scss */
 .progressSmall {
   width: 100%;
   background-color: #989898;
   height: 5px;
 }
 
-/* line 28, ../sass/base.scss */
+/* line 32, ../sass/base.scss */
 .progressDescription {
   color: #FAFAFA;
   padding-left: 20px;
@@ -360,7 +361,7 @@ fieldset {
   float: left;
 }
 
-/* line 36, ../sass/base.scss */
+/* line 40, ../sass/base.scss */
 .progressBar {
   width: 0%;
   max-width: 100%;
@@ -369,137 +370,137 @@ fieldset {
   float: left;
 }
 
-/* line 45, ../sass/base.scss */
+/* line 49, ../sass/base.scss */
 .fysiekWerk .progress {
   background-color: #fec606;
 }
 
-/* line 49, ../sass/base.scss */
+/* line 53, ../sass/base.scss */
 .fysiekWerk .progressBar {
   background-color: #fedf73;
 }
 
-/* line 53, ../sass/base.scss */
+/* line 57, ../sass/base.scss */
 .fysiekWerk h1 {
   color: #fec606;
 }
 
-/* line 58, ../sass/base.scss */
+/* line 62, ../sass/base.scss */
 .adviserendWerk .progress {
   background-color: #0692fe;
 }
 
-/* line 62, ../sass/base.scss */
+/* line 66, ../sass/base.scss */
 .adviserendWerk .progressBar {
   background-color: #73c2fe;
 }
 
-/* line 66, ../sass/base.scss */
+/* line 70, ../sass/base.scss */
 .adviserendWerk h1 {
   color: #0692fe;
 }
 
-/* line 71, ../sass/base.scss */
+/* line 75, ../sass/base.scss */
 .handarbeid .progress {
   background-color: #6bcd3b;
 }
 
-/* line 75, ../sass/base.scss */
+/* line 79, ../sass/base.scss */
 .handarbeid .progressBar {
   background-color: #ace391;
 }
 
-/* line 79, ../sass/base.scss */
+/* line 83, ../sass/base.scss */
 .handarbeid h1 {
   color: #6bcd3b;
 }
 
-/* line 84, ../sass/base.scss */
+/* line 88, ../sass/base.scss */
 .technischWerk .progress {
   background-color: #fe0606;
 }
 
-/* line 88, ../sass/base.scss */
+/* line 92, ../sass/base.scss */
 .technischWerk .progressBar {
   background-color: #fe7373;
 }
 
-/* line 92, ../sass/base.scss */
+/* line 96, ../sass/base.scss */
 .technischWerk h1 {
   color: #fe0606;
 }
 
-/* line 96, ../sass/base.scss */
+/* line 100, ../sass/base.scss */
 .description {
   padding: 30px 30px 30px 20px;
 }
 
-/* line 100, ../sass/base.scss */
+/* line 104, ../sass/base.scss */
 .information {
   margin-right: 220px;
   padding-right: 30px;
 }
-/* line 104, ../sass/base.scss */
+/* line 108, ../sass/base.scss */
 .information.wide {
   margin-right: 30px;
 }
 
-/* line 111, ../sass/base.scss */
+/* line 115, ../sass/base.scss */
 .details, .quickMenu {
   width: 210px;
 }
 
-/* line 114, ../sass/base.scss */
+/* line 118, ../sass/base.scss */
 .details ul {
   margin-top: 5px;
   margin-left: 50px;
 }
 
-/* line 119, ../sass/base.scss */
+/* line 123, ../sass/base.scss */
 .quickMenu ul {
   margin-top: 15px;
   margin-left: 30px;
 }
 
-/* line 124, ../sass/base.scss */
+/* line 128, ../sass/base.scss */
 .iconItem {
   padding: 0 0 0 40px;
   margin-bottom: 15px;
   font-size: 15px;
 }
 
-/* line 130, ../sass/base.scss */
+/* line 134, ../sass/base.scss */
 .dateIcon {
   background: url("../images/icons/date_icon.png") no-repeat;
 }
 
-/* line 134, ../sass/base.scss */
+/* line 138, ../sass/base.scss */
 .timeIcon {
   background: url("../images/icons/time_icon.png") no-repeat;
 }
 
-/* line 138, ../sass/base.scss */
+/* line 142, ../sass/base.scss */
 .moneyIcon {
   background: url("../images/icons/money_icon.png") no-repeat;
 }
 
-/* line 142, ../sass/base.scss */
+/* line 146, ../sass/base.scss */
 .settingsIcon {
   background: url("../images/icons/settings_icon.png") no-repeat;
 }
 
-/* line 146, ../sass/base.scss */
+/* line 150, ../sass/base.scss */
 .companyIcon {
   background: url("../images/icons/company_icon.png") no-repeat;
 }
 
-/* line 151, ../sass/base.scss */
+/* line 155, ../sass/base.scss */
 .jobSlider {
   position: relative;
   padding: 30px 20px 0 0;
 }
 
-/* line 157, ../sass/base.scss */
+/* line 161, ../sass/base.scss */
 .friendList {
   position: fixed;
   width: 250px;
@@ -509,12 +510,12 @@ fieldset {
   margin-right: -745px;
 }
 
-/* line 166, ../sass/base.scss */
+/* line 170, ../sass/base.scss */
 .friendList ul {
   margin-bottom: 25px;
 }
 
-/* line 170, ../sass/base.scss */
+/* line 174, ../sass/base.scss */
 .friend {
   padding: 15px 20px;
   border-top: 1px solid #eaeaea;
@@ -522,32 +523,32 @@ fieldset {
   background-color: #fff;
 }
 
-/* line 177, ../sass/base.scss */
+/* line 181, ../sass/base.scss */
 .friendList .friend:hover {
   background-color: #eaeaea;
 }
 
-/* line 181, ../sass/base.scss */
+/* line 185, ../sass/base.scss */
 .friend:last-child {
   border-bottom: 1px solid #eaeaea;
 }
 
-/* line 185, ../sass/base.scss */
+/* line 189, ../sass/base.scss */
 .droppableJob {
   position: relative;
 }
 
-/* line 189, ../sass/base.scss */
+/* line 193, ../sass/base.scss */
 .droppableOverlay {
   background: rgba(255, 255, 255, 0.7);
 }
 
-/* line 193, ../sass/base.scss */
+/* line 197, ../sass/base.scss */
 .confirmOverlay {
   background: rgba(255, 255, 255, 0.8);
 }
 
-/* line 197, ../sass/base.scss */
+/* line 201, ../sass/base.scss */
 .droppableOverlay, .confirmOverlay {
   position: absolute;
   left: 0;
@@ -557,18 +558,18 @@ fieldset {
   display: none;
 }
 
-/* line 206, ../sass/base.scss */
+/* line 210, ../sass/base.scss */
 .droppableOverlay, .confirmOverlay {
   text-align: center;
   padding-top: 120px;
 }
 
-/* line 211, ../sass/base.scss */
+/* line 215, ../sass/base.scss */
 .confirmOverlay h1 {
   margin-bottom: 20px;
 }
 
-/* line 215, ../sass/base.scss */
+/* line 219, ../sass/base.scss */
 .droppable .droppableOverlay, .active .confirmOverlay {
   display: block;
 }

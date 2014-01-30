@@ -35,27 +35,37 @@
 
     <section class="jobs">
 
-        @if(isset($jobs['Gestart']))
+        @if(!empty($jobs))
 
-        <section class="started-jobs">            
-            <h1 class="block marginTop mainTitle">Opdrachten die gestart zijn</h1>
+            @if(isset($jobs['Gestart']))
 
-            @foreach ($jobs['Gestart'] as $job)
-                @include('partials.client._jobEdit', $job)
-            @endforeach
-        </section>
+            <section class="started-jobs">            
+                <h1 class="block marginTop mainTitle">Opdrachten die gestart zijn</h1>
 
-        @endif
+                @foreach ($jobs['Gestart'] as $job)
+                    @include('partials.client._jobEdit', $job)
+                @endforeach
+            </section>
 
-        @if(isset($jobs['Open']))
-        
-        <section class="pending-jobs">
-            <h1 class="block marginTop mainTitle">Opdrachten die nog niet gestart zijn</h1>
+            @endif
 
-            @foreach ($jobs['Open'] as $job)
-                @include('partials.client._jobEdit', $job)
-            @endforeach
-        </section>
+            @if(isset($jobs['Open']))
+            
+            <section class="pending-jobs">
+                <h1 class="block marginTop mainTitle">Opdrachten die nog niet gestart zijn</h1>
+
+                @foreach ($jobs['Open'] as $job)
+                    @include('partials.client._jobEdit', $job)
+                @endforeach
+            </section>
+
+            @endif
+
+        @else
+
+             <article class="block marginTop ">
+                <header class="mainTitle"><h1>Je bent nog niet aangemeld voor een opdracht.</h1></header>
+            </article>
 
         @endif
 

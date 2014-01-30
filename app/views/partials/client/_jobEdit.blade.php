@@ -16,6 +16,7 @@
                 <li class="iconItem timeIcon">{{ $job->status->label }}</li>
                 <li class="iconItem moneyIcon">€ {{ $job->formatted_payment }}</li>
             </ul>
+            {{ $job->link_to_edit }}
         </aside>
         <div class="information borderRight">
             <p>{{ $job->short_description }}</p>

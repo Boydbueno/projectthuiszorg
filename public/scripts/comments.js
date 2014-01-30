@@ -1,11 +1,8 @@
 /** @jsx React.DOM */
 
-//Temp Data
+//Data
 
-var data = [
-	{author: "Pete Hunt", text: "This is one comment"},
-	{author: "Jordan Walke", text: "This is *another* comment"}
-];
+var jobId = $("#comments").attr("rel");
 
 //React Components
 
@@ -14,7 +11,7 @@ var CommentList = React.createClass({displayName: 'CommentList',
 
 		//Create comments from commentBox's data
 		var commentNodes = this.props.data.map(function(comment){
-			return Comment( {author:comment.author}, comment.text);
+			return Comment( {author:comment.user.user_info.firstName+' '+comment.user.user_info.lastName}, comment.text);
 		});
 
 		//Return the comment list
@@ -29,21 +26,19 @@ var CommentList = React.createClass({displayName: 'CommentList',
 var CommentForm = React.createClass({displayName: 'CommentForm',
 	render:function(){
 		return(
-			React.DOM.div( {className:"commentForm"}, 
-				" Hello, world! I am a CommentForm. "
+			React.DOM.form( {className:"commentForm"}, 
+				React.DOM.input( {type:"text", placeholder:"Your name"} ),
+				React.DOM.input( {type:"text", placeholder:"Say something..."} ),
+				React.DOM.input( {type:"submit", value:"Post"} )
 			)
 		);
 	}
 });
 
 var CommentBox = React.createClass({displayName: 'CommentBox',
-	getInitialState: function(){
-		return {data: []};
-	},
-	//Executed before the component is rendered
-	componentWillMount: function(){
+	loadCommentsWithAjax: function(){
 		$.ajax({
-			url: 'comments.json',
+			url: '/api/jobs/'+jobId+'/comments',
 			dataType: 'json',
 			success: function(data) {
 				//Replace the old array of data with new data
@@ -54,6 +49,16 @@ var CommentBox = React.createClass({displayName: 'CommentBox',
 				console.error("comments.json", status, err.toString());
 			}.bind(this)
 		});
+	},
+	getInitialState: function(){
+		return {data: []};
+	},
+	//Executed before the component is rendered
+	componentWillMount: function(){
+		//Load all the comments from the server
+		this.loadCommentsWithAjax();
+		//Set an interval to check for new comments
+		setInterval(this.loadCommentsWithAjax, this.props.pollInterval);
 	},
 	//Render the commentBox and pass the data to the commentList
 	render:function(){
@@ -79,7 +84,6 @@ var Comment = React.createClass({displayName: 'Comment',
 });
 
 React.renderComponent(
-	//Send the comment's data object to the commentbox
-	CommentBox( {data:data} ),
+	CommentBox( {pollInterval:2000} ),
 	document.getElementById('comments')
 )

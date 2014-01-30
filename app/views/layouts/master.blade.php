@@ -7,7 +7,9 @@
     {{ HTML::style('css/base.css') }}
     {{ HTML::style('css/ion.rangeSlider.css') }}
     {{ HTML::style('css/ion.rangeSlider.skinNice.css') }}
+    {{ HTML::style('css/shepherd-theme-arrows.css') }}
 	{{ HTML::script('scripts/modernizr.js') }}
+
 </head>
 <body>
 	
@@ -56,6 +58,8 @@
 	    </footer>
 
 	</div>
+    {{ HTML::script('scripts/vendor/react.min.js') }}	
+    {{ HTML::script('scripts/vendor/JSXtransformer.js') }}
     {{ HTML::script('scripts/jquery-2.0.3.min.js') }}	
     {{ HTML::script('scripts/jquery-ui-1.9.2.custom.min.js') }}	
 	@yield('scripts')

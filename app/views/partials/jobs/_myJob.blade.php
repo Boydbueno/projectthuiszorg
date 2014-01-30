@@ -9,13 +9,14 @@
             Nog {{ $job->amount_left }} {{ $job->postfix }}
         </div>
     </div>
-    <section class="description">
+    <section class="description floatFix">
         <aside class="details floatRight">
             <ul>
                 <li class="iconItem dateIcon bold">{{ $job->days_left_phrase }}</li>
                 <li class="iconItem timeIcon">{{ $job->status->label }}</li>
                 <li class="iconItem moneyIcon">€ {{ $job->formatted_payment }}</li>
             </ul>
+            {{ $job->link_to_edit }}
         </aside>
         <div class="information borderRight">
             <p>{{ $job->short_description }}</p>

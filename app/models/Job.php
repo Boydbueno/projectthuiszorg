@@ -14,7 +14,8 @@ class Job extends Eloquent {
 		'days_left_phrase',
 		'formatted_payment',
 		'jobcategory_classname',
-		'link_to_details'
+		'link_to_details',
+		'link_to_edit'
 	);
 	
 	public static $rules = array();
@@ -134,6 +135,11 @@ class Job extends Eloquent {
 	public function getLinkToDetailsAttribute()
 	{
 		return link_to_route('client.jobs.show', 'Bekijk Opdracht', array($this->id), array('class' => 'btn'));
+	}
+
+	public function getLinkToEditAttribute()
+	{
+		return link_to_route('client.jobs.edit', 'Beheer opdracht', array($this->id), array('class' => 'btn'));
 	}
 
 }

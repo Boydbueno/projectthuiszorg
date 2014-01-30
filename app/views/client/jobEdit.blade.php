@@ -11,7 +11,6 @@
 	</nav>
 
 	<section class='job'>
-		<div class="droppableOverlay"></div>
 		<article class="block marginTop floatFix {{ camel_case($job->jobcategory->label) }}">
 	    <header class="mainTitle floatFix">
 	        <h1 class="floatLeft">{{ $job->title }}</h1>
@@ -44,7 +43,7 @@
 				@endif
 
 				@if($job->isStarted)
-					{{ link_to_route('client.jobs.join', 'Voortgang doorgeven', [$job->id], ['class' => 'btn']) }}
+					{{ link_to_route('client.jobs.progress', 'Voortgang', [$job->id], ['class' => 'btn']) }}
 				@endif
 
 				@if($job->isOpen)
@@ -95,8 +94,6 @@
 
     			$("#js-confirm, .droppableOverlay").hide();
     		});
-
-
 
 		})();
 	</script>

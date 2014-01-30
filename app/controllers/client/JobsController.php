@@ -62,6 +62,13 @@ class JobsController extends \BaseController {
 		return Redirect::route('client.jobs');
 	}
 
+	public function progress($id)
+	{
+		$job = Job::find($id);
+
+		return View::make('client.jobProgress', compact('job'));
+	}
+
 	/**
 	 * Get the text about previous participants based on amount of users
 	 * @param  int $usersCount

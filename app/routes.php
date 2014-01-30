@@ -57,6 +57,7 @@ Route::group(['prefix' => 'client', 'namespace' => 'controllers\client', 'before
 
 	Route::get('jobs/{id}/edit', ['as' => 'client.jobs.edit', 'uses' => 'JobsController@edit']);
 	Route::delete('jobs/{id}', ['as' => 'client.jobs.delete', 'uses' => 'JobsController@destroy']); // Doesn't destroy the job, just connection with user
+	Route::get('jobs/{id}/progress', ['as' => 'client.jobs.progress', 'uses' => 'JobsController@progress']);
 
 });
 

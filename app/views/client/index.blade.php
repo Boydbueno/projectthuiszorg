@@ -142,7 +142,8 @@
     </script>
 
     {{ HTML::style('css/shepherd-theme-arrows.css') }}
-    {{ HTML::script('scripts/shepherd.min.js') }}
-    {{ HTML::script('scripts/tour.js') }}
-    
+    @if(!Cookie::get('tour'))
+        {{ HTML::script('scripts/shepherd.min.js') }}
+        {{ HTML::script('scripts/tour.js') }}
+    @endif    
 @stop

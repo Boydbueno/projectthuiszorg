@@ -3,6 +3,8 @@
 use Job;
 use Auth;
 use View;
+use Cookie;
+use Response;
 use DateTime;
 use Jobcategory;
 use \Carbon\Carbon;
@@ -22,7 +24,9 @@ class HomeController extends \BaseController {
 	{
 		$jobs = $this->job->all();
 
-		return View::make('client.index', compact('jobs'));
+		$tourCookie = Cookie::forever('tour', '1');
+
+		return Response::view('client.index', compact('jobs'))->withCookie($tourCookie);
 	}
 
 	public function getMyjobs() 

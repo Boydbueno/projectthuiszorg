@@ -48,7 +48,7 @@ Route::group(['prefix' => 'client', 'namespace' => 'controllers\client', 'before
 
 	Route::get('/', ['as' => 'client', 'uses' => 'HomeController@index']);
 	Route::get('jobs', ['as' => 'client.jobs', 'uses' => 'HomeController@getMyJobs']);
-	Route::get('settings', ['as' => 'client.settings', 'uses' => 'client\SettingsController@getSettings']);
+	Route::get('settings', ['as' => 'client.settings', 'uses' => 'SettingsController@getSettings']);
 	Route::get('friendlist', ['as' => 'client.friendlist', 'uses' => 'FriendListController@getFriendList']);
 
 	Route::get('jobs/{id}', ['as' => 'client.jobs.show', 'uses' => 'JobsController@show']);

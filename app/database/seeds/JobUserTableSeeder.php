@@ -10,32 +10,32 @@ class JobUserTableSeeder extends Seeder {
 			array(
 				'job_id' => Job::where('title', '=', 'Tapijt leggen')->first()->id,
 				'user_id' => User::where('username', '=', 'boydbuenodemesquita')->first()->id,
-				'amount' => 3
+				'amount' => 30
 			),
 			array(
 				'job_id' => Job::where('title', '=', 'Mutsen breien')->first()->id,
 				'user_id' => User::where('username', '=', 'stefanweck')->first()->id,
-				'amount' => 300
-			),			
-			array(
-				'job_id' => Job::where('title', '=', 'Mutsen breien')->first()->id,
-				'user_id' => User::where('username', '=', 'kevinvlietstra')->first()->id,
-				'amount' => 200
-			),			
-			array(
-				'job_id' => Job::where('title', '=', 'Speelgoed monteren')->first()->id,
-				'user_id' => User::where('username', '=', 'boydbuenodemesquita')->first()->id,
 				'amount' => 20
+			),			
+			array(
+				'job_id' => Job::where('title', '=', 'Mutsen breien')->first()->id,
+				'user_id' => User::where('username', '=', 'kevinvlietstra')->first()->id,
+				'amount' => 15
+			),			
+			array(
+				'job_id' => Job::where('title', '=', 'Speelgoed monteren')->first()->id,
+				'user_id' => User::where('username', '=', 'boydbuenodemesquita')->first()->id,
+				'amount' => 70
 			),
 			array(
 				'job_id' => Job::where('title', '=', 'Speelgoed monteren')->first()->id,
 				'user_id' => User::where('username', '=', 'stefanweck')->first()->id,
-				'amount' => 150
+				'amount' => 50
 			),			
 			array(
 				'job_id' => Job::where('title', '=', 'Speelgoed monteren')->first()->id,
 				'user_id' => User::where('username', '=', 'kevinvlietstra')->first()->id,
-				'amount' => 5
+				'amount' => 40
 			),
 			array(
 				'job_id' => Job::where('title', '=', 'Gadgets monteren')->first()->id,
@@ -45,12 +45,12 @@ class JobUserTableSeeder extends Seeder {
 			array(
 				'job_id' => Job::where('title', '=', 'Gadgets monteren')->first()->id,
 				'user_id' => User::where('username', '=', 'stefanweck')->first()->id,
-				'amount' => 10
+				'amount' => 20
 			),			
 			array(
 				'job_id' => Job::where('title', '=', 'Gadgets monteren')->first()->id,
 				'user_id' => User::where('username', '=', 'kevinvlietstra')->first()->id,
-				'amount' => 10
+				'amount' => 30
 			),
 		);
 

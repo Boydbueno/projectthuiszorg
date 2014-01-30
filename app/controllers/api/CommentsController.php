@@ -11,7 +11,7 @@ class CommentsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return Comment::all();
+		return Comment::with('user', 'job')->get();
 	}
 
 	/**
@@ -24,6 +24,16 @@ class CommentsController extends \BaseController {
 	{
 		// TODO: Error handling if resource isn't found
 		return Comment::find($id);
+	}
+
+	/**
+	 * Return a listing of the resource as JSON.
+	 *
+	 * @return Response
+	 */
+	public function indexJob($jobId)
+	{
+		return Comment::with('user')->where('job_id','=',$jobId)->get();
 	}
 
 }

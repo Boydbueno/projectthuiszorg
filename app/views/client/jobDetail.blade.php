@@ -64,24 +64,22 @@
 
 @section('scripts')
 
-	<script type="text/jsx">
-		/**
-		* @jsx React.DOM
-		*/
+	<script type="text/javascript">
 		
 		var CommentBox = React.createClass({
 			render:function(){
 				return(
-					<div class='commentBox'>
-						Ewa Comments hier
-					</div>
+					React.DOM.div({
+						className: 'commentBox',
+						children: 'Hello, world! I am a CommentBox.'
+					})
 				);
 			}
 		});
 
 		React.renderComponent(
-			<CommentBox />
-			document.getElementById('comments');
+			CommentBox({}),
+			document.getElementById('comments')
 		)
 
 	</script>

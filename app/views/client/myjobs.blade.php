@@ -71,6 +71,12 @@
 
     </section> <!-- End Jobs -->
 
+    @include('partials.client._friendlist')
+
     @include('partials.client._footer')
 
+@stop
+
+@section('scripts')
+    {{ HTML::script('scripts/friendlist.js') }}
 @stop

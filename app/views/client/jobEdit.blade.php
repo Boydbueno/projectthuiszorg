@@ -43,8 +43,9 @@
 				@endif
 
 				{{ link_to_route('client.jobs.join', 'Voortgang doorgeven', array($job->id), array('class' => 'btn')) }}
-				{{ link_to_route('client.jobs.join', 'Afmelden', array($job->id), array('class' => 'btn btnWarning')) }}
-
+				{{ Form::open(['method' => 'delete', 'route' => ['client.jobs.delete', $job->id]])}}
+					{{ Form::submit('Afmelden', array('class' => 'btn btnWarning')) }}
+				{{ Form::close() }}
 	        </aside>
 	        <div class="information borderRight">
 	            <p>

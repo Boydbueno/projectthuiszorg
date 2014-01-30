@@ -58,6 +58,7 @@ Route::group(array('prefix' => 'client'), function()
 		Route::post('jobs/{id}/join', 'controllers\client\JobsController@postJoin');
 
 		Route::get('jobs/{id}/edit', array('as' => 'client.jobs.edit', 'uses' => 'controllers\client\JobsController@edit'));
+		Route::delete('jobs/{id}', array('as' => 'client.jobs.delete', 'uses' => 'controllers\client\JobsController@destroy')); // Doesn't destroy the job, just connection with user
 	});
 
 });

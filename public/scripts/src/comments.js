@@ -36,6 +36,9 @@ var CommentForm = React.createClass({
 		//Clear the field again
 		this.refs.text.getDOMNode().value = '';
 
+		//Call the callback from the CommentForm
+		this.props.onCommentSubmit({text: text});
+
 		//Make sure the page doesn't reload, aka preventDefault
 		return false;
 	},
@@ -60,7 +63,24 @@ var CommentBox = React.createClass({
 				this.setState({data: data});
 			}.bind(this),
 			error: function(xhr, status, err) {
-				console.error("comments.json", status, err.toString());
+				console.error("Get comments from server", status, err.toString());
+			}.bind(this)
+		});
+	},
+	handleCommentSubmit: function(comment) {
+		//Submit comment to the server
+		$.ajax({
+			url: '/api/jobs/'+jobId+'/comments',
+			dataType: 'json',
+			type: 'POST',
+			data: comment,
+			success: function(data) {
+				//Replace the old array of data with new data
+				//This forces the component to re-render itself
+				this.setState({data: data});
+			}.bind(this),
+			error: function(xhr, status, err) {
+				console.error("Add comment on server", status, err.toString());
 			}.bind(this)
 		});
 	},
@@ -80,7 +100,7 @@ var CommentBox = React.createClass({
 			<div className="commentBox">
 				<h1>Comments</h1>
 				<CommentList data={this.state.data} /> 
-				<CommentForm />
+				<CommentForm onCommentSubmit={this.handleCommentSubmit} />
 			</div>
 		);
 	} 

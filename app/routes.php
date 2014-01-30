@@ -42,6 +42,7 @@ Route::group(array('prefix' => 'register'), function()
 | Client routes
 |---------------------------------------------------------------------------
 */
+
 Route::group(array('prefix' => 'client'), function()
 {
 
@@ -50,6 +51,7 @@ Route::group(array('prefix' => 'client'), function()
 		Route::get('/', array('as' => 'client', 'uses' => 'controllers\client\HomeController@index'));
 		Route::get('jobs', 'controllers\client\HomeController@getMyJobs');
 		Route::get('settings', array('as' => 'client.settings', 'uses' => 'controllers\client\SettingsController@getSettings'));
+		Route::get('friendlist', array('as' => 'client.friendlist', 'uses' => 'controllers\client\FriendListController@getFriendList'));
 
 		Route::get('jobs/{id}', array('as' => 'client.jobs.show', 'uses' => 'controllers\client\JobsController@show'));
 		Route::get('jobs/{id}/join', array('as' => 'client.jobs.join', 'uses' => 'controllers\client\JobsController@join'));
@@ -91,6 +93,7 @@ Route::group(array('prefix' => 'api'), function()
 	# Job routes
 	Route::get('jobs', 'controllers\api\JobsController@index');
 	Route::get('jobs/{id}', 'controllers\api\JobsController@show');
+	Route::get('jobs/{id}/invite/{userid}', 'controllers\api\JobsController@inviteUser');
 	Route::get('jobcategories/{id}/jobs', 'controllers\api\JobsController@byCategory');
 
 	# Jobcategory routes

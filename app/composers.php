@@ -11,5 +11,6 @@ View::composer(
 		  'client.jobEdit',
 		  'client.join',
 		  'client.myjobs',
+		  'client.friendlist',
 		  'client.settings'),
 	'Rework\Composers\FriendListComposer');

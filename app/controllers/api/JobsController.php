@@ -1,15 +1,20 @@
 <?php namespace controllers\api;
 
 use Job;
+use User;
+use Mail;
 use Auth;
+use Input;
 use DateTime;
 use JobCategory;
+use Rework\Repositories\EloquentJobRepository;
+use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 
 class JobsController extends \BaseController {
 
-	protected $job;
+	private $job;
 
-	public function __construct(Job $job)
+	public function __construct(EloquentJobRepository $job)
 	{
 		$this->job = $job;
 	}
@@ -21,7 +26,16 @@ class JobsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return $this->job->notExpired()->orderBy('start_date')->get();
+		$params = [];
+
+		if(Input::get('availability'))
+		{
+			$params['availability'] = Input::get('availability');
+		}
+
+		$jobs = $this->job->all($params); 
+		
+		return $jobs;
 	}
 
 	/**
@@ -33,7 +47,7 @@ class JobsController extends \BaseController {
 	public function show($id)
 	{
 		// TODO: Error handling if resource isn't found
-		return Job::find($id);
+		return $this->job->find($id);
 	}
 
 	/**
@@ -44,7 +58,35 @@ class JobsController extends \BaseController {
 	 */
 	public function byCategory($id)
 	{
-		return JobCategory::find($id)->jobs;
+		$params = [];
+
+		if(Input::get('availability'))
+		{
+			$params['availability'] = Input::get('availability');
+		}
+
+		return $this->job->byCategory($id, $params);
+	}
+
+	/**
+	 * Sends an email to another person to invite them to a job
+	 * 
+	 * @param  int $id id of the user being invited
+	 * @return Response
+	 */
+	public function inviteUser($id, $userId)
+	{
+		$data = array();
+		$data['job'] = Job::find($id);
+		$data['user'] = User::find($userId);
+
+		Mail::send('emails.invite', $data, function($message) use ($data)
+		{
+			$message->subject(Auth::user()->userInfo->firstName.''.Auth::user()->userInfo->lastName." nodigt u uit!");
+		    $message->to($data['user']->email, $data['user']->userInfo->firstName.' '.$data['user']->userInfo->lastName);
+		});
+
+		return "succes";
 	}
 
 }

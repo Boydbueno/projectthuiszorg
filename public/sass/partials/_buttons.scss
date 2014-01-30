@@ -67,3 +67,13 @@
 .job .btn{
 	margin:15px 0 35px 20px;
 }
+
+.confirmOverlay .grey{
+
+	background-color:$grey;
+
+	&:hover{
+		background-color: $lightGrey;
+	}
+
+}

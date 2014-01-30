@@ -9,7 +9,7 @@ class FriendListComposer {
 		$friends = \Auth::user()->friendList();
 
 		foreach ($friends as $friend) {
-			array_push($friends, \User::find($friend->user_id));
+			array_push($friendList, \User::find($friend->user_id));
 		}
 
 		$view->with('friends', $friendList);

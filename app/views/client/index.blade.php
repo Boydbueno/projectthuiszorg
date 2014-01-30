@@ -6,10 +6,6 @@
 
 @section('content')
 
-    @foreach ($friends as $friend)
-        {{ $friend->user_id }}
-    @endforeach
-
     @if(Session::get('notice'))
 
         <section class="block marginTop floatFix">
@@ -71,14 +67,41 @@
 
     <section class="jobs" id="jobs">
 
-        @foreach ($jobs as $job)
-            @include('partials.jobs._job', array('job' => $job))
-        @endforeach
+        @if(count($jobs))
+            @foreach ($jobs as $job)
+                @include('partials.jobs._job', array('job' => $job))
+            @endforeach
+        @else
+            <article class="block marginTop ">
+                <header class="mainTitle"><h1>Er zijn geen opdrachten beschikbaar</h1></header>
+                <div class="progressSmall"></div>
+                <section class="description">
+                    <p class="information wide">
+                        Op dit moment zijn er helaas geen opdrachten om weer te geven. Er zullen spoedig nieuwe opdrachten beschikbaar komen.
+                    </p>
+                </section>
+            </article>
+        @endif
 
     </section> <!-- End Jobs -->
 
     <!-- Todo: See if we can combine this with the php partial -->
     @include('partials.handlebars._job')
+
+    <!-- Friendlist -->
+    <section class="block friendList" id="friendList">
+        <header class='mainTitle floatFix'>
+            <h1 class="floatLeft">{{ link_to('client/friendlist', 'Vriendenlijst')}}</h1>
+            <a class="subTitle floatRight">Verbergen</a>
+        </header>
+        <section>
+            <ul>
+                @foreach ($friends as $friend)
+                    <li id="{{ $friend->id }}" class="friend">{{ $friend->userInfo->firstName }} {{ $friend->userInfo->lastName }}</li>
+                @endforeach
+            </ul>
+        </section>
+    </section>
 
     @include('partials.client._footer')
 @stop
@@ -87,20 +110,107 @@
     {{ HTML::script('scripts/vendor/handlebars-v1.1.2.js') }}
 
     <script>
+        // Todo: Place in external js file
+
+        //Make friends draggable
+        $(".friend").draggable({ 
+            cursor: 'move',
+            containment: 'document',
+            revert: true 
+        });
+
+        //Make jobs droppable 
+        $('.droppableJob').droppable( {
+            drop: handleDropEvent,
+            hoverClass: "droppable"
+        });
+
+        function handleDropEvent(event, ui) {
+
+            //Get dragged object and text
+            var draggable = ui.draggable;
+            var friendsName = draggable.context.innerText;
+            var friendsId = draggable.context.id;
+
+            //Add class and edit text
+            $(this).addClass("active");
+            $(this).find("#droppableName").text(friendsName);
+
+            //Edit rel attribute and add friendsId to it
+            var oldRel = $(this).find("a.accept").attr('rel');
+            $(this).find("a.accept").attr('rel', oldRel + "-" + friendsId);
+        }
+
+        //Button events
+        $(".jobs").on( "click", "a.cancel", function(e) {
+            e.preventDefault();
+
+            //Remove the overlay
+            $(this).parent().parent().removeClass("active");
+        });
+
+        $(".jobs").on( "click", "a.accept", function(e) {
+            e.preventDefault();
+
+            var button = $(this);
+
+            //Change text to busy and split rel attribute
+            button.html("Bezig...");
+            var rel = button.attr('rel').split("-");
+
+            var userId = rel[1];
+            var jobId = rel[0];
+
+            var url;
+            var baseUrl = 'http://projectthuiszorg.dev/api/jobs/';
+            var url = baseUrl + jobId + '/invite/' + userId;
+
+            //Ajax request to execute the invite
+            var inviteRequest = $.ajax({
+                type: "GET",
+                dataType: "text",
+                url: url
+            });
+
+            //When it's done, give the user feedback
+            inviteRequest.done(function(result){
+                if(result == "succes"){
+                    button.html("Gelukt!");
+
+                    //Remove the overlay
+                    setTimeout(function(){
+                        button.parent().parent().removeClass("active");
+                    },2000);
+                }
+            });
+            
+            //When the request fails, give them an ugly alert!
+            inviteRequest.fail(function( jqXHR, textStatus ) {
+                alert( "Helaas, probeer het nogmaals: " + textStatus );
+            });
+
+        });
+
+    </script>
+
+    <script>
         // Todo: We need some javascript layer to wrap all javascript into or something..
         // Probably some namespacing stuff
 
-        // Todo: Place in external js file
-        $('#js-jobcategoryDropdown').on('change', function() { // Todo: Abstract away in named function
-            var jobcategoryId = $(this).val();
-            
+        var filter = function() {
             var url;
-
-            // Todo: This url should not be hardcoded!!
+            var baseUrl = 'http://projectthuiszorg.dev/api';
+            var jobcategoryId = $("#js-jobcategoryDropdown").val();
+            var availability = $("#js-jobAvailabilityDropdown").val();
+            
             if (jobcategoryId === "") {
-                url = 'http://projectthuiszorg.dev/api/jobs'; 
+                url = baseUrl + '/jobs'; 
             } else {
-                url = 'http://projectthuiszorg.dev/api/jobcategories/' + jobcategoryId + '/jobs';
+                url = baseUrl + '/jobcategories/' + jobcategoryId + '/jobs';
+            }
+
+            if (availability !== "") {
+                url += "?availability=" + availability;
             }
 
             $.getJSON(url, function(data) { // Todo: Abstract away in named func
@@ -110,14 +220,20 @@
 
                 $("#jobs").html(template({jobs: data}));
 
+                //Make jobs droppable 
+                $('.droppableJob').droppable( {
+                    drop: handleDropEvent,
+                    hoverClass: "droppable"
+                });
+
             });
-        });
 
-        $('#js-jobAvailabilityDropdown').on('change', function() {
+        }
 
-            console.log("Pizza");
 
-        });
+        // Todo: Place in external js file
+        $('#js-jobcategoryDropdown').on('change', filter);
+        $('#js-jobAvailabilityDropdown').on('change', filter);
 
     </script>
 @stop

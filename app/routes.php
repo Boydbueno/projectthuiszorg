@@ -90,9 +90,11 @@ Route::group(['prefix' => 'api', 'namespace' => 'controllers\api'], function()
 	Route::get('comments/{id}', 'CommentsController@show');
 
 	# Job routes
+	
 	Route::get('jobs', 'JobsController@index');
 	Route::get('jobs/{id}', 'JobsController@show');
-	Route::get('jobs/{id}/comments', 'CommentsController@indexJob');
+	Route::get('jobs/{id}/comments', 'CommentsController@getComments');
+	Route::post('jobs/{id}/comments', 'CommentsController@postComment');
 	Route::get('jobs/{id}/invite/{userid}', 'JobsController@inviteUser');
 	Route::get('jobcategories/{id}/jobs', 'JobsController@byCategory');
 

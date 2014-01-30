@@ -9,6 +9,8 @@ var jobId = $("#comments").attr("rel");
 var CommentList = React.createClass({
 	render:function(){
 
+		console.log(this.props.data);
+
 		//Create comments from commentBox's data
 		var commentNodes = this.props.data.map(function(comment){
 			return <Comment author={comment.user.user_info.firstName+' '+comment.user.user_info.lastName}>{comment.text}</Comment>;
@@ -71,8 +73,8 @@ var CommentBox = React.createClass({
 		//Submit comment to the server
 		$.ajax({
 			url: '/api/jobs/'+jobId+'/comments',
-			dataType: 'json',
 			type: 'POST',
+			dataType: 'json',
 			data: comment,
 			success: function(data) {
 				//Replace the old array of data with new data
@@ -118,6 +120,6 @@ var Comment = React.createClass({
 });
 
 React.renderComponent(
-	<CommentBox pollInterval={2000} />,
+	<CommentBox pollInterval={5000} />,
 	document.getElementById('comments')
 )

@@ -7,7 +7,9 @@
     {{ HTML::style('css/base.css') }}
     {{ HTML::style('css/ion.rangeSlider.css') }}
     {{ HTML::style('css/ion.rangeSlider.skinNice.css') }}
+    {{ HTML::style('css/shepherd-theme-arrows.css') }}
 	{{ HTML::script('scripts/modernizr.js') }}
+
 </head>
 <body>
 	

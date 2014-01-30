@@ -236,4 +236,8 @@
         $('#js-jobAvailabilityDropdown').on('change', filter);
 
     </script>
+    @section('scripts')
+        {{ HTML::script('scripts/shepherd.js') }}
+        {{ HTML::script('scripts/tour.js') }}
+    @stop
 @stop

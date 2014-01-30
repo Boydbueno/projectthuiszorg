@@ -60,7 +60,7 @@
 	</div>
     {{ HTML::script('scripts/vendor/react.min.js') }}
     {{ HTML::script('scripts/jquery-2.0.3.min.js') }}	
-    {{ HTML::script('scripts/jquery-ui-1.9.2.custom.min.js') }}	
+    {{ HTML::script('scripts/jquery-ui-1.10.4.custom.min.js') }}	
 	@yield('scripts')
 </body>
 </html>

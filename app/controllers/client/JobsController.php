@@ -55,6 +55,13 @@ class JobsController extends \BaseController {
 		return View::make('client.jobEdit', compact('job'));	
 	}
 
+	public function destroy($id)
+	{
+		Auth::user()->jobs()->detach($id);
+
+		return Redirect::route('client.jobs');
+	}
+
 	/**
 	 * Get the text about previous participants based on amount of users
 	 * @param  int $usersCount

@@ -12,8 +12,8 @@ setupShepherd = function() {
     var shepherd;
     shepherd = new Shepherd.Tour({
       defaults: {
-        classes: 'shepherd-element shepherd-open shepherd-theme-arrows',
-        scrollTo: true
+        classes: 'shepherd-element shepherd-open shepherd-theme-arrows'
+        
       }
     });
 
@@ -22,6 +22,7 @@ setupShepherd = function() {
   		text: ['Welkom bij Rework, leuk dat u een account gemaakt heeft! Dit is een korte tour door de website om u snel op gang te helpen.'],
   		attachTo: '.progressSmall top', //.progressSmall
   		classes: 'shepherd shepherd-open shepherd-theme-arrows shepherd-transparent-text',
+      scrollTo: false,
   		buttons: [
         {
           text: 'Stop',
@@ -41,11 +42,12 @@ setupShepherd = function() {
       title: 'Uw eerste job',
       text: 'Dit is maar een van de opdrachten die op de website staan. Er zijn 4 verschillende categorien waar een opdracht in kan staan. Fysiek, adviserend, handarbeid of technisch werk!',
       attachTo: '.progress bottom',
+      scrollTo: false,
       buttons: [
         {
           text: 'Terug',
           classes: 'shepherd-button-secondary',
-          action: shepherd.back
+          action: shepherd.back,
         }, {
           text: 'Volgende',
           action: shepherd.next
@@ -56,11 +58,13 @@ setupShepherd = function() {
       title: 'Bekijk opdracht',
       text: 'Als u eenmaal een opdracht gevonden heeft waar u aan wilt meewerken kunt u de opdracht bekijken eventueel aanmelden',
       attachTo: '.jobs left',
+      scrollTo: true,
       buttons: [
         {
           text: 'Terug',
           classes: 'shepherd-button-secondary',
-          action: shepherd.back
+          action: shepherd.back,
+          scrollTo: true,
         }, {
           text: 'Volgende',
           action: shepherd.next
@@ -71,6 +75,7 @@ setupShepherd = function() {
       title: 'Uw opdrachten',
       text: 'Als u eenmaal bent aangemeld voor een aantal opdrachten, komen deze in uw eigen overzicht. Van hieruit kunt u de status zien, en uw voortgang aangeven!',
       attachTo: '.menuLink top',
+      scrollTo: true,
       buttons: [
         {
           text: 'Terug',
@@ -86,6 +91,7 @@ setupShepherd = function() {
       title: 'Vriendenlijst',
       text: 'Dit is de vriendenlijst. Opdrachten doen is leuk, maar samen aan een opdracht werken is natuurlijk nog leuker. Als deze lijst eenmaal gevuld is, kunt u door te slepen uw vrienden uitnodigen om mee te helpen aan een opdracht',
       attachTo: '.friendList left',
+      scrollTo: false,
       buttons: [
         {
           text: 'Terug',

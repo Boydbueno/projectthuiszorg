@@ -12,13 +12,13 @@ Route::post('/forgot_password', 'HomeController@do_forgot_password');
 |---------------------------------------------------------------------------
 */
 
-Route::group(array('prefix' => 'login'), function()
+Route::group(['prefix' => 'login'], function()
 {
 
-	Route::get('client', array('as' => 'client.login', 'uses' => 'controllers\client\AuthController@getLogin'));
-	Route::post('client', array('as' => 'client.doLogin', 'uses' => 'controllers\client\AuthController@postLogin'));
-	Route::get('company', array('as' => 'company.login', 'uses' => 'controllers\company\AuthController@getLogin'));
-	Route::post('company', array('as' => 'company.doLogin', 'uses' => 'controllers\company\AuthController@postLogin'));
+	Route::get('client', ['as' => 'client.login', 'uses' => 'controllers\client\AuthController@getLogin']);
+	Route::post('client', ['as' => 'client.doLogin', 'uses' => 'controllers\client\AuthController@postLogin']);
+	Route::get('company', ['as' => 'company.login', 'uses' => 'controllers\company\AuthController@getLogin']);
+	Route::post('company', ['as' => 'company.doLogin', 'uses' => 'controllers\company\AuthController@postLogin']);
 
 });
 
@@ -28,7 +28,7 @@ Route::group(array('prefix' => 'login'), function()
 |---------------------------------------------------------------------------
 */
 
-Route::group(array('prefix' => 'register'), function()
+Route::group(['prefix' => 'register'], function()
 {
 
 	Route::get('client', 'controllers\client\AuthController@getRegister');
@@ -43,22 +43,20 @@ Route::group(array('prefix' => 'register'), function()
 |---------------------------------------------------------------------------
 */
 
-Route::group(array('prefix' => 'client'), function()
+Route::group(['prefix' => 'client', 'namespace' => 'controllers\client', 'before' => 'clientOrAdmin'], function()
 {
 
-	Route::group(array('before' => 'clientOrAdmin'), function() 
-	{
-		Route::get('/', array('as' => 'client', 'uses' => 'controllers\client\HomeController@index'));
-		Route::get('jobs', 'controllers\client\HomeController@getMyJobs');
-		Route::get('settings', array('as' => 'client.settings', 'uses' => 'controllers\client\SettingsController@getSettings'));
-		Route::get('friendlist', array('as' => 'client.friendlist', 'uses' => 'controllers\client\FriendListController@getFriendList'));
+	Route::get('/', ['as' => 'client', 'uses' => 'HomeController@index']);
+	Route::get('jobs', ['as' => 'client.jobs', 'uses' => 'HomeController@getMyJobs']);
+	Route::get('settings', ['as' => 'client.settings', 'uses' => 'client\SettingsController@getSettings']);
+	Route::get('friendlist', ['as' => 'client.friendlist', 'uses' => 'FriendListController@getFriendList']);
 
-		Route::get('jobs/{id}', array('as' => 'client.jobs.show', 'uses' => 'controllers\client\JobsController@show'));
-		Route::get('jobs/{id}/join', array('as' => 'client.jobs.join', 'uses' => 'controllers\client\JobsController@join'));
-		Route::post('jobs/{id}/join', 'controllers\client\JobsController@postJoin');
+	Route::get('jobs/{id}', ['as' => 'client.jobs.show', 'uses' => 'JobsController@show']);
+	Route::get('jobs/{id}/join', ['as' => 'client.jobs.join', 'uses' => 'JobsController@join']);
+	Route::post('jobs/{id}/join', 'JobsController@postJoin');
 
-		Route::get('jobs/{id}/edit', array('as' => 'client.jobs.edit', 'uses' => 'controllers\client\JobsController@edit'));
-	});
+	Route::get('jobs/{id}/edit', ['as' => 'client.jobs.edit', 'uses' => 'JobsController@edit']);
+	Route::delete('jobs/{id}', ['as' => 'client.jobs.delete', 'uses' => 'JobsController@destroy']); // Doesn't destroy the job, just connection with user
 
 });
 
@@ -68,16 +66,13 @@ Route::group(array('prefix' => 'client'), function()
 |---------------------------------------------------------------------------
 */
 
-Route::group(array('prefix' => 'company'), function()
+Route::group(['prefix' => 'company', 'namespace' => 'controllers\company', 'before' => 'companyOrAdmin'], function()
 {
 
-	Route::group(array('before' => 'companyOrAdmin'), function() 
-	{
-		Route::get('/', array('as' => 'company', 'uses' => 'controllers\company\HomeController@index'));
+	Route::get('/', ['as' => 'company', 'uses' => 'HomeController@index']);
 
-		Route::get('jobs/create', array('as' => 'company.jobs.create', 'uses' => 'controllers\company\JobsController@create'));
-		Route::post('jobs/create', 'controllers\company\JobsController@postCreate');
-	});
+	Route::get('jobs/create', ['as' => 'company.jobs.create', 'uses' => 'JobsController@create']);
+	Route::post('jobs/create', 'JobsController@postCreate');
 
 });
 
@@ -87,24 +82,25 @@ Route::group(array('prefix' => 'company'), function()
 |---------------------------------------------------------------------------
 */
 
-Route::group(array('prefix' => 'api'), function()
+Route::group(['prefix' => 'api', 'namespace' => 'controllers\api'], function()
 {
 
 	# Comment routes
-	Route::get('comments', 'controllers\api\CommentsController@index');
-	Route::get('comments/{id}', 'controllers\api\CommentsController@show');
+	Route::get('comments', 'CommentsController@index');
+	Route::get('comments/{id}', 'CommentsController@show');
 
 	# Job routes
-	Route::get('jobs', 'controllers\api\JobsController@index');
-	Route::get('jobs/{id}', 'controllers\api\JobsController@show');
-	Route::get('jobs/{id}/comments', 'controllers\api\CommentsController@getComments');
-	Route::post('jobs/{id}/comments', 'controllers\api\CommentsController@postComment');
-	Route::get('jobs/{id}/invite/{userid}', 'controllers\api\JobsController@inviteUser');
-	Route::get('jobcategories/{id}/jobs', 'controllers\api\JobsController@byCategory');
+	
+	Route::get('jobs', 'JobsController@index');
+	Route::get('jobs/{id}', 'JobsController@show');
+	Route::get('jobs/{id}/comments', 'CommentsController@getComments');
+	Route::post('jobs/{id}/comments', 'CommentsController@postComment');
+	Route::get('jobs/{id}/invite/{userid}', 'JobsController@inviteUser');
+	Route::get('jobcategories/{id}/jobs', 'JobsController@byCategory');
 
 	# Jobcategory routes
-	Route::get('jobcategories', 'controllers\api\JobcategoriesController@index');
-	Route::get('jobcategories/{id}', 'controllers\api\JobcategoriesController@show');
+	Route::get('jobcategories', 'JobcategoriesController@index');
+	Route::get('jobcategories/{id}', 'JobcategoriesController@show');
 
 });
 
@@ -117,4 +113,4 @@ Route::group(array('prefix' => 'api'), function()
 Route::get( 'user/confirm/{code}',         'UserController@confirm');
 Route::get( 'user/reset_password/{token}', 'UserController@reset_password');
 Route::post('user/reset_password',         'UserController@do_reset_password');
-Route::get('logout', array('as' => 'logout', 'uses' => 'UserController@logout'));
+Route::get('logout', ['as' => 'logout', 'uses' => 'UserController@logout']);

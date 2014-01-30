@@ -110,6 +110,7 @@
     {{ HTML::script('scripts/vendor/handlebars-v1.1.2.js') }}
 
     <script>
+
         // Todo: Place in external js file
 
         //Make friends draggable
@@ -237,7 +238,8 @@
 
     </script>
     @section('scripts')
-        {{ HTML::script('scripts/shepherd.js') }}
+        {{ HTML::style('css/shepherd-theme-arrows.css') }}
+        {{ HTML::script('scripts/shepherd.min.js') }}
         {{ HTML::script('scripts/tour.js') }}
     @stop
 @stop

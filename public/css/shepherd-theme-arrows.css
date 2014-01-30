@@ -9,15 +9,22 @@
   .shepherd-element.shepherd-open {
     display: block; }
 
+body.tour header.mainMenu, body.tour section.block, body.tour article.block{
+  opacity: 0.3; 
+}
+
+body.shepherd-completed header.mainMenu, body.shepherd-completed section.block, body.shepherd-completed article.block {
+  opacity: 1; 
+}
+
+.grid-container .shepherd-target.shepherd-enabled{
+  opacity: 1;
+}
+
 .shepherd-element.shepherd-theme-arrows {
   max-width: 100%;
   max-height: 100%; }
   .shepherd-element.shepherd-theme-arrows .shepherd-content {
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-    border-radius: 5px;
     position: relative;
     font-family: inherit;
     background: white;
@@ -122,11 +129,6 @@
   .shepherd-element.shepherd-theme-arrows .shepherd-content * {
     font-size: inherit; }
   .shepherd-element.shepherd-theme-arrows .shepherd-content header {
-    -webkit-border-radius: 5px 5px 0 0;
-    -moz-border-radius: 5px 5px 0 0;
-    -ms-border-radius: 5px 5px 0 0;
-    -o-border-radius: 5px 5px 0 0;
-    border-radius: 5px 5px 0 0;
     background: #eeeeee;
     padding: 1em; }
     .shepherd-element.shepherd-theme-arrows .shepherd-content header h3 {
@@ -158,11 +160,6 @@
           *vertical-align: auto;
           zoom: 1;
           *display: inline;
-          -webkit-border-radius: 3px;
-          -moz-border-radius: 3px;
-          -ms-border-radius: 3px;
-          -o-border-radius: 3px;
-          border-radius: 3px;
           cursor: pointer;
           border: 0;
           margin: 0 0.5em 0 0;

@@ -1,10 +1,9 @@
 (function() {
 
-  //$(".jobs:first").addClass("tourSecond");
-
   var completeShepherd, init, setupShepherd;
 
   init = function() {
+    document.getElementsByTagName('body')[0].className+='tour';
     return setupShepherd();
   };
 
@@ -18,9 +17,9 @@ setupShepherd = function() {
     });
 
 
-	shepherd.addStep('welkom', {
+	shepherd.addStep('Welkom!', {
   		text: ['Welkom bij Rework, leuk dat u een account gemaakt heeft! Dit is een korte tour door de website om u snel op gang te helpen.'],
-  		attachTo: '.progressSmall top', //.progressSmall
+  		attachTo: '.content .block:first-child top', //.progressSmall
   		classes: 'shepherd shepherd-open shepherd-theme-arrows shepherd-transparent-text',
       scrollTo: false,
   		buttons: [
@@ -38,10 +37,10 @@ setupShepherd = function() {
         }
       ]
 	});
-  shepherd.addStep('Eerste job', {
-      title: 'Uw eerste job',
+  shepherd.addStep('Eerste opdracht', {
+      title: 'Uw eerste opdracht',
       text: 'Dit is maar een van de opdrachten die op de website staan. Er zijn 4 verschillende categorien waar een opdracht in kan staan. Fysiek, adviserend, handarbeid of technisch werk!',
-      attachTo: '.progress bottom',
+      attachTo: '.jobs article:first-child bottom',
       scrollTo: false,
       buttons: [
         {
@@ -55,10 +54,10 @@ setupShepherd = function() {
       ]
     });
   shepherd.addStep('Bekijk opdracht', {
-      title: 'Bekijk opdracht',
+      title: 'Bekijk een opdracht',
       text: 'Als u eenmaal een opdracht gevonden heeft waar u aan wilt meewerken kunt u de opdracht bekijken eventueel aanmelden',
-      attachTo: '.jobs left',
-      scrollTo: true,
+      attachTo: '.jobs article:first-child right',
+      scrollTo: false,
       buttons: [
         {
           text: 'Terug',
@@ -74,8 +73,8 @@ setupShepherd = function() {
   shepherd.addStep('Mijn opdrachten', {
       title: 'Uw opdrachten',
       text: 'Als u eenmaal bent aangemeld voor een aantal opdrachten, komen deze in uw eigen overzicht. Van hieruit kunt u de status zien, en uw voortgang aangeven!',
-      attachTo: '.menuLink top',
-      scrollTo: true,
+      attachTo: 'header.mainMenu bottom',
+      scrollTo: false,
       buttons: [
         {
           text: 'Terug',

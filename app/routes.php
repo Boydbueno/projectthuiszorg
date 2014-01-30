@@ -49,7 +49,7 @@ Route::group(array('prefix' => 'client'), function()
 	Route::group(array('before' => 'clientOrAdmin'), function() 
 	{
 		Route::get('/', array('as' => 'client', 'uses' => 'controllers\client\HomeController@index'));
-		Route::get('jobs', 'controllers\client\HomeController@getMyJobs');
+		Route::get('jobs', array('as' => 'client.jobs', 'uses' => 'controllers\client\HomeController@getMyJobs'));
 		Route::get('settings', array('as' => 'client.settings', 'uses' => 'controllers\client\SettingsController@getSettings'));
 		Route::get('friendlist', array('as' => 'client.friendlist', 'uses' => 'controllers\client\FriendListController@getFriendList'));
 

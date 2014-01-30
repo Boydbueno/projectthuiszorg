@@ -1,6 +1,9 @@
 <?php namespace controllers\api;
 
 use Comment;
+use Auth;
+use Input;
+use Request;
 
 class CommentsController extends \BaseController {
 
@@ -31,9 +34,18 @@ class CommentsController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function indexJob($jobId)
+	public function getComments($jobId)
 	{
 		return Comment::with('user')->where('job_id','=',$jobId)->get();
+	}
+
+	public function postComment($id)
+	{
+		$text = Input::get('text');
+		$userid = Auth::user()->id;
+		Comment::create(array('job_id' => $id, 'user_id' => $userid, 'text' => $text));
+
+		return Comment::with('user')->where('job_id','=',$id)->get();
 	}
 
 }

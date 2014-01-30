@@ -97,6 +97,7 @@ Route::group(array('prefix' => 'api'), function()
 	# Job routes
 	Route::get('jobs', 'controllers\api\JobsController@index');
 	Route::get('jobs/{id}', 'controllers\api\JobsController@show');
+	Route::get('jobs/{id}/comments', 'controllers\api\CommentsController@indexJob');
 	Route::get('jobs/{id}/invite/{userid}', 'controllers\api\JobsController@inviteUser');
 	Route::get('jobcategories/{id}/jobs', 'controllers\api\JobsController@byCategory');
 

@@ -49,9 +49,13 @@
 	</section>
 </article>
 {{ Form::close() }}
+
+@include('partials.client._friendlist')
+
 @stop
 
 @section('scripts')
+	{{ HTML::script('scripts/friendlist.js') }}
 	{{ HTML::script('scripts/ion.rangeSlider.js') }}
 	<script>
 		var job = {{ $job }};

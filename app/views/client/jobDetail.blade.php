@@ -60,8 +60,11 @@
 
 	</section>
 
+	@include('partials.client._friendlist')
+
 @stop
 
 @section('scripts')
+	{{ HTML::script('scripts/friendlist.js') }}
 	{{ HTML::script('scripts/comments.js') }}
 @stop

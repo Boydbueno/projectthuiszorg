@@ -9,8 +9,6 @@ var jobId = $("#comments").attr("rel");
 var CommentList = React.createClass({displayName: 'CommentList',
 	render:function(){
 
-		console.log(this.props.data);
-
 		//Create comments from commentBox's data
 		var commentNodes = this.props.data.map(function(comment){
 			return Comment( {author:comment.user.user_info.firstName+' '+comment.user.user_info.lastName}, comment.text);
@@ -100,7 +98,9 @@ var CommentBox = React.createClass({displayName: 'CommentBox',
 	render:function(){
 		return(
 			React.DOM.div( {className:"commentBox"}, 
-				React.DOM.h1(null, "Comments"),
+				React.DOM.header( {className:"mainTitle floatFix"}, 
+					React.DOM.h1(null, "Reacties")
+				),
 				CommentList( {data:this.state.data} ), 
 				CommentForm( {onCommentSubmit:this.handleCommentSubmit} )
 			)

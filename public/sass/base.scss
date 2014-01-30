@@ -100,7 +100,13 @@
 	.information{
 		margin-right:220px;
 		padding-right:30px;
+	
+		&.wide{
+			margin-right: 30px;
+		}
+	
 	}
+
 
 	.details, .quickMenu{
 		width:210px;

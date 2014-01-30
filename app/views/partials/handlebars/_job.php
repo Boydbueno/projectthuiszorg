@@ -32,5 +32,9 @@
                 </div>
             </section>
         </article>
+    {{else}}
+        <article class="block marginTop floatFix">
+            <header class="mainTitle"><h1>Er zijn opdrachten gevonden.</h1></header>
+        </article>
     {{/each}}
 </script>

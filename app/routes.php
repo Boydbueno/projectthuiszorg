@@ -43,22 +43,22 @@ Route::group(['prefix' => 'register'], function()
 |---------------------------------------------------------------------------
 */
 
-Route::group(['prefix' => 'client'], function()
+Route::group(['prefix' => 'client', 'namespace' => 'controllers\client'], function()
 {
 
 	Route::group(['before' => 'clientOrAdmin'], function() 
 	{
-		Route::get('/', ['as' => 'client', 'uses' => 'controllers\client\HomeController@index']);
-		Route::get('jobs', ['as' => 'client.jobs', 'uses' => 'controllers\client\HomeController@getMyJobs']);
-		Route::get('settings', ['as' => 'client.settings', 'uses' => 'controllers\client\SettingsController@getSettings']);
-		Route::get('friendlist', ['as' => 'client.friendlist', 'uses' => 'controllers\client\FriendListController@getFriendList']);
+		Route::get('/', ['as' => 'client', 'uses' => 'HomeController@index']);
+		Route::get('jobs', ['as' => 'client.jobs', 'uses' => 'HomeController@getMyJobs']);
+		Route::get('settings', ['as' => 'client.settings', 'uses' => 'client\SettingsController@getSettings']);
+		Route::get('friendlist', ['as' => 'client.friendlist', 'uses' => 'FriendListController@getFriendList']);
 
-		Route::get('jobs/{id}', ['as' => 'client.jobs.show', 'uses' => 'controllers\client\JobsController@show']);
-		Route::get('jobs/{id}/join', ['as' => 'client.jobs.join', 'uses' => 'controllers\client\JobsController@join']);
-		Route::post('jobs/{id}/join', 'controllers\client\JobsController@postJoin');
+		Route::get('jobs/{id}', ['as' => 'client.jobs.show', 'uses' => 'JobsController@show']);
+		Route::get('jobs/{id}/join', ['as' => 'client.jobs.join', 'uses' => 'JobsController@join']);
+		Route::post('jobs/{id}/join', 'JobsController@postJoin');
 
-		Route::get('jobs/{id}/edit', ['as' => 'client.jobs.edit', 'uses' => 'controllers\client\JobsController@edit']);
-		Route::delete('jobs/{id}', ['as' => 'client.jobs.delete', 'uses' => 'controllers\client\JobsController@destroy']); // Doesn't destroy the job, just connection with user
+		Route::get('jobs/{id}/edit', ['as' => 'client.jobs.edit', 'uses' => 'JobsController@edit']);
+		Route::delete('jobs/{id}', ['as' => 'client.jobs.delete', 'uses' => 'JobsController@destroy']); // Doesn't destroy the job, just connection with user
 	});
 
 });
@@ -69,15 +69,15 @@ Route::group(['prefix' => 'client'], function()
 |---------------------------------------------------------------------------
 */
 
-Route::group(['prefix' => 'company'], function()
+Route::group(['prefix' => 'company', 'namespace' => 'controllers\company'], function()
 {
 
 	Route::group(['before' => 'companyOrAdmin'], function() 
 	{
-		Route::get('/', ['as' => 'company', 'uses' => 'controllers\company\HomeController@index']);
+		Route::get('/', ['as' => 'company', 'uses' => 'HomeController@index']);
 
-		Route::get('jobs/create', ['as' => 'company.jobs.create', 'uses' => 'controllers\company\JobsController@create']);
-		Route::post('jobs/create', 'controllers\company\JobsController@postCreate');
+		Route::get('jobs/create', ['as' => 'company.jobs.create', 'uses' => 'JobsController@create']);
+		Route::post('jobs/create', 'JobsController@postCreate');
 	});
 
 });
@@ -88,23 +88,23 @@ Route::group(['prefix' => 'company'], function()
 |---------------------------------------------------------------------------
 */
 
-Route::group(['prefix' => 'api'], function()
+Route::group(['prefix' => 'api', 'namespace' => 'controllers\api'], function()
 {
 
 	# Comment routes
-	Route::get('comments', 'controllers\api\CommentsController@index');
-	Route::get('comments/{id}', 'controllers\api\CommentsController@show');
+	Route::get('comments', 'CommentsController@index');
+	Route::get('comments/{id}', 'CommentsController@show');
 
 	# Job routes
-	Route::get('jobs', 'controllers\api\JobsController@index');
-	Route::get('jobs/{id}', 'controllers\api\JobsController@show');
-	Route::get('jobs/{id}/comments', 'controllers\api\CommentsController@indexJob');
-	Route::get('jobs/{id}/invite/{userid}', 'controllers\api\JobsController@inviteUser');
-	Route::get('jobcategories/{id}/jobs', 'controllers\api\JobsController@byCategory');
+	Route::get('jobs', 'JobsController@index');
+	Route::get('jobs/{id}', 'JobsController@show');
+	Route::get('jobs/{id}/comments', 'CommentsController@indexJob');
+	Route::get('jobs/{id}/invite/{userid}', 'JobsController@inviteUser');
+	Route::get('jobcategories/{id}/jobs', 'JobsController@byCategory');
 
 	# Jobcategory routes
-	Route::get('jobcategories', 'controllers\api\JobcategoriesController@index');
-	Route::get('jobcategories/{id}', 'controllers\api\JobcategoriesController@show');
+	Route::get('jobcategories', 'JobcategoriesController@index');
+	Route::get('jobcategories/{id}', 'JobcategoriesController@show');
 
 });
 

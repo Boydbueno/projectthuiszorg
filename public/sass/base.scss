@@ -171,7 +171,7 @@
 	margin-bottom:25px;
 }
 
-.friend{
+.friend, .comment{
 	padding:15px 20px;
 	border-top: 1px solid #eaeaea;
 	font-size:15px;
@@ -218,4 +218,11 @@
 
 .droppable .droppableOverlay, .active .confirmOverlay{
 	display:block;
+}
+
+/* Comments */
+
+.commentForm{
+	border-top: 1px solid #eaeaea;
+	padding:15px 20px;
 }

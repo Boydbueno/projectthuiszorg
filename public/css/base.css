@@ -516,7 +516,7 @@ fieldset {
 }
 
 /* line 174, ../sass/base.scss */
-.friend {
+.friend, .comment {
   padding: 15px 20px;
   border-top: 1px solid #eaeaea;
   font-size: 15px;
@@ -572,4 +572,11 @@ fieldset {
 /* line 219, ../sass/base.scss */
 .droppable .droppableOverlay, .active .confirmOverlay {
   display: block;
+}
+
+/* Comments */
+/* line 225, ../sass/base.scss */
+.commentForm {
+  border-top: 1px solid #eaeaea;
+  padding: 15px 20px;
 }

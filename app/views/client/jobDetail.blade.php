@@ -56,7 +56,7 @@
 		</section>
 	</section>
 
-	<section class="block marginTop description" id="comments" rel="{{ $job->id }}">
+	<section class="block marginTop" id="comments" rel="{{ $job->id }}">
 
 	</section>
 

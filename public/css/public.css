@@ -205,6 +205,11 @@ a:hover {
 }
 
 /* line 47, ../sass/partials/_buttons.scss */
+.btn.btnWarning {
+  background-color: #e35340;
+}
+
+/* line 51, ../sass/partials/_buttons.scss */
 .messageBoxBtn {
   background-repeat: no-repeat;
   background-position: 10px 9px;
@@ -213,31 +218,31 @@ a:hover {
   width: 180px;
 }
 
-/* line 55, ../sass/partials/_buttons.scss */
+/* line 59, ../sass/partials/_buttons.scss */
 .btnWorkIcon {
   background-image: url("../images/icons/work_icon.png");
 }
 
-/* line 59, ../sass/partials/_buttons.scss */
+/* line 63, ../sass/partials/_buttons.scss */
 .btnSettingsIcon {
   background-image: url("../images/icons/settings_icon_white.png");
 }
 
-/* line 63, ../sass/partials/_buttons.scss */
-.jobs .btn {
-  margin: 15px 0 35px 35px;
-}
-
 /* line 67, ../sass/partials/_buttons.scss */
-.job .btn {
-  margin: 15px 0 35px 20px;
+.jobs .btn {
+  margin: 15px 0 5px 35px;
 }
 
 /* line 71, ../sass/partials/_buttons.scss */
+.job .btn {
+  margin: 15px 0 5px 20px;
+}
+
+/* line 75, ../sass/partials/_buttons.scss */
 .confirmOverlay .grey {
   background-color: #989898;
 }
-/* line 75, ../sass/partials/_buttons.scss */
+/* line 79, ../sass/partials/_buttons.scss */
 .confirmOverlay .grey:hover {
   background-color: #c5c5c5;
 }

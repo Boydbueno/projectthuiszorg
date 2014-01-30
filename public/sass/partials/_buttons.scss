@@ -44,6 +44,10 @@
 	}
 }
 
+.btn.btnWarning{
+	background-color:$warning;
+}
+
 .messageBoxBtn{
 	background-repeat: no-repeat;
 	background-position: 10px 9px;
@@ -61,11 +65,11 @@
 }
 
 .jobs .btn{
-	margin:15px 0 35px 35px;
+	margin:15px 0 5px 35px;
 }
 
 .job .btn{
-	margin:15px 0 35px 20px;
+	margin:15px 0 5px 20px;
 }
 
 .confirmOverlay .grey{

@@ -18,7 +18,7 @@
                     Nog {{ amount_left }} {{ postfix }}
                 </div>
             </div>
-            <section class="description">
+            <section class="description floatFix">
                 <aside class="details floatRight">
                     <ul>
                         <li class="iconItem dateIcon bold">{{ days_left_phrase }}</li>

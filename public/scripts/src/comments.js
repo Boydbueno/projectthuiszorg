@@ -24,11 +24,25 @@ var CommentList = React.createClass({
 });
 
 var CommentForm = React.createClass({
+	handleSubmit: function(){
+		//Get the input
+		var text = this.refs.text.getDOMNode().value.trim();
+
+		//Check if the input isset
+		if(!text){
+			return false;
+		}
+
+		//Clear the field again
+		this.refs.text.getDOMNode().value = '';
+
+		//Make sure the page doesn't reload, aka preventDefault
+		return false;
+	},
 	render:function(){
 		return(
-			<form className="commentForm">
-				<input type="text" placeholder="Your name" />
-				<input type="text" placeholder="Say something..." />
+			<form className="commentForm" onSubmit={this.handleSubmit}>
+				<input type="text" ref="text" placeholder="Wat wilt u vragen..." />
 				<input type="submit" value="Post" />
 			</form>
 		);

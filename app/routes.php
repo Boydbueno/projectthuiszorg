@@ -90,6 +90,10 @@ Route::group(array('prefix' => 'company'), function()
 Route::group(array('prefix' => 'api'), function()
 {
 
+	# Comment routes
+	Route::get('comments', 'controllers\api\CommentsController@index');
+	Route::get('comments/{id}', 'controllers\api\CommentsController@show');
+
 	# Job routes
 	Route::get('jobs', 'controllers\api\JobsController@index');
 	Route::get('jobs/{id}', 'controllers\api\JobsController@show');

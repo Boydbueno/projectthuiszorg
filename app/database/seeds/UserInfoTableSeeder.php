@@ -10,43 +10,43 @@ class UserInfoTableSeeder extends Seeder {
 			array(
 				"firstName" => "Stefan",
 				"lastName" => "Weck",
-				"adress" => "StefanStraat",
+				"adress" => "Marie Boddaertstraat",
 				"houseNumber" => 8,
 				"city" => "Gorinchem",
 				"phoneNumber" => "06348939",
 				"user_id" => User::where('username', '=', 'stefanweck')->first()->id
 			),
 			array(
-				"firstName" => "Stefan",
-				"lastName" => "Client",
+				"firstName" => "Henk",
+				"lastName" => "de Jager",
 				"adress" => "",
-				"houseNumber" => 9,
+				"houseNumber" => 14,
 				"city" => "",
 				"phoneNumber" => "06348939",
 				"user_id" => User::where('username', '=', 'stefanweckclient')->first()->id
 			),
 			array(
-				"firstName" => "Stefan",
-				"lastName" => "Company",
-				"adress" => "StefanStraat",
-				"houseNumber" => 10,
-				"city" => "Gorinchem",
+				"firstName" => "Barry",
+				"lastName" => "Viola",
+				"adress" => "Hoofdweg",
+				"houseNumber" => 84,
+				"city" => "Rotterdam",
 				"phoneNumber" => "06348939",
 				"user_id" => User::where('username', '=', 'stefanweckcompany')->first()->id
 			),
 			array(
-				"firstName" => "Kevin",
-				"lastName" => "Vlietstra",
-				"adress" => "KevinStraat",
+				"firstName" => "Kees",
+				"lastName" => "Hendriks",
+				"adress" => "Vestingweg",
 				"houseNumber" => 4,
 				"city" => "Zoetermeer",
 				"phoneNumber" => "063768139",
-				"user_id" => User::where('username', '=', 'kevinvlietstra')->first()->id
+				"user_id" => User::where('username', '=', 'kevinvlietstracompany')->first()->id
 			),
 			array(
-				"firstName" => "Kevin",
-				"lastName" => "Client",
-				"adress" => "KevinStraat",
+				"firstName" => "Mindy",
+				"lastName" => "Dekker",
+				"adress" => "Boomanslaan",
 				"houseNumber" => 6,
 				"city" => "",
 				"phoneNumber" => "",
@@ -59,7 +59,7 @@ class UserInfoTableSeeder extends Seeder {
 				"houseNumber" => 7,
 				"city" => "Zoetermeer",
 				"phoneNumber" => "063768139",
-				"user_id" => User::where('username', '=', 'kevinvlietstracompany')->first()->id
+				"user_id" => User::where('username', '=', 'kevinvlietstra')->first()->id
 			),
 			array(
 				"firstName" => "Boyd",
@@ -71,22 +71,40 @@ class UserInfoTableSeeder extends Seeder {
 				"user_id" => User::where('username', '=', 'boydbuenodemesquita')->first()->id
 			),
 			array(
-				"firstName" => "Boyd",
-				"lastName" => "Bueno de Client",
+				"firstName" => "Bep",
+				"lastName" => "de Jong",
 				"adress" => "",
-				"houseNumber" => 8,
+				"houseNumber" => 3,
 				"city" => "",
 				"phoneNumber" => "061168139",
 				"user_id" => User::where('username', '=', 'boydbuenodemesquitaclient')->first()->id
 			),
 			array(
-				"firstName" => "Boyd",
-				"lastName" => "Bueno de Company",
-				"adress" => "BoydStraat",
+				"firstName" => "Sjaak",
+				"lastName" => "van Dijk",
+				"adress" => "Vestingwal",
 				"houseNumber" => 1,
 				"city" => "Rotterdam",
 				"phoneNumber" => "061168139",
 				"user_id" => User::where('username', '=', 'boydbuenodemesquitacompany')->first()->id
+			),
+			array(
+				"firstName" => "Timo",
+				"lastName" => "de Boer",
+				"adress" => "Prins Alexanderplein",
+				"houseNumber" => 49,
+				"city" => "Rotterdam",
+				"phoneNumber" => "061168139",
+				"user_id" => User::where('username', '=', 'timodeboer')->first()->id
+			),
+			array(
+				"firstName" => "Willemijn",
+				"lastName" => "Bakker",
+				"adress" => "Abrahamshofje",
+				"houseNumber" => 4,
+				"city" => "Rotterdam",
+				"phoneNumber" => "061168139",
+				"user_id" => User::where('username', '=', 'willemijnbakker')->first()->id
 			)
 			
 		);

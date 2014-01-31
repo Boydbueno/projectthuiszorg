@@ -1,7 +1,9 @@
 <?php namespace controllers\client;
 
+use Progress;
 use JobUser;
 use Job;
+use DB;
 
 use Auth;
 use Input;
@@ -64,9 +66,24 @@ class JobsController extends \BaseController {
 
 	public function progress($id)
 	{
+		$userId = Auth::user()->id;
 		$job = Job::find($id);
 
-		return View::make('client.jobProgress', compact('job'));
+		$progress = Progress::select([
+		        DB::raw('DATE(`created_at`) as `date`'),
+                DB::raw('SUM(amount) as `amount`')
+			])
+			->where('user_id', '=', $userId)->where('job_id', '=', $job->id)
+			->groupBy('date')
+			->lists('amount', 'date');
+
+		$dates = array_keys($progress);
+		$amounts = array_map('intval', array_values($progress));
+
+		return View::make('client.jobProgress')
+			->with('job', $job)
+			->with('dates', $dates)
+			->with('amounts', $amounts);
 	}
 
 	/**

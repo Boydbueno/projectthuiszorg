@@ -69,7 +69,21 @@ class UsersTableSeeder extends Seeder {
 				'password' => Hash::make('Welkom01'),
 				'confirmation_code' => '7896eef2ea334fb0e13f496996b17177',
 				'confirmed' => '1'
-			)
+			),
+			array(
+				'username' => 'timodeboer', 
+				'email' => 'timodeboer@gmail.com', 
+				'password' => Hash::make('Welkom01'),
+				'confirmation_code' => '7896eef2ea334fb0e13f496996b17177',
+				'confirmed' => '1'
+			),
+			array(
+				'username' => 'willemijnbakker', 
+				'email' => 'willemijnbakker@gmail.com', 
+				'password' => Hash::make('Welkom01'),
+				'confirmation_code' => '7896eef2ea334fb0e13f496996b17177',
+				'confirmed' => '1'
+			),
 		);
 
 		DB::table('users')->insert($users);

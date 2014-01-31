@@ -26,11 +26,7 @@
 			<aside class="details floatRight">
 				<ul>
 					<li class="iconItem dateIcon bold">
-						@if($job->daysLeft === 0)
-							Alleen vandaag nog!
-						@else
-							Nog {{ $job->daysLeft }} {{ $job->daysLeft  === 1 ? "dag" : "dagen" }}!
-						@endif
+						{{ $job->days_left_phrase }}
 					</li>
 					<li class="iconItem timeIcon">Starten</li>
 					<li class="iconItem moneyIcon">€ {{ $job->payment }}</li>

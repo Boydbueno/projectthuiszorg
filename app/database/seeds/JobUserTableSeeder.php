@@ -39,17 +39,17 @@ class JobUserTableSeeder extends Seeder {
 			),
 			array(
 				'job_id' => Job::where('title', '=', 'Gadgets monteren')->first()->id,
-				'user_id' => User::where('username', '=', 'boydbuenodemesquita')->first()->id,
-				'amount' => 10
+				'user_id' => User::where('username', '=', 'boydbuenodemesquitaclient')->first()->id,
+				'amount' => 40
 			),
 			array(
 				'job_id' => Job::where('title', '=', 'Gadgets monteren')->first()->id,
-				'user_id' => User::where('username', '=', 'stefanweck')->first()->id,
-				'amount' => 20
+				'user_id' => User::where('username', '=', 'stefanweckclient')->first()->id,
+				'amount' => 30
 			),			
 			array(
 				'job_id' => Job::where('title', '=', 'Gadgets monteren')->first()->id,
-				'user_id' => User::where('username', '=', 'kevinvlietstra')->first()->id,
+				'user_id' => User::where('username', '=', 'kevinvlietstraclient')->first()->id,
 				'amount' => 30
 			),
 		);

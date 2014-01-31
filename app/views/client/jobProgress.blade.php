@@ -23,31 +23,63 @@
 		        </div>
 		    </div>
 			<section class="description floatFix">
-			<h2>Uw voortgang</h2> 
+				@if($dates)
+					<h2>Uw voortgang</h2> 
+					<canvas id="js-progressChart" width="900"></canvas>
+				@else
+					<h2>U heeft nog geen voortgang dooregeven.</h2>
+					<p>
+						Geef uw voortgang door zodat uw opdrachtgever een beter beeld krijgt hoe het er voor staat.
+					</p>
+				@endif
+
+		        <div class="jobSlider floatFix" class="slider">
+				    {{ Form::label('range_1', 'Slider', array('class' => 'hidden' )); }}
+				    {{ Form::text('range_1') }}
+				</div>
 			</section>
 
-			<canvas id="js-progressChart" width="940"></canvas>
 		</article>
 	</section>
 
 @stop
 
 @section('scripts')
-	{{ HTML::script('scripts/vendor/chartjs/chart.min.js') }}
+	@if($dates)
+		{{ HTML::script('scripts/vendor/chartjs/chart.min.js') }}
+		<script>
+		(function(){
+			"use strict"
+
+			//Get the context of the canvas element we want to select
+			var ctx = document.getElementById("js-progressChart").getContext("2d");
+			var chart = {
+				labels: {{ json_encode($dates) }},
+				datasets: [{
+					data: {{ json_encode($amounts) }}
+				}]
+			};
+
+			var myNewChart = new Chart(ctx).Bar(chart);
+		})();
+		</script>
+	@endif
+	{{ HTML::script('scripts/ion.rangeSlider.js') }}
 	<script>
-	(function(){
-		"use strict"
+		var job = {{ $job }};
+	    $(document).ready(function(){
 
-		//Get the context of the canvas element we want to select
-		var ctx = document.getElementById("js-progressChart").getContext("2d");
-		var chart = {
-			labels: {{ json_encode($dates) }},
-			datasets: [{
-				data: {{ json_encode($amounts) }}
-			}]
-		};
+	        $("#range_1").ionRangeSlider({
+	            min: 1,
+	            max: job.amount_left,
+	            type: 'single',
+	            step: 1,
+	            postfix: ' '+job.postfix,
+	            prefix: job.prefix,
+	            prettify: true,
+	            hasGrid: true
+	        });
 
-		var myNewChart = new Chart(ctx).Bar(chart);
-	})();
+	    });
 	</script>
 @stop

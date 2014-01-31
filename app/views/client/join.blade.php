@@ -62,7 +62,7 @@
 	    $(document).ready(function(){
 
 	        $("#range_1").ionRangeSlider({
-	            min: job.minimum,
+	            min: 0,
 	            max: job.amount_left,
 	            type: 'single',
 	            step: job.step,

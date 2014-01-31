@@ -120,32 +120,38 @@ h1 {
 }
 
 /* line 9, ../sass/partials/_typography.scss */
+h2 {
+  font-size: 15px;
+  color: #989898;
+}
+
+/* line 14, ../sass/partials/_typography.scss */
 p {
   line-height: 30px;
   font-size: 15px;
 }
 
-/* line 14, ../sass/partials/_typography.scss */
+/* line 19, ../sass/partials/_typography.scss */
 a {
   color: #989898;
   text-decoration: none;
 }
-/* line 17, ../sass/partials/_typography.scss */
+/* line 22, ../sass/partials/_typography.scss */
 a:hover {
   text-decoration: underline;
 }
 
-/* line 22, ../sass/partials/_typography.scss */
+/* line 27, ../sass/partials/_typography.scss */
 .subTitle {
   color: #d5d5d5;
 }
 
-/* line 26, ../sass/partials/_typography.scss */
+/* line 31, ../sass/partials/_typography.scss */
 .centerText {
   text-align: center;
 }
 
-/* line 30, ../sass/partials/_typography.scss */
+/* line 35, ../sass/partials/_typography.scss */
 .bold {
   font-weight: bold;
 }
@@ -579,4 +585,9 @@ fieldset {
 .commentForm {
   border-top: 1px solid #eaeaea;
   padding: 15px 20px;
+}
+
+/* line 230, ../sass/base.scss */
+#js-progressChart {
+  margin-top: 20px;
 }

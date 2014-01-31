@@ -43,6 +43,14 @@ class AssignedRolesTableSeeder extends Seeder {
 				'user_id' => User::where('username', '=', 'kevinvlietstracompany')->first()->id,
 				'role_id' => Role::where('name', '=', 'CompanyOwner')->first()->id
 			),
+			array(
+				'user_id' => User::where('username', '=', 'timodeboer')->first()->id,
+				'role_id' => Role::where('name', '=', 'Client')->first()->id
+			),
+			array(
+				'user_id' => User::where('username', '=', 'willemijnbakker')->first()->id,
+				'role_id' => Role::where('name', '=', 'Client')->first()->id
+			),
 		);
 
 		DB::table('assigned_roles')->insert($assignedroles);

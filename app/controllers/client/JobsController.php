@@ -80,10 +80,26 @@ class JobsController extends \BaseController {
 		$dates = array_keys($progress);
 		$amounts = array_map('intval', array_values($progress));
 
+		$amountSubscribedFor = $job->users->find($userId)->pivot->amount;
+
 		return View::make('client.jobProgress')
 			->with('job', $job)
 			->with('dates', $dates)
-			->with('amounts', $amounts);
+			->with('amounts', $amounts)
+			->with('max', $amountSubscribedFor);
+	}
+
+	public function addProgress($id)
+	{
+		$userId = Auth::user()->id;
+
+		$progress = new Progress;
+		$progress->user_id = $userId;
+		$progress->job_id = $id;
+		$progress->amount = Input::get('progressSlider');
+		$progress->save();
+
+		return Redirect::route('client.jobs.progress', $id);
 	}
 
 	/**

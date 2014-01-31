@@ -32,11 +32,13 @@
 						Geef uw voortgang door zodat uw opdrachtgever een beter beeld krijgt hoe het er voor staat.
 					</p>
 				@endif
-
+				{{ Form::open(['action' => ['controllers\client\JobsController@addProgress', $job->id]]) }}
 		        <div class="jobSlider floatFix" class="slider">
-				    {{ Form::label('range_1', 'Slider', array('class' => 'hidden' )); }}
-				    {{ Form::text('range_1') }}
+				    {{ Form::label('progressSlider', 'Slider', array('class' => 'hidden')); }}
+				    {{ Form::text('progressSlider') }}
 				</div>
+				{{ Form::submit('Voortgang doorgeven', ['class' => 'btn'])}}
+				{{ Form::close() }}
 			</section>
 
 		</article>
@@ -60,7 +62,12 @@
 				}]
 			};
 
-			var myNewChart = new Chart(ctx).Bar(chart);
+			var options = {
+				scaleShowLabels: true,
+				scaleShowGridLines: true
+			};
+
+			var myNewChart = new Chart(ctx).Bar(chart, options);
 		})();
 		</script>
 	@endif
@@ -69,9 +76,9 @@
 		var job = {{ $job }};
 	    $(document).ready(function(){
 
-	        $("#range_1").ionRangeSlider({
+	        $("#progressSlider").ionRangeSlider({
 	            min: 1,
-	            max: job.amount_left,
+	            max: {{ $max }},
 	            type: 'single',
 	            step: 1,
 	            postfix: ' '+job.postfix,

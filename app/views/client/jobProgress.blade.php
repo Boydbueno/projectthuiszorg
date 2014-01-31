@@ -23,8 +23,10 @@
 		        </div>
 		    </div>
 			<section class="description floatFix">
-				@if($dates)
-					<h2>Uw voortgang</h2> 
+				<h2>Uw voortgang</h2> 
+				@if(count($dates) == 1)
+					<p>U heeft van één dag uw voortgang doorgegeven. Doe dit vaker om een beter overzicht te krijgen van uw voortgang.</p> 
+				@elseif($dates)
 					<canvas id="js-progressChart" width="900"></canvas>
 				@else
 					<h2>U heeft nog geen voortgang dooregeven.</h2>
@@ -63,8 +65,8 @@
 			};
 
 			var options = {
-				scaleShowLabels: true,
-				scaleShowGridLines: true
+				scaleShowLabels: false,
+				scaleShowGridLines: false
 			};
 
 			var myNewChart = new Chart(ctx).Bar(chart, options);

@@ -82,6 +82,8 @@ class JobsController extends \BaseController {
 
 		$amountSubscribedFor = $job->users->find($userId)->pivot->amount;
 
+		// dd(count($dates))
+
 		return View::make('client.jobProgress')
 			->with('job', $job)
 			->with('dates', $dates)

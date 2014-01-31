@@ -52,6 +52,36 @@ class JobUserTableSeeder extends Seeder {
 				'user_id' => User::where('username', '=', 'kevinvlietstraclient')->first()->id,
 				'amount' => 30
 			),
+			array(
+				'job_id' => Job::where('title', '=', 'Muren verven')->first()->id,
+				'user_id' => User::where('username', '=', 'kevinvlietstraclient')->first()->id,
+				'amount' => 30
+			),
+			array(
+				'job_id' => Job::where('title', '=', 'Muren verven')->first()->id,
+				'user_id' => User::where('username', '=', 'stefanweckclient')->first()->id,
+				'amount' => 30
+			),
+			array(
+				'job_id' => Job::where('title', '=', 'Muren verven')->first()->id,
+				'user_id' => User::where('username', '=', 'boydbuenodemesquitaclient')->first()->id,
+				'amount' => 30
+			),
+			array(
+				'job_id' => Job::where('title', '=', 'Kleding repareren')->first()->id,
+				'user_id' => User::where('username', '=', 'kevinvlietstraclient')->first()->id,
+				'amount' => 24
+			),
+			array(
+				'job_id' => Job::where('title', '=', 'Kleding repareren')->first()->id,
+				'user_id' => User::where('username', '=', 'stefanweckclient')->first()->id,
+				'amount' => 26
+			),
+			array(
+				'job_id' => Job::where('title', '=', 'Kleding repareren')->first()->id,
+				'user_id' => User::where('username', '=', 'boydbuenodemesquitaclient')->first()->id,
+				'amount' => 85
+			),
 		);
 
 		DB::table('job_user')->insert($job_user);

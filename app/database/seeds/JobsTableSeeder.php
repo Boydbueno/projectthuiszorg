@@ -116,7 +116,7 @@ class JobsTableSeeder extends Seeder {
 				"start_date" => "2014-02-08 00:00:00",
 				"end_date" => "2014-05-11 00:00:00",
 				"company_id" => Company::where('name', '=', 'Vestia')->first()->id,
-				"jobcategory_id" => JobCategory::where('label', '=', 'Fysiek')->first()->id,
+				"jobcategory_id" => JobCategory::where('label', '=', 'Fysiek werk')->first()->id,
 				"status_id" => Status::where('label', '=', 'Open')->first()->id
 			),
 			array(

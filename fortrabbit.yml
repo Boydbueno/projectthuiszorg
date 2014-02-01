@@ -5,7 +5,7 @@ excludes:
     - app/storage/
     - vendor/
 composer:
-    mode: trigger
+    mode: always
     method: install
 post-deploy:
     script: artisan

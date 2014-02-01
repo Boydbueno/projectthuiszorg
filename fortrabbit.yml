@@ -1,0 +1,14 @@
+---
+version: 1
+strategy: fullsync
+excludes:
+    - app/storage/
+    - vendor/
+composer:
+    mode: trigger
+    method: install
+post-deploy:
+    script: artisan
+    args:
+        - migrate
+        - --seed

@@ -3,7 +3,7 @@ version: 1
 strategy: fullsync
 excludes:
     - app/storage/
-    - vendor/
+    - /vendor/
 composer:
     mode: always
     method: install

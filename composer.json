@@ -5,6 +5,7 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.1.*",
+		"doctrine/dbal": "~2.3",
 		"conarwelsh/mustache-l4": "dev-master",
 		"zizaco/confide": "3.1.x",
 		"zizaco/entrust": "dev-master",
